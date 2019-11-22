@@ -1,0 +1,103 @@
+@import "../mixins/mask-icon";
+
+nav.posts-navigation {
+  @apply text-center my-12;
+
+  .nav-links {
+    @apply px-3 py-2 leading-none;
+
+    & > div {
+      @apply inline-block px-3 py-2;
+
+      & > a {
+        @apply no-underline uppercase;
+
+        &::before,
+        &::after {
+          @apply bg-black align-top inline-block w-4 h-4 px-4;
+
+          transition: background-color 0.3s;
+        }
+
+        &:focus,
+        &:hover {
+          &::before,
+          &::after {
+            @apply bg-primary;
+          }
+        }
+      }
+    }
+
+    div.nav-previous {
+      & a {
+        &::before {
+          content: '';
+
+          @include mask-icon('arrow-left');
+        }
+      }
+    }
+
+    div.nav-next {
+      & a {
+        &::after {
+          content: '';
+
+          @include mask-icon('arrow-right');
+        }
+      }
+    }
+  }
+}
+
+nav.page-nav {
+  @apply text-base text-center leading-none py-6 my-12 border-t border-b;
+
+  .post-page-numbers {
+    @apply px-3 py-2 leading-none no-underline;
+
+    &.current {
+      @apply text-primary;
+    }
+  }
+}
+
+nav.woocommerce-pagination {
+  @apply mb-8 text-center;
+
+  ul.page-numbers {
+    @apply inline-block text-base leading-none my-5;
+
+    li {
+      @apply inline-block leading-none;
+
+      .page-numbers {
+        @apply px-3 py-2 leading-none no-underline;
+
+        &.prev,
+        &.next {
+          svg {
+            @apply align-top inline-block w-4 h-4;
+          }
+        }
+
+        &.current {
+          @apply text-primary;
+        }
+      }
+    }
+
+    & > li:first-child {
+      .page-numbers {
+        @apply pl-0;
+      }
+    }
+
+    & > li:last-child {
+      .page-numbers {
+        @apply pr-0;
+      }
+    }
+  }
+}

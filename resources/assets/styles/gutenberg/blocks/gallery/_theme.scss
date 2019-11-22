@@ -1,0 +1,22 @@
+.wp-block-gallery {
+  .blocks-gallery-image,
+  .blocks-gallery-item {
+    figure {
+      @apply flex items-end h-full m-0 px-0 overflow-hidden;
+    }
+
+    img {
+      @apply block p-0 h-auto;
+    }
+
+    figcaption {
+      background: none;
+
+      @apply absolute inset-x-0 bottom-0 justify-center w-full m-0 p-3 text-center opacity-75 bg-white text-black;
+    }
+
+    figcaption img {
+      @apply inline;
+    }
+  }
+}

@@ -1,0 +1,732 @@
+# Copyright (C) 2019 Philipp Wellmer
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Stage 1.0.0-alpha\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/terra-nova\n"
+"Language-Team: ouun.io, hello@ouun.io\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-22T16:01:29+01:00\n"
+"PO-Revision-Date: 2019-11-22 16:25+0100\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+#. Theme Name of the theme
+msgid "Stage"
+msgstr "Stage"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+msgid "https://ouun.io/"
+msgstr "https://ouun.io/"
+
+#. Description of the theme
+msgid ""
+"A feature rich & best practise Theme Framework by ouun.io, based on roots.io "
+"Sage"
+msgstr ""
+"Ein Feature- und Best-Practice-Theme von ouun.io, basierend auf roots.io Sage"
+
+#. Author of the theme
+msgid "Philipp Wellmer"
+msgstr "Philipp Wellmer"
+
+#: app/Composers/Title.php:42
+msgid "Latest Posts"
+msgstr "Neuste Artikel"
+
+#. translators: %s is replaced with the search query
+#: app/Composers/Title.php:52
+msgid "Search Results for %s"
+msgstr "Suchergebnisse für %s"
+
+#: app/Composers/Title.php:58
+msgid "Not Found"
+msgstr "Nicht gefunden"
+
+#: app/Customizer/Controls/LayoutControl.php:42
+#: app/Customizer/Controls/LayoutControl.php:89
+msgid "Change"
+msgstr "Ändern"
+
+#: app/Customizer/Controls/LayoutControl.php:43
+msgid "Close"
+msgstr "Schließen"
+
+#: app/Customizer/Panels/ArchivesPanel.php:40
+msgid "Archives"
+msgstr "Archive"
+
+#: app/Customizer/Panels/ArchivesPanel.php:93
+msgid "Grid Layout"
+msgstr "Rasterlayout"
+
+#: app/Customizer/Panels/FooterPanel.php:37 app/setup.php:125
+msgid "Footer"
+msgstr "Footer"
+
+#: app/Customizer/Panels/FooterPanel.php:38
+msgid "Customize the footer."
+msgstr "Den Foster anpassen."
+
+#: app/Customizer/Panels/FooterPanel.php:59
+#: app/Customizer/Panels/GlobalPanel.php:270
+#: app/Customizer/Panels/HeaderPanel.php:398
+msgid "Colors"
+msgstr "Farben"
+
+#: app/Customizer/Panels/FooterPanel.php:60
+#: app/Customizer/Panels/HeaderPanel.php:399
+#, fuzzy
+msgid "My section description."
+msgstr "Meine Abschnittsbeschreibung."
+
+#: app/Customizer/Panels/FooterPanel.php:71
+msgid "Footer Colors"
+msgstr "Farben im Footer"
+
+#: app/Customizer/Panels/FooterPanel.php:75
+#: app/Customizer/Panels/HeaderPanel.php:414
+msgid "Background Color"
+msgstr "Hintergrundfarbe"
+
+#: app/Customizer/Panels/FooterPanel.php:76
+msgid "Text Color"
+msgstr "Textfarbe"
+
+#: app/Customizer/Panels/FooterPanel.php:77
+#: app/Customizer/Panels/HeaderPanel.php:416
+msgid "Item Hover & Active"
+msgstr "Aktive Farbe"
+
+#: app/Customizer/Panels/FooterPanel.php:145
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: app/Customizer/Panels/FooterPanel.php:146
+#, fuzzy
+msgid "Footer settings."
+msgstr "Fußzeileneinstellungen."
+
+#: app/Customizer/Panels/FooterPanel.php:158
+msgid "Copyright Text"
+msgstr "Copyright Text"
+
+#: app/Customizer/Panels/GlobalPanel.php:37
+msgid "Global Settings"
+msgstr "Globale Einstellungen"
+
+#: app/Customizer/Panels/GlobalPanel.php:38
+msgid "Various settings for your website."
+msgstr "Verschiedene Einstellungen für Ihre Website."
+
+#: app/Customizer/Panels/GlobalPanel.php:69
+msgid "Website Information"
+msgstr "Webseiten-Informationen"
+
+#: app/Customizer/Panels/GlobalPanel.php:82
+msgid "Titel of the Website"
+msgstr "Titel der Website"
+
+#: app/Customizer/Panels/GlobalPanel.php:83
+msgid "This is so important!"
+msgstr "Das ist so wichtig!"
+
+#: app/Customizer/Panels/GlobalPanel.php:105
+msgid "Subtitle of the Website"
+msgstr "Untertitel der Website"
+
+#: app/Customizer/Panels/GlobalPanel.php:106
+msgid "This is so important, too!"
+msgstr "Das ist auch so wichtig!"
+
+#: app/Customizer/Panels/GlobalPanel.php:133
+msgid "Logos & Branding"
+msgstr "Logos & Branding"
+
+#: app/Customizer/Panels/GlobalPanel.php:173
+#: app/Customizer/Panels/HeaderPanel.php:342
+msgid "Typography"
+msgstr "Typografie"
+
+#: app/Customizer/Panels/GlobalPanel.php:174
+msgid "Set typo settings for your website"
+msgstr "Typographische Einstellungen für Deine Website"
+
+#: app/Customizer/Panels/GlobalPanel.php:187
+msgid "Copy Font"
+msgstr "Fließtext Schriftart"
+
+#: app/Customizer/Panels/GlobalPanel.php:226
+msgid "Headlines Font"
+msgstr "Überschriften Schriftart"
+
+#: app/Customizer/Panels/GlobalPanel.php:271
+msgid "Set color settings for your website"
+msgstr "Lege die Farbeinstellungen für Deine Webseite fest."
+
+#: app/Customizer/Panels/GlobalPanel.php:284
+msgid "Main Colors"
+msgstr "Primärfarben"
+
+#: app/Customizer/Panels/GlobalPanel.php:289
+msgid "Default Background Color"
+msgstr "Standard-Hintergrund-Farbe"
+
+#: app/Customizer/Panels/GlobalPanel.php:290
+msgid "Default Text Color"
+msgstr "Standard-Textfarbe"
+
+#: app/Customizer/Panels/GlobalPanel.php:291
+msgid "Primary Color"
+msgstr "Primäre Farbe"
+
+#: app/Customizer/Panels/GlobalPanel.php:292
+msgid "Secondary Color"
+msgstr "Sekundäre Farbe"
+
+#: app/Customizer/Panels/GlobalPanel.php:349
+msgid "Link Colors"
+msgstr "Link-Farben"
+
+#: app/Customizer/Panels/GlobalPanel.php:354
+msgid "Link Color"
+msgstr "Linkfarbe"
+
+#: app/Customizer/Panels/GlobalPanel.php:355
+msgid "Hover & Focus Color"
+msgstr "Hover & Focus Farbe"
+
+#: app/Customizer/Panels/HeaderPanel.php:48
+msgid "Site Header & Menus"
+msgstr "Seiten-Header & Menüs"
+
+#: app/Customizer/Panels/HeaderPanel.php:49
+msgid "Customize the main header and menus."
+msgstr "Passe den Header und die Menüs an."
+
+#: app/Customizer/Panels/HeaderPanel.php:72
+msgid "Layout"
+msgstr "Layout"
+
+#: app/Customizer/Panels/HeaderPanel.php:73
+msgid "Adjust theme colors."
+msgstr "Passe die Designfarben an."
+
+#: app/Customizer/Panels/HeaderPanel.php:113
+msgid "Header Layout"
+msgstr "Header Layout"
+
+#: app/Customizer/Panels/HeaderPanel.php:146
+msgid "Search Layout"
+msgstr "Suche Layout"
+
+#: app/Customizer/Panels/HeaderPanel.php:177
+msgid "Header Position"
+msgstr "Header Position"
+
+#: app/Customizer/Panels/HeaderPanel.php:180
+msgid "Default"
+msgstr "Standard"
+
+#: app/Customizer/Panels/HeaderPanel.php:181
+msgid "Fixed on top"
+msgstr "Oben fixiert"
+
+#: app/Customizer/Panels/HeaderPanel.php:182
+msgid "Auto hide while scrolling"
+msgstr "Automatisches Ausblenden beim Scrollen"
+
+#: app/Customizer/Panels/HeaderPanel.php:207
+msgid "Fullwidth header"
+msgstr "Header mit voller Breite"
+
+#: app/Customizer/Panels/HeaderPanel.php:234
+msgid "Show Tagline"
+msgstr "Tagzeile anzeigen"
+
+#: app/Customizer/Panels/HeaderPanel.php:263
+msgid "Horizontal Padding"
+msgstr "Horizontaler Innenabstand"
+
+#: app/Customizer/Panels/HeaderPanel.php:296
+msgid "Vertical Padding"
+msgstr "Vertikaler Innenabstand"
+
+#: app/Customizer/Panels/HeaderPanel.php:353
+#, fuzzy
+msgid "Header Typo"
+msgstr "Header Typo"
+
+#: app/Customizer/Panels/HeaderPanel.php:410
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: app/Customizer/Panels/HeaderPanel.php:415
+msgid "Menu Item Color"
+msgstr "Farbe des Menüeintrags"
+
+#: app/Customizer/Panels/SettingsPanel.php:35
+msgid "Website Settings"
+msgstr "Website-Einstellungen"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:38
+msgid "Website Features"
+msgstr "Website-Funktionen"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:39
+msgid "Activate & customize website features."
+msgstr "Aktivieren und anpassen der Website-Funktionen."
+
+#: app/Customizer/Panels/WebsiteFeatures.php:60
+msgid "Dynamic Page Loading & Transitions"
+msgstr "Dynamisches Laden von Seiten & Übergänge"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:81
+msgid "Lazy Load Media"
+msgstr "„Lazy Load“ von Medieninhalten"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:102
+msgid "Infinite scrolling for Archives"
+msgstr "Unendliches Scrollen für Archive"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:123
+msgid "Galleries"
+msgstr "Galerien"
+
+#: app/Customizer/Panels/WebsiteFeatures.php:166
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: app/Customizer/Panels/WebsitePanel.php:67
+msgid "Shop Settings"
+msgstr "Shop-Einstellungen"
+
+#: app/filters.php:46
+msgid "Continued"
+msgstr "Weiterlesen"
+
+#: app/setup.php:61
+msgid "Primary Navigation"
+msgstr "Primäre Navigation"
+
+#: app/setup.php:62
+msgid "Footer Navigation"
+msgstr "Footer-Navigation"
+
+#: app/setup.php:120
+msgid "Primary"
+msgstr "Primär"
+
+#: config/defaults.php:77
+msgid "System Serif"
+msgstr "System Serif"
+
+#: config/defaults.php:78
+msgid "System Sans-Serif"
+msgstr "System Sans-Serif"
+
+#: config/defaults.php:85
+msgid "Extra Small"
+msgstr "Extra klein"
+
+#: config/defaults.php:90
+msgid "Small"
+msgstr "Klein"
+
+#: config/defaults.php:95
+msgid "Normal"
+msgstr "Normal"
+
+#: config/defaults.php:100
+msgid "Large"
+msgstr "Groß"
+
+#: config/defaults.php:105
+msgid "Extra Large"
+msgstr "Extra Groß"
+
+#: config/defaults.php:110
+msgid "XX Large"
+msgstr "XXL Groß"
+
+#: config/defaults.php:115
+msgid "3X Large"
+msgstr "3XL Groß"
+
+#: config/defaults.php:120
+msgid "4X Large"
+msgstr "4XL Groß"
+
+#: config/defaults.php:125
+msgid "5X Large"
+msgstr "5XL Groß"
+
+#. translators: %1$s is replaced with the current year, %2$s with the site name
+#: config/defaults.php:200
+msgid "Copyright %1$s, all rights reserved by %2$s."
+msgstr "Copyright %1$s, alle Rechte vorbehalten von %2$s."
+
+#: functions.php:15
+msgid "Stage &rsaquo; Error"
+msgstr "Stage &rsaquo; Fehler"
+
+#: functions.php:24
+msgid "You must be using PHP 7.2 or greater."
+msgstr "Du musst PHP 7.2 oder höher verwenden."
+
+#: functions.php:24
+msgid "Invalid PHP version"
+msgstr "Ungültige PHP-Version"
+
+#: functions.php:31
+msgid "You must be using WordPress 5.2 or greater."
+msgstr "Du musst WordPress 5.2 oder größer verwenden."
+
+#: functions.php:31
+msgid "Invalid WordPress version"
+msgstr "Ungültige WordPress-Version"
+
+#: functions.php:39
+msgid "You must run <code>composer install</code> from the Stage directory."
+msgstr "Du musst <code>composer install</code> im Stage-Verzeichnis ausführen."
+
+#: functions.php:40
+msgid "Autoloader not found."
+msgstr "Autoloader nicht gefunden."
+
+#. translators: %s is replaced with the missing file path.
+#: functions.php:58
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr "<code>%s</code> konnte nicht zur Einbindung gefunden werden."
+
+#: functions.php:60
+msgid "File not found"
+msgstr "Datei nicht gefunden"
+
+#: resources/views/partials/footer/psw-container.blade.php:12
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:12
+msgid "Close (Esc)"
+msgstr "Schließen (Esc)"
+
+#: resources/views/partials/footer/psw-container.blade.php:15
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:15
+msgid "Share"
+msgstr "Teilen"
+
+#: resources/views/partials/footer/psw-container.blade.php:18
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:18
+msgid "Toggle fullscreen"
+msgstr "Vollbildmodus ein/aus"
+
+#: resources/views/partials/footer/psw-container.blade.php:22
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:22
+msgid "Zoom in/out"
+msgstr "Zoom rein/raus"
+
+#: resources/views/partials/footer/psw-container.blade.php:33
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:33
+msgid "Previous (arrow left)"
+msgstr "Zurück (Pfeiltaste links)"
+
+#: resources/views/partials/footer/psw-container.blade.php:36
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:36
+msgid "Next (arrow right)"
+msgstr "Vor (Pfeiltaste rechts)"
+
+#: resources/views/shop/cart/cart-empty.blade.php:22
+msgid "Return to shop"
+msgstr "Zurück zum Shop"
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:42
+msgid "Shipping to %s."
+msgstr "Versand nach %s."
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:43
+msgid "Change address"
+msgstr "Adresse ändern"
+
+#: resources/views/shop/cart/cart-shipping.blade.php:45
+#, fuzzy
+msgid "Shipping options will be updated during checkout."
+msgstr "Wir sind stets um niedrigste Versandkosten bemüht."
+
+#: resources/views/shop/cart/cart-shipping.blade.php:52
+#, fuzzy
+msgid "Enter your address to view shipping options."
+msgstr "Geben Sie Ihre Adresse ein, um die Versandoptionen anzuzeigen."
+
+#: resources/views/shop/cart/cart-shipping.blade.php:54
+#, fuzzy
+msgid ""
+"There are no shipping options available. Please ensure that your address has "
+"been entered correctly, or contact us if you need any help."
+msgstr ""
+"Es sind keine Versandoptionen verfügbar. Bitte stellen Sie sicher, dass Ihre "
+"Adresse korrekt eingegeben wurde, oder kontaktieren Sie uns, wenn Sie Hilfe "
+"benötigen."
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:57
+#, fuzzy
+msgid "No shipping options were found for %s."
+msgstr "Es wurden keine Versandoptionen für %s gefunden."
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:58
+#, fuzzy
+msgid "Enter a different address"
+msgstr "Geben Sie eine andere Adresse ein"
+
+#: resources/views/shop/cart/cart-totals.blade.php:20
+#: resources/views/shop/cart/cart-totals.blade.php:21
+#, fuzzy
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#. translators: %s is replaced with tax.
+#: resources/views/shop/cart/cart-totals.blade.php:62
+#, fuzzy
+msgid "(estimated for %s)"
+msgstr "(voraussichtlich %s)"
+
+#: resources/views/shop/cart/cart-totals.blade.php:82
+#: resources/views/shop/cart/cart-totals.blade.php:83
+#: resources/views/shop/cart/cart.blade.php:28
+#: resources/views/shop/cart/cart.blade.php:107
+#, fuzzy
+msgid "Total"
+msgstr "Gesamt"
+
+#: resources/views/shop/cart/cart.blade.php:18
+#, fuzzy
+msgid "Cart"
+msgstr "Warenkorb"
+
+#: resources/views/shop/cart/cart.blade.php:24
+#: resources/views/shop/cart/cart.blade.php:67
+#, fuzzy
+msgid "Product"
+msgstr "Produktkategorie Slug"
+
+#: resources/views/shop/cart/cart.blade.php:27
+#: resources/views/shop/cart/cart.blade.php:90
+#: resources/views/shop/global/quantity-input.blade.php:21
+#, fuzzy
+msgid "Quantity"
+msgstr "Anzahl"
+
+#: resources/views/shop/cart/cart.blade.php:49
+#, fuzzy
+msgid "Remove this item"
+msgstr "Diesen Artikel entfernen"
+
+#: resources/views/shop/cart/cart.blade.php:79
+#, fuzzy
+msgid "Available on backorder"
+msgstr "Verfügbar auf Nachbestellung"
+
+#: resources/views/shop/cart/cart.blade.php:84
+#, fuzzy
+msgid "Price"
+msgstr "Preis"
+
+#: resources/views/shop/cart/cart.blade.php:123
+#, fuzzy
+msgid "Update cart"
+msgstr "Warenkorb aktualisieren"
+
+#: resources/views/shop/cart/cart.blade.php:140
+#, fuzzy
+msgid "Cart totals"
+msgstr "Summe"
+
+#: resources/views/shop/cart/cart.blade.php:146
+#: resources/views/shop/cart/cart.blade.php:151
+#, fuzzy
+msgid "Coupon code"
+msgstr "Gutscheincode"
+
+#: resources/views/shop/cart/cart.blade.php:152
+#, fuzzy
+msgid "Apply coupon"
+msgstr "Gutschein anwenden"
+
+#: resources/views/shop/cart/proceed-to-checkout-button.blade.php:8
+#, fuzzy
+msgid "Proceed to checkout"
+msgstr "Zur Kasse"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:18
+#, fuzzy
+msgid "Calculate shipping"
+msgstr "Versandkosten berechnen"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:27
+#, fuzzy
+msgid "Select a country&hellip;"
+msgstr "Land auswählen&hellip;"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:45
+#: resources/views/shop/cart/shipping-calculator.blade.php:50
+#: resources/views/shop/cart/shipping-calculator.blade.php:62
+#, fuzzy
+msgid "State / County"
+msgstr "Bundesland"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:51
+#, fuzzy
+msgid "Select an option&hellip;"
+msgstr "Wählen Sie eine Option&hellip;"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:71
+#, fuzzy
+msgid "City"
+msgstr "Stadt"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:77
+#, fuzzy
+msgid "Postcode / ZIP"
+msgstr "Postleitzahl"
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:81
+#, fuzzy
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: resources/views/shop/checkout/thankyou.blade.php:18
+#, fuzzy
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction. Please attempt your purchase again."
+msgstr ""
+"Leider konnten wir Ihre Bestellung nicht bearbeiten, da die Bank/der "
+"Zahlungsdienstleister Ihre Transaktion abgelehnt hat. Bitte versuchen Sie es "
+"noch einmal."
+
+#: resources/views/shop/checkout/thankyou.blade.php:21
+#, fuzzy
+msgid "Pay"
+msgstr "Bezahlen"
+
+#: resources/views/shop/checkout/thankyou.blade.php:23
+#, fuzzy
+msgid "My account"
+msgstr "Mein Konto"
+
+#: resources/views/shop/checkout/thankyou.blade.php:29
+#: resources/views/shop/checkout/thankyou.blade.php:71
+#, fuzzy
+msgid "Thank you. Your order has been received."
+msgstr "Vielen Dank. Ihre Bestellung ist eingegangen."
+
+#: resources/views/shop/checkout/thankyou.blade.php:34
+#, fuzzy
+msgid "Order number:"
+msgstr "Bestellnummer:"
+
+#: resources/views/shop/checkout/thankyou.blade.php:39
+#, fuzzy
+msgid "Date:"
+msgstr "Datum:"
+
+#: resources/views/shop/checkout/thankyou.blade.php:45
+#, fuzzy
+msgid "Email:"
+msgstr "E-Mail"
+
+#: resources/views/shop/checkout/thankyou.blade.php:51
+#, fuzzy
+msgid "Total:"
+msgstr "Gesamt:"
+
+#: resources/views/shop/checkout/thankyou.blade.php:57
+#, fuzzy
+msgid "Payment method:"
+msgstr "Zahlungsmethode:"
+
+#: resources/views/shop/global/quantity-input.blade.php:31
+#, fuzzy
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr "Anz"
+
+#: resources/views/shop/order/order-details-customer.blade.php:14
+#, fuzzy
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+#. Template Name of the theme
+#, fuzzy
+msgid "Custom Template"
+msgstr "Template"
+
+#: storage/framework/views/0e41e80473836f65e9f28255543d845b8b4fd303.php:17
+#, fuzzy
+msgid "View your shopping cart"
+msgstr "Warenkorb ansehen"
+
+#: storage/framework/views/06bf6874383916bf44a10c651786ad4500018ca2.php:6
+msgid "ENTER to search, ESC to exit"
+msgstr "ENTER zum Suchen, ESC zum Beenden"
+
+#: storage/framework/views/32af045a5cbbe1c3cc9e4a71bc986c2392522745.php:21
+#: storage/framework/views/66dcadf2c6bfbda8099d1098b4f455fbadb3a98e.php:9
+msgid "Pages:"
+msgstr "Seiten:"
+
+#. translators: 1: number of comments, 2: plural number of comments.
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:12
+msgctxt "comments title"
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:26
+msgid "&larr; Older comments"
+msgstr "&larr; Ältere Kommentare"
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:29
+msgid "Newer comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:38
+msgid "Comments are closed."
+msgstr "Die Kommentarfunktion ist geschlossen."
+
+#: storage/framework/views/719983b82980447d08d4e2febc0db65b149d5170.php:6
+#: storage/framework/views/b64a98833e46ba2782a644e521c8eb5280e080b6.php:14
+msgid "Sorry, no results were found."
+msgstr "Sorry, keine Ergebnisse gefunden."
+
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:2
+msgid "Avatar by "
+msgstr "Profilbild von "
+
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:5
+msgid "By"
+msgstr "Von"
+
+#. translators: %s: Human-readable time difference.
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:12
+msgid "%s ago"
+msgstr "vor %s"
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:2
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:3
+msgid "Search &hellip;"
+msgstr "Suche &hellip;"
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:4
+msgid "Search"
+msgstr "Suche nach"

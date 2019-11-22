@@ -1,0 +1,14 @@
+p.has-drop-cap {
+  &:not(:focus)::first-letter {
+    @apply font-hairline not-italic uppercase float-left;
+
+    font-family: var(--heading-font-family);
+    font-size: 8.4em; // Relative to the text-size
+    line-height: 0.68;
+    margin: 0.05em 0.1em 0 0;
+  }
+}
+
+p.has-background {
+  @apply py-4 px-6;
+}

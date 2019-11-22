@@ -1,0 +1,256 @@
+@import "../mixins/loader";
+
+/**
+ * Background
+ */
+.pswp__bg {
+  @apply bg-body;
+}
+
+
+/**
+ * Placeholder
+ */
+.pswp__img--placeholder--blank {
+  @apply bg-gray-200;
+}
+
+
+/**
+ * Buttons
+ */
+.pswp__button {
+  @apply text-copy opacity-50 w-10 h-full p-0 m-0 border-0 block relative cursor-pointer overflow-visible float-right shadow-none appearance-none;
+
+  transition: opacity 0.2s;
+
+  &:focus,
+  &:hover {
+    @apply opacity-100;
+  }
+
+  &:active {
+    @apply outline-none opacity-75;
+  }
+
+  svg {
+    @apply stroke-current absolute h-5 w-5 inset-0 m-auto pointer-events-none;
+  }
+}
+
+/* pswp__ui--over-close class is added when mouse is over element that should close gallery */
+.pswp__ui--over-close .pswp__button--close {
+ @apply opacity-100;
+}
+
+// Full Screen
+.pswp__button--fs {
+  @apply hidden;
+}
+
+.pswp--supports-fs .pswp__button--fs {
+  @apply block;
+
+  svg.minimize {
+    @apply invisible;
+  }
+}
+
+.pswp--fs .pswp__button--fs {
+  svg.maximize {
+    @apply invisible;
+  }
+
+  svg.minimize {
+    @apply visible;
+  }
+}
+
+.pswp__button--zoom {
+  @apply hidden;
+}
+
+.pswp--zoom-allowed .pswp__button--zoom {
+  @apply block;
+
+  svg.zoom-out {
+    @apply invisible;
+  }
+}
+
+.pswp--zoomed-in .pswp__button--zoom {
+  svg.zoom-in {
+    @apply invisible;
+  }
+
+  svg.zoom-out {
+    @apply visible;
+  }
+}
+
+/* no arrows on touch screens */
+.pswp--touch {
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right {
+    @apply invisible;
+  }
+}
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  @apply absolute inset-y-auto top-half h-20 mt-0;
+}
+
+.pswp__button--arrow--left {
+  @apply left-0 ml-5;
+}
+
+.pswp__button--arrow--right {
+  @apply right-0 mr-5;
+}
+
+
+/**
+ * Index indicator ("1 of X" counter)
+ */
+.pswp__counter {
+  @apply absolute w-auto h-auto left-0 top-half pl-6 text-2xl text-copy font-heading leading-none opacity-25;
+
+  transform: translateY(-50%);
+}
+
+
+/**
+ * Caption
+ */
+.pswp__caption {
+  @apply absolute left-0 bottom-0 w-full font-copy min-h-12;
+
+  small {
+    @apply text-xs text-copy;
+  }
+}
+
+.pswp__caption__center {
+  @apply text-center my-0 mx-auto text-xs p-6 text-copy font-copy max-w-lg;
+}
+
+.pswp__caption--empty {
+  @apply hidden;
+}
+
+/* Fake caption element, used to calculate height of next/prev image */
+.pswp__caption--fake {
+  @apply invisible;
+}
+
+/**
+ * Loading indicator (preloader)
+ */
+.pswp__preloader {
+  @apply absolute w-6 h-full left-half -ml-3 opacity-0;
+
+  transition: opacity 0.25s ease-out;
+  will-change: opacity;
+  direction: ltr;
+
+  .pswp__preloader__icn {
+    @apply relative h-full w-full inset-0;
+
+    @include loader();
+
+    &:before {
+      @apply h-2 w-2;
+    }
+  }
+}
+
+.pswp--css_animation {
+  .pswp__preloader--active {
+    @apply opacity-100;
+  }
+}
+
+
+/**
+ * Additional styles
+ */
+
+/* root element of UI */
+.pswp__ui {
+  @apply z-50 visible opacity-100;
+}
+
+/* top black bar with buttons and "1 of X" indicator */
+.pswp__top-bar {
+  @apply absolute inset-x-0 top-0 h-16 px-5;
+}
+
+.pswp__caption,
+.pswp__top-bar,
+.pswp--has_mouse .pswp__button--arrow--left,
+.pswp--has_mouse .pswp__button--arrow--right {
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+  transition: opacity 333ms cubic-bezier(.4,0,.22,1);
+}
+
+/* pswp--has_mouse class is added only when two subsequent mousemove events occur */
+.pswp--has_mouse {
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right {
+    @apply visible;
+  }
+}
+
+.pswp__top-bar,
+.pswp__caption {
+  @apply bg-body;
+}
+
+/* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
+.pswp__ui--fit {
+  .pswp__top-bar,
+  .pswp__caption {
+    @apply bg-body;
+  }
+}
+
+/* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */
+.pswp__ui--idle {
+  .pswp__top-bar {
+    @apply opacity-0;
+  }
+
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right {
+    @apply opacity-0;
+  }
+}
+
+/*
+	pswp__ui--hidden class is added when controls are hidden
+	e.g. when user taps to toggle visibility of controls
+*/
+.pswp__ui--hidden {
+  .pswp__top-bar,
+  .pswp__caption,
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right {
+    /* Force paint & create composition layer for controls. */
+    opacity: 0.001;
+  }
+}
+
+/* pswp__ui--one-slide class is added when there is just one item in gallery */
+.pswp__ui--one-slide {
+  .pswp__button--arrow--left,
+  .pswp__button--arrow--right,
+  .pswp__counter {
+    @apply hidden;
+  }
+}
+
+.pswp__element--disabled {
+  @apply hidden #{$important};
+}

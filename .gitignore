@@ -1,0 +1,16 @@
+# Folders
+/node_modules
+/vendor
+/dist
+
+# Error Logs
+npm-debug.log
+yarn-error.log
+
+# PHPStorm
+/.idea
+/.idea/*
+_ide_helper.php
+
+# MacOS
+.DS_Store

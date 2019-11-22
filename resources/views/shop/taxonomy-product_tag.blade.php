@@ -1,0 +1,1 @@
+@include('shop.archive-product')

@@ -1,0 +1,11 @@
+.wp-block-table {
+  @apply block w-full mb-block-spacing overflow-x-auto;
+
+  tbody {
+    @apply table;
+  }
+
+  tr:first-child td {
+    @apply relative pr-block-spacing;
+  }
+}

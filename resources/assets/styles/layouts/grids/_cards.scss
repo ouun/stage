@@ -1,0 +1,5 @@
+.grid-cards {
+  .cards-item {
+    @apply flex flex-wrap flex-grow-0 flex-shrink;
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "ouun/stage",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "WordPress starter theme with a modern development workflow",
+  "homepage": "https://ouun.io/stage/",
+  "authors": [
+    {
+      "name": "Philipp Wellmer",
+      "email": "philipp@ouun.io",
+      "homepage": "https://ouun.io"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/ouun/stage/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "kirki-framework/compatibility": "dev-master",
+    "kirki-framework/control-checkbox": "dev-master",
+    "kirki-framework/control-image": "dev-master",
+    "kirki-framework/control-react-color": "dev-master",
+    "kirki-framework/field-multicolor": "dev-master",
+    "kirki-framework/field-typography": "dev-master",
+    "kirki-framework/module-css": "dev-master",
+    "kirki-framework/module-editor-styles": "dev-master",
+    "kirki-framework/module-field-dependencies": "dev-master",
+    "kirki-framework/module-panels": "dev-master",
+    "kirki-framework/module-postmessage": "dev-master",
+    "kirki-framework/module-sections": "dev-master",
+    "kirki-framework/module-selective-refresh": "dev-master",
+    "kirki-framework/module-tooltips": "^1.0",
+    "kirki-framework/module-webfonts": "dev-master",
+    "log1x/navi": "^1.0",
+    "log1x/sage-directives": "^1.1",
+    "log1x/sage-svg": "^1.0",
+    "ouun/kirki-module-sync_controls": "*",
+    "roots/acorn": "dev-master"
+  },
+  "require-dev": {
+    "filp/whoops": "^2.5",
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "lint": [
+      "phpcs --ignore=vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}

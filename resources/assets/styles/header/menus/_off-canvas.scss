@@ -1,0 +1,145 @@
+.off-canvas-menu {
+  @apply absolute block w-full max-w-xs bottom-0 z-50 overflow-x-hidden shadow-lg;
+
+  height: calc(100vh - 100%);
+  top: 100%;
+  will-change: transform;
+  transform: translate3d(0, 0, 1px);
+  transition: transform 0.3s, box-shadow 0.3s, height 0s 0s;
+  -webkit-overflow-scrolling: touch;
+
+  &.is-hidden {
+    @apply shadow-none h-0;
+
+    transition: transform 0.2s 0.3s, box-shadow 0.2s 0.3s, height 0s 0.5s;
+
+    &.left-0 {
+      transform: translate(-100%, 0);
+    }
+
+    &.right-0 {
+      transform: translate(100%, 0);
+    }
+
+    & > ul > li > a {
+      transition: opacity 0.4s;
+      opacity: 0;
+    }
+  }
+
+  // First level menu items
+  &:not(.is-hidden) {
+    @for $i from 1 through 20 {
+      & > ul > li:nth-child(#{$i}n) > a {
+        transition: opacity 0.4s ease-in #{$i * 0.03}s;
+      }
+    }
+
+    & > ul > li > a {
+      opacity: 1;
+    }
+  }
+
+  ul {
+    @apply fixed inset-0 w-full;
+
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease-out, opacity 0.3s ease-in;
+
+    li {
+      @apply w-full;
+
+      /* stylelint-disable-next-line */
+      a {
+        @apply block w-full text-copy px-6 py-5 border-b border-gray-300;
+
+        transition: transform 0.3s, opacity 0.4s;
+        will-change: transform, opacity;
+      }
+
+      /* Menu item arrow < / > */
+      &.has-children,
+      &.go-back {
+        @apply relative block;
+
+        & > a {
+          &::before {
+            @apply absolute inline-block bg-gray-700;
+
+            content: '';
+            right: 1.5rem;
+            width: 20px;
+            height: 20px;
+            mask: url('../icons/chevron-right.svg') no-repeat left center;
+            mask-size: contain;
+            top: 50%;
+            transform: translate(0, -50%);
+            opacity: 1;
+          }
+        }
+      }
+
+      &.go-back {
+        transform: translateX(-50%);
+        transition: transform 0.3s, opacity 0.2s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+
+        & > a {
+         @apply pl-10 border-none text-gray-700 text-sm;
+
+         &::before {
+            @apply ml-4;
+
+            visibility: visible;
+            transform: translate(0, -50%);
+            mask: url('../icons/chevron-left.svg') no-repeat right center;
+            mask-size: contain;
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &.sub-menu {
+      @apply z-0 w-full;
+
+      transform: translateX(200%);
+
+      &.is-visible {
+        @apply inline-block z-30;
+
+        transform: translateX(0);
+      }
+    }
+
+    &.is-visible {
+      transform: translateX(0);
+      transition: transform 0.3s;
+
+      & > li.go-back {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.moves-out {
+      & > li > a {
+        transition: transform 0.3s, opacity 0.4s;
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      & > li.go-back {
+        transform: translateX(-50%);
+      }
+    }
+
+    li.selected-copy > a {
+      @apply text-primary;
+    }
+  }
+}

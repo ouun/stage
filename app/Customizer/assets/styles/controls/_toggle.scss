@@ -1,0 +1,151 @@
+.components-base-control {
+  margin: 0 0 1.5em;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 13px;
+}
+.components-form-toggle * {
+  box-sizing: border-box;
+}
+.components-base-control:last-child {
+  margin-bottom: 0.5em;
+}
+.components-base-control .components-base-control__field {
+  margin-bottom: 8px;
+}
+input[type="checkbox"] {
+  border: 1px solid $color-gray;
+  border-radius: 2px;
+  background: $color-white;
+  color: $color-text;
+  clear: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 0;
+  height: 16px;
+  margin: -4px 4px 0 0;
+  outline: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 16px;
+  min-width: 16px;
+  -webkit-appearance: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: 0.05s border-color ease-in-out;
+}
+.components-form-toggle input[type="checkbox"]:checked {
+  background: $color-primary;
+  border-color: $color-primary;
+}
+.components-form-toggle input[type="checkbox"]:checked:before {
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  font: 400 21px/1 dashicons;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.components-form-toggle input[type="checkbox"]:before {
+  color: #fff;
+  margin: -4px 0 0 -5px;
+}
+.components-form-toggle input[type="checkbox"]:checked:before {
+  content: "\f147";
+  margin: -3px 0 0 -4px;
+  color: $color-primary;
+}
+.components-form-toggle input[type="checkbox"]:checked:focus {
+  box-shadow: 0 0 0 2px $color-text;
+}
+.components-form-toggle__input[type="checkbox"] {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.components-form-toggle {
+  position: relative;
+}
+.components-toggle-control .components-base-control__field {
+  display: flex;
+  margin-bottom: 12px;
+}
+.components-toggle-control
+.components-base-control__field
+.components-form-toggle {
+  margin: 4px 0 0 auto;
+}
+.components-form-toggle .components-form-toggle__track {
+  background-color: transparent;
+  border: 2px solid #6c7781;
+  border-radius: 9px;
+  content: "";
+  display: inline-block;
+  height: 18px;
+  transition: background 0.2s ease;
+  vertical-align: top;
+  width: 36px;
+}
+.components-form-toggle.is-checked .components-form-toggle__track {
+  background-color: $color-primary;
+  border: 9px solid transparent;
+}
+.components-form-toggle__input:focus + .components-form-toggle__track {
+  box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-text;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.components-form-toggle .components-form-toggle__thumb {
+  background-color: $color-text;
+  border: 5px solid $color-text;
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  transition: transform 0.1s ease;
+  width: 10px;
+}
+.components-form-toggle.is-checked .components-form-toggle__thumb {
+  background-color: $color-white;
+  border-width: 0;
+  transform: translateX(18px);
+}
+.components-form-toggle .components-form-toggle__off,
+.components-form-toggle .components-form-toggle__on {
+  position: absolute;
+  top: 6px;
+}
+.components-form-toggle .components-form-toggle__off {
+  color: #6c7781;
+  fill: currentColor;
+  right: 6px;
+}
+.components-form-toggle .components-form-toggle__on {
+  -webkit-filter: invert(100%) contrast(500%);
+  border: 1px solid #000;
+  filter: invert(100%) contrast(500%);
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  left: 8px;
+}
+.components-toggle-control
+.components-base-control__field
+.components-toggle-control__label {
+  display: block;
+  margin-bottom: 4px;
+}
+.components-base-control .components-base-control__help {
+  font-style: italic;
+  margin-bottom: 0;
+  margin-top: -8px;
+}

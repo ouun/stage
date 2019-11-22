@@ -1,0 +1,28 @@
+@import "../../../mixins/container";
+
+.wp-block-separator {
+  @apply block border-b border-accent my-block-spacing mx-auto p-0 bg-transparent;
+
+  clear: both;
+
+  &.is-style-wide {
+    @include align__wide();
+
+    max-width: none;
+  }
+
+  &.is-style-dots {
+    @apply h-auto border-none text-center;
+
+    max-width: none;
+    line-height: 0;
+    background: none; // Override any background themes often set on the hr tag for this style.
+  }
+
+  &.is-style-dots::before {
+    @apply text-black text-base;
+
+    content: "\00b7 \00b7 \00b7";
+    letter-spacing: 3vw;
+  }
+}

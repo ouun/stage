@@ -1,0 +1,93 @@
+@mixin button($style:'') {
+  transition: all 0.2s;
+
+  @apply z-0 relative inline-block bg-black text-white border-2 border-solid border-black m-0 py-2 px-4 font-medium text-center whitespace-no-wrap select-none cursor-pointer shadow-none rounded-none no-underline;
+
+  &::before {
+    content: '';
+
+    @apply absolute inset-0 bg-black border-black border-2 opacity-100 -z-1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @apply bg-transparent text-white;
+
+    &::before {
+      @apply opacity-90;
+    }
+  }
+
+  // Not used in blocks as color is selectable
+  @if $style == 'primary' {
+    @apply text-white bg-transparent border-0;
+
+    &::before {
+      @apply bg-primary border-primary;
+    }
+  }
+
+  @if $style == 'outline' or $style == 'rounded-outline' or $style == 'cta' {
+    @apply text-primary border-primary bg-transparent;
+
+    &::before {
+      @apply bg-transparent border-none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @apply bg-primary text-white;
+    }
+  }
+
+  @if $style == 'rounded' or $style == 'rounded-outline' {
+    @apply rounded-full bg-transparent;
+
+    &::before {
+      @apply rounded-full;
+    }
+  }
+
+  @if $style == 'rounded' {
+    @apply border-transparent;
+  }
+
+  @if $style == 'cta' {
+    @apply py-4 px-6 uppercase;
+  }
+
+  // Fix non-container elements
+  &[type="submit"] {
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-black;
+    }
+  }
+
+  &:disabled {
+    @apply bg-gray-200 border-gray-200 text-gray-400 cursor-not-allowed;
+
+    &::before {
+      @apply opacity-0;
+    }
+  }
+}
+
+@mixin button_style-primary() {
+  @include button('primary');
+}
+
+@mixin button_style-squared() {
+  @include button('primary');
+}
+
+@mixin button_style-rounded() {
+  @include button('rounded');
+}
+
+@mixin button_style-outline() {
+  @include button('outline');
+}

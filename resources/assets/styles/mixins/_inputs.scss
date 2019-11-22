@@ -1,0 +1,22 @@
+@mixin label_style() {
+  @apply block text-left uppercase tracking-wide text-xs text-gray-900 font-semibold;
+}
+
+@mixin input_style() {
+  @apply appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 mb-2 leading-tight;
+
+  transition: border 0.5s;
+
+  &:hover,
+  &:focus {
+    @apply outline-none border-gray-500;
+  }
+
+  &:focus {
+    @apply outline-none bg-white border-gray-500;
+  }
+
+  & + label {
+    @include label_style();
+  }
+}

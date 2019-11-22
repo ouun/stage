@@ -1,0 +1,8 @@
+@import "../mixins/container";
+
+article.page {
+  header,
+  footer {
+    @include container();
+  }
+}

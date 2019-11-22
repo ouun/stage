@@ -1,0 +1,154 @@
+@import "../mixins/container";
+
+header {
+  .header-wrap {
+    nav.nav-wrap {
+      ul.menu {
+        & > li.menu-item.mega-menu {
+          &.has-children.depth-1 > ul.sub-menu {
+            @apply fixed flex flex-row left-0 mx-auto mt-0 pl-0 pr-0 py-12;
+
+            @include container();
+
+            transform: translateX(0);
+
+            ul {
+              @apply static h-auto w-auto overflow-hidden z-3;
+
+              background: 0 0;
+              transform: translateZ(0);
+              transition: transform 0.2s;
+            }
+
+            li {
+              @apply overflow-x-hidden p-0 m-0 leading-tight;
+
+              -webkit-overflow-scrolling: touch;
+
+              // Hidden sub-menu
+              &.hide-children {
+                & > ul {
+                  @apply absolute top-0 left-0 h-full w-full;
+
+                  transform: translateX(100%);
+                }
+              }
+            }
+
+            a {
+              @apply overflow-hidden whitespace-no-wrap max-w-15 py-1 pr-16 pl-12;
+
+              text-overflow: ellipsis;
+              transform: translateZ(0);
+              will-change: transform, opacity;
+              transition: transform 0.2s, opacity 0.15s;
+
+              &:hover {
+                @apply text-primary;
+              }
+            }
+
+            /* Menu item arrow < / > */
+            .has-children > a,
+            li.go-back > a {
+              @apply relative;
+
+              &::before {
+                @apply absolute inline-block bg-gray-700;
+
+                content: '';
+                right: 1.5rem;
+                width: 20px;
+                height: 20px;
+                mask: url('../icons/chevron-right.svg') no-repeat left center;
+                mask-size: contain;
+              }
+
+              a {
+                @apply opacity-0 text-gray-700 p-0;
+              }
+            }
+
+            .has-children > a {
+              &:hover {
+                &::before,
+                &::after {
+                  @apply bg-primary;
+                }
+              }
+            }
+
+            li.go-back > a {
+              @apply text-transparent ml-12 pl-6;
+
+              transition: color 0.2s;
+
+              &::before {
+                @apply inline;
+
+                vertical-align: middle;
+                mask: url('../icons/chevron-left.svg') no-repeat right center;
+                mask-size: contain;
+                right: auto;
+                left: -5px;
+              }
+
+              &:hover {
+                &::before {
+                  @apply bg-primary;
+                }
+              }
+            }
+
+            & > li.menu-item {
+              @apply flex-grow border-r border-accent overflow-hidden;
+
+              @screen lg {
+                & > a {
+                  @apply font-medium mb-3;
+
+                  &::before,
+                  &::after {
+                    @apply hidden;
+                  }
+                }
+              }
+
+              &:last-child {
+                @apply border-r-0 mr-0;
+
+                a {
+                  @apply mr-0;
+                }
+              }
+
+              // Hidden submenus
+              ul.sub-menu {
+                &.moves-out {
+                  & > li > a,
+                  & > .go-back {
+                    @apply absolute opacity-0;
+
+                    transform: translateX(-100%);
+                    transition: transform 0.2s 0.1s, opacity 0.2s;
+                  }
+
+                  & > li {
+                    &.show-children {
+
+                      & > a {
+                      }
+                    }
+                  }
+
+                  a.selected + ul {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

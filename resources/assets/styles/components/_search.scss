@@ -1,0 +1,47 @@
+/* --------------------------------
+
+Title: Search Forms
+
+-------------------------------- */
+
+form[role="search"].search-form {
+  & button[type="submit"] {
+    @apply opacity-0;
+
+    transition: opacity 0.2s;
+
+    svg {
+      @apply w-auto;
+      height: 1em;
+      max-height: 2rem;
+    }
+  }
+
+  & input[type="search"] {
+    &:not(:placeholder-shown) {
+      & ~ button[type="submit"] {
+        @apply opacity-100;
+
+        &:hover,
+        &:focus,
+        &:active {
+          @apply text-primary;
+        }
+      }
+    }
+
+    // Autofill style
+    @-webkit-keyframes autofill {
+      to {
+        color: var(--color-black);
+        background: transparent;
+      }
+    }
+
+    &:-webkit-autofill {
+      -webkit-animation-name: autofill;
+      -webkit-animation-fill-mode: both;
+    }
+  }
+}
+

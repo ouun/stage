@@ -1,0 +1,124 @@
+@import "../mixins/clearfix";
+@import "../mixins/container";
+@import "../mixins/inputs";
+@import "../mixins/buttons";
+
+#respond {
+  @apply mt-6 px-3;
+
+  #reply-title {
+    @apply block mb-2 text-xl font-light;
+
+    small {
+      @apply float-right;
+
+      a {
+        @apply rounded-full bg-gray-200 uppercase px-2 py-1 text-sm font-medium;
+      }
+    }
+  }
+
+  form {
+    @apply -mx-3 flex flex-wrap;
+
+    & > * {
+      @apply px-3 mt-6 w-full;
+    }
+
+    label {
+      @include label_style();
+
+      @apply mb-2;
+    }
+
+    .comment-notes {
+      @apply mt-2 mb-6 text-xs font-medium;
+    }
+
+    .comment-form-author,
+    .comment-form-email {
+      @apply w-1/2;
+    }
+
+    .form-submit {
+      input.submit {
+        @include button();
+
+        @apply float-right m-0;
+      }
+    }
+  }
+}
+
+#comments {
+  @apply mt-12;
+
+  @include align();
+
+  ol.commentlist {
+    @apply mb-6 mt-6 pt-6 border-t border-gray-200;
+
+    & > li {
+      @apply border-b border-gray-200 pb-6 mb-6;
+
+      .comment_container,
+      .comment-body {
+        @apply px-3 pt-3;
+
+        .avatar {
+          @apply hidden;
+        }
+
+        .meta,
+        .comment-meta {
+          @apply mb-3;
+
+          span.says {
+            @apply hidden;
+          }
+
+          time {
+            @apply block mt-1 text-xs text-gray-800;
+          }
+        }
+
+        .comment-content {
+          @apply text-base;
+        }
+
+        .reply {
+          @apply mt-3 text-right;
+
+          /* stylelint-disable-next-line no-descending-specificity */
+          a {
+            @apply text-sm font-medium uppercase;
+          }
+        }
+
+        & + #respond {
+          @apply my-6 mx-3 p-6 border border-gray-200;
+
+          #reply-title {
+            @apply invisible float-right text-xs font-sans;
+
+            small {
+              @apply visible;
+            }
+          }
+        }
+      }
+
+      .children {
+        @apply pt-6 pl-6;
+      }
+
+      li.depth-4 {
+        .children {
+          & > .comment {
+            @apply pb-3;
+          }
+        }
+      }
+    }
+  }
+}

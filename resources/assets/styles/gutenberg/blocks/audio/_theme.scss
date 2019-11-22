@@ -1,0 +1,15 @@
+.wp-block-audio {
+  audio {
+    @apply block mx-auto rounded-lg;
+  }
+
+  figcaption {
+    @apply text-center italic;
+  }
+
+  &.aligncenter {
+    audio {
+      @apply block mx-auto;
+    }
+  }
+}

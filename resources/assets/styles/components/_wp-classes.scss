@@ -1,0 +1,9 @@
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+/** Text meant only for screen readers */
+.screen-reader-text {
+  @include screen-reader-text;
+}

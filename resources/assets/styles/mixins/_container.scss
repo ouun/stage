@@ -1,0 +1,91 @@
+/*
+ * Container Style
+ */
+@mixin container() {
+  @apply w-full max-w-full mx-auto;
+
+  padding-left: var(--block-spacing);
+  padding-right: var(--block-spacing);
+
+  @screen sm {
+    @apply px-initial;
+
+    max-width: calc(100% - var(--block-spacing) * 2);
+    // max-width: theme('screens.md');
+  }
+
+  @screen md {
+    max-width: calc(100% - var(--block-spacing) * 4);
+    // max-width: theme('screens.md');
+  }
+
+  @screen lg {
+    max-width: calc(theme('screens.lg') - var(--block-spacing) * 4);
+    // max-width: theme('screens.lg');
+  }
+
+  @screen xl {
+    max-width: calc(theme('screens.xl') - var(--block-spacing) * 4);
+  }
+
+  @screen xxl {
+    max-width: calc(theme('screens.xxl') - var(--block-spacing) * 8);
+  }
+}
+
+/*
+ * Adds style to wide aligned blocks
+ */
+@mixin align() {
+  @apply px-initial mx-auto;
+
+  @screen sm {
+    max-width: var(--block-width-sm);
+  }
+
+  @screen md {
+    max-width: var(--block-width-md);
+  }
+
+  @screen lg {
+    max-width: var(--block-width-lg);
+  }
+
+  @screen xl {
+    max-width: var(--block-width-xl);
+  }
+}
+
+/*
+ * Adds style to wide aligned blocks
+ */
+@mixin align__wide() {
+  @apply px-initial mx-auto;
+
+  @screen sm {
+    max-width: calc(100% - var(--block-spacing) * 2);
+  }
+
+  @screen md {
+    width: calc(100% - ((100% - theme('screens.md')) / 2));
+    min-width: calc(theme('screens.md') - var(--block-spacing) * 2);
+  }
+
+  @screen lg {
+    width: calc(100% - ((100% - theme('screens.lg')) / 2));
+    min-width: calc(theme('screens.lg') - var(--block-spacing) * 2);
+  }
+
+  @screen xl {
+    width: calc(100% - ((100% - theme('screens.xl')) / 2));
+    min-width: calc(theme('screens.xl') - var(--block-spacing) * 2);
+  }
+
+  @screen xxl {
+    min-width: calc(theme('screens.xl') - var(--block-spacing) * 2);
+  }
+}
+
+@mixin align__full() {
+  @apply mx-0 w-full;
+}

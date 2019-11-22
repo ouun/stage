@@ -1,0 +1,17 @@
+.lazy-wrap,
+.image-container,
+.wp-block-image {
+  overflow: hidden;
+  width: initial;
+}
+
+img.lazy-load[data-src] {
+  @apply bg-gray-100;
+
+  transition: filter 0.3s ease;
+  filter: blur(3px);
+}
+
+img.lazy-load.is-loaded {
+  filter: blur(0);
+}

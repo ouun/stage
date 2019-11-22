@@ -1,0 +1,148 @@
+@import "../mixins/container";
+@import "../mixins/bg-blur";
+
+header.main-header {
+  @apply z-30 bg-body font-copy;
+
+  transform: translate3d(0, 0, 1px);
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+  text-transform: var(--heading-text-transform);
+  letter-spacing: var(--heading-letter-spacing);
+
+  &.fullwidth > :first-child {
+    @include align__full();
+
+    @apply px-block-spacing;
+  }
+
+  &.boxed > :first-child {
+    @include container();
+  }
+
+  a {
+    @apply no-underline font-copy;
+  }
+
+  // Initial set BG color
+  &.bg-header {
+    //@include bgBlur(#fff);
+  }
+
+  // Customizer: fixed header layout
+  &.sticky,
+  &.fixed {
+    @apply top-0 inset-x-0 w-full z-50;
+
+    transition: padding 0.3s;
+
+    &.is-scrolled {
+      transition: padding 0.3s;
+      padding: 0 !important;
+    }
+
+    &.auto-hide {
+      transition: transform .5s, padding 0.3s;
+
+      &.is-hidden {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .header-wrap {
+    .container-inner {
+      @apply flex items-stretch justify-between flex-wrap my-0;
+
+      // Logo
+      div.logo-wrap {
+        img {
+          @apply align-middle;
+        }
+      }
+
+      // Mobile burger
+      div.burger-wrap {
+        @apply block;
+
+        @screen lg {
+          @apply hidden;
+        }
+      }
+
+      div.icons-wrap {
+        .menu {
+          svg {
+            @apply relative inline-block align-middle;
+
+            & + sup {
+              @apply absolute top-1/3 left-85;
+            }
+          }
+
+          a {
+            @apply cursor-pointer bg-transparent text-black border-0 overflow-visible;
+
+            &:focus,
+            &:hover,
+            &:active {
+              @apply outline-none bg-transparent;
+
+              backdrop-filter: none;
+
+              span {
+                @apply outline-none;
+              }
+            }
+
+            // Menu search icons
+            &.search-trigger {
+              @apply w-6 h-6;
+
+              svg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transform: rotate( 0 );
+                transition: transform 0.2s, opacity 0.2s;
+
+                &.search--open {
+                  opacity: 1;
+                }
+
+                &.search--close {
+                  opacity: 0;
+                }
+              }
+
+              &.is-visible {
+                svg {
+                  transform: rotate( -90deg );
+                  transition: transform 0.2s;
+
+                  &.search--open {
+                    opacity: 0;
+                  }
+
+                  &.search--close {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+
+            // Active state for menu items
+            &.active {
+              @apply text-primary;
+            }
+          }
+        }
+
+        // Hamburger inline fix
+        .hamburger-box {
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+}

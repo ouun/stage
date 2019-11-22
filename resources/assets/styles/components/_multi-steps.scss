@@ -1,0 +1,120 @@
+@import "../mixins/clearfix";
+
+ol.multi-steps {
+  @apply p-0;
+
+  @include clearfix();
+
+  counter-reset: step;
+
+  li {
+    @apply relative inline-block float-left p-0 m-1 mr-0;
+
+    & a::before,
+    & span::before {
+      counter-increment: step;
+      content: counter(step) ". ";
+    }
+
+    /* this is the separator between items */
+    &::after {
+      content: '\00bb';
+
+      @apply inline-block mx-2 text-gray-500;
+    }
+
+    /* hide separator after the last item */
+    &:last-of-type::after {
+      @apply hidden;
+    }
+
+    & > * {
+      @apply inline-block text-gray-500 text-base leading-none;
+    }
+
+    &.current > * {
+      @apply text-primary;
+    }
+
+    a {
+      @apply no-underline;
+    }
+  }
+
+  /*
+    Triangle style .multi-steps.triangle
+   */
+
+  &.triangle {
+    @apply bg-gray-100 p-0;
+
+    li {
+      @apply relative p-0 mr-2 ml-0 my-0;
+
+      margin-right: 0.1rem;
+
+      & > * {
+        @apply relative h-12 p-4 bg-gray-100 border-gray-100 pl-8;
+      }
+
+      &.done > * {
+        @apply text-white bg-green-500 border-green-500;
+      }
+
+      &.current > *,
+      &:hover > a,
+      &:focus > a {
+        @apply text-white bg-gray-500 border-gray-500;
+      }
+
+      &.current ~ * > * {
+        @apply text-gray-500 bg-gray-100 border-gray-100;
+      }
+
+      &:first-of-type > * {
+        @apply pl-6;
+      }
+
+      &:last-of-type > * {
+        @apply pr-6;
+      }
+
+      /*
+				li > *::after is the colored triangle after each item
+				li::after is the white separator between two items
+			*/
+      &::after,
+      & > *::after {
+        content: '';
+        border-width: 1.5rem;
+        border-left-width: 1.4rem;
+
+        @apply absolute top-0 left-full h-0 w-0 border-transparent border-r-0;
+      }
+
+      /* this is the white separator between two items */
+      &::after {
+        @apply z-1 m-0;
+
+        border-left-color: var(--color-white);
+        transform: translateX(0.1rem);
+      }
+
+      /* this is the colored triangle after each element */
+      & > *::after {
+        @apply z-2;
+
+        border-left-color: inherit;
+      }
+
+      &:last-of-type {
+        @apply mr-0;
+
+        &::after,
+        & > *::after {
+          @apply hidden;
+        }
+      }
+    }
+  }
+}

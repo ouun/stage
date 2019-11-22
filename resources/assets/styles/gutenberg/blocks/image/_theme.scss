@@ -1,0 +1,69 @@
+.wp-block-image {
+  > img {
+    @apply block max-w-full w-full mx-0;
+  }
+
+  &.alignfull > figcaption,
+  &.alignwide > figcaption {
+    @apply text-center;
+  }
+
+  > figure {
+    @apply inline-block p-0;
+
+    &.alignleft,
+    &.alignright {
+      @apply inline;
+
+      > img,
+      > figcaption {
+        @apply mt-1;
+      }
+    }
+
+    @screen lg {
+      &.alignleft > img,
+      &.alignleft > figcaption {
+        @apply float-left;
+      }
+
+      &.alignleft > figcaption {
+        @apply mt-0 mb-block-spacing;
+
+        clear: left;
+      }
+
+      &.alignright > img,
+      &.alignright > figcaption {
+        @apply float-right;
+      }
+
+      &.alignright > figcaption {
+        @apply mt-0 mb-block-spacing;
+
+        clear: right;
+      }
+    }
+
+    &.aligncenter > img,
+    &.aligncenter > figcaption {
+      @apply w-full;
+    }
+
+    &.aligncenter > figcaption {
+      @apply w-full mt-0 mb-block-spacing text-center;
+    }
+
+    @media screen and (max-width: theme('screens.lg')) {
+      @apply mx-0 mb-0 mt-block-spacing;
+
+      > img {
+        @apply w-full mb-3;
+      }
+
+      > figcaption {
+        @apply w-full text-center mb-3;
+      }
+    }
+  }
+}

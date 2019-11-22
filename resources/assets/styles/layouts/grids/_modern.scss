@@ -1,0 +1,106 @@
+@screen sm {
+  @supports (display: grid) {
+    .grid-modern {
+      @apply grid border-red-500 grid-gap-4;
+
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: min-content;
+      grid-auto-rows: auto;
+
+      & > .post {
+        @apply flex w-full h-auto mb-24;
+
+        .post-inner {
+          @apply relative;
+
+          .image-container {
+            @apply relative w-full h-auto max-h-half bg-transparent;
+
+            img {
+              @apply w-full h-auto object-cover z-0;
+            }
+
+            // If element has image
+            & + .meta-container {
+              @apply relative inset-x-0 bottom-0 z-1;
+            }
+          }
+
+          &:hover {
+            .image-container {
+              & + .meta-container {
+                @apply opacity-100;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(6n + 1) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 5;
+          justify-content: start;
+          align-items: start;
+
+          .post-inner {
+            @apply w-5/6;
+          }
+        }
+
+        &:nth-of-type(6n + 2) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 4;
+          justify-content: flex-end;
+          align-items: center;
+
+          .post-inner {
+            @apply w-4/6;
+          }
+        }
+
+        &:nth-of-type(6n + 3) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 4;
+          justify-content: center;
+          align-items: center;
+
+          .post-inner {
+            @apply w-4/6;
+          }
+        }
+
+        &:nth-of-type(6n + 4) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 3;
+          justify-content: flex-end;
+          align-items: center;
+
+          .post-inner {
+            @apply w-4/6;
+          }
+        }
+
+        &:nth-of-type(6n + 5) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 4;
+          justify-content: center;
+          align-items: start;
+
+          .post-inner {
+            @apply w-4/6;
+          }
+        }
+
+        &:nth-of-type(6n + 6) {
+          grid-column: auto / span 6;
+          grid-row: auto / span 4;
+          justify-content: flex-end;
+          align-items: center;
+
+          .post-inner {
+            @apply w-full;
+          }
+        }
+      }
+    }
+  }
+}

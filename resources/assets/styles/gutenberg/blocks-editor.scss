@@ -1,0 +1,27 @@
+/**
+ * This is loaded additionally to blocks.css
+ */
+
+/* Global variables */
+@import "../variables/variables";
+@import "../mixins/container";
+
+/* Main column width */
+.wp-block {
+  @include container();
+
+  &[data-align="wide"] {
+    @apply px-initial mx-auto;
+
+    width: calc(100% - var(--block-spacing) * 2);
+    max-width: 100% !important;
+  }
+
+  &[data-align="full"] {
+    @apply max-w-none w-auto;
+  }
+}
+
+// Get the editor specific styles
+@import "blocks/button/editor";
+@import "blocks/cover/editor";

@@ -1,0 +1,64 @@
+@import "../mixins/container";
+
+.entry-content > *:not(.block-wrap) {
+  @apply w-full max-w-full mx-auto mb-block-spacing px-block-spacing;
+
+  @include align();
+}
+
+.block-wrap {
+  // @apply mb-block-spacing;
+
+  & > .alignwide {
+    @include align__wide();
+  }
+
+  & > .alignfull {
+    @apply mx-0 w-screen;
+  }
+
+  &:last-of-type {
+    @apply mb-0;
+  }
+}
+
+/*
+.entry-content {
+  & > * {
+    @apply mb-10;
+  }
+
+  @screen sm {
+    & > .alignwide {
+      @apply relative left-half right-half;
+
+      width: calc(100% + ((100vw - 100%) / 2));
+      min-width: calc(100% + ((100vw - 100%) / 2));
+      margin-left: calc(-50% + (100vw - 100%) / -4);
+      margin-right: calc(-50% + (100vw - 100%) / -4);
+    }
+  }
+
+  & > .alignfull {
+    @apply w-screen min-w-screen relative left-half right-half -mx-half-screen px-0;
+  }
+
+  .alignleft {
+    @apply float-left mr-4;
+  }
+
+  .alignright {
+    @apply float-right ml-4;
+  }
+
+  .aligncenter {
+    @apply block mx-auto;
+  }
+
+  .alignleft,
+  .alignright,
+  .alignnone {
+    @include clearfix();
+  }
+}
+*/

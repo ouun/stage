@@ -1,0 +1,25 @@
+@import "theme";
+
+.wp-block-button {
+  .wp-block-button__link {
+    &.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+      @apply absolute text-primary top-0 w-full mt-0 h-full opacity-25;
+    }
+  }
+
+  .is-style-rounded-outline {
+    .block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
+      & + .block-editor-rich-text__editable {
+        @apply text-primary;
+      }
+    }
+  }
+
+  &:not(.has-text-color):not(.is-style-outline):not(.is-style-rounded-outline) {
+    .block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
+      & + .block-editor-rich-text__editable {
+        @apply text-white;
+      }
+    }
+  }
+}

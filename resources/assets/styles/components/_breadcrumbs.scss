@@ -1,0 +1,12 @@
+/* Fix list-items margins */
+nav.breadcrumbs {
+  ol {
+    li {
+      @apply ml-1 no-underline;
+
+      a {
+        @apply no-underline;
+      }
+    }
+  }
+}

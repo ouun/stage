@@ -1,0 +1,59 @@
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright {
+  @apply w-full max-w-5xl;
+}
+
+.is-type-video,
+.wp-has-aspect-ratio {
+  > .wp-block-embed__wrapper {
+    @apply relative;
+  }
+
+  > .wp-block-embed__wrapper::before {
+    @apply block;
+
+    content: "";
+  }
+
+  iframe {
+    @apply absolute w-full h-full mx-auto inset-y-0 inset-x-0;
+  }
+
+  figcaption {
+    @apply inline-block w-full mx-auto text-center;
+  }
+
+  /** Fallback to common aspect ratio for videos */
+  &.is-type-video:not(.wp-has-aspect-ratio) .wp-block-embed__wrapper::before {
+    padding-top: percentage(9 / 16);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-21-9 .wp-block-embed__wrapper::before {
+    padding-top: percentage(9 / 21);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-18-9 .wp-block-embed__wrapper::before {
+    padding-top: percentage(9 / 18);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before {
+    padding-top: percentage(9 / 16);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-4-3 .wp-block-embed__wrapper::before {
+    padding-top: percentage(3 / 4);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-1-1 .wp-block-embed__wrapper::before {
+    padding-top: percentage(1 / 1);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-9-6 .wp-block-embed__wrapper::before {
+    padding-top: percentage(6 / 9);
+  }
+
+  &.wp-has-aspect-ratio.wp-embed-aspect-1-2 .wp-block-embed__wrapper::before {
+    padding-top: percentage(2 / 1);
+  }
+}
+

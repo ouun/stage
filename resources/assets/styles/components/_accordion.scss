@@ -1,0 +1,109 @@
+@import "../mixins/screen-reader-text";
+@import "../mixins/inputs";
+
+.animated-accordion__panel {
+  @apply block overflow-hidden visible max-h-5xl opacity-100 m-0 p-0;
+
+  transition: visibility 0s ease, max-height 0.5s ease, opacity 0.5s ease;
+  transition-delay: 0s;
+
+  /* This is the hidden state */
+  &[aria-hidden=true] {
+    @apply block invisible max-h-0 opacity-0 m-0 p-0;
+
+    transition-delay: 0.5s, 0s, 0s;
+  }
+}
+
+.js-accordion {
+  @apply border-0 border-b border-gray-300;
+
+  &:last-child {
+    @apply border-b;
+  }
+
+  .js-accordion__header {
+    @include label_style();
+
+    @apply px-4 py-3 m-0 bg-transparent w-full flex items-center justify-between text-left font-sans border-0 border-t border-gray-300 outline-none;
+
+    &.animated-accordion__header {
+      &:hover,
+      &:focus {
+        @apply text-primary;
+      }
+
+      .js-accordion__header-icon {
+        @apply relative block float-right w-3 h-3;
+
+        will-change: transform;
+
+        &::before,
+        &::after {
+          content: '';
+          width: 1px;
+          height: 80%;
+          background: currentColor;
+          transform-origin: 50% 100%;
+          will-change: transform;
+          transition: transform 0.2s;
+
+          @apply absolute top-0 right-0;
+        }
+
+        &::before {
+          left: 50%;
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          left: calc(50% - 0.5px);
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    /* title opened */
+    &[aria-expanded="true"] {
+      .js-accordion__header-icon {
+        &::before {
+          transform: translateY(-80%) rotate(-135deg);
+        }
+
+        &::after {
+          transform: translateY(-80%) rotate(135deg);
+        }
+      }
+    }
+
+    /*
+    &[aria-selected="true"] {
+      @apply text-primary;
+
+      &::before,
+      &::after {
+        @apply bg-primary;
+      }
+    }
+    */
+  }
+
+  .js-accordion__panel {
+    .js-accordion__content {
+      @apply px-4 pt-3 pb-4;
+    }
+
+    &[aria-hidden="true"] {
+      @apply p-0 m-0;
+    }
+
+    /* Only visible if no JS */
+    .js-accordion__header {
+      @apply pb-2 pt-4;
+
+      &.animated-accordion__title {
+        @include screen-reader-text();
+      }
+    }
+  }
+}

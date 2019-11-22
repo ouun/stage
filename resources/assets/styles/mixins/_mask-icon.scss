@@ -1,0 +1,11 @@
+@mixin mask-icon($name, $size:false, $position:false) {
+  mask: url(../icons/#{$name}.svg) no-repeat 50% 50%;
+
+  @if ($size) {
+    mask-size: $size;
+  }
+
+  @if ($position) {
+    mask-position: $position;
+  }
+}

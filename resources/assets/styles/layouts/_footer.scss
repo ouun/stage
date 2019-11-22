@@ -1,0 +1,33 @@
+@import "../mixins/container";
+
+footer.footer-wrap {
+  & > :first-child {
+    @include container();
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  .widgets-wrap {
+    @apply -mx-4;
+
+    .widget {
+      @apply p-4 flex-auto;
+    }
+  }
+
+  .menu-wrap {
+    @apply mt-4 pt-4 border-gray-400 border-t;
+
+    .menu-footer {
+      li {
+        @apply pr-4;
+
+        &:last-of-type {
+          @apply pr-0;
+        }
+      }
+    }
+  }
+}

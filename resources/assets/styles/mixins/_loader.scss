@@ -1,0 +1,33 @@
+@import "bg-image";
+
+$loader_color: black;
+
+@mixin loader() {
+  &::before {
+    @apply absolute block w-4 h-4 -mt-2 -ml-2 top-half left-half visible;
+
+    content: '';
+    animation: loading 2s infinite;
+    border-radius: 50%;
+    background: $loader_color;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba($loader_color, 0.4);
+  }
+
+  70% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 15px rgba($loader_color, 0);
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba($loader_color, 0);
+  }
+}

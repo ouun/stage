@@ -1,0 +1,19 @@
+.entry-content {
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul,
+  ol {
+    @apply list-inside;
+
+    & ul,
+    & ol {
+      @apply py-2 pl-4;
+    }
+  }
+}

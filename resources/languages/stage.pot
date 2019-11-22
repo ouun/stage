@@ -1,0 +1,676 @@
+# Copyright (C) 2019 Philipp Wellmer
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Stage 1.0.0-alpha\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/terra-nova\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-22T16:01:29+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Theme Name of the theme
+msgid "Stage"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+msgid "https://ouun.io/"
+msgstr ""
+
+#. Description of the theme
+msgid "A feature rich & best practise Theme Framework by ouun.io, based on roots.io Sage"
+msgstr ""
+
+#. Author of the theme
+msgid "Philipp Wellmer"
+msgstr ""
+
+#: app/Composers/Title.php:42
+msgid "Latest Posts"
+msgstr ""
+
+#. translators: %s is replaced with the search query
+#: app/Composers/Title.php:52
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/Composers/Title.php:58
+msgid "Not Found"
+msgstr ""
+
+#: app/Customizer/Controls/LayoutControl.php:42
+#: app/Customizer/Controls/LayoutControl.php:89
+msgid "Change"
+msgstr ""
+
+#: app/Customizer/Controls/LayoutControl.php:43
+msgid "Close"
+msgstr ""
+
+#: app/Customizer/Panels/ArchivesPanel.php:40
+msgid "Archives"
+msgstr ""
+
+#: app/Customizer/Panels/ArchivesPanel.php:93
+msgid "Grid Layout"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:37
+#: app/setup.php:125
+msgid "Footer"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:38
+msgid "Customize the footer."
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:59
+#: app/Customizer/Panels/GlobalPanel.php:270
+#: app/Customizer/Panels/HeaderPanel.php:398
+msgid "Colors"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:60
+#: app/Customizer/Panels/HeaderPanel.php:399
+msgid "My section description."
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:71
+msgid "Footer Colors"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:75
+#: app/Customizer/Panels/HeaderPanel.php:414
+msgid "Background Color"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:76
+msgid "Text Color"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:77
+#: app/Customizer/Panels/HeaderPanel.php:416
+msgid "Item Hover & Active"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:145
+msgid "Settings"
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:146
+msgid "Footer settings."
+msgstr ""
+
+#: app/Customizer/Panels/FooterPanel.php:158
+msgid "Copyright Text"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:37
+msgid "Global Settings"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:38
+msgid "Various settings for your website."
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:69
+msgid "Website Information"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:82
+msgid "Titel of the Website"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:83
+msgid "This is so important!"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:105
+msgid "Subtitle of the Website"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:106
+msgid "This is so important, too!"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:133
+msgid "Logos & Branding"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:173
+#: app/Customizer/Panels/HeaderPanel.php:342
+msgid "Typography"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:174
+msgid "Set typo settings for your website"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:187
+msgid "Copy Font"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:226
+msgid "Headlines Font"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:271
+msgid "Set color settings for your website"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:284
+msgid "Main Colors"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:289
+msgid "Default Background Color"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:290
+msgid "Default Text Color"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:291
+msgid "Primary Color"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:292
+msgid "Secondary Color"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:349
+msgid "Link Colors"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:354
+msgid "Link Color"
+msgstr ""
+
+#: app/Customizer/Panels/GlobalPanel.php:355
+msgid "Hover & Focus Color"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:48
+msgid "Site Header & Menus"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:49
+msgid "Customize the main header and menus."
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:72
+msgid "Layout"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:73
+msgid "Adjust theme colors."
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:113
+msgid "Header Layout"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:146
+msgid "Search Layout"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:177
+msgid "Header Position"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:180
+msgid "Default"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:181
+msgid "Fixed on top"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:182
+msgid "Auto hide while scrolling"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:207
+msgid "Fullwidth header"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:234
+msgid "Show Tagline"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:263
+msgid "Horizontal Padding"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:296
+msgid "Vertical Padding"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:353
+msgid "Header Typo"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:410
+msgid "Main Menu"
+msgstr ""
+
+#: app/Customizer/Panels/HeaderPanel.php:415
+msgid "Menu Item Color"
+msgstr ""
+
+#: app/Customizer/Panels/SettingsPanel.php:35
+msgid "Website Settings"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:38
+msgid "Website Features"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:39
+msgid "Activate & customize website features."
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:60
+msgid "Dynamic Page Loading & Transitions"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:81
+msgid "Lazy Load Media"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:102
+msgid "Infinite scrolling for Archives"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:123
+msgid "Galleries"
+msgstr ""
+
+#: app/Customizer/Panels/WebsiteFeatures.php:166
+msgid "Activate"
+msgstr ""
+
+#: app/Customizer/Panels/WebsitePanel.php:67
+msgid "Shop Settings"
+msgstr ""
+
+#: app/filters.php:46
+msgid "Continued"
+msgstr ""
+
+#: app/setup.php:61
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:62
+msgid "Footer Navigation"
+msgstr ""
+
+#: app/setup.php:120
+msgid "Primary"
+msgstr ""
+
+#: config/defaults.php:77
+msgid "System Serif"
+msgstr ""
+
+#: config/defaults.php:78
+msgid "System Sans-Serif"
+msgstr ""
+
+#: config/defaults.php:85
+msgid "Extra Small"
+msgstr ""
+
+#: config/defaults.php:90
+msgid "Small"
+msgstr ""
+
+#: config/defaults.php:95
+msgid "Normal"
+msgstr ""
+
+#: config/defaults.php:100
+msgid "Large"
+msgstr ""
+
+#: config/defaults.php:105
+msgid "Extra Large"
+msgstr ""
+
+#: config/defaults.php:110
+msgid "XX Large"
+msgstr ""
+
+#: config/defaults.php:115
+msgid "3X Large"
+msgstr ""
+
+#: config/defaults.php:120
+msgid "4X Large"
+msgstr ""
+
+#: config/defaults.php:125
+msgid "5X Large"
+msgstr ""
+
+#. translators: %1$s is replaced with the current year, %2$s with the site name
+#: config/defaults.php:200
+msgid "Copyright %1$s, all rights reserved by %2$s."
+msgstr ""
+
+#: functions.php:15
+msgid "Stage &rsaquo; Error"
+msgstr ""
+
+#: functions.php:24
+msgid "You must be using PHP 7.2 or greater."
+msgstr ""
+
+#: functions.php:24
+msgid "Invalid PHP version"
+msgstr ""
+
+#: functions.php:31
+msgid "You must be using WordPress 5.2 or greater."
+msgstr ""
+
+#: functions.php:31
+msgid "Invalid WordPress version"
+msgstr ""
+
+#: functions.php:39
+msgid "You must run <code>composer install</code> from the Stage directory."
+msgstr ""
+
+#: functions.php:40
+msgid "Autoloader not found."
+msgstr ""
+
+#. translators: %s is replaced with the missing file path.
+#: functions.php:58
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr ""
+
+#: functions.php:60
+msgid "File not found"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:12
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:12
+msgid "Close (Esc)"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:15
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:15
+msgid "Share"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:18
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:18
+msgid "Toggle fullscreen"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:22
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:22
+msgid "Zoom in/out"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:33
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:33
+msgid "Previous (arrow left)"
+msgstr ""
+
+#: resources/views/partials/footer/psw-container.blade.php:36
+#: storage/framework/views/958eae4164f4ccb037242f77ab7c01827249347a.php:36
+msgid "Next (arrow right)"
+msgstr ""
+
+#: resources/views/shop/cart/cart-empty.blade.php:22
+msgid "Return to shop"
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:42
+msgid "Shipping to %s."
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:43
+msgid "Change address"
+msgstr ""
+
+#: resources/views/shop/cart/cart-shipping.blade.php:45
+msgid "Shipping options will be updated during checkout."
+msgstr ""
+
+#: resources/views/shop/cart/cart-shipping.blade.php:52
+msgid "Enter your address to view shipping options."
+msgstr ""
+
+#: resources/views/shop/cart/cart-shipping.blade.php:54
+msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:57
+msgid "No shipping options were found for %s."
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: resources/views/shop/cart/cart-shipping.blade.php:58
+msgid "Enter a different address"
+msgstr ""
+
+#: resources/views/shop/cart/cart-totals.blade.php:20
+#: resources/views/shop/cart/cart-totals.blade.php:21
+msgid "Subtotal"
+msgstr ""
+
+#. translators: %s is replaced with tax.
+#: resources/views/shop/cart/cart-totals.blade.php:62
+msgid "(estimated for %s)"
+msgstr ""
+
+#: resources/views/shop/cart/cart-totals.blade.php:82
+#: resources/views/shop/cart/cart-totals.blade.php:83
+#: resources/views/shop/cart/cart.blade.php:28
+#: resources/views/shop/cart/cart.blade.php:107
+msgid "Total"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:18
+msgid "Cart"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:24
+#: resources/views/shop/cart/cart.blade.php:67
+msgid "Product"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:27
+#: resources/views/shop/cart/cart.blade.php:90
+#: resources/views/shop/global/quantity-input.blade.php:21
+msgid "Quantity"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:49
+msgid "Remove this item"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:79
+msgid "Available on backorder"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:84
+msgid "Price"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:123
+msgid "Update cart"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:140
+msgid "Cart totals"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:146
+#: resources/views/shop/cart/cart.blade.php:151
+msgid "Coupon code"
+msgstr ""
+
+#: resources/views/shop/cart/cart.blade.php:152
+msgid "Apply coupon"
+msgstr ""
+
+#: resources/views/shop/cart/proceed-to-checkout-button.blade.php:8
+msgid "Proceed to checkout"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:18
+msgid "Calculate shipping"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:27
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:45
+#: resources/views/shop/cart/shipping-calculator.blade.php:50
+#: resources/views/shop/cart/shipping-calculator.blade.php:62
+msgid "State / County"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:51
+msgid "Select an option&hellip;"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:71
+msgid "City"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:77
+msgid "Postcode / ZIP"
+msgstr ""
+
+#: resources/views/shop/cart/shipping-calculator.blade.php:81
+msgid "Update"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:18
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:21
+msgid "Pay"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:23
+msgid "My account"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:29
+#: resources/views/shop/checkout/thankyou.blade.php:71
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:34
+msgid "Order number:"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:39
+msgid "Date:"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:45
+msgid "Email:"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:51
+msgid "Total:"
+msgstr ""
+
+#: resources/views/shop/checkout/thankyou.blade.php:57
+msgid "Payment method:"
+msgstr ""
+
+#: resources/views/shop/global/quantity-input.blade.php:31
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: resources/views/shop/order/order-details-customer.blade.php:14
+msgid "Billing address"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Custom Template"
+msgstr ""
+
+#: storage/framework/views/0e41e80473836f65e9f28255543d845b8b4fd303.php:17
+msgid "View your shopping cart"
+msgstr ""
+
+#: storage/framework/views/06bf6874383916bf44a10c651786ad4500018ca2.php:6
+msgid "ENTER to search, ESC to exit"
+msgstr ""
+
+#: storage/framework/views/32af045a5cbbe1c3cc9e4a71bc986c2392522745.php:21
+#: storage/framework/views/66dcadf2c6bfbda8099d1098b4f455fbadb3a98e.php:9
+msgid "Pages:"
+msgstr ""
+
+#. translators: 1: number of comments, 2: plural number of comments.
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:12
+msgctxt "comments title"
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:26
+msgid "&larr; Older comments"
+msgstr ""
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:29
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: storage/framework/views/91af847f7b2cfd3f64dab71a252ac686cc3c7223.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: storage/framework/views/719983b82980447d08d4e2febc0db65b149d5170.php:6
+#: storage/framework/views/b64a98833e46ba2782a644e521c8eb5280e080b6.php:14
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:2
+msgid "Avatar by "
+msgstr ""
+
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:5
+msgid "By"
+msgstr ""
+
+#. translators: %s: Human-readable time difference.
+#: storage/framework/views/54294921e8345f9c0f3153e1ebbb1b724a1acd8b.php:12
+msgid "%s ago"
+msgstr ""
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:2
+msgid "Search for:"
+msgstr ""
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:3
+msgid "Search &hellip;"
+msgstr ""
+
+#: storage/framework/views/df2aca93f77c74340cbcae01ecf0939733830e46.php:4
+msgid "Search"
+msgstr ""

@@ -1,0 +1,84 @@
+body {
+  @apply font-copy text-copy bg-body;
+
+  font-weight: var(--copy-font-weight);
+}
+
+/*
+a {
+  @apply relative;
+
+  transition: color 0.3s;
+
+  // The link has a counter
+  & > span.count {
+    @apply absolute top-0 right-0 inline-block text-sm;
+
+    transform: translate(110%, -50%);
+    line-height: initial;
+  }
+
+  &:hover {
+    @apply text-primary no-underline;
+  }
+}
+*/
+
+a {
+  @apply relative underline;
+
+  color: var(--color-link);
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: var(--color-hover);
+  }
+
+  // The link has a counter
+  & > span.count {
+    @apply absolute top-0 right-0 inline-block text-sm;
+
+    transform: translate(110%, -50%);
+    line-height: initial;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: 1;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-lg;
+}
+
+abbr {
+  @apply no-underline text-red-500;
+}

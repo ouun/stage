@@ -1,0 +1,22 @@
+@import "../mixins/loader";
+
+.overlay {
+  @apply invisible fixed inset-0 w-full h-full z-20 opacity-0 bg-white;
+
+  //transition: opacity 0.3s ease-in-out 0.2s, visibility 0.3s 0.3s;
+  transition: opacity 0.3s;
+  transform: translate3d(0, 0, -1px);
+
+  &.is-visible {
+    transition: opacity 0.3s;
+    //transition: opacity 0.3s ease-in-out 0.2s, visibility 0s 0.3s;
+
+    @apply visible opacity-75;
+  }
+
+  &.is-loading {
+    @apply invisible opacity-100;
+
+    @include loader();
+  }
+}

@@ -1,0 +1,42 @@
+@import "../mixins/container";
+
+.search-wrap {
+  &.below-header {
+    @apply top-full bg-transparent inset-x-0 invisible h-0 opacity-0 border-0 border-transparent text-transparent;
+
+    /* This is the closing transition: property name | duration | delay */
+    transition: height 0.3s 0s, opacity 0.1s 0.25s, border 0.2s 0.15s, visibility 0s 0.5s;
+
+    &.is-visible {
+      @apply visible opacity-100 text-black h-16 border-inherit border border-l-0 border-r-0 bg-white;
+
+      /* This is the opening transition: property name | duration | delay */
+      transition: height 0.2s 0s, opacity 0s 0s, color 0.2s 0.2s, border 0.25s 0s;
+    }
+  }
+
+  &.fullscreen {
+    @apply opacity-0 h-full;
+
+    transition: height 0.2s 0.3s ease-out, opacity 0.3s 0.6s, visibility 0s 1s;
+    will-change: height, opacity;
+
+    .search-form-wrap {
+      @apply opacity-0;
+
+      transition: opacity 0.3s;
+    }
+
+    &.is-visible {
+      @apply visible opacity-100 text-black border-0 h-screen;
+
+      transition: height 0.3s 0.1s ease-out, opacity 0.3s;
+
+      .search-form-wrap {
+        @apply opacity-100;
+
+        transition: opacity 0.3s 0.5s;
+      }
+    }
+  }
+}
