@@ -30,7 +30,7 @@ function stage_get_features_status() {
  */
 function stage_is_feature_active( $feature ) {
 	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
-	return ( ( isset( $status ) && true === $status ) ? true : false );
+	return ( ( isset( $status ) && true == $status ) ? true : false );
 }
 
 /**

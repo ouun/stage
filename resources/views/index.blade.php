@@ -3,13 +3,15 @@
 @section('content')
   @include('partials.page-header')
 
-  @noposts
+  @if(! have_posts())
     @alert(['type' => 'warning'])
-    {{ __('Sorry, no results were found.', 'stage') }}
+      {{ __('Sorry, no results were found.', 'stage') }}
     @endalert
 
-    {!! get_search_form(false) !!}
-  @endnoposts
+    <div class="text-xl max-w-sm border-2 border-black py-3 my-6">
+      {!! get_search_form(false) !!}
+    </div>
+  @endif
 
   <div class="flex-1 archive-wrap">
     @include( 'partials.grids.' . $layout )

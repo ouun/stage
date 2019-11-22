@@ -10,10 +10,10 @@
       {!! get_search_form(false) !!}
     </div>
 
-    @if (!have_posts())
-      <div class="alert alert-warning text-center text-xl text-red-500 my-24">
+    @if (! have_posts())
+      @alert(['type' => 'warning'])
         {{ __('Sorry, no results were found.', 'stage') }}
-      </div>
+      @endalert
     @endif
 
     <div class="flex flex-wrap mb-4 -mx-4">

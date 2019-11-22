@@ -30,7 +30,7 @@ return [
 			'activate' => false,
 		],
 		'gallery' => [
-			'activate' => false,
+			'activate' => true,
 		],
 	],
 
