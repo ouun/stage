@@ -34,6 +34,19 @@ class Customizer extends ServiceProvider {
 		// Do not inline CSS, build with action
 		add_filter( 'kirki_output_inline_styles', '__return_false' );
 
+		// Fix Kirki URL handling for local development, if in symlink folder
+		add_filter(
+			'kirki_path_url',
+			function ( $url, $path ) {
+				if ( defined( 'WP_ENV' ) && WP_ENV !== 'production' && substr( $url, 0, 4 ) !== 'http' ) {
+					$url = get_template_directory_uri() . explode( get_template(), $path )[1];
+				}
+				return $url;
+			},
+			10,
+			2
+		);
+
 		// Rename the css output action
 		add_filter(
 			'kirki_styles_action_handle',
