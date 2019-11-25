@@ -71,9 +71,9 @@ class Customizer extends ServiceProvider {
 				 * not needed for every control we add.
 				 */
 				$controls = array(
-					'App\Customizer\Controls\LayoutControl',
-					'App\Customizer\Controls\RangeValueControl',
-					'App\Customizer\Controls\ToggleControl',
+					'Stage\Customizer\Controls\LayoutControl',
+					'Stage\Customizer\Controls\RangeValueControl',
+					'Stage\Customizer\Controls\ToggleControl',
 					'\Kirki\Control\Base', // Activating this might overwrite normal text inputs
 					'\Kirki\Control\Checkbox',
 					'\Kirki\Control\Checkbox_Switch',
