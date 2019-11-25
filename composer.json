@@ -22,6 +22,15 @@
       "App\\": "app/"
     }
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/Volumes/Webprojekte/Repositories/kirki-module-sync_controls",
+      "options": {
+        "symlink": false
+      }
+    }
+  ],
   "require": {
     "php": "^7.2",
     "kirki-framework/compatibility": "dev-master",
