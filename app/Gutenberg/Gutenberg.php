@@ -1,9 +1,9 @@
 <?php
-namespace App\Gutenberg;
+namespace Stage\Gutenberg;
 
 use Roots\Acorn\ServiceProvider;
-use function App\stage_get_default;
-use function App\stage_get_fallback;
+use function Stage\stage_get_default;
+use function Stage\stage_get_fallback;
 use function Roots\asset;
 
 class Gutenberg extends ServiceProvider {

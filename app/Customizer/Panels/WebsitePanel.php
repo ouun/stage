@@ -1,5 +1,5 @@
 <?php
-namespace App\Customizer\Panels;
+namespace Stage\Customizer\Panels;
 
 use function Roots\asset;
 

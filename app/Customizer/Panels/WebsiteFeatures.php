@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Customizer\Panels;
+namespace Stage\Customizer\Panels;
 
-use App\Customizer\Controls\ToggleControl;
+use Stage\Customizer\Controls\ToggleControl;
 use Kirki\Compatibility\Kirki;
 use WP_Customize_Manager;
-use function App\stage_get_default;
+use function Stage\stage_get_default;
 
 class WebsiteFeatures {
 

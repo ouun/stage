@@ -1,5 +1,5 @@
 <?php
-namespace App\Customizer;
+namespace Stage\Customizer;
 
 use function Roots\config;
 use function Roots\view;

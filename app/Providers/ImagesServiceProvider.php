@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace Stage\Providers;
 
 use Roots\Acorn\ServiceProvider;
-use function App\stage_is_feature_active;
+use function Stage\stage_is_feature_active;
 
 class ImagesServiceProvider extends ServiceProvider {
 

@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Customizer\Panels;
+namespace Stage\Customizer\Panels;
 
-use App\Composers\Header;
-use App\Customizer\Controls\LayoutControl;
-use App\Customizer\Controls\RangeValueControl;
-use App\Customizer\Controls\ToggleControl;
+use Stage\Composers\Header;
+use Stage\Customizer\Controls\LayoutControl;
+use Stage\Customizer\Controls\RangeValueControl;
+use Stage\Customizer\Controls\ToggleControl;
 use Kirki\Compatibility\Kirki;
 use Kirki\Control\ReactSelect;
 use Kirki\Panel;
 use Kirki\Section;
 use WP_Customize_Manager;
-use function App\stage_get_default;
-use function App\stage_get_fallback;
-use function App\stage_get_fallback_template;
+use function Stage\stage_get_default;
+use function Stage\stage_get_fallback;
+use function Stage\stage_get_fallback_template;
 use function Roots\asset;
 
 class HeaderPanel {

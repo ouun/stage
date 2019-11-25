@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Composers;
+namespace Stage\Composers;
 
 use Log1x\Navi\NaviFacade as Navi;
 use Roots\Acorn\View\Composer;

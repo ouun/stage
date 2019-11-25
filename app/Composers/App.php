@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Composers;
+namespace Stage\Composers;
 
 use Roots\Acorn\View\Composer;
-use function App\stage_get_features_status;
+use function Stage\stage_get_features_status;
 
 class App extends Composer {
 

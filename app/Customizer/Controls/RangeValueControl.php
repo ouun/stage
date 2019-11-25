@@ -3,7 +3,7 @@
  * Range Value Control
  */
 
-namespace App\Customizer\Controls;
+namespace Stage\Customizer\Controls;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

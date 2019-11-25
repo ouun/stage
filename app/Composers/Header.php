@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Composers;
+namespace Stage\Composers;
 
 use Roots\Acorn\View\Composer;
-use function App\stage_get_fallback;
+use function Stage\stage_get_fallback;
 
 class Header extends Composer {
 

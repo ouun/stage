@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Customizer\Panels;
+namespace Stage\Customizer\Panels;
 
 use Kirki\Compatibility\Kirki;
 use Kirki\Panel;
 use Kirki\Section;
-use function App\stage_get_default;
-use function App\stage_get_fallback;
+use function Stage\stage_get_default;
+use function Stage\stage_get_fallback;
 
 class FooterPanel {
 	// Set panel ID

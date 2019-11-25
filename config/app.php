@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'de',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -120,9 +120,9 @@ return [
     */
 
     'providers' => [
-        App\Gutenberg\Gutenberg::class,
-        App\Customizer\Customizer::class,
-	    App\Providers\ImagesServiceProvider::class
+        Stage\Gutenberg\Gutenberg::class,
+        Stage\Customizer\Customizer::class,
+	    Stage\Providers\ImagesServiceProvider::class
     ],
 
     /*

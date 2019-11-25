@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Customizer;
+namespace Stage\Customizer;
 
-use App\Customizer\Panels\ArchivesPanel;
-use App\Customizer\Panels\FooterPanel;
-use App\Customizer\Panels\GlobalPanel;
-use App\Customizer\Panels\HeaderPanel;
-use App\Customizer\Panels\SettingsPanel;
-use App\Customizer\Panels\WebsitePanel;
-use App\Customizer\Panels\WebsiteFeatures;
+use Stage\Customizer\Panels\ArchivesPanel;
+use Stage\Customizer\Panels\FooterPanel;
+use Stage\Customizer\Panels\GlobalPanel;
+use Stage\Customizer\Panels\HeaderPanel;
+use Stage\Customizer\Panels\SettingsPanel;
+use Stage\Customizer\Panels\WebsitePanel;
+use Stage\Customizer\Panels\WebsiteFeatures;
 use Roots\Acorn\ServiceProvider;
 use WP_Customize_Manager;
 

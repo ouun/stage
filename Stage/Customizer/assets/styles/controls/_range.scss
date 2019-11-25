@@ -1,0 +1,257 @@
+.customize-control-range-value {
+  .components-base-control__field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    .components-range-value-control__label {
+      position: absolute;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    .components-form-range-slider {
+
+      .components-form-range-slider__container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        a.components-form-range-slider__reset {
+          opacity: 0;
+          margin-right: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-gray;
+
+          &:hover {
+            color: $color-primary;
+          }
+
+          &::after {
+            content: "\F531";
+            cursor: pointer;
+            font: 100 15px/0 dashicons;
+          }
+
+          span {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(100%);
+            white-space: nowrap;
+          }
+        }
+
+        input.components-form-range-slider__range-input {
+          width: 100%;
+          flex: 1 0 0;
+          vertical-align: middle;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+          margin: 3px 0;
+        }
+
+        .components-form-range-slider__display {
+          display: flex;
+          position: relative;
+          width: 25%;
+          color: $color-text;
+          text-align: center;
+          border-radius: 3px;
+          background-color: $color-gray;
+          padding: 5px 10px;
+          margin-left: 8px;
+          transition: color 0.2s ease, background-color 0.2s ease;
+
+          input.components-form-range-slider__number-input {
+            background: none !important;
+            border: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            color: inherit !important;
+            display: inline-block !important;
+            font-size: 14px;
+            height: 100% !important;
+            line-height: inherit !important;
+            padding: 0 3px;
+            position: relative;
+            text-align: center;
+            flex-basis: 100%;
+            min-width: 0;
+          }
+        }
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      .components-range-value-control__label {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .components-form-range-slider {
+        .components-form-range-slider__container {
+          .components-form-range-slider__display {
+            color: $color-white;
+            background-color: $color-primary;
+          }
+
+          a.components-form-range-slider__reset,
+          input.components-form-range-slider__range-input {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Cross Browser range input style
+ * https://github.com/darlanrod/input-range-scss
+ */
+$track-color: $color-gray !default;
+$thumb-color: $color-primary !default;
+
+$thumb-radius: 10px !default;
+$thumb-height: 15px !default;
+$thumb-width: 15px !default;
+$thumb-shadow-size: 2px !default;
+$thumb-shadow-blur: 2px !default;
+$thumb-shadow-color: rgba(0, 0, 0, .2) !default;
+$thumb-border-width: 0px !default;
+$thumb-border-color: $color-gray !default;
+
+$track-width: 100% !default;
+$track-height: 4px !default;
+$track-shadow-size: 0px !default;
+$track-shadow-blur: 0px !default;
+$track-shadow-color: rgba(0, 0, 0, .2) !default;
+$track-border-width: 1px !default;
+$track-border-color: $color-gray !default;
+
+$track-radius: 3px !default;
+$contrast: 5% !default;
+
+$ie-bottom-track-color: darken($track-color, $contrast) !default;
+
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: default;
+  height: $track-height;
+  transition: all .2s ease;
+  width: $track-width;
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  background: $thumb-color;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  box-sizing: border-box;
+  cursor: default;
+  height: $thumb-height;
+  width: $thumb-width;
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:focus {
+    outline: 0;
+
+    &::-webkit-slider-runnable-track {
+      background: lighten($track-color, $contrast);
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2);
+  }
+
+  &::-moz-range-track {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    @include track;
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    height: $track-height / 2;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $ie-bottom-track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-fill-upper {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: $track-height / 4;
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb,
+    &::-webkit-slider-runnable-track,
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      cursor: not-allowed;
+    }
+  }
+}

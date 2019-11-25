@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace Stage;
 
-use App\Customizer\Settings;
+use Stage\Customizer\Settings;
 use function Roots\view;
 
 /**

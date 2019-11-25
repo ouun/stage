@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Stage;
 
 use function Roots\asset;
 
