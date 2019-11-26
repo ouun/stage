@@ -39,8 +39,8 @@ class ToggleControl extends \WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/controls.css' )->uri(), false, '1.0.0', 'all' );
-		wp_enqueue_script( 'stage/customizer/toggle-js', \Roots\asset( 'scripts/customizer/toggle.js' )->uri(), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/controls.css', 'stage' )->uri(), false, '1.0.0', 'all' );
+		wp_enqueue_script( 'stage/customizer/toggle-js', \Roots\asset( 'scripts/customizer/toggle.js', 'stage' )->uri(), array( 'jquery' ), '1.0.0', true );
 	}
 
 	/**

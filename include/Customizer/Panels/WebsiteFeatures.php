@@ -134,45 +134,27 @@ class WebsiteFeatures {
 
 	}
 
-
+	/**
+	 * Helper function to add common controls
+	 *
+	 * @param $section
+	 */
 	function addFeatureActivationToggle( $section ) {
+
 		/**
 		 * Add Customizer settings & controls.
 		 *
 		 * @since 1.0
-		 * @param WP_Customize_Manager $wp_customize The WP_Customize_Manager object.
-		 * @return void
 		 */
-		add_action(
-			'customize_register',
-			function( WP_Customize_Manager $wp_customize ) use ( $section ) {
+		Kirki::add_field( $section . '.activate', [
+			'type'        => 'checkbox_toggle',
+			'settings'    => $section . '.activate',
+			'label'       => esc_html__( 'Activate', 'stage' ),
+			'section'     => $section,
+			'default'     => stage_get_default( $section . '.activate' ),
+			'priority'    => 10,
+		] );
 
-				$wp_customize->add_setting(
-					$section . '.activate',
-					array(
-						'type'              => 'theme_mod',
-						'capability'        => 'edit_theme_options',
-						'default'           => stage_get_default( $section . '.activate' ),
-						'transport'         => 'refresh',
-						'sanitize_callback' => array( 'App\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
-					)
-				);
-
-				$wp_customize->add_control(
-					new ToggleControl(
-						$wp_customize,
-						$section . '.activate',
-						array(
-							'label'    => esc_html__( 'Activate', 'stage' ),
-							'section'  => $section,
-							'settings' => $section . '.activate',
-							'type'     => 'toggle',
-						)
-					)
-				);
-
-			}
-		);
 	}
 
 }

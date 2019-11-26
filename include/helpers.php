@@ -69,10 +69,12 @@ function stage_get_fallback( $request, $fallback = false, $pop = false ) {
  * with fallback to defaults
  *
  * @param $request
+ * @param bool $pop
+ *
  * @return mixed|string
  */
-function stage_get_default( $request ) {
-	return Settings::get_default( $request );
+function stage_get_default( $request, $pop = false ) {
+	return Settings::get_default( $request, $pop );
 }
 
 /**

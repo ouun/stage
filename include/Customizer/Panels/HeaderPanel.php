@@ -96,7 +96,7 @@ class HeaderPanel {
 					array(
 						'type'              => 'theme_mod',
 						'capability'        => 'edit_theme_options',
-						'default'           => stage_get_default( 'header.desktop.layout' ),
+						'default'           => stage_get_default( 'header.desktop.layout', true ),
 						'transport'         => 'refresh', // Or postMessage.
 						'sanitize_callback' => function( $layout ) {
 							return $layout;
@@ -113,9 +113,9 @@ class HeaderPanel {
 							'label'   => esc_html__( 'Header Layout', 'stage' ),
 							'section' => $section,
 							'choices' => array(
-								'horizontal-left'   => asset( 'images/customizer/header-horizontal-left.svg' )->uri(),
-								'horizontal-center' => asset( 'images/customizer/header-horizontal-center.svg' )->uri(),
-								'horizontal-right'  => asset( 'images/customizer/header-horizontal-right.svg' )->uri(),
+								'horizontal-left'   => asset( 'images/customizer/header-horizontal-left.svg', 'stage' )->uri(),
+								'horizontal-center' => asset( 'images/customizer/header-horizontal-center.svg', 'stage' )->uri(),
+								'horizontal-right'  => asset( 'images/customizer/header-horizontal-right.svg', 'stage' )->uri(),
 							),
 						)
 					)
@@ -129,7 +129,7 @@ class HeaderPanel {
 					array(
 						'type'              => 'theme_mod',
 						'capability'        => 'edit_theme_options',
-						'default'           => stage_get_default( 'header.search.layout' ),
+						'default'           => stage_get_default( 'header.search.layout', true ),
 						'transport'         => 'refresh', // Or postMessage.
 						'sanitize_callback' => function( $layout ) {
 							return $layout;
@@ -146,8 +146,8 @@ class HeaderPanel {
 							'label'   => esc_html__( 'Search Layout', 'stage' ),
 							'section' => $section,
 							'choices' => array(
-								'below-header' => asset( 'images/customizer/header-horizontal-left.svg' )->uri(),
-								'fullscreen'   => asset( 'images/customizer/header-horizontal-center.svg' )->uri(),
+								'below-header' => asset( 'images/customizer/header-horizontal-left.svg', 'stage' )->uri(),
+								'fullscreen'   => asset( 'images/customizer/header-horizontal-center.svg', 'stage' )->uri(),
 							),
 						)
 					)

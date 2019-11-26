@@ -71,9 +71,9 @@ class Customizer extends ServiceProvider {
 				 * not needed for every control we add.
 				 */
 				$controls = array(
-					'Stage\Customizer\Controls\LayoutControl',
-					'Stage\Customizer\Controls\RangeValueControl',
-					'Stage\Customizer\Controls\ToggleControl',
+					'\Stage\Customizer\Controls\LayoutControl',
+					'\Stage\Customizer\Controls\RangeValueControl',
+					'\Stage\Customizer\Controls\ToggleControl',
 					'\Kirki\Control\Base', // Activating this might overwrite normal text inputs
 					'\Kirki\Control\Checkbox',
 					'\Kirki\Control\Checkbox_Switch',
@@ -154,7 +154,7 @@ class Customizer extends ServiceProvider {
 		add_action(
 			'customize_controls_enqueue_scripts',
 			function () {
-				wp_enqueue_script( 'stage/customize-controls.js', \Roots\asset( 'scripts/customizer/customize-controls.js' )->uri(), array( 'customize-controls', 'jquery' ), null, true );
+				wp_enqueue_script( 'stage/customize-controls.js', \Roots\asset( 'scripts/customizer/customize-controls.js', 'stage' )->uri(), array( 'customize-controls', 'jquery' ), null, true );
 			}
 		);
 
@@ -164,7 +164,7 @@ class Customizer extends ServiceProvider {
 		add_action(
 			'customize_preview_init',
 			function () {
-				wp_enqueue_script( 'stage/customize-preview.js', \Roots\asset( 'scripts/customizer/customize-preview.js' )->uri(), array( 'customize-preview' ), null, true );
+				wp_enqueue_script( 'stage/customize-preview.js', \Roots\asset( 'scripts/customizer/customize-preview.js', 'stage' )->uri(), array( 'customize-preview' ), null, true );
 			}
 		);
 
@@ -175,7 +175,7 @@ class Customizer extends ServiceProvider {
 			'wp_enqueue_scripts',
 			function() {
 				if ( is_customize_preview() ) {
-					wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/customizer.css' )->uri(), array( 'customize-preview' ), '1.0.0', 'all' );
+					wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/customizer.css', 'stage' )->uri(), array( 'customize-preview' ), '1.0.0', 'all' );
 				}
 			},
 			20

@@ -76,7 +76,7 @@ class ArchivesPanel {
 						array(
 							'type'              => 'theme_mod',
 							'capability'        => 'edit_theme_options',
-							'default'           => stage_get_default( $config ),
+							'default'           => stage_get_default( $config, true ),
 							'transport'         => 'postMessage', // Or postMessage.
 							'sanitize_callback' => function( $layout ) {
 								return $layout;

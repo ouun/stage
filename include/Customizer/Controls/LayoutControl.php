@@ -35,8 +35,8 @@ class LayoutControl extends \WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/controls.css' )->uri(), false, '1.0.0', 'all' );
-		wp_enqueue_script( 'stage/customizer/layout-js', \Roots\asset( 'scripts/customizer/layout.js' )->uri(), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/controls.css', 'stage' )->uri(), false, '1.0.0', 'all' );
+		wp_enqueue_script( 'stage/customizer/layout-js', \Roots\asset( 'scripts/customizer/layout.js', 'stage' )->uri(), array( 'jquery' ), '1.0.0', true );
 
 		// Localization.
 		$layout_control_l10n['open']  = esc_html__( 'Change', 'stage' );
