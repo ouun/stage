@@ -146,7 +146,7 @@ class Gutenberg extends ServiceProvider {
 		add_action(
 			'enqueue_block_assets',
 			function() {
-				wp_enqueue_style( 'stage/blocks.css', asset( 'styles/blocks/blocks.css' )->uri(), false, null );
+				wp_enqueue_style( 'stage/blocks.css', asset( 'styles/blocks/blocks.css', 'stage' )->uri(), false, null );
 			}
 		);
 
