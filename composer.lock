@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07f078366b5301bf6feebcd97b7ef708",
+    "content-hash": "7b58d0662a2e72ecda8e7145dbd61ade",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1288,9 +1288,9 @@
             "authors": [
                 {
                     "name": "Ari Stathopoulos",
-                    "role": "Developer",
                     "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io"
+                    "homepage": "http://aristath.github.io",
+                    "role": "Developer"
                 }
             ],
             "description": "Panels API & Custom Panel Types for the Kirki WordPress Plugin.",
@@ -2041,7 +2041,10 @@
                 "customizer",
                 "framework",
                 "wordpress"
-            ]
+            ],
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "psr/container",

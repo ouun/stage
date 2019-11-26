@@ -30,8 +30,8 @@ mix.js('resources/assets/scripts/app.js', 'scripts')
 mix.sass('resources/assets/styles/app.scss', 'styles')
   .sass('resources/assets/styles/gutenberg/blocks.scss', 'styles/blocks')
   .sass('resources/assets/styles/gutenberg/blocks-editor.scss', 'styles/blocks')
-  .sass('app/Customizer/assets/styles/customizer.scss', 'styles/customizer')
-  .sass('app/Customizer/assets/styles/controls.scss', 'styles/customizer')
+  .sass('inc/Customizer/assets/styles/customizer.scss', 'styles/customizer')
+  .sass('inc/Customizer/assets/styles/controls.scss', 'styles/customizer')
   .tailwind()
   .purgeCss();
 
@@ -42,7 +42,7 @@ mix.copyWatched('resources/assets/images', 'dist/images')
   .copyWatched('resources/languages', 'dist/languages');
 
 // Customizer Scripts
-mix.copyWatched('app/Customizer/assets/scripts', 'dist/scripts/customizer');
+mix.copyWatched('inc/Customizer/assets/scripts', 'dist/scripts/customizer');
 
 // Autoload
 mix.autoload({
