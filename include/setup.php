@@ -11,10 +11,10 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('stage/vendor.js', asset('scripts/vendor.js', 'parent')->uri(), ['jquery'], null, true);
-    wp_enqueue_script('stage/app.js', asset('scripts/app.js', 'parent')->uri(), ['stage/vendor.js', 'jquery'], null, true);
+    wp_enqueue_script('stage/vendor.js', asset('scripts/vendor.js', 'stage')->uri(), ['jquery'], null, true);
+    wp_enqueue_script('stage/app.js', asset('scripts/app.js', 'stage')->uri(), ['stage/vendor.js', 'jquery'], null, true);
 
-    wp_add_inline_script('stage/vendor.js', asset('scripts/manifest.js', 'parent')->contents(), 'before');
+    wp_add_inline_script('stage/vendor.js', asset('scripts/manifest.js', 'stage')->contents(), 'before');
 
 	// Collect data for 'stage' JS object via 'stage_localize_script' filter
 	wp_localize_script( 'stage/app.js', 'stage', apply_filters( 'stage_localize_script', [
@@ -29,7 +29,7 @@ add_action('wp_enqueue_scripts', function () {
 
     foreach ($styles as $stylesheet) {
         if (asset($stylesheet)->exists()) {
-            wp_enqueue_style('stage/' . basename($stylesheet, '.css'), asset($stylesheet, 'parent')->uri(), false, null);
+            wp_enqueue_style('stage/' . basename($stylesheet, '.css'), asset($stylesheet, 'stage')->uri(), false, null);
         }
     }
 }, 100);

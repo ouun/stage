@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', wp_get_theme()->get('Name')),
+    'name' => wp_get_theme()->get('Name'),
 
     /*
     |--------------------------------------------------------------------------

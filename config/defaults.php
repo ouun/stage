@@ -195,10 +195,7 @@ return [
 	 */
 	'footer' => [
 		'settings' => [
-			'copyright' => sprintf(
-				/* translators: %1$s is replaced with the current year, %2$s with the site name */
-				esc_html__( 'Copyright %1$s, all rights reserved by %2$s.', 'stage' ), get_the_date( 'Y'), get_bloginfo( 'name', 'display' )
-			),
+			esc_html__( 'Copyright %1$s, all rights reserved by %2$s.', 'stage' ), date("Y"), get_bloginfo( 'name', 'display' )
 		]
 	]
 ];

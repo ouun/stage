@@ -75,8 +75,15 @@ return [
     */
 
     'composers' => [
-	    // App\Composers\Title::class,
-	    // App\Composers\Alert::class,
+	    Stage\Composers\Alert::class,
+	    Stage\Composers\App::class,
+	    Stage\Composers\Archive::class,
+	    Stage\Composers\ArchiveItem::class,
+	    Stage\Composers\Footer::class,
+	    Stage\Composers\Header::class,
+	    Stage\Composers\Navigation::class,
+	    Stage\Composers\Shop::class,
+	    Stage\Composers\Title::class,
     ],
 
     /*

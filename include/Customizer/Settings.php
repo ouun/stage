@@ -1,6 +1,7 @@
 <?php
 namespace Stage\Customizer;
 
+use Roots\Acorn\Application;
 use function Roots\config;
 use function Roots\view;
 
@@ -34,21 +35,22 @@ class Settings {
 	 *  get_config() array from defaults.php
 	 *
 	 * @param string $request 'header.layout'
+	 * @param bool $pop Set true if you need last part only
+	 *
 	 * @return string|array
 	 */
-	public static function get_default( $request ) {
+	public static function get_default( $request, $pop = false ) {
 		// Transform underscore requests
 		// $request = str_replace( '_', '.', $request );
 		$config = self::get_config( $request );
 
-		// Handle string vs. array config
-		if ( is_array( $config ) ) {
-			// Return an array if requested
-			return $config;
-		} else {
-			// Extract e.g. 'string' from.a.request.string
+		if ( $pop ) {
+			// Pop e.g. 'string' from.a.request.string
 			$config = self::to_array( $config );
 			return end( $config );
+		} else {
+			// Return an array if requested
+			return $config;
 		}
 	}
 
@@ -89,12 +91,15 @@ class Settings {
 	 * Get value from Customizer with fallback to defaults
 	 *
 	 * @param $request 'header.desktop.layout'
-	 * @param bool|string     $fallback If no default available
+	 * @param bool|string $fallback If no default available
+	 *
+	 * @param bool $pop Set true if you need last part only
 	 *
 	 * @return mixed|string
 	 */
-	public static function get_fallback( $request, $fallback = false ) {
-		$default = self::get_default( $request );
+	public static function get_fallback( $request, $fallback = false, $pop = false ) {
+
+		$default = self::get_default( $request, $pop );
 		$custom  = self::get_chosen( $request, empty( $default ) ? $fallback : $default );
 
 		return ! empty( $custom ) ? $custom : $default;
@@ -107,10 +112,12 @@ class Settings {
 	 * stage_get_fallback_template( $request, $data = array() );
 	 *
 	 * @param $request
+	 * @param bool $pop
+	 *
 	 * @return string path to template file
 	 */
-	public static function get_fallback_template_path( $request ) {
-		$fallback = self::get_fallback( $request );
+	public static function get_fallback_template_path( $request, $pop = true ) {
+		$fallback = self::get_fallback( $request, false, $pop );
 		$config   = self::to_array( self::get_config( $request ) );
 		$default  = array_pop( $config );
 

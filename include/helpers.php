@@ -56,10 +56,12 @@ function stage_get_fallback_template( $request, $data = [] ) {
  * @param $request
  * @param bool|string $fallback If no default available
  *
+ * @param bool $pop
+ *
  * @return mixed|string
  */
-function stage_get_fallback( $request, $fallback = false ) {
-	return Settings::get_fallback( $request, $fallback );
+function stage_get_fallback( $request, $fallback = false, $pop = false ) {
+	return Settings::get_fallback( $request, $fallback, $pop );
 }
 
 /**

@@ -29,18 +29,18 @@ class Header extends Composer {
 			'show_tagline' => stage_get_fallback( 'header.branding.show_tagline' ),
 			'home_url'     => esc_url( home_url( '/' ) ),
 			'desktop'      => [
-				'layout'    => stage_get_fallback( 'header.desktop.layout' ),
+				'layout'    => stage_get_fallback( 'header.desktop.layout', false, true ),
 				'position'  => stage_get_fallback( 'header.desktop.position' ), // fixed, sticky, relative, ...
 				'fullwidth' => stage_get_fallback( 'header.desktop.fullwidth' ) ? 'fullwidth' : 'boxed',
 				'padding-x' => 'sm:px-' . stage_get_fallback( 'header.desktop.padding-x' ),
 				'padding-y' => 'sm:py-' . stage_get_fallback( 'header.desktop.padding-y' ),
 			],
 			'mobile'       => [
-				'layout'   => stage_get_fallback( 'header.mobile.layout' ), // fixed, sticky, relative, ...
+				'layout'   => stage_get_fallback( 'header.mobile.layout', false, true ), // fixed, sticky, relative, ...
 				'position' => stage_get_fallback( 'header.mobile.position' ),
 			],
 			'search'    => [
-				'layout' => stage_get_fallback( 'header.search.layout' ),
+				'layout' => stage_get_fallback( 'header.search.layout', false, true ),
 			],
 		];
 	}

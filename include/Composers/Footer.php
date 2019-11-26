@@ -12,9 +12,9 @@ class Footer extends Composer {
 	 *
 	 * @var array
 	 */
-	protected static $views = [
+	protected static $views = array(
 		'partials.footer',
-	];
+	);
 
 	/**
 	 * Data to be passed to view before rendering.
@@ -22,8 +22,8 @@ class Footer extends Composer {
 	 * @return array
 	 */
 	public function with() {
-		return [
-			'copyright' => stage_get_fallback( 'footer.settings.copyright' )
-		];
+		return array(
+			'copyright' => stage_get_fallback( 'footer.settings.copyright' ),
+		);
 	}
 }
