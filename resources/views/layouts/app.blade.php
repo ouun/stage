@@ -6,22 +6,20 @@
     @php do_action('get_header') @endphp
     @include('partials.header')
 
-    <div id="app" data-loader="container" data-loader-namespace="page">
+    <div id="app" class="flex" data-loader="container" data-loader-namespace="page">
+      <main id="main" class="main flex-1 @hasSection('sidebar') flex-wrap lg:flex-no-wrap content-wrap @endif">
+        @yield('content')
+      </main>
 
-      <div id="content-wrapper" class="flex flex-1 @hasSection('sidebar') flex-wrap lg:flex-no-wrap content-wrap @endif">
-        <main id="main" @php body_class('app main flex-1') @endphp>
-          @yield('content')
-        </main>
-
-        @hasSection('sidebar')
-          <aside class="sidebar widgets-wrap flex-grow-0 w-full sm:w-1/4 md:w-1/5 lg:border-l border-accent lg:pl-block-spacing lg:ml-block-spacing mt-12">
-            @yield('sidebar')
-          </aside>
-        @endif
-      </div>
+      @hasSection('sidebar')
+        <aside class="sidebar widgets-wrap flex-grow-0 w-full sm:w-1/4 md:w-1/5 lg:border-l border-accent lg:pl-block-spacing lg:ml-block-spacing mt-12">
+          @yield('sidebar')
+        </aside>
+      @endif
 
       @include('partials.footer')
     </div>
+
 
     @include('partials.footer.overlay')
 
