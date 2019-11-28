@@ -21,7 +21,6 @@ class Customizer extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-
 		// Set available viewport previews
 		add_filter( 'customize_previewable_devices', '__return_empty_array' );
 

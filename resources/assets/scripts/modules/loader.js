@@ -66,6 +66,9 @@ export const loader = {
       // Trigger for resetting features states
       $(document).trigger('loader-before-enter');
 
+      // Update body classes
+      loader.replaceBodyClasses( data );
+
       // Update Admin-Bar
       loader.replaceOldWithNew( '#wp-toolbar', data );
 
@@ -75,9 +78,6 @@ export const loader = {
     barba.hooks.enter(data => {
       // Scroll up the next page
       window.scrollTo(0, 0);
-
-      // Update body classes
-      loader.replaceBodyClasses( data );
 
       return data;
     });
@@ -138,9 +138,8 @@ export const loader = {
         || this.href.indexOf('/wp-login.php') !== -1
         || this.href.indexOf('#') !== -1
         || $(this).parent().hasClass('menu-item-has-children')
-        || $(this).hasClass('prevent')
       ) {
-        $( this ).addClass( 'prevent' );
+        $( this ).addClass('prevent');
       }
     });
   },

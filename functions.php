@@ -11,34 +11,34 @@
  * @param string $subtitle
  * @param string $title
  */
-$sage_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Stage &rsaquo; Error', 'stage');
-    $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p>";
-    wp_die($message, $title);
+$sage_error = function ( $message, $subtitle = '', $title = '' ) {
+	$title   = $title ?: __( 'Stage &rsaquo; Error', 'stage' );
+	$message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p>";
+	wp_die( $message, $title );
 };
 
 /**
  * Ensure a compatible version of PHP is being used.
  */
-if (version_compare('7.2', phpversion(), '>')) {
-    $sage_error(__('You must be using PHP 7.2 or greater.', 'stage'), __('Invalid PHP version', 'stage'));
+if ( version_compare( '7.2', phpversion(), '>' ) ) {
+	$sage_error( __( 'You must be using PHP 7.2 or greater.', 'stage' ), __( 'Invalid PHP version', 'stage' ) );
 }
 
 /**
  * Ensure a compatible version of WordPress is being used.
  */
-if (version_compare('5.2', get_bloginfo('version'), '>')) {
-    $sage_error(__('You must be using WordPress 5.2 or greater.', 'stage'), __('Invalid WordPress version', 'stage'));
+if ( version_compare( '5.2', get_bloginfo( 'version' ), '>' ) ) {
+	$sage_error( __( 'You must be using WordPress 5.2 or greater.', 'stage' ), __( 'Invalid WordPress version', 'stage' ) );
 }
 
 /**
  * Ensure dependencies are loaded.
  */
-if (! file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
-    $sage_error(
-        __('You must run <code>composer install</code> from the Stage directory.', 'stage'),
-        __('Autoloader not found.', 'stage')
-    );
+if ( ! file_exists( $composer = __DIR__ . '/vendor/autoload.php' ) ) {
+	$sage_error(
+		__( 'You must run <code>composer install</code> from the Stage directory.', 'stage' ),
+		__( 'Autoloader not found.', 'stage' )
+	);
 }
 
 require_once $composer;
@@ -49,22 +49,27 @@ require_once $composer;
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
-array_map(function ($file) use ($sage_error) {
-    $file = "include/{$file}.php";
-    if (! locate_template($file, true, true)) {
-        $sage_error(
-            sprintf(
-            	/* translators: %s is replaced with the missing file path. */
-	            __('Error locating <code>%s</code> for inclusion.', 'stage'), $file
-            ),
-            __('File not found', 'stage')
-        );
-    }
-}, ['helpers', 'setup', 'filters', 'admin']);
+array_map(
+	function ( $file ) use ( $sage_error ) {
+		$file = "include/{$file}.php";
+		if ( ! locate_template( $file, true, true ) ) {
+			$sage_error(
+				sprintf(
+					/* translators: %s is replaced with the missing file path. */
+					__( 'Error locating <code>%s</code> for inclusion.', 'stage' ),
+					$file
+				),
+				__( 'File not found', 'stage' )
+			);
+		}
+	},
+	array( 'helpers', 'setup', 'filters', 'admin' )
+);
 
 /**
  * Boot Acorn with the Sage provider.
+ *
  * @link https://roots.io/acorn/
  */
-add_theme_support('sage');
+add_theme_support( 'sage' );
 Roots\bootloader();

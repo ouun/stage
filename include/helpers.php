@@ -47,6 +47,7 @@ function stage_get_features_status() {
 
 /**
  * Checks the activation status of a given Stage feature
+ * todo: Edit after this is fixed: https://github.com/kirki-framework/control-checkbox/issues/3
  *
  * @param $feature
  *
@@ -54,7 +55,7 @@ function stage_get_features_status() {
  */
 function stage_is_feature_active( $feature ) {
 	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
-	return ( $status !== true ) ? false : true;
+	return ( '0' !== $status || 'false' !== $status  || $status == true ) ? (bool) $status : false;
 }
 
 /**

@@ -2,10 +2,8 @@
 
 namespace Stage\Customizer\Panels;
 
-use Stage\Customizer\Controls\ToggleControl;
 use Kirki\Compatibility\Kirki;
-use WP_Customize_Manager;
-use function Stage\stage_get_default;
+use function Stage\stage_get_fallback;
 
 class WebsiteFeatures {
 
@@ -23,6 +21,7 @@ class WebsiteFeatures {
 			array(
 				'capability'        => 'edit_theme_options',
 				'option_type'       => 'option',
+				'option_name'       => 'stage_options',
 				'gutenberg_support' => false,
 				'disable_output'    => false,
 			)
@@ -131,7 +130,6 @@ class WebsiteFeatures {
 		 * Feature Activation Toggle
 		 */
 		$this->addFeatureActivationToggle( $section );
-
 	}
 
 	/**
@@ -146,14 +144,17 @@ class WebsiteFeatures {
 		 *
 		 * @since 1.0
 		 */
-		Kirki::add_field( self::$config, [
-			'type'        => 'checkbox_switch',
-			'settings'    => $section . '.activate',
-			'label'       => esc_html__( 'Activate', 'stage' ),
-			'section'     => $section,
-			'default'     => stage_get_default( $section . '.activate' ),
-			'priority'    => 10,
-		] );
+		Kirki::add_field(
+			self::$config,
+			array(
+				'type'     => 'kirki-switch',
+				'settings' => $section . '.activate',
+				'label'    => esc_html__( 'Activate', 'stage' ),
+				'section'  => $section,
+				'default'  => stage_get_fallback( $section . '.activate' ),
+				'priority' => 10,
+			)
+		);
 
 	}
 

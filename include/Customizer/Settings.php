@@ -69,8 +69,9 @@ class Settings {
 		// e.g. 'header.desktop.layout' to array => [0] header, [1] desktop, [2] layout
 		$request_array = self::to_array( $request );
 
-		// 1st: Check against header.desktop.layout
+		// 1st: Check against header.desktop.layout as option or theme_mod
 		$theme_mod = get_theme_mod( (string) implode( '.', $request_array ) );
+		$theme_mod = empty( $theme_mod ) ? self::stage_get_theme_option( $request ) : '';
 
 		// 2nd: Check against header_desktop_layout
 		if ( empty( $theme_mod ) ) {
@@ -85,6 +86,40 @@ class Settings {
 		}
 
 		return $theme_mod;
+	}
+
+	/**
+	 * Get value for a option from the 'stage_options' table
+	 *
+	 * @param $name
+	 * @param bool $default
+	 *
+	 * @return mixed|void|null
+	 */
+	public static function stage_get_theme_option( $name, $default = false  ) {
+		$options = get_option( 'stage_options' );
+
+		if ( isset( $options[ $name ] ) ) {
+			return apply_filters( "stage_option_{$name}", $options[ $name ] );
+		}
+
+	}
+
+	/**
+	 * Get and filter value from the theme_mods table
+	 *
+	 * @param $name
+	 * @param bool $default
+	 *
+	 * @return mixed|void|null
+	 */
+	public static function stage_get_theme_mod( $name, $default = false  ) {
+		$theme_mods = get_theme_mods();
+
+		if ( isset( $theme_mods[ $name ] ) ) {
+			return apply_filters( "stage_theme_mod_{$name}", $theme_mods[ $name ] );
+		}
+
 	}
 
 	/**

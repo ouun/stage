@@ -45,6 +45,11 @@ add_filter(
 );
 
 /**
+ * Remove WordPress.org from Meta Widget
+ */
+add_filter( 'widget_meta_poweredby', '__return_empty_string' );
+
+/**
  * Modify oEmbed URL parameters.
  * todo: This is not yet production tested
  */
@@ -101,8 +106,3 @@ add_filter(
 	10,
 	4
 );
-
-/**
- * Remove WordPress.org from Meta Widget
- */
-add_filter( 'widget_meta_poweredby', '__return_empty_string' );

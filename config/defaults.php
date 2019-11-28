@@ -21,16 +21,16 @@ return [
 	 */
 	'features' => [
 		'lazy' => [
-			'activate' => true,
+			'activate' => false,
 		],
 		'loader' => [
-			'activate' => true,
+			'activate' => false,
 		],
 		'infinity' => [
 			'activate' => false,
 		],
 		'gallery' => [
-			'activate' => true,
+			'activate' => false,
 		],
 	],
 
@@ -152,10 +152,10 @@ return [
 			'fullwidth' => false,
 			'open'      => 'click-open', // click-open or hover-open sub-menu.
 			'padding-x' => '0',
-			'padding-y' => '0',
+			'padding-y' => '4',
 		],
 		'search' => [
-			'layout' => 'partials.header.search.below-header'
+			'layout' => 'partials.header.search.fullscreen'
 		],
 	],
 

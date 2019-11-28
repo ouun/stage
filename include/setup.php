@@ -49,7 +49,7 @@ add_action('after_setup_theme', function () {
 	 * Load Theme tranlsation
 	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	 */
-	load_theme_textdomain('stage', asset('languages')->path() );
+	load_theme_textdomain('stage', asset('languages', 'stage')->path() );
 
     /**
      * Enable plugins to manage the document title

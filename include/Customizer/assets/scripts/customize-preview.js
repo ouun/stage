@@ -10,9 +10,14 @@
   // Run when Preview ist active
   api.preview.bind( 'active', function() {
     if ( 'undefined' !== typeof wp && api && api.selectiveRefresh ) {
-    /**
-     * Trigger custom events on layout elements when layout control changes
-     */
+      /**
+       * Prevent links from usage with barba.js
+       */
+      $('.prevent').attr( 'href', '#' );
+
+      /**
+       * Trigger custom events on layout elements when layout control changes
+       */
       api.selectiveRefresh.bind( 'partial-content-rendered', function (placement) {
         // When new content is rendered run with each control of the partial
         $.each( placement.partial.params.settings, function ( index, controlID ) {
