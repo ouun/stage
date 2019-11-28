@@ -25,12 +25,9 @@ add_filter(
  */
 add_filter(
 	'stage_localize_script',
-	function ( $object ) {
-		return array_merge(
-			$object,
-			array(
-				'features' => stage_get_features_status(),
-			)
+	function () {
+		return array(
+			'features' => stage_get_features_status(),
 		);
 	}
 );

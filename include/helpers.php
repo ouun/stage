@@ -6,6 +6,28 @@ use Stage\Customizer\Settings;
 use function Roots\view;
 
 /**
+ * Collect data for 'stage' JS object via 'stage_localize_script' filter
+ *
+ * @return array
+ */
+function stage_build_js_object() {
+	return array_merge( apply_filters( 'stage_localize_script', [] ),
+		[
+			'ajax' => [
+				'url' => admin_url( 'admin-ajax.php' ),
+			],
+			'user' => [
+				'is_admin' => is_user_admin(),
+				'is_logged_in' => is_user_logged_in()
+			],
+			'wp' => [
+				'is_admin_bar_showing' => is_admin_bar_showing()
+			]
+		]
+	);
+}
+
+/**
  * Gets the statuses of each feature listed in defaults.php
  *
  * @return object Each feature and its state

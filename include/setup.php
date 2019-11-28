@@ -17,9 +17,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('stage/vendor.js', asset('scripts/manifest.js', 'stage')->contents(), 'before');
 
 	// Collect data for 'stage' JS object via 'stage_localize_script' filter
-	wp_localize_script( 'stage/app.js', 'stage', apply_filters( 'stage_localize_script', [
-		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-	] ) );
+	wp_localize_script( 'stage/app.js', 'stage', stage_build_js_object() );
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
