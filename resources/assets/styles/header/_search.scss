@@ -1,18 +1,32 @@
 .search-wrap {
+  /**
+   * Below Header Style
+   */
   &.below-header {
-    @apply top-full bg-transparent inset-x-0 invisible h-0 opacity-0 border-0 border-transparent text-transparent;
+    @apply top-full inset-x-0 invisible h-0 opacity-0 border-0 border-transparent text-transparent bg-inherit;
 
     /* This is the closing transition: property name | duration | delay */
     transition: height 0.3s 0s, opacity 0.1s 0.25s, border 0.2s 0.15s, visibility 0s 0.5s;
+
+    input {
+      @apply opacity-0;
+    }
 
     &.is-visible {
       @apply visible opacity-100 text-black h-16 border-inherit border border-l-0 border-r-0 bg-inherit;
 
       /* This is the opening transition: property name | duration | delay */
       transition: height 0.2s 0s, opacity 0s 0s, color 0.2s 0.2s, border 0.25s 0s;
+
+      input {
+        @apply opacity-100;
+      }
     }
   }
 
+  /**
+   * Fullscreen Style
+   */
   &.fullscreen {
     @apply opacity-0 h-full;
 
