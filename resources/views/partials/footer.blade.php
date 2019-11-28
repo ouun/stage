@@ -17,19 +17,3 @@
     </div>
   </div>
 </footer>
-
-<div>
-  <div class="flex hidden">
-    <div class="flex-1 h-16" style="background-color: var(--color-primary)"></div>
-    <div class="flex-1 h-16" style="background-color: var(--color-secondary)"></div>
-    <div class="flex-1 h-16" style="background-color: var(--color-link)"></div>
-    <div class="flex-1 h-16" style="background-color: var(--color-hover)"></div>
-  </div>
-  @foreach(['gray', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'indigo', 'purple', 'pink'] as $color)
-    <div class="flex hidden">
-      @for ($i = 1; $i < 10; $i++)
-        <div class="flex-1 h-16" style="background-color: var({{ '--color-' }}{{ $color }}-{{ $i }}00)"></div>
-      @endfor
-    </div>
-  @endforeach
-</div>
