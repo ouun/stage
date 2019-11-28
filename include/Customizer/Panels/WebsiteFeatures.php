@@ -22,7 +22,7 @@ class WebsiteFeatures {
 			self::$config,
 			array(
 				'capability'        => 'edit_theme_options',
-				'option_type'       => 'theme_mod',
+				'option_type'       => 'option',
 				'gutenberg_support' => false,
 				'disable_output'    => false,
 			)
@@ -146,8 +146,8 @@ class WebsiteFeatures {
 		 *
 		 * @since 1.0
 		 */
-		Kirki::add_field( $section . '.activate', [
-			'type'        => 'checkbox_toggle',
+		Kirki::add_field( self::$config, [
+			'type'        => 'checkbox_switch',
 			'settings'    => $section . '.activate',
 			'label'       => esc_html__( 'Activate', 'stage' ),
 			'section'     => $section,
