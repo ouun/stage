@@ -20,7 +20,6 @@
       @include('partials.footer')
     </div>
 
-
     @include('partials.footer.overlay')
 
     @if( $features->gallery )
