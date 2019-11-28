@@ -1,4 +1,3 @@
-import { infinity } from "./infinite-scroll";
 import Colcade from 'colcade';
 
 const defaultContainer = 'main .grid-masonry';
@@ -56,7 +55,7 @@ export const msnry = {
    * @returns {object} The InfiniteScroll instance
    */
   get: function( container = defaultContainer ) {
-    return this.bootstrap( container );
+    return msnry.bootstrap( container );
   },
 
   /**
@@ -84,11 +83,9 @@ export const msnry = {
    * @param container
    */
   appendItems: function ( container = defaultContainer ) {
-    if ( infinity.active( container ) ) {
-      infinity.get( container ).on('append', function ( response, path, items ) {
-        if ( infinity.active( container ) ) {
-          msnry.bootstrap( container ).append( items );
-        }
+    if ( stage.features.infinity ) {
+      $(document).on( 'stage_infinity-append-items', function ( event, response, path, items ) {
+        msnry.bootstrap( container ).append( items );
       });
     }
   },

@@ -1,7 +1,13 @@
 import InfiniteScroll from 'infinite-scroll';
 
+/**
+ * Infinity Loading Module
+ *
+ * @type {{container: string, init: infinity.init, get: (function(*=): *), isInitialized: boolean, available: (function(*=): boolean), active: (function(*=): boolean), destroy: infinity.destroy, addLoadingIndicator: infinity.addLoadingIndicator, triggerEvent: infinity.triggerEvent, bootstrap: (function(*=, *=, *=, *=)), animateItems: infinity.animateItems}}
+ */
 export const infinity = {
 
+  isInitialized: false,
   container: 'main .infinity-wrap',
 
   /**
@@ -10,9 +16,10 @@ export const infinity = {
    * @param container
    */
   init: function( container = infinity.container ) {
-    if ( infinity.available( container ) ) {
-      // Bootstrap
-      let infScroll = infinity.bootstrap( container );
+    if ( infinity.available( container ) && !infinity.isInitialized && stage.features.infinity ) {
+      // Bootstrap infinity scroll
+      let infScroll = infinity.bootstrap(container);
+      infinity.isInitialized = true;
 
       if ( infinity.active( container ) ) {
         // Add event listener to append items
@@ -49,7 +56,7 @@ export const infinity = {
       hideNav: hide,
       history: 'push',
       status: '.page-load-status',
-      scrollThreshold: 600,
+      scrollThreshold: 800,
     });
   },
 
@@ -111,11 +118,12 @@ export const infinity = {
   },
 
   /**
-   * Custom
+   * Custom event trigger 'stage_infinity-append-items'
+   * Fired when appending new items
    */
   triggerEvent: function( container ) {
-    infinity.get( container ).on('append', function ( response, path, items ) {
-      $(document).trigger('stage_append-items', [ response, path, items ]);
+    infinity.get( container ).on( 'append', function ( event, response, path, items ) {
+      $( document ).trigger('stage_infinity-append-items', [ event, response, path, items ]);
     });
   },
 
@@ -125,9 +133,8 @@ export const infinity = {
    * @param container
    */
   animateItems: function ( container ) {
-    infinity.get( container ).on('append', function ( response, path, items ) {
+    infinity.get( container ).on( 'append', function ( response, path, items ) {
       // Reload common events e.g. for lazy loading
-
       items.forEach(function (element, index) {
         // Hide loaded elements
         element.classList.add('invisible');

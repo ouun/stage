@@ -15,7 +15,7 @@ export const lazy = {
     }
 
     // Run lozad.js on dynamically added elements
-    $(document).on( 'stage_append-items', function() {
+    $(document).on( 'stage_infinity-append-items', function() {
       lazy.bootstrap().observe();
     });
   },
