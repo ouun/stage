@@ -11,19 +11,21 @@ use function Roots\view;
  * @return array
  */
 function stage_build_js_object() {
-	return array_merge( apply_filters( 'stage_localize_script', [] ),
-		[
-			'ajax' => [
+	return array_merge(
+		apply_filters( 'stage_localize_script', array() ),
+		array(
+			'ajax' => array(
 				'url' => admin_url( 'admin-ajax.php' ),
-			],
-			'user' => [
-				'is_admin' => is_user_admin(),
-				'is_logged_in' => is_user_logged_in()
-			],
-			'wp' => [
-				'is_admin_bar_showing' => is_admin_bar_showing()
-			]
-		]
+			),
+			'user' => array(
+				'is_admin'     => is_user_admin(),
+				'is_logged_in' => is_user_logged_in(),
+			),
+			'wp'   => array(
+				'is_admin_bar_showing' => is_admin_bar_showing(),
+				'permalinks'           => get_option( 'permalink_structure' ),
+			),
+		)
 	);
 }
 
@@ -33,8 +35,8 @@ function stage_build_js_object() {
  * @return object Each feature and its state
  */
 function stage_get_features_status() {
-	$features = stage_get_default('features' );
-	$status = [];
+	$features = stage_get_default( 'features' );
+	$status   = array();
 
 	foreach ( $features as $feature => $settings ) {
 		$status[ $feature ] = stage_is_feature_active( $feature );
@@ -52,7 +54,7 @@ function stage_get_features_status() {
  */
 function stage_is_feature_active( $feature ) {
 	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
-	return ( ( isset( $status ) && true == $status ) ? true : false );
+	return ( $status !== true ) ? false : true;
 }
 
 /**
@@ -65,7 +67,7 @@ function stage_is_feature_active( $feature ) {
  * @return string Rendered template
  * @throws \Throwable
  */
-function stage_get_fallback_template( $request, $data = [] ) {
+function stage_get_fallback_template( $request, $data = array() ) {
 	// Does the file exist -> return
 	$path = Settings::get_fallback_template_path( $request );
 	return view( $path, view( $path )->getData(), $data )->render();
@@ -78,7 +80,7 @@ function stage_get_fallback_template( $request, $data = [] ) {
  * @param $request
  * @param bool|string $fallback If no default available
  *
- * @param bool $pop
+ * @param bool        $pop
  *
  * @return mixed|string
  */
@@ -91,7 +93,7 @@ function stage_get_fallback( $request, $fallback = false, $pop = false ) {
  * with fallback to defaults
  *
  * @param $request
- * @param bool $pop
+ * @param bool    $pop
  *
  * @return mixed|string
  */
@@ -103,9 +105,9 @@ function stage_get_default( $request, $pop = false ) {
  * Get a list of all post types that the user might care about.
  */
 function post_types() {
-	return collect( get_post_types( [ '_builtin' => false ], 'objects' ) )
+	return collect( get_post_types( array( '_builtin' => false ), 'objects' ) )
 		->pluck( 'label', 'name' )
-		->except( [ 'acf-field', 'acf-field-group', 'wp_stream_alerts' ] )
+		->except( array( 'acf-field', 'acf-field-group', 'wp_stream_alerts' ) )
 		->prepend( get_post_type_object( 'page' )->labels->name, 'page' )
 		->prepend( get_post_type_object( 'post' )->labels->name, 'post' )
 		->all();
