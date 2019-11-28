@@ -1,7 +1,6 @@
 // do not import Barba like this if you load the library through the browser
 import barba from '@barba/core';
 import css from '@barba/css';
-import prefetch from '@barba/prefetch';
 import {dropdown} from './menu/dropdown';
 import {offCanvas} from './menu/off-canvas';
 import {overlay} from "./overlay";
@@ -23,7 +22,7 @@ export const loader = {
 
     loader.preventLinks();
 
-    if ( !this.initialized ) {
+    if ( ! loader.initialized ) {
       // tell barba to use the css module
       barba.use( css );
       // Prefetch all urls in viewport
@@ -34,7 +33,7 @@ export const loader = {
       loader.bootstrap();
 
       // Set init state
-      this.initialized = true;
+      loader.initialized = true;
     }
   },
 
@@ -64,14 +63,11 @@ export const loader = {
 
     // After enter hook
     barba.hooks.beforeEnter(data => {
-      // Update body classes
-      $('body').attr(
-        'class',
-        $('main#main').attr('class')
-      );
-
       // Trigger for resetting features states
       $(document).trigger('loader-before-enter');
+
+      // Update Admin-Bar
+      loader.replaceOldWithNew( '#wp-toolbar', data );
 
       return data;
     });
@@ -79,6 +75,9 @@ export const loader = {
     barba.hooks.enter(data => {
       // Scroll up the next page
       window.scrollTo(0, 0);
+
+      // Update body classes
+      loader.replaceBodyClasses( data );
 
       return data;
     });
@@ -101,6 +100,36 @@ export const loader = {
   },
 
   /**
+   * Replace body classes
+   *
+   * @param data
+   */
+  replaceBodyClasses: function ( data ) {
+    if ( data.next.html ) {
+      const bodyElement = data.next.html.replace(/(<\/?)body( .+?)?>/gi, '$1notbody$2>', data.next.html);
+      const bodyClasses = $(bodyElement).filter('notbody').attr('class');
+      $("body").attr("class", bodyClasses);
+    }
+  },
+
+  /**
+   * Replaces element outside the replaced barba.js container
+   * Used e.g. for WP Admin-Bar
+   *
+   * @param selector ID of element to replace
+   * @param data barba.js data object
+   */
+  replaceOldWithNew: function ( selector, data ) {
+    // Get from new DOM
+    const element = $( data.next.html ).find( selector );
+
+    if ( element.length > 0 ) {
+      // Replace in DOM
+      $( selector ).html( element.html() )
+    }
+  },
+
+  /**
    * Prevent links to get handled by barba. E.g. all WordPress Links
    */
   preventLinks: function() {
@@ -111,7 +140,7 @@ export const loader = {
         || $(this).parent().hasClass('menu-item-has-children')
         || $(this).hasClass('prevent')
       ) {
-        $( this ).attr( 'href', '#' ).addClass( 'prevent' );
+        $( this ).addClass( 'prevent' );
       }
     });
   },
