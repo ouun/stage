@@ -104,6 +104,11 @@ add_action('after_setup_theme', function () {
      * Use main stylesheet for visual editor
      */
     add_editor_style( asset('styles/app.css')->uri() );
+
+	/**
+	 * Remove admin-bar spacing
+	 */
+	add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 }, 20);
 
 /**
