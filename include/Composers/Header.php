@@ -24,6 +24,7 @@ class Header extends Composer {
 	public function with() {
 		return [
 			'logo'         => get_custom_logo(),
+			'classes'      => $this->get_header_classes(),
 			'site_name'    => get_bloginfo( 'name' ),
 			'site_tagline' => get_bloginfo( 'description' ),
 			'show_tagline' => stage_get_fallback( 'header.branding.show_tagline' ),
@@ -43,5 +44,25 @@ class Header extends Composer {
 				'layout' => stage_get_fallback( 'header.search.layout', false, true ),
 			],
 		];
+	}
+
+	/**
+	 * Array of classes for <header>
+	 *
+	 * @return string
+	 */
+	function get_header_classes () {
+		$classes = [
+			'main-header',
+			'header-wrap',
+			'top-0',
+			'w-full',
+			'banner',
+			'bg-body',
+			'font-copy',
+			'border-accent',
+		];
+
+		return implode( ' ', apply_filters( 'stage_header_classes', $classes ) );
 	}
 }
