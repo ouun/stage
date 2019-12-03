@@ -55,6 +55,78 @@ class Customizer extends ServiceProvider {
 		);
 
 		/**
+		 * Filter the Kirki Standard Fonts
+		 *
+		 * @return array Standard Fonts
+		 */
+		add_filter( 'kirki_fonts_standard_fonts', function( $standard_fonts ) {
+
+			// Remove Monospace font
+			unset( $standard_fonts['monospace'] );
+
+			$stage_defaults = [
+				'serif'      => [
+					'label' => esc_html__( 'System Serif', 'stage' ),
+					'stack' => 'Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif',
+				],
+				'sans-serif' => [
+					'label' => esc_html__( 'System Sans-Serif', 'stage' ),
+					'stack' => 'system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+				],
+			];
+
+			return apply_filters( 'stage_standard_fonts', wp_parse_args( $stage_defaults, $standard_fonts ) );
+
+		}, 1, 20 );
+
+		/**
+		 * Register Kirki Modules
+		 *
+		 * @since 1.0
+		 * @return void
+		 */
+		if ( is_customize_preview() ) {
+			$modules = array(
+				'core'               => '\Kirki\Compatibility\Kirki',
+				'postMessage'        => '\Kirki\Module\Postmessage',
+				'css'                => '\Kirki\Module\CSS',
+				'selective-refresh'  => '\Kirki\Module\Selective_Refresh',
+				'field-dependencies' => '\Kirki\Module\Field_Dependencies',
+				'webfonts'           => '\Kirki\Module\Webfonts',
+				'tooltips'           => '\Kirki\Module\Tooltips',
+				'sync'               => '\Kirki\Module\Sync',
+				'font-uploads'       => '\Kirki\Module\FontUploads',
+				// 'preset'             => '\Kirki\Module\Preset',
+				// 'gutenberg'          => '\Kirki\Module\Editor_Styles',
+			);
+		} elseif ( ! is_admin() && ! is_customize_preview() ) {
+			$modules = array(
+				'core'         => '\Kirki\Compatibility\Kirki',
+				'webfonts'     => '\Kirki\Module\Webfonts',
+				'css'          => '\Kirki\Module\CSS',
+				'font-uploads' => '\Kirki\Module\FontUploads',
+			);
+		} elseif ( is_admin() ) {
+			$modules = array(
+				'core'         => '\Kirki\Compatibility\Kirki',
+				'gutenberg'    => '\Kirki\Module\Editor_Styles',
+				'css'          => '\Kirki\Module\CSS',
+				'webfonts'     => '\Kirki\Module\Webfonts',
+				'font-uploads' => '\Kirki\Module\FontUploads',
+			);
+		}
+
+		if ( ! empty( $modules ) && is_array( $modules ) ) {
+			foreach ( $modules as $key => $module ) {
+				if ( class_exists( $module ) ) {
+					new $module();
+				} else {
+					wp_die( 'Oh no! We are missing a Module Class for the Customizer: ' . $module );
+				}
+			}
+		}
+
+		/**
 		 * Registers the controls and whitelists them for JS templating.
 		 *
 		 * @since 1.0
@@ -105,47 +177,6 @@ class Customizer extends ServiceProvider {
 		new HeaderPanel();
 		new ArchivesPanel();
 		new FooterPanel();
-
-		/**
-		 * Register Kirki Modules
-		 */
-		if ( is_customize_preview() ) {
-			$modules = array(
-				'core'               => '\Kirki\Compatibility\Kirki',
-				'postMessage'        => '\Kirki\Module\Postmessage',
-				'css'                => '\Kirki\Module\CSS',
-				'selective-refresh'  => '\Kirki\Module\Selective_Refresh',
-				'field-dependencies' => '\Kirki\Module\Field_Dependencies',
-				'webfonts'           => '\Kirki\Module\Webfonts',
-				'tooltips'           => '\Kirki\Module\Tooltips',
-				'sync'               => '\Kirki\Module\Sync',
-				// 'preset'             => '\Kirki\Module\Preset',
-				// 'gutenberg'          => '\Kirki\Module\Editor_Styles',
-			);
-		} elseif ( ! is_admin() && ! is_customize_preview() ) {
-			$modules = array(
-				'core'     => '\Kirki\Compatibility\Kirki',
-				'webfonts' => '\Kirki\Module\Webfonts',
-				'css'      => '\Kirki\Module\CSS',
-			);
-		} elseif ( is_admin() ) {
-			$modules = array(
-				'core'      => '\Kirki\Compatibility\Kirki',
-				'gutenberg' => '\Kirki\Module\Editor_Styles',
-				'css'       => '\Kirki\Module\CSS',
-				'webfonts'  => '\Kirki\Module\Webfonts',
-			);
-		}
-
-		if ( ! empty( $modules ) && is_array( $modules ) ) {
-			foreach ( $modules as $key => $module ) {
-				if ( class_exists( $module ) ) {
-					new $module();
-				} else {
-					wp_die( 'Oh no! We are missing a Module Class for the Customizer: ' . $module );
-				}
-			}
-		}
 
 		/**
 		 * Include customizer.js

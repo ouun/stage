@@ -52,6 +52,7 @@
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
     "ouun/kirki-module-sync_controls": "*",
+    "ouun/kirki-module-fonts_upload": "*",
     "roots/acorn": "dev-master"
   },
   "require-dev": {

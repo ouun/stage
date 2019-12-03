@@ -73,10 +73,6 @@ return [
 			'choices' => [
 				'fonts' => [
 					'google'   => [ 'popularity', 100 ],
-					'standard' => [
-						'Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif' => esc_html__( 'System Serif', 'stage' ),
-						'system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif' => esc_html__( 'System Sans-Serif', 'stage' ),
-					],
 				],
 			],
 			'sizes'   => [
