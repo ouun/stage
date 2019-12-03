@@ -2,7 +2,7 @@
 @import "../mixins/bg-blur";
 
 header.main-header {
-  @apply z-30 bg-body font-copy;
+  @apply z-30;
 
   transform: translate3d(0, 0, 1px);
   font-size: var(--heading-font-size);
@@ -34,11 +34,12 @@ header.main-header {
   &.fixed {
     @apply top-0 inset-x-0 w-full z-50;
 
-    transition: padding 0.3s;
+    transition: padding 0.3s, top 0.3s;
 
     &.is-scrolled {
       transition: padding 0.3s;
       padding: 0 !important;
+      top: 0 !important;
     }
 
     &.auto-hide {

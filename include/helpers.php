@@ -22,8 +22,8 @@ function stage_build_js_object() {
 				'is_logged_in' => is_user_logged_in(),
 			),
 			'wp'   => array(
-				'is_admin_bar_showing' => is_admin_bar_showing(),
-				'permalinks'           => get_option( 'permalink_structure' ),
+				'adminbar_visible' => is_admin_bar_showing(),
+				'permalinks'       => get_option( 'permalink_structure' ),
 			),
 		)
 	);
@@ -55,7 +55,7 @@ function stage_get_features_status() {
  */
 function stage_is_feature_active( $feature ) {
 	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
-	return ( '0' !== $status || 'false' !== $status  || $status == true ) ? (bool) $status : false;
+	return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
 }
 
 /**
