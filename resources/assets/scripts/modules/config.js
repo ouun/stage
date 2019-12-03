@@ -8,6 +8,7 @@ export const objects = {
   mainHeader    : $('header.main-header'),
   offCanvasMenu : $('.off-canvas-menu'),
   mainMenu      : $('.menu'),
+  adminbar      : $('#wpadminbar'),
 };
 
 export const config = {

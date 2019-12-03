@@ -1,3 +1,4 @@
+import {adminbar} from "./adminbar";
 import {objects} from "../config";
 import detectIt from "detect-it/src";
 
@@ -12,11 +13,15 @@ export const menuOnScroll = {
   isScrolling: false,
   previousTop: 0,
   currentTop: 0,
+  offsetTop: 0,
   classes: 'is-scrolled',
 
   init: function () {
     if ( !menuOnScroll.isInitialized ) {
       menuOnScroll.onScroll();
+
+      // Check for offset
+      menuOnScroll.setOffset();
 
       // Set state & init only once
       menuOnScroll.isInitialized = true;
@@ -25,6 +30,16 @@ export const menuOnScroll = {
       $( window ).on( 'loader-before-enter', function () {
         menuOnScroll.removeClasses();
       });
+    }
+  },
+
+  /**
+   * Adds offset e.g. for admin bar
+   */
+  setOffset: function () {
+    // Add offset if adminbar is visible
+    if( stage.wp.adminbar_visible ) {
+      menuOnScroll.offsetTop = adminbar.height;
     }
   },
 
@@ -50,7 +65,7 @@ export const menuOnScroll = {
     let currentTop = $( window ).scrollTop();
 
     if ( menuOnScroll.currentTop < 100 ) {
-      if (currentTop > 0) {
+      if (currentTop > menuOnScroll.offsetTop) {
         menuOnScroll.addClasses();
       } else {
         menuOnScroll.removeClasses();
