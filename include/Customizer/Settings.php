@@ -57,6 +57,7 @@ class Settings {
 	/**
 	 * Get setting from the customizer via theme_mod
 	 * Supports nested array
+	 * todo: Simplify this via common naming convention
 	 *
 	 * @param $request 'header.desktop.layout'
 	 * @param $default
@@ -70,19 +71,18 @@ class Settings {
 		$request_array = self::to_array( $request );
 
 		// 1st: Check against header.desktop.layout as option or theme_mod
-		$theme_mod = get_theme_mod( (string) implode( '.', $request_array ) );
-		$theme_mod = empty( $theme_mod ) ? self::stage_get_theme_option( $request ) : '';
+		$theme_mod = self::stage_get_theme_mod( (string) implode( '.', $request_array ) );
+		$theme_mod = empty( $theme_mod ) ? self::stage_get_theme_option( (string) implode( '.', $request_array ) ) : '';
 
 		// 2nd: Check against header_desktop_layout
 		if ( empty( $theme_mod ) ) {
-			$theme_mod = get_theme_mod( (string) implode( '_', $request_array ) );
+			$theme_mod = self::stage_get_theme_mod( (string) implode( '_', $request_array ) );
 		}
 
 		// 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
 		if ( empty( $theme_mod ) ) {
 			$key       = array_pop( $request_array );
-			$theme_mod = get_theme_mod( (string) implode( '_', $request_array ) );
-			$theme_mod = isset( $theme_mod[ $key ] ) ? $theme_mod[ $key ] : get_theme_mod( $request, $default );
+			$theme_mod = isset( $theme_mod[ $key ] ) ? $theme_mod[ $key ] : self::stage_get_theme_mod( $request, $default );
 		}
 
 		return $theme_mod;
@@ -103,6 +103,7 @@ class Settings {
 			return apply_filters( "stage_option_{$name}", $options[ $name ] );
 		}
 
+		return apply_filters( "stage_option_{$name}", $default );
 	}
 
 	/**
@@ -117,9 +118,10 @@ class Settings {
 		$theme_mods = get_theme_mods();
 
 		if ( isset( $theme_mods[ $name ] ) ) {
-			return apply_filters( "stage_theme_mod_{$name}", $theme_mods[ $name ] );
+			return apply_filters( "stage_option_{$name}", $theme_mods[ $name ] );
 		}
 
+		return apply_filters( "stage_option_{$name}", $default );
 	}
 
 	/**
