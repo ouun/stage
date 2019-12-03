@@ -21,6 +21,25 @@ add_filter(
 );
 
 /**
+ * Filter allowed mime types upload
+ */
+add_filter(
+	'upload_mimes',
+	function ( $mimes ) {
+
+		// Images
+		$mimes['svg']  = 'image/svg+xml';
+		$mimes['svgz'] = 'image/svg+xml';
+
+		// Adds Filter to customize mime types
+		return apply_filters( 'stage_upload_mimes', $mimes );
+
+	},
+	1,
+	1
+);
+
+/**
  * Add features state to 'stage' object accessible from JS
  */
 add_filter(
