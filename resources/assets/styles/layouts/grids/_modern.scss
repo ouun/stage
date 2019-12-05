@@ -1,7 +1,7 @@
 @screen sm {
   @supports (display: grid) {
     .grid-modern {
-      @apply grid border-red-500 grid-gap-4;
+      @apply grid grid-gap-4;
 
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: min-content;

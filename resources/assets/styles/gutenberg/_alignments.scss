@@ -1,26 +1,40 @@
 @import "../mixins/container";
 
-.entry-content > *:not(.block-wrap) {
-  @apply w-full max-w-full mx-auto mb-block-spacing px-block-spacing;
 
-  @include align();
-}
+.entry-content {
+  & > * {
+    &:not(.alignfull):not(.alignwide) {
+      @apply w-full max-w-full mx-auto mb-block-spacing px-block-spacing;
 
-.block-wrap {
-  // @apply mb-block-spacing;
+      @include align();
+    }
+
+    & > * {
+      @apply mx-auto;
+    }
+
+    &:last-of-type {
+      @apply mb-0;
+    }
+  }
 
   & > .alignwide {
     @include align__wide();
+
+    & > * {
+      @apply mx-0 w-full;
+    }
   }
 
   & > .alignfull {
     @apply mx-0 w-screen;
-  }
 
-  &:last-of-type {
-    @apply mb-0;
+    & > * {
+      @apply mx-0 mx-0 w-full;
+    }
   }
 }
+
 
 /*
 .entry-content {
