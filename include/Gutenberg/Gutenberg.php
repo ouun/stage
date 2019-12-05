@@ -132,10 +132,10 @@ class Gutenberg extends ServiceProvider {
 						$manifest['version']
 					);
 
-					wp_add_inline_script( 'stage/editor.js', asset( 'scripts/manifest.js' )->contents(), 'before' );
+					wp_add_inline_script( 'stage/editor.js', asset( 'scripts/manifest.js', 'stage' )->contents(), 'before' );
 				}
 
-				wp_enqueue_style( 'stage/editor.css', asset( 'styles/editor.css' )->uri(), false, null );
+				wp_enqueue_style( 'stage/editor.css', asset( 'styles/blocks/blocks-editor.css', 'stage' )->uri(), false, null );
 			},
 			100
 		);
