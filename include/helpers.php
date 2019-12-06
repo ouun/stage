@@ -2,8 +2,24 @@
 
 namespace Stage;
 
+use Stage\Composers\Archive;
 use Stage\Customizer\Settings;
 use function Roots\view;
+
+/**
+ * Helper function for debugging
+ *
+ * @param $dump
+ */
+function stage_dump( $dump ) {
+	if( is_array( $dump ) ) {
+		$message ='<pre>' . print_r( $dump) . '</pre>';
+	} else {
+		$message = $dump;
+	}
+
+	wp_die( $message );
+}
 
 /**
  * Collect data for 'stage' JS object via 'stage_localize_script' filter
@@ -55,6 +71,7 @@ function stage_get_features_status() {
  */
 function stage_is_feature_active( $feature ) {
 	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
+	//todo: Replace this when value is true/false instead of true or '1'
 	return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
 }
 
@@ -71,6 +88,19 @@ function stage_is_feature_active( $feature ) {
 function stage_get_fallback_template( $request, $data = array() ) {
 	// Does the file exist -> return
 	$path = Settings::get_fallback_template_path( $request );
+	return stage_render_template( $path, $data );
+}
+
+/**
+ * Render view and overwrite $data
+ *
+ * @param $path
+ * @param $data
+ *
+ * @return array|string
+ * @throws \Throwable
+ */
+function stage_render_template( $path, $data ) {
 	return view( $path, view( $path )->getData(), $data )->render();
 }
 
@@ -108,7 +138,7 @@ function stage_get_default( $request, $pop = false ) {
 function post_types() {
 	return collect( get_post_types( array( '_builtin' => false ), 'objects' ) )
 		->pluck( 'label', 'name' )
-		->except( array( 'acf-field', 'acf-field-group', 'wp_stream_alerts' ) )
+		->except( array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ) )
 		->prepend( get_post_type_object( 'page' )->labels->name, 'page' )
 		->prepend( get_post_type_object( 'post' )->labels->name, 'post' )
 		->all();
