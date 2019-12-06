@@ -1,6 +1,7 @@
 <?php
 namespace Stage\Customizer\Panels;
 
+use Stage\Customizer\Settings;
 use WP_Customize_Manager;
 use Stage\Composers\Archive;
 use Stage\Customizer\Controls\LayoutControl;
@@ -8,7 +9,9 @@ use Stage\Customizer\Controls\ToggleControl;
 use Kirki\Compatibility\Kirki;
 use Kirki\Section;
 use function Stage\stage_get_default;
+use function Stage\stage_get_fallback;
 use function Stage\stage_get_fallback_template;
+use function Stage\stage_render_template;
 
 class ArchivesPanel {
 
@@ -139,7 +142,10 @@ class ArchivesPanel {
 								'container_inclusive' => false,
 								'render_callback'     => function () use ( $id, $display_configs, $cpt_name ) {
 									$data = array();
-									$request = Archive::get_post_type_archive_config_key( $cpt_name ) . '.layout';
+
+									// Get $layout based on available setting
+									$chosen_key  = 'archive.' . $cpt_name . '.layout'; // theme_mod() or option() key
+									$default_key = Archive::get_post_type_archive_config_key( $cpt_name ) . '.layout'; // config() key
 
 									// Collect data to overwrite in view
 									foreach ( $display_configs as $id => $config ) {
@@ -147,7 +153,8 @@ class ArchivesPanel {
 									}
 
 									return stage_get_fallback_template(
-										$request,
+										$chosen_key,
+										$default_key,
 										$data
 									);
 								},

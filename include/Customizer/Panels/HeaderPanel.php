@@ -313,6 +313,7 @@ class HeaderPanel {
 						'render_callback' => function () {
 							return stage_get_fallback_template(
 								'header.desktop.layout',
+								null,
 								array(
 									'layout'       => stage_get_fallback( 'header.desktop.layout' ),
 									'position'     => stage_get_fallback( 'header.desktop.position' ),

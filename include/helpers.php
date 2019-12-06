@@ -79,15 +79,16 @@ function stage_is_feature_active( $feature ) {
  * Render & process the fallback template file
  * from Settings::get_fallback_template_path()
  *
- * @param $request string
+ * @param $chosen_key string
+ * @param null $default_key
  * @param $data array
  *
  * @return string Rendered template
  * @throws \Throwable
  */
-function stage_get_fallback_template( $request, $data = array() ) {
+function stage_get_fallback_template( $chosen_key, $default_key = null, $data = array() ) {
 	// Does the file exist -> return
-	$path = Settings::get_fallback_template_path( $request );
+	$path = Settings::get_fallback_template_path( $chosen_key, $default_key );
 	return stage_render_template( $path, $data );
 }
 

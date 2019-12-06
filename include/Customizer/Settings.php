@@ -148,15 +148,17 @@ class Settings {
 	 * e.g. for:
 	 * stage_get_fallback_template( $request, $data = array() );
 	 *
-	 * @param $request
+	 * @param string $request Key to look at in theme_mod() & option() 'archive.cpt.layout'
+	 *
+	 * @param null $default_key Key to look at in config()
 	 *
 	 * @return string path to template file
 	 */
-	public static function get_fallback_template_path( $request ) {
-		// Get the chosen layout
+	public static function get_fallback_template_path( $request, $default_key = null ) {
+		// Get the chosen layout e.g. "masonry"
 		$fallback = self::get_fallback( $request, false, true );
-		// Get default layout
-		$config  = self::to_array( self::get_config( $request ) );
+		// Get path & default layout (e.g. "partials.grids.modern")
+		$config  = self::to_array( self::get_config( $default_key ?: $request ) );
 		$default = array_pop( $config );
 
 		// Get path from default $config, view is removed via array_pop before
