@@ -16,7 +16,12 @@ add_filter(
 			$classes[] = get_post_type() . '-archive';
 		}
 
-		return $classes;
+		// Post Thumbnail
+		if ( is_singular() && has_post_thumbnail() ) {
+			$classes[] = 'featured-image';
+		}
+
+		return apply_filters( 'stage_body_classes', $classes );
 	}
 );
 
