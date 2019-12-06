@@ -9,6 +9,7 @@ export const infinity = {
 
   isInitialized: false,
   container: 'main .infinity-wrap',
+  nextPath: '.nav-previous > a',
 
   /**
    * Init InfiniteScroll
@@ -45,7 +46,7 @@ export const infinity = {
    * @param hide
    * @returns {object} The InfiniteScroll instance
    */
-  bootstrap: function( container = infinity.container, nextPath = '.nav-previous > a', append = '.grid-item', hide = '.nav-links' ) {
+  bootstrap: function( container = infinity.container, nextPath = infinity.nextPath, append = '.grid-item', hide = '.nav-links' ) {
 
     infinity.addLoadingIndicator( hide, nextPath );
 
@@ -80,10 +81,11 @@ export const infinity = {
    * Container element in DOM?
    *
    * @param container
+   * @param nextPath
    * @returns {boolean}
    */
-  available: function ( container = infinity.container ) {
-    return !!document.querySelector( container );
+  available: function ( container = infinity.container, nextPath = infinity.nextPath ) {
+    return !! document.querySelector( container ) && document.querySelector( nextPath );
   },
 
   /**
