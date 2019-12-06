@@ -24,9 +24,10 @@ class Settings {
 	 * Get config value from /app/config/defaults.php
 	 *
 	 * @param string $request 'header.layout'
+	 *
 	 * @return array
 	 */
-	private static function get_config( $request ) {
+	public static function get_config( $request ) {
 		return config( self::$config_namespace . $request );
 	}
 
@@ -35,7 +36,7 @@ class Settings {
 	 *  get_config() array from defaults.php
 	 *
 	 * @param string $request 'header.layout'
-	 * @param bool $pop Set true if you need last part only
+	 * @param bool   $pop Set true if you need last part only
 	 *
 	 * @return string|array
 	 */
@@ -72,7 +73,7 @@ class Settings {
 
 		// 1st: Check against header.desktop.layout as option or theme_mod
 		$theme_mod = self::stage_get_theme_mod( (string) implode( '.', $request_array ) );
-		$theme_mod = empty( $theme_mod ) ? self::stage_get_theme_option( (string) implode( '.', $request_array ) ) : '';
+		$theme_mod = empty( $theme_mod ) ? self::stage_get_theme_option( (string) implode( '.', $request_array ) ) : $theme_mod;
 
 		// 2nd: Check against header_desktop_layout
 		if ( empty( $theme_mod ) ) {
@@ -96,7 +97,7 @@ class Settings {
 	 *
 	 * @return mixed|void|null
 	 */
-	public static function stage_get_theme_option( $name, $default = false  ) {
+	public static function stage_get_theme_option( $name, $default = false ) {
 		$options = get_option( 'stage_options' );
 
 		if ( isset( $options[ $name ] ) ) {
@@ -114,11 +115,11 @@ class Settings {
 	 *
 	 * @return mixed|void|null
 	 */
-	public static function stage_get_theme_mod( $name, $default = false  ) {
-		$theme_mods = get_theme_mods();
+	public static function stage_get_theme_mod( $name, $default = false ) {
+		$theme_mod = get_theme_mod( $name );
 
-		if ( isset( $theme_mods[ $name ] ) ) {
-			return apply_filters( "stage_option_{$name}", $theme_mods[ $name ] );
+		if ( ! empty( $theme_mod ) ) {
+			return apply_filters( "stage_option_{$name}", $theme_mod );
 		}
 
 		return apply_filters( "stage_option_{$name}", $default );
@@ -128,18 +129,17 @@ class Settings {
 	 * Get value from Customizer with fallback to defaults
 	 *
 	 * @param $request 'header.desktop.layout'
-	 * @param bool|string $fallback If no default available
+	 * @param bool|string     $fallback If no default available
 	 *
-	 * @param bool $pop Set true if you need last part only
+	 * @param bool            $pop Set true if you need last part only
 	 *
 	 * @return mixed|string
 	 */
 	public static function get_fallback( $request, $fallback = false, $pop = false ) {
 
 		$default = self::get_default( $request, $pop );
-		$custom  = self::get_chosen( $request, empty( $default ) ? $fallback : $default );
 
-		return ! empty( $custom ) ? $custom : $default;
+		return self::get_chosen( $request, empty( $default ) ? $fallback : $default );
 	}
 
 	/**
@@ -149,14 +149,15 @@ class Settings {
 	 * stage_get_fallback_template( $request, $data = array() );
 	 *
 	 * @param $request
-	 * @param bool $pop
 	 *
 	 * @return string path to template file
 	 */
-	public static function get_fallback_template_path( $request, $pop = true ) {
-		$fallback = self::get_fallback( $request, false, $pop );
-		$config   = self::to_array( self::get_config( $request ) );
-		$default  = array_pop( $config );
+	public static function get_fallback_template_path( $request ) {
+		// Get the chosen layout
+		$fallback = self::get_fallback( $request, false, true );
+		// Get default layout
+		$config  = self::to_array( self::get_config( $request ) );
+		$default = array_pop( $config );
 
 		// Get path from default $config, view is removed via array_pop before
 		$path = implode( '.', $config );

@@ -3,6 +3,7 @@
 namespace Stage\Composers;
 
 use Roots\Acorn\View\Composer;
+use function Stage\post_types;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback;
 
@@ -24,36 +25,36 @@ class Archive extends Composer {
 	 * @return array
 	 */
 	public function with() {
-		$with = array_merge(
+		return wp_parse_args(
+			self::get_archive_display_config(),
 			array(
 				'layout' => stage_get_fallback( self::get_post_type_archive_config_key( get_post_type() ) . '.layout', false, true ),
-			),
-			self::combine_display_config()
+			)
 		);
-
-		return $with;
 	}
 
 	/**
-	 * Used to auto generate customizer controls from defaults.php
+	 * Get current archive combined display configs
+	 *
+	 * @param null $post_type
 	 *
 	 * @return array
 	 */
-	public static function combine_display_config() {
+	public static function get_archive_display_config( $post_type = null ) {
 		$data = array();
 
-		foreach ( self::archives_to_register() as $post_type ) {
-			// Fallback if nothing defined for post type
-			$configs_key = self::get_post_type_archive_config_key( $post_type->name ) . '.display';
-			$configs     = stage_get_default( $configs_key );
+		$post_type = $post_type ? $post_type : get_post_type();
 
-			foreach ( $configs as $key => $config ) {
-				$data[ 'display_' . $key ] = stage_get_fallback( str_replace( '.', '_', $configs_key . '_' . $key ), $config );
-			}
+		$configs_key = self::get_post_type_archive_config_key( $post_type ) . '.display';
+		$configs     = stage_get_default( $configs_key );
+
+		foreach ( $configs as $key => $config ) {
+			$data[ 'display_' . $key ] = stage_get_fallback( 'archive.' . $post_type . '.display' . '.' . $key, $config );
 		}
 
 		return $data;
 	}
+
 
 	/**
 	 * Helper to get the config key with fallback
@@ -73,18 +74,10 @@ class Archive extends Composer {
 	 * @return \WP_Post_Type[]
 	 */
 	public static function archives_to_register() {
-		$post_types = get_post_types(
-			array(
-				'public'             => true,
-				'publicly_queryable' => true,
-				'_builtin'           => true,
-			),
-			'objects'
-		);
-
-		foreach ( $post_types as $post_type ) {
-			if ( ! get_post_type_archive_link( $post_type->name ) ) {
-				unset( $post_types[ $post_type->name ] );
+		$post_types = post_types();
+		foreach ( $post_types as $name => $label ) {
+			if ( ! get_post_type_archive_link( $name ) ) {
+				unset( $post_types[ $name ] );
 			}
 		}
 

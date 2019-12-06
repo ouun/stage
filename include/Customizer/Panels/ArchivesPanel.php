@@ -41,9 +41,9 @@ class ArchivesPanel {
 			)
 		);
 
-		foreach ( Archive::archives_to_register() as $archive ) {
+		foreach ( Archive::archives_to_register() as $cpt_name => $cpt_label ) {
 			// Set section & settings ID
-			$section = self::$panel . '_' . $archive->name;
+			$section = self::$panel . '_' . $cpt_name;
 
 			/**
 			 * Add Section and fields for Header Style
@@ -51,7 +51,7 @@ class ArchivesPanel {
 			new Section(
 				$section,
 				array(
-					'title' => $archive->label,
+					'title' => $cpt_label,
 					'panel' => self::$panel,
 				)
 			);
@@ -65,11 +65,11 @@ class ArchivesPanel {
 			 */
 			add_action(
 				'customize_register',
-				function( WP_Customize_Manager $wp_customize ) use ( $section, $archive ) {
+				function( WP_Customize_Manager $wp_customize ) use ( $section, $cpt_name, $cpt_label ) {
 					// Archive layout settings
-					$id                = 'archive.' . $archive->name . '.layout';
-					$config            = Archive::get_post_type_archive_config_key( $archive->name ) . '.layout';
-					$display_configs[] = $id;
+					$id                        = 'archive.' . $cpt_name . '.layout';
+					$config                    = Archive::get_post_type_archive_config_key( $cpt_name ) . '.layout';
+					$display_configs['layout'] = $id;
 
 					$wp_customize->add_setting(
 						$id,
@@ -102,9 +102,9 @@ class ArchivesPanel {
 					);
 
 					// Archive item display settings
-					foreach ( Archive::combine_display_config() as $key => $display_config ) {
-						$id                = 'archive_' . $archive->name . '_' . $key;
-						$display_configs[] = $id;
+					foreach ( Archive::get_archive_display_config( $cpt_name ) as $key => $display_config ) {
+						$id                      = 'archive.' . $cpt_name . '.' . str_replace( '_', '.', $key );
+						$display_configs[ $key ] = $id;
 
 						$wp_customize->add_setting(
 							$id,
@@ -113,7 +113,7 @@ class ArchivesPanel {
 								'capability'        => 'edit_theme_options',
 								'default'           => $display_config,
 								'transport'         => 'postMessage', // Or postMessage.
-								'sanitize_callback' => array( 'App\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
+								'sanitize_callback' => array( 'Stage\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
 							)
 						);
 
@@ -122,7 +122,7 @@ class ArchivesPanel {
 								$wp_customize,
 								$id,
 								array(
-									'label'   => __( $key, 'stage' ),
+									'label'   => __( ucwords( str_replace( '_', ' ', $key ) ), 'stage' ),
 									'section' => $section,
 								)
 							)
@@ -134,18 +134,21 @@ class ArchivesPanel {
 						$wp_customize->selective_refresh->add_partial(
 							$id,
 							array(
-								'selector'            => 'main.' . $archive->name . '-archive .archive-wrap',
-								'settings'            => $display_configs,
+								'selector'            => 'body.' . $cpt_name . '-archive .archive-wrap',
+								'settings'            => array_values( $display_configs ),
 								'container_inclusive' => false,
-								'render_callback'     => function () use ( $archive, $id, $display_configs ) {
-									$config = Archive::get_post_type_archive_config_key( get_post_type() ) . '.layout';
+								'render_callback'     => function () use ( $id, $display_configs, $cpt_name ) {
+									$data = array();
+									$request = Archive::get_post_type_archive_config_key( $cpt_name ) . '.layout';
+
+									// Collect data to overwrite in view
+									foreach ( $display_configs as $id => $config ) {
+										$data[ $id ] = get_theme_mod( $config );
+									}
 
 									return stage_get_fallback_template(
-										$config,
-										array(
-											'test'   => $display_configs[0],
-											'layout' => get_theme_mod( $display_configs[0] ),
-										)
+										$request,
+										$data
 									);
 								},
 							)

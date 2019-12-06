@@ -63,15 +63,14 @@ class ArchiveItem extends Composer {
 		return implode( ' ', get_post_class( $classes ) );
 	}
 
-
 	/**
-	 * Generates classes for archive item
+	 * Generates classes for single archive item
 	 *
 	 * @return string
 	 */
 	public function item_inner_classes() {
 		// Classes for all items
-		$classes = 'post-inner mx-4 mb-8 shadow-lg overflow-hidden rounded';
+		$classes = 'post-inner mx-4 mb-10 overflow-hidden';
 
 		// Cards specific classes
 		if ( $this->data->get( 'display_thumbnail' ) ) {
@@ -83,7 +82,7 @@ class ArchiveItem extends Composer {
 			$classes .= ' flex-1';
 		}
 
-		return $classes;
+		return apply_filters( 'stage_archive_item_classes', $classes );
 	}
 
 	/**
