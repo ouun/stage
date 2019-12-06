@@ -7,7 +7,7 @@
       grid-template-rows: min-content;
       grid-auto-rows: auto;
 
-      & > .post {
+      & > .grid-item {
         @apply flex w-full h-auto mb-24;
 
         .post-inner {
