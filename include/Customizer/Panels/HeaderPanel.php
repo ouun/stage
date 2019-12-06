@@ -195,7 +195,7 @@ class HeaderPanel {
 						'capability'        => 'edit_theme_options',
 						'default'           => stage_get_default( 'header.desktop.fullwidth' ),
 						'transport'         => 'refresh',
-						'sanitize_callback' => array( 'App\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
+						'sanitize_callback' => array( 'Stage\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
 					)
 				);
 
@@ -222,7 +222,7 @@ class HeaderPanel {
 						'capability'        => 'edit_theme_options',
 						'default'           => stage_get_default( 'header.branding.show_tagline' ),
 						'transport'         => 'refresh',
-						'sanitize_callback' => array( 'App\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
+						'sanitize_callback' => array( 'Stage\Customizer\Controls\ToggleControl', 'sanitize_toggle' ),
 					)
 				);
 
