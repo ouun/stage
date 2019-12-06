@@ -58,7 +58,7 @@ class Settings {
 	/**
 	 * Get setting from the customizer via theme_mod
 	 * Supports nested array
-	 * todo: Simplify this via common naming convention
+	 * todo: Simplify this via common naming convention (this.is.the.convention)
 	 *
 	 * @param $request 'header.desktop.layout'
 	 * @param $default
@@ -144,9 +144,7 @@ class Settings {
 
 	/**
 	 * Get user chosen template path from Customizer
-	 * With fallback to default in /config/defaults.php
-	 * e.g. for:
-	 * stage_get_fallback_template( $request, $data = array() );
+	 * With fallback defined in /config/defaults.php
 	 *
 	 * @param string $request Key to look at in theme_mod() & option() 'archive.cpt.layout'
 	 *
