@@ -1,7 +1,6 @@
 <div class="{{ $classes }}">
   <div class="{{ $inner_classes }}">
-
-    @if( ( $has_thumbnail || $display_thumbnail_placeholder ) && $display_thumbnail )
+    @if( ( $has_thumbnail || $display_placeholder ) && $display_thumbnail )
         <a class="no-underline block" href="{{ $permalink }}" title="{{ $title }}">
           {!! $thumbnail !!}
         </a>

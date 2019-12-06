@@ -165,7 +165,7 @@ return [
 			'display' => [
 				'sidebar' => false,
 				'thumbnail' => true,
-				'thumbnail_placeholder' => false,
+				'placeholder' => false,
 				'headline' => true,
 				'meta' => false,
 				'excerpt' => true,
@@ -177,7 +177,7 @@ return [
 			'display' => [
 				'sidebar' => true,
 				'thumbnail' => true,
-				'thumbnail_placeholder' => false,
+				'placeholder' => false,
 				'headline' => true,
 				'meta' => false,
 				'excerpt' => true,
