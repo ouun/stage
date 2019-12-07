@@ -53,14 +53,32 @@ class ArchiveItem extends Composer {
 	 */
 	public function item_classes() {
 		// Classes for all items
-		$classes = $this->layout() . '-item w-full grid-item w-full float-left';
+		$classes = array_merge(
+			get_post_class(),
+			array(
+				$this->layout() . '-item',
+				'grid-item',
+				'w-full',
+				'float-left',
+			)
+		);
 
 		// Cards specific classes
 		if ( $this->layout() === 'cards' ) {
-			$classes .= ' flex flex-wrap flex-grow-0 flex-shrink md:w-1/2 lg:w-1/3';
+			array_merge(
+				$classes,
+				array(
+					'flex',
+					'flex-wrap',
+					'flex-grow-0',
+					'flex-shrink',
+					'md:w-1/2',
+					'lg:w-1/3',
+				)
+			);
 		}
 
-		return implode( ' ', get_post_class( $classes ) );
+		return implode( ' ', apply_filters( 'stage_archive_item_classes', $classes ) );
 	}
 
 	/**
@@ -70,19 +88,24 @@ class ArchiveItem extends Composer {
 	 */
 	public function item_inner_classes() {
 		// Classes for all items
-		$classes = 'post-inner mx-4 mb-10 overflow-hidden';
+		$classes = array(
+			'post-inner',
+			'mx-4',
+			'mb-10',
+			'overflow-hidden',
+		);
 
 		// Cards specific classes
 		if ( $this->data->get( 'display_thumbnail' ) ) {
-			$classes .= '';
+			$classes[] = 'featured-image';
 		}
 
 		// Cards specific classes
 		if ( $this->layout() === 'cards' ) {
-			$classes .= ' flex-1';
+			$classes[] = 'flex-1';
 		}
 
-		return apply_filters( 'stage_archive_item_classes', $classes );
+		return implode( ' ', apply_filters( 'stage_archive_item_inner_classes', $classes ) );
 	}
 
 	/**
