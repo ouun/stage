@@ -153,7 +153,7 @@ class Customizer extends ServiceProvider {
 		 * Register Panels
 		 */
 		add_action(
-			'init',
+			'after_setup_theme',
 			function () {
 				new WebsitePanel(); // HIDES AND MOVES CONTROLS!
 				new WebsiteFeatures(); // HIDES AND MOVES CONTROLS!
