@@ -24,11 +24,14 @@
   },
   "repositories": [
     {
-      "type": "path",
-      "url": "/Volumes/Webprojekte/Repositories/kirki-module-sync_controls",
-      "options": {
-        "symlink": false
-      }
+      "name": "ouun/kirki-module-sync_controls",
+      "type": "vcs",
+      "url": "https://github.com/ouun/kirki-module-sync_controls"
+    },
+    {
+      "name": "ouun/kirki-module-fonts_upload",
+      "type": "vcs",
+      "url": "https://github.com/ouun/kirki-module-fonts_upload"
     }
   ],
   "require": {
@@ -51,8 +54,8 @@
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
-    "ouun/kirki-module-sync_controls": "*",
-    "ouun/kirki-module-fonts_upload": "*",
+    "ouun/kirki-module-sync_controls": "^1.0",
+    "ouun/kirki-module-fonts_upload": "^1.0",
     "roots/acorn": "dev-master"
   },
   "require-dev": {
