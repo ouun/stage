@@ -293,6 +293,45 @@ module.exports = {
 
     /*
     |-----------------------------------------------------------------------------
+    | Letter Spacing                   https://tailwindcss.com/letter-spacing.html
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .tracking-{size}
+    | CSS property: letter-spacing
+    |
+    */
+
+    letterSpacing: {
+      tighter: '-0.05em',
+      tight: '-0.025em',
+      normal: '0',
+      wide: '0.025em',
+      wider: '0.1em',
+      widest: '0.2em',
+    },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Line Height                         https://tailwindcss.com/line-height.html
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .leading-{size}
+    | CSS property: line-height
+    |
+    */
+
+    lineHeight: {
+      none: '1',
+      tight: '1.25',
+      snug: '1.375',
+      normal: '1.5',
+      relaxed: '1.625',
+      loose: '2',
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
     | Width                                    https://tailwindcss.com/docs/width
     |-----------------------------------------------------------------------------
     |
@@ -535,6 +574,7 @@ module.exports = {
       '32': '8rem',
       'half-block-spacing': 'calc(var(--block-spacing) / 2 )',
       'block-spacing': 'var(--block-spacing)',
+      'gutter': 'var(--gutter)',
       'initial': 'initial',
     },
 
@@ -589,6 +629,7 @@ module.exports = {
       'full': '100%',
       'half-block-spacing': 'calc(var(--block-spacing) / 2 )',
       'block-spacing': 'var(--block-spacing)',
+      'gutter': 'var(--gutter)',
     },
 
 

@@ -55,9 +55,8 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@barba/core": "^2.3.15",
-    "@barba/css": "^2.1.10",
-    "@barba/prefetch": "^2.1.8",
+    "@barba/core": "^2.9.5",
+    "@barba/css": "^2.1.15",
     "colcade": "^0.2.0",
     "custom-event-polyfill": "^1.0.7",
     "detect-it": "^3.0.5",

@@ -1,10 +1,6 @@
 @import "../mixins/container";
 
 footer.footer-wrap {
-  & > :first-child {
-    @include container();
-  }
-
   a {
     @apply no-underline;
   }
@@ -18,7 +14,7 @@ footer.footer-wrap {
   }
 
   .menu-wrap {
-    @apply mt-4 pt-4 border-gray-400 border-t;
+    @apply mt-4 pt-4;
 
     .menu-footer {
       li {

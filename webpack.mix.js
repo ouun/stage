@@ -12,7 +12,7 @@ const { whitelist, whitelistPatterns } = require('purgecss-with-wordpress');
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Sage application. By default, we are compiling the Sass file
+ | for your Stage application. By default, we are compiling the Sass file
  | for your application, as well as bundling up your JS files.
  |
  */
@@ -27,7 +27,7 @@ mix.js('resources/assets/scripts/app.js', 'scripts')
   .block('resources/assets/scripts/editor.js', 'scripts');
 
 // Styles
-mix.sass('resources/assets/styles/app.scss', 'styles')
+mix.sass('resources/assets/styles/stage.scss', 'styles')
   .sass('resources/assets/styles/gutenberg/blocks.scss', 'styles/blocks')
   .sass('resources/assets/styles/gutenberg/blocks-editor.scss', 'styles/blocks')
   .sass('include/Customizer/assets/styles/customizer.scss', 'styles/customizer')

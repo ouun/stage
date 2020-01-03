@@ -42,8 +42,12 @@ class Title extends Composer
 			return __('Latest Posts', 'stage');
 		}
 
-		if (is_archive()) {
+		if (is_tax() || is_category()) {
 			return get_the_archive_title();
+		}
+
+		if (is_archive()) {
+			return post_type_archive_title( '', false );
 		}
 
 		if (is_search()) {

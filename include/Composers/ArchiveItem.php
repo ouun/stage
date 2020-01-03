@@ -60,6 +60,9 @@ class ArchiveItem extends Composer {
 				'grid-item',
 				'w-full',
 				'float-left',
+				'mb-8',
+				'lg:mb-24',
+				'mx-4',
 			)
 		);
 
@@ -90,8 +93,6 @@ class ArchiveItem extends Composer {
 		// Classes for all items
 		$classes = array(
 			'post-inner',
-			'mx-4',
-			'mb-10',
 			'overflow-hidden',
 		);
 
@@ -120,7 +121,7 @@ class ArchiveItem extends Composer {
 		if ( $tags ) {
 			foreach ( $tags as $tag ) {
 				$out     .= '<a href="' . get_tag_link( $tag->term_id ) . '" title="' . $tag->name . '">';
-					$out .= '<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 my-1 hover:bg-primary">#' . $tag->name . '</span>';
+					$out .= '<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 my-1 hover:bg-primary hover:text-white">#' . $tag->name . '</span>';
 				$out     .= '</a>';
 			}
 		}

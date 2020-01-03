@@ -23,14 +23,9 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('comment-reply');
     }
 
-    $styles = ['styles/app.css'];
+	wp_enqueue_style('stage/app.css', asset('styles/stage.css', 'stage')->uri(), false, null);
 
-    foreach ($styles as $stylesheet) {
-        if (asset($stylesheet)->exists()) {
-            wp_enqueue_style('stage/' . basename($stylesheet, '.css'), asset($stylesheet, 'stage')->uri(), false, null);
-        }
-    }
-}, 100);
+}, 99);
 
 /**
  * Theme setup
@@ -103,7 +98,7 @@ add_action('after_setup_theme', function () {
 	/**
      * Use main stylesheet for visual editor
      */
-    add_editor_style( asset('styles/app.css')->uri() );
+    add_editor_style( asset( 'styles/app.css', 'stage' )->uri() );
 
 	/**
 	 * Remove admin-bar spacing

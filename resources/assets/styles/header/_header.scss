@@ -10,16 +10,6 @@ header.main-header {
   text-transform: var(--heading-text-transform);
   letter-spacing: var(--heading-letter-spacing);
 
-  &.fullwidth > :first-child {
-    @include align__full();
-
-    @apply px-block-spacing;
-  }
-
-  &.boxed > :first-child {
-    @include container();
-  }
-
   a {
     @apply no-underline font-copy;
   }
@@ -33,14 +23,6 @@ header.main-header {
   &.sticky,
   &.fixed {
     @apply top-0 inset-x-0 w-full z-50;
-
-    transition: padding 0.3s, top 0.3s;
-
-    &.is-scrolled {
-      transition: padding 0.3s;
-      padding: 0 !important;
-      top: 0 !important;
-    }
 
     &.auto-hide {
       transition: transform .5s, padding 0.3s;
@@ -101,18 +83,16 @@ header.main-header {
               @apply w-6 h-6;
 
               svg {
-                position: absolute;
-                width: 100%;
-                height: 100%;
+                @apply absolute w-full h-full;
                 transform: rotate( 0 );
                 transition: transform 0.2s, opacity 0.2s;
 
                 &.search--open {
-                  opacity: 1;
+                  @apply opacity-100;
                 }
 
                 &.search--close {
-                  opacity: 0;
+                  @apply opacity-0;
                 }
               }
 
@@ -122,11 +102,11 @@ header.main-header {
                   transition: transform 0.2s;
 
                   &.search--open {
-                    opacity: 0;
+                    @apply opacity-0;
                   }
 
                   &.search--close {
-                    opacity: 1;
+                    @apply opacity-100;
                   }
                 }
               }

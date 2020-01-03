@@ -55,6 +55,7 @@ class Header extends Composer {
 		$classes = [
 			'main-header',
 			'header-wrap',
+			'container',
 			'top-0',
 			'w-full',
 			'banner',

@@ -1,4 +1,4 @@
-<ul class="icons menu @if(!empty($classes)) {{ $classes }} @endif">
+<ul class="icons menu">
 
   <!-- Search Icon -->
   <li class="menu-item @if(is_search()) active @endif">

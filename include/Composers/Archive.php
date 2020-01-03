@@ -5,6 +5,7 @@ namespace Stage\Composers;
 use Roots\Acorn\View\Composer;
 use Stage\Customizer\Settings;
 use function Stage\post_types;
+use function Stage\stage_dump;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback;
 
@@ -17,6 +18,8 @@ class Archive extends Composer {
 	 */
 	protected static $views = array(
 		'index',
+		'search',
+		'front-page',
 		'partials.grids.*',
 	);
 
@@ -27,10 +30,10 @@ class Archive extends Composer {
 	 */
 	public function with() {
 		return wp_parse_args(
-			self::get_archive_display_config(),
 			array(
-				'layout' => self::get_archive_layout_config()
-				)
+				'layout' => self::get_archive_layout_config(),
+			),
+			self::get_archive_display_config()
 		);
 	}
 
@@ -45,6 +48,7 @@ class Archive extends Composer {
 	 */
 	public static function get_archive_config( $post_type = null, $append_key = '' ) {
 		$post_type = $post_type ?: get_post_type();
+		$post_type = $post_type === 'page' ? 'post' : $post_type;
 
 		// Set up required config keys
 		$chosen_key  = 'archive.' . $post_type . $append_key; // theme_mod() or option() key
@@ -84,8 +88,7 @@ class Archive extends Composer {
 		$configs     = stage_get_default( $configs_key );
 
 		foreach ( $configs as $key => $config ) {
-			$config = self::get_archive_config( $post_type,  '.display' . '.' . $key );
-			$data[ 'display_' . $key ] = (bool) ( $config === true ) ? true : false;
+			$data[ 'display_' . $key ] = (bool) self::get_archive_config( $post_type,  '.display' . '.' . $key );
 		}
 
 		return $data;

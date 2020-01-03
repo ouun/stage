@@ -1,13 +1,13 @@
-<footer class="footer-wrap bg-body text-copy py-8">
-  <div class="footer-inner">
+<footer class="container py-8 bg-body text-copy">
+  <div class="footer-inner alignwide">
     @if(is_active_sidebar( 'sidebar-footer' ))
-      <div class="widgets-wrap flex flex-wrap flex-grow">
+      <div class="flex flex-wrap flex-grow widgets-wrap">
         @php dynamic_sidebar('sidebar-footer') @endphp
       </div>
     @endif
 
-    <div class="menu-wrap flex flex-wrap justify-between items-center text-gray-500 text-sm">
-      <p class="copyright flex-grow">
+    <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 menu-wrap">
+      <p class="flex-grow copyright">
         {{ $copyright }}
       </p>
 

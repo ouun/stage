@@ -4,6 +4,7 @@ namespace Stage;
 
 use Stage\Composers\Archive;
 use Stage\Customizer\Settings;
+use Throwable;
 use function Roots\view;
 
 /**
@@ -12,7 +13,7 @@ use function Roots\view;
  * @param $dump
  */
 function stage_dump( $dump ) {
-	if( is_array( $dump ) ) {
+	if( is_array( $dump ) || is_object( $dump ) ) {
 		$message ='<pre>' . print_r( $dump) . '</pre>';
 	} else {
 		$message = $dump;
@@ -33,13 +34,13 @@ function stage_build_js_object() {
 			'ajax' => array(
 				'url' => admin_url( 'admin-ajax.php' ),
 			),
+			'screens' => stage_get_default( 'global.screens' ),
 			'user' => array(
 				'is_admin'     => is_user_admin(),
 				'is_logged_in' => is_user_logged_in(),
 			),
 			'wp'   => array(
 				'adminbar_visible' => is_admin_bar_showing(),
-				'permalinks'       => get_option( 'permalink_structure' ),
 			),
 		)
 	);
@@ -84,7 +85,7 @@ function stage_is_feature_active( $feature ) {
  * @param $data array
  *
  * @return string Rendered template
- * @throws \Throwable
+ * @throws Throwable
  */
 function stage_get_fallback_template( $chosen_key, $default_key = null, $data = array() ) {
 	// Does the file exist -> return
@@ -99,7 +100,7 @@ function stage_get_fallback_template( $chosen_key, $default_key = null, $data = 
  * @param $data
  *
  * @return array|string
- * @throws \Throwable
+ * @throws Throwable
  */
 function stage_render_template( $path, $data ) {
 	return view( $path, view( $path )->getData(), $data )->render();

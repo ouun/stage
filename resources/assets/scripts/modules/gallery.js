@@ -76,6 +76,9 @@ export const gallery = {
         let $anchor = $( this );
         let $image  = $anchor.find( 'img' );
 
+        // Prevent links from barba.js loader
+        $anchor.addClass('prevent');
+
         if ( $image.attr( 'data-full' ) && $image.attr( 'data-full-width' ) && $image.attr( 'data-full-height' ) ) {
           $image.attr( 'data-gid', galleryID ).attr( 'data-pid', index );
           // Prevent link from loading with barba.js
@@ -92,6 +95,8 @@ export const gallery = {
     $('.stage-gallery a').on('click', function ( e ) {
       // Do not follow the link
       e.preventDefault();
+
+      console.log('hier');
       // Set the gallery
       gallery.setGallery( $( this ).find('img') );
       // Open the gallery

@@ -53,7 +53,7 @@
 #comments {
   @apply mt-12;
 
-  @include align();
+  @include blocks_align();
 
   ol.commentlist {
     @apply mb-6 mt-6 pt-6 border-t border-gray-200;

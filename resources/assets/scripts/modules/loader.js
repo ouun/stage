@@ -25,8 +25,6 @@ export const loader = {
     if ( ! loader.initialized ) {
       // tell barba to use the css module
       barba.use( css );
-      // Prefetch all urls in viewport
-      // barba.use( prefetch );
       // Add theme hooks
       loader.hooks();
       // Init barba.js
@@ -57,7 +55,7 @@ export const loader = {
       if ( data.next.url.path ) {
         const activeClass = 'active';
         $( '.menu-item.' + activeClass ).removeClass( activeClass );
-        $( `.menu-item > a[href$="${ data.next.url.path }"]` ).parents( '.menu-item' ).addClass( activeClass )
+        $( `.menu-item > a[href="${ data.next.url.href }"]` ).parents( '.menu-item' ).addClass( activeClass )
       }
     });
 
@@ -72,10 +70,16 @@ export const loader = {
       // Update Admin-Bar
       loader.replaceOldWithNew( '#wp-toolbar', data );
 
+      // Update
+      loader.replaceOldWithNew( 'header.main-header', data );
+
       return data;
     });
 
     barba.hooks.enter(data => {
+      // Trigger for resetting features states
+      $(document).trigger('loader-enter');
+
       // Scroll up the next page
       window.scrollTo(0, 0);
 

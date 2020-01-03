@@ -12,6 +12,7 @@ import {dropdown} from "./menu/dropdown";
 export const menu = {
 
   isInitialized: false,
+  onScroll: menuOnScroll,
 
   /**
    * Init modules

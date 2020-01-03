@@ -25,7 +25,7 @@ a {
 */
 
 a {
-  @apply relative underline;
+  @apply relative;
 
   color: var(--color-link);
   transition: color 0.2s;

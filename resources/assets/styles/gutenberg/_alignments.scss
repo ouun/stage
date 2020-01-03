@@ -1,25 +1,31 @@
 @import "../mixins/container";
 
-
-.entry-content {
+.container,
+.blocks-wrap,
+.content-wrap,
+.archive-wrap {
   & > * {
-    &:not(.alignfull):not(.alignwide) {
-      @apply w-full max-w-full mx-auto mb-block-spacing px-block-spacing;
+    &:not(.alignfull):not(.alignscreen):not(.alignwide) {
+      @apply w-full max-w-full mx-auto px-gutter;
 
-      @include align();
+      @include blocks_align();
     }
 
     & > * {
       @apply mx-auto;
     }
-
-    &:last-of-type {
-      @apply mb-0;
-    }
   }
 
   & > .alignwide {
-    @include align__wide();
+    @include blocks_align__wide();
+
+    & > * {
+      @apply w-full;
+    }
+  }
+
+  & > .alignscreen {
+    @include blocks_align__screen();
 
     & > * {
       @apply mx-0 w-full;
@@ -27,17 +33,30 @@
   }
 
   & > .alignfull {
-    @apply mx-0 w-screen;
+    @include blocks_align__full();
 
     & > * {
-      @apply mx-0 mx-0 w-full;
+      @apply mx-0 w-full;
+    }
+  }
+}
+
+// Add some default spacing
+.blocks-wrap {
+  & > * {
+    &:not(.alignfull):not(.alignscreen):not(.alignwide) {
+      @apply my-block-spacing;
+
+      &:first-child {
+        @apply mt-0;
+      }
     }
   }
 }
 
 
 /*
-.entry-content {
+.blocks-wrap {
   & > * {
     @apply mb-10;
   }

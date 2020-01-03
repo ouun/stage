@@ -3,10 +3,10 @@
 namespace Stage\Providers;
 
 use Roots\Acorn\ServiceProvider;
+use function Stage\stage_dump;
 use function Stage\stage_is_feature_active;
 
 class ImagesServiceProvider extends ServiceProvider {
-
 
 	public $lazy;
 	public $gallery;
@@ -29,6 +29,20 @@ class ImagesServiceProvider extends ServiceProvider {
 		}
 
 		/**
+		 * Add class 'wp-image-{$id}' to images
+		 * This is already set to block images by default
+		 */
+		add_filter( 'wp_get_attachment_image_attributes', function( array $attr, \WP_Post $attachment ) {
+
+			$classes = explode(" ", $attr['class']);
+			$classes[] = 'wp-image-' . $attachment->ID;
+
+			$attr['class'] = implode( ' ', $classes );
+
+			return $attr;
+		}, 10, 2 );
+
+		/**
 		 * Filter blocks HTML
 		 */
 		if ( $this->gallery ) {
@@ -46,6 +60,19 @@ class ImagesServiceProvider extends ServiceProvider {
 		 * Filter the_content output for Gutenberg support
 		 */
 		if ( $this->lazy || $this->gallery ) {
+			/**
+			 * Manipulate images outside the_content()
+			 */
+			add_filter(
+				'post_thumbnail_html',
+				function( $html ) {
+					return $this->stage_manipulate_image_html( $html );
+				}
+			);
+
+			/**
+			 * Manipulate images inside the_content()
+			 */
 			add_filter(
 				'the_content',
 				function ( $html ) {
@@ -65,29 +92,18 @@ class ImagesServiceProvider extends ServiceProvider {
 	 */
 	protected function stage_manipulate_blocks_html( $block_content, $block ) {
 		// Fail early
-		if ( is_admin() || ! isset( $block['blockName'] ) ) {
+		if ( is_admin() || ! isset( $block['blockName'] ) || ! $this->gallery ) {
 			return $block_content;
 		}
 
 		// Add a dedicated class to the gallery
 		if ( $block['blockName'] === 'core/gallery' && isset( $block['attrs']['linkTo'] ) && $block['attrs']['linkTo'] === 'media' ) {
-			$block_content = '<div class="stage-gallery">' . $block_content . '</div>';
-
-			/*
-			foreach ( $block['attrs']['ids'] as $id ) {
-				$full_res = get_low_res_image_src( '', $id, 'full'  );
-
-				if ( ! empty( $full_res ) && isset( $full_res[0] ) &&  isset( $full_res[1] ) &&  isset( $full_res[2] ) ) {
-					// $block_content = preg_replace( '/<img ([^>]+?)[\/ ]*>/', '<img $1' . 'data-full="' . $full_res[0] . '" data-full-width="' . $full_res[1] . '" data-full-height="' . $full_res[2] . '" />', $block_content );
-					$block_content = preg_replace( '/<img ([^>]+?)data-id=\"1045\"([^>]+?)[\/ ]*>/', '<img $1' . 'data-full="' . $full_res[0] . '" data-full-width="' . $full_res[1] . '" data-full-height="' . $full_res[2] . '" />', $block_content );
-				}
-			}
-			*/
+			$block_content = str_replace( 'wp-block-gallery', 'wp-block-gallery stage-gallery', $block_content );
 		}
 
 		// Add a dedicated class to the images
 		if ( $block['blockName'] === 'core/image' && isset( $block['attrs']['linkDestination'] ) && $block['attrs']['linkDestination'] === 'media' ) {
-			$block_content = '<div class="stage-gallery">' . $block_content . '</div>';
+			$block_content = str_replace( 'wp-block-image', 'wp-block-image stage-gallery', $block_content );
 		}
 
 		return $block_content;
@@ -111,12 +127,16 @@ class ImagesServiceProvider extends ServiceProvider {
 
 				$out = '';
 
+				// Try to get image ID from class
+				preg_match('/wp-image-(\d+)/', $m[5], $image, PREG_UNMATCHED_AS_NULL);
+				$image_id = isset( $image[1] ) ? $image[1] : null;
+
 				if ( $this->gallery ) {
-					$m = $this->stage_images_add_gallery_markup( $m );
+					$m = $this->stage_images_add_gallery_markup( $m, $image_id );
 				}
 
 				if ( $this->lazy ) {
-					$m = $this->stage_images_add_lazy_markup( $m );
+					$m = $this->stage_images_add_lazy_markup( $m, $image_id );
 				}
 
 				$out .= "<$m[1]$m[2]$m[3]$m[4]$m[5]$m[6]\"$m[7]\"$m[8]>";
@@ -140,11 +160,13 @@ class ImagesServiceProvider extends ServiceProvider {
 	 *
 	 * @param $matches
 	 *
+	 * @param null $image_id
+	 *
 	 * @return mixed
 	 */
-	protected function stage_images_add_lazy_markup( $matches ) {
+	protected function stage_images_add_lazy_markup( $matches, $image_id = null ) {
 
-		$placeholder = $this->stage_get_image( $matches[4], null, 'low-res' );
+		$placeholder = $this->stage_get_image( $matches[4], $image_id, 'low-res' );
 
 		if ( ! empty( $placeholder ) ) {
 			// Replace src attribute
@@ -163,10 +185,12 @@ class ImagesServiceProvider extends ServiceProvider {
 	 *
 	 * @param $matches
 	 *
+	 * @param null $image_id
+	 *
 	 * @return mixed
 	 */
-	protected function stage_images_add_gallery_markup( $matches ) {
-		$image = $this->stage_get_image( $matches[4], null, 'full' );
+	protected function stage_images_add_gallery_markup( $matches, $image_id = null  ) {
+		$image = $this->stage_get_image( $matches[4], $image_id, 'full' );
 
 		if ( ! empty( $image ) && isset( $image[0] ) && isset( $image[1] ) && isset( $image[2] ) ) {
 			$matches[8] .= 'data-full="' . $image[0] . '" data-full-width="' . $image[1] . '" data-full-height="' . $image[2] . '"';

@@ -8,13 +8,13 @@
       grid-auto-rows: auto;
 
       & > .grid-item {
-        @apply flex w-full h-auto mb-24;
+        @apply flex w-full h-auto;
 
         .post-inner {
           @apply relative;
 
           .image-container {
-            @apply relative w-full h-auto max-h-half bg-transparent;
+            @apply relative w-full h-auto max-h-half;
 
             img {
               @apply w-full h-auto object-cover z-0;

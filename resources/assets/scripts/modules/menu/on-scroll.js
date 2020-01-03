@@ -5,16 +5,19 @@ import detectIt from "detect-it/src";
 /**
  * On scroll handling
  *
- * @type {{removeClasses: menuOnScroll.removeClasses, init: menuOnScroll.init, previousTop: number, onScroll: menuOnScroll.onScroll, classes: string, toggleClasses: menuOnScroll.toggleClasses, isInitialized: boolean, currentTop: number, addClasses: menuOnScroll.addClasses, isScrolling: boolean}}
+ * @type {{removeClasses: menuOnScroll.removeClasses, init: menuOnScroll.init, previousTop: number, onScroll: menuOnScroll.onScroll, classes: string, toggleClasses: menuOnScroll.toggleClasses, isInitialized: boolean, currentTop: number, addClasses: menuOnScroll.addClasses, isScrolling: boolean, isScrolled: boolean}}
  */
 export const menuOnScroll = {
 
   isInitialized: false,
   isScrolling: false,
+  isScrolled: false,
   previousTop: 0,
   currentTop: 0,
-  offsetTop: 0,
-  classes: 'is-scrolled',
+  offsetTop: 100,
+  scrolledClasses: 'is-scrolled',
+  upClasses: 'up',
+  downClasses: 'down',
 
   init: function () {
     if ( !menuOnScroll.isInitialized ) {
@@ -39,7 +42,7 @@ export const menuOnScroll = {
   setOffset: function () {
     // Add offset if adminbar is visible
     if( stage.wp.adminbar_visible ) {
-      menuOnScroll.offsetTop = adminbar.height;
+      menuOnScroll.offsetTop = adminbar.getAdminbarHeight();
     }
   },
 
@@ -47,7 +50,7 @@ export const menuOnScroll = {
    * Add event listener
    */
   onScroll: function () {
-    document.addEventListener("wheel", function () {
+    document.addEventListener("scroll", function () {
       if ( !menuOnScroll.isScrolling ) {
         menuOnScroll.isScrolling = true;
 
@@ -55,38 +58,54 @@ export const menuOnScroll = {
           ? setTimeout(menuOnScroll.toggleClasses, 250)
           : requestAnimationFrame(menuOnScroll.toggleClasses);
       }
-    }, detectIt.passiveEvents ? {passive:true} : false );
+    }, detectIt.passiveEvents ? { passive: true } : false );
   },
 
   /**
    * Add/Remove classes depending on scrolling distance
    */
   toggleClasses: function () {
-    let currentTop = $( window ).scrollTop();
+    let currentTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if ( menuOnScroll.currentTop < 100 ) {
-      if (currentTop > menuOnScroll.offsetTop) {
-        menuOnScroll.addClasses();
+    if ( currentTop > menuOnScroll.offsetTop ) {
+      menuOnScroll.addClasses( menuOnScroll.scrolledClasses );
+      menuOnScroll.isScrolled = true;
+
+      // Page is scrolled, check for up or down scrolling
+      if ( currentTop > menuOnScroll.previousTop ) {
+        // Scroll down
+        menuOnScroll.addClasses( menuOnScroll.downClasses );
+        menuOnScroll.removeClasses( menuOnScroll.upClasses );
       } else {
-        menuOnScroll.removeClasses();
+        // Scroll up
+        menuOnScroll.addClasses( menuOnScroll.upClasses );
+        menuOnScroll.removeClasses( menuOnScroll.downClasses );
       }
+
+    } else {
+      // We are at the top, remove the classes
+      menuOnScroll.removeClasses( menuOnScroll.scrolledClasses );
+      menuOnScroll.removeClasses( menuOnScroll.downClasses );
+      menuOnScroll.removeClasses( menuOnScroll.upClasses );
+      menuOnScroll.isScrolled = false;
     }
 
     menuOnScroll.isScrolling = false;
-    menuOnScroll.currentTop = currentTop;
+    menuOnScroll.currentTop = currentTop <= 0 ? 0 : currentTop;
+    menuOnScroll.previousTop = currentTop <= 0 ? 0 : currentTop;
   },
 
   /**
    * Add classes
    */
-  addClasses: function() {
-    objects.mainHeader.addClass( menuOnScroll.classes );
+  addClasses: function( classes ) {
+    objects.mainHeader.addClass( classes );
   },
 
   /**
    * Remove classes
    */
-  removeClasses: function () {
-    objects.mainHeader.removeClass(  menuOnScroll.classes  );
+  removeClasses: function ( classes ) {
+    objects.mainHeader.removeClass( classes );
   },
 };

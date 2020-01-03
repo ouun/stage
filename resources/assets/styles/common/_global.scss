@@ -1,33 +1,13 @@
 @import "../mixins/bg-full";
 @import "../mixins/container";
 
-html {
-  @apply overflow-x-hidden h-full;
-}
-
 body {
-  @apply antialiased flex flex-col min-h-full bg-body;
-
   [data-loader="container"] {
     display: contents;
-
-    main.main {
-      @apply flex-auto h-auto min-h-0 overflow-hidden;
-    }
   }
 }
 
-.content-wrap {
-  @include container();
 
-  &.alignwide {
-    @include align__wide();
-  }
-
-  &.alignfull {
-    @apply mx-0 w-screen;
-  }
-}
 
 .bg-full-width {
   @include bg-full( var(--color-gray-500) );

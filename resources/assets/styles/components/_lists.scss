@@ -1,4 +1,4 @@
-.entry-content {
+.blocks-wrap {
   ul {
     @apply list-disc;
   }
@@ -9,8 +9,6 @@
 
   ul,
   ol {
-    @apply list-inside;
-
     & ul,
     & ol {
       @apply py-2 pl-4;

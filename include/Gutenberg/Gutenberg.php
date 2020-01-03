@@ -62,14 +62,13 @@ class Gutenberg extends ServiceProvider {
 	}
 
 	private static function register_font_sizes() {
-		$register = array();
-		$sizes    = stage_get_default( 'global.typo.sizes' );
+		$register = [];
 
-		foreach ( $sizes as $slug => $size ) {
+		foreach ( stage_get_default( 'global.typo.sizes' ) as $slug => $size ) {
 			$register[] = array(
 				'name'      => __( $size['name'], 'stage' ),
 				'shortName' => __( strtoupper( $slug ), 'stage' ),
-				'size'      => $size['px'],
+				'size'      => intval( $size['px'] ),
 				'slug'      => $slug,
 			);
 		}
@@ -94,6 +93,7 @@ class Gutenberg extends ServiceProvider {
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/render_block/
 		 */
+		/*
 		add_filter(
 			'render_block',
 			function ( $block_content, $block ) {
@@ -177,6 +177,7 @@ class Gutenberg extends ServiceProvider {
 		 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
 		 */
 		add_theme_support( 'editor-font-sizes', self::register_font_sizes() );
+		// add_theme_support('disable-custom-font-sizes');
 
 		/**
 		 * Add editor styles

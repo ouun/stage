@@ -38,6 +38,14 @@ return [
 	 * Global style defaults
 	 */
 	'global' => [
+		// Adjust also in tailwind config
+		'screens' => [
+			'sm' => '576px',
+			'md' => '768px',
+			'lg' => '992px',
+			'xl' => '1200px',
+			'xxl' => '1600px',
+		],
 		// All colors are registered as wp-blocks colors.
 		'colors' => [
 			'main'     => [

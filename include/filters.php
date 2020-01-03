@@ -10,6 +10,17 @@ namespace Stage;
 add_filter(
 	'body_class',
 	function( $classes ) {
+		// Stage defaults classes
+		$classes = array_merge( [
+			'app',
+			'stage',
+			'flex',
+			'flex-col',
+			'min-h-full',
+			'antialiased',
+			'bg-body'
+		], $classes );
+
 		// Used by customizer partial refresh for archives
 		if ( is_post_type_archive() || is_home() ) {
 			$classes[] = 'archive';
@@ -17,7 +28,7 @@ add_filter(
 		}
 
 		// Post Thumbnail
-		if ( is_singular() && has_post_thumbnail() ) {
+		if ( is_singular() && !is_front_page() && !is_home() && has_post_thumbnail() ) {
 			$classes[] = 'featured-image';
 		}
 
@@ -72,6 +83,14 @@ add_filter(
  * Remove WordPress.org from Meta Widget
  */
 add_filter( 'widget_meta_poweredby', '__return_empty_string' );
+
+/**
+ * Remove WP logo from Admin Toolbar
+ */
+add_action( 'admin_bar_menu', function ( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'wp-logo' );
+	$wp_admin_bar->remove_node( 'search' );
+}, 999 );
 
 /**
  * Modify oEmbed URL parameters.

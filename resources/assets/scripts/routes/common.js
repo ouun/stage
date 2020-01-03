@@ -8,7 +8,11 @@ import {adminbar} from "../modules/menu/adminbar";
  * Common
  */
 export default () => {
+  // Set stage object
+  let stage = window.stage;
+
   // Init Modules
+  stage.menu = menu;
   menu.init();
 
   if ( stage.features.loader ) {

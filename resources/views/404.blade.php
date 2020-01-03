@@ -9,8 +9,9 @@
         {{ __('Sorry, but the page you were trying to view does not exist.', 'stage') }}
       </div>
 
-      {!! get_search_form(false) !!}
-
+      <div class="h-12 border py-2">
+        {!! get_search_form(false) !!}
+      </div>
     @endif
   </div>
 @endsection

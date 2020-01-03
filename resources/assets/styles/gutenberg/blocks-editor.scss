@@ -9,7 +9,7 @@
 /* Main column width */
 .wp-block {
   @include container();
-  @include align();
+  @include blocks_align();
 
   &[data-align="wide"] {
     @apply px-initial mx-auto;
