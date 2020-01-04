@@ -7,14 +7,12 @@
   @apply bg-body;
 }
 
-
 /**
  * Placeholder
  */
 .pswp__img--placeholder--blank {
   @apply bg-gray-200;
 }
-
 
 /**
  * Buttons
@@ -40,7 +38,7 @@
 
 /* pswp__ui--over-close class is added when mouse is over element that should close gallery */
 .pswp__ui--over-close .pswp__button--close {
- @apply opacity-100;
+  @apply opacity-100;
 }
 
 // Full Screen
@@ -109,7 +107,6 @@
   @apply right-0 mr-5;
 }
 
-
 /**
  * Index indicator ("1 of X" counter)
  */
@@ -118,7 +115,6 @@
 
   transform: translateY(-50%);
 }
-
 
 /**
  * Caption
@@ -159,7 +155,7 @@
 
     @include loader();
 
-    &:before {
+    &::before {
       @apply h-2 w-2;
     }
   }
@@ -170,7 +166,6 @@
     @apply opacity-100;
   }
 }
-
 
 /**
  * Additional styles
@@ -192,7 +187,7 @@
 .pswp--has_mouse .pswp__button--arrow--right {
   -webkit-backface-visibility: hidden;
   will-change: opacity;
-  transition: opacity 333ms cubic-bezier(.4,0,.22,1);
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
 }
 
 /* pswp--has_mouse class is added only when two subsequent mousemove events occur */

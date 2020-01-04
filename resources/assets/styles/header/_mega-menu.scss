@@ -132,17 +132,6 @@ header {
                     transform: translateX(-100%);
                     transition: transform 0.2s 0.1s, opacity 0.2s;
                   }
-
-                  & > li {
-                    &.show-children {
-
-                      & > a {
-                      }
-                    }
-                  }
-
-                  a.selected + ul {
-                  }
                 }
               }
             }

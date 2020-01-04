@@ -87,9 +87,9 @@
         z-index: -1;
 
         & > a {
-         @apply pl-10 border-none text-gray-700 text-sm;
+          @apply pl-10 border-none text-gray-700 text-sm;
 
-         &::before {
+          &::before {
             @apply ml-4;
 
             visibility: visible;
