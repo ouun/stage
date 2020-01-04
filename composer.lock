@@ -2012,7 +2012,7 @@
             "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ouun/kirki-module-fonts_upload.git",
+                "url": "https://github.com/ouun/kirki-module-fonts_upload.git",
                 "reference": "6f8ff06d80e1078ba6b89affa4f78029e5d58d62"
             },
             "dist": {
@@ -2058,7 +2058,7 @@
             "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ouun/kirki-framework-sync_controls.git",
+                "url": "https://github.com/ouun/kirki-framework-sync_controls.git",
                 "reference": "d0d5879df3882f28d982c9f606b29e6b13a1f695"
             },
             "dist": {
