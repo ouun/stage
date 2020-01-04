@@ -2,7 +2,7 @@
   "name": "ouun/stage",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "WordPress starter theme with a modern development workflow",
+  "description": "WordPress Theme Framework based on Roots Sage",
   "homepage": "https://ouun.io/stage/",
   "authors": [
     {
@@ -72,6 +72,9 @@
   "scripts": {
     "lint": [
       "phpcs --ignore=vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
+    ],
+    "fix": [
+      "phpcbf -q --ignore=vendor,resources,storage,dist --extensions=php --standard=PSR12 . && composer lint"
     ],
     "post-autoload-dump": [
       "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
