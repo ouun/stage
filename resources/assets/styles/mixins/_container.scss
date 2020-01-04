@@ -64,7 +64,8 @@
   }
 
   @screen md {
-    max-width: var(--block-width-md);
+    min-width: var(--block-width-md);
+    max-width: calc(var(--block-width-md) + 20%);
   }
 
   @screen lg {

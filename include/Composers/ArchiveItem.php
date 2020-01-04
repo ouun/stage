@@ -155,7 +155,7 @@ class ArchiveItem extends Composer
      */
     public function itemThumbnail()
     {
-        $container_classes = 'image-container';
+        $container_classes = 'image-container overflow-hidden';
         $img_classes       = 'w-full';
         $out               = '';
 
