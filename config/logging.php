@@ -6,7 +6,7 @@ use Monolog\Handler\SyslogUdpHandler;
 use function Roots\env;
 use function Roots\storage_path;
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default'  => env('LOG_CHANNEL', 'stack'),
 
     /*
     |--------------------------------------------------------------------------
@@ -36,62 +36,62 @@ return [
     |
     */
 
-    'channels' => [
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['daily'],
+    'channels' => array(
+        'stack'      => array(
+            'driver'            => 'stack',
+            'channels'          => array( 'daily' ),
             'ignore_exceptions' => false,
-        ],
+        ),
 
-        'single' => [
+        'single'     => array(
             'driver' => 'single',
-            'path' => storage_path('logs/stage.log'),
-            'level' => 'debug',
-        ],
+            'path'   => storage_path('logs/stage.log'),
+            'level'  => 'debug',
+        ),
 
-        'daily' => [
+        'daily'      => array(
             'driver' => 'daily',
-            'path' => storage_path('logs/stage.log'),
-            'level' => 'debug',
-            'days' => 14,
-        ],
+            'path'   => storage_path('logs/stage.log'),
+            'level'  => 'debug',
+            'days'   => 14,
+        ),
 
-        'slack' => [
-            'driver' => 'slack',
-            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+        'slack'      => array(
+            'driver'   => 'slack',
+            'url'      => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Sage Log',
-            'emoji' => ':boom:',
-            'level' => 'critical',
-        ],
+            'emoji'    => ':boom:',
+            'level'    => 'critical',
+        ),
 
-        'papertrail' => [
-            'driver' => 'monolog',
-            'level' => 'debug',
-            'handler' => SyslogUdpHandler::class,
-            'handler_with' => [
+        'papertrail' => array(
+            'driver'       => 'monolog',
+            'level'        => 'debug',
+            'handler'      => SyslogUdpHandler::class,
+            'handler_with' => array(
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-            ],
-        ],
+            ),
+        ),
 
-        'stderr' => [
-            'driver' => 'monolog',
-            'handler' => StreamHandler::class,
+        'stderr'     => array(
+            'driver'    => 'monolog',
+            'handler'   => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with' => [
+            'with'      => array(
                 'stream' => 'php://stderr',
-            ],
-        ],
+            ),
+        ),
 
-        'syslog' => [
+        'syslog'     => array(
             'driver' => 'syslog',
-            'level' => 'debug',
-        ],
+            'level'  => 'debug',
+        ),
 
-        'errorlog' => [
+        'errorlog'   => array(
             'driver' => 'errorlog',
-            'level' => 'debug',
-        ],
-    ],
+            'level'  => 'debug',
+        ),
+    ),
 
-];
+);

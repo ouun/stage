@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -12,9 +12,9 @@ return [
     |
     */
 
-    'paths' => [
+    'paths'      => array(
         get_theme_file_path('/resources/views'),
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'compiled' => get_theme_file_path('/storage/framework/views'),
+    'compiled'   => get_theme_file_path('/storage/framework/views'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => false,
+    'debug'      => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,13 +55,13 @@ return [
     |
     */
 
-    'namespaces' => [
+    'namespaces' => array(
         /*
          | Given the below example, in your views use something like:
          |     @include('MyPlugin::some.view.or.partial.here')
          */
         // 'MyPlugin' => WP_PLUGIN_DIR . '/my-plugin/resources/views',
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -74,17 +74,17 @@ return [
     |
     */
 
-    'composers' => [
-	    Stage\Composers\Alert::class,
-	    Stage\Composers\App::class,
-	    Stage\Composers\Archive::class,
-	    Stage\Composers\ArchiveItem::class,
-	    Stage\Composers\Footer::class,
-	    Stage\Composers\Header::class,
-	    Stage\Composers\Navigation::class,
-	    Stage\Composers\Shop::class,
-	    Stage\Composers\Title::class,
-    ],
+    'composers'  => array(
+        Stage\Composers\Alert::class,
+        Stage\Composers\App::class,
+        Stage\Composers\Archive::class,
+        Stage\Composers\ArchiveItem::class,
+        Stage\Composers\Footer::class,
+        Stage\Composers\Header::class,
+        Stage\Composers\Navigation::class,
+        Stage\Composers\Shop::class,
+        Stage\Composers\Title::class,
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -96,11 +96,11 @@ return [
     |
     */
 
-    'directives' => [
-        'asset'  => Roots\Acorn\Assets\AssetDirective::class,
-    ],
+    'directives' => array(
+        'asset' => Roots\Acorn\Assets\AssetDirective::class,
+    ),
 
-   /*
+    /*
     |--------------------------------------------------------------------------
     | Blade Component Aliases
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return [
     |
     */
 
-    'components' => [
-        'alert'  => 'components.alert',
-    ],
-];
+    'components' => array(
+        'alert' => 'components.alert',
+    ),
+);

@@ -1,10 +1,17 @@
 <?php
 
+/**
+ * Theme helpers.
+ *
+ * @copyright https://ouun.io/ ouun
+ * @license   https://opensource.org/licenses/MIT MIT
+ */
+
 namespace Stage;
 
-use Stage\Composers\Archive;
 use Stage\Customizer\Settings;
 use Throwable;
+
 use function Roots\view;
 
 /**
@@ -12,14 +19,15 @@ use function Roots\view;
  *
  * @param $dump
  */
-function stage_dump( $dump ) {
-	if( is_array( $dump ) || is_object( $dump ) ) {
-		$message ='<pre>' . print_r( $dump) . '</pre>';
-	} else {
-		$message = $dump;
-	}
+function stage_dump($dump)
+{
+    if (is_array($dump) || is_object($dump)) {
+        $message = '<pre>' . print_r($dump) . '</pre>';
+    } else {
+        $message = $dump;
+    }
 
-	wp_die( $message );
+    wp_die($message);
 }
 
 /**
@@ -27,23 +35,24 @@ function stage_dump( $dump ) {
  *
  * @return array
  */
-function stage_build_js_object() {
-	return array_merge(
-		apply_filters( 'stage_localize_script', array() ),
-		array(
-			'ajax' => array(
-				'url' => admin_url( 'admin-ajax.php' ),
-			),
-			'screens' => stage_get_default( 'global.screens' ),
-			'user' => array(
-				'is_admin'     => is_user_admin(),
-				'is_logged_in' => is_user_logged_in(),
-			),
-			'wp'   => array(
-				'adminbar_visible' => is_admin_bar_showing(),
-			),
-		)
-	);
+function stage_build_js_object()
+{
+    return array_merge(
+        apply_filters('stage_localize_script', array()),
+        array(
+            'ajax'    => array(
+                'url' => admin_url('admin-ajax.php'),
+            ),
+            'screens' => stage_get_default('global.screens'),
+            'user'    => array(
+                'is_admin'     => is_user_admin(),
+                'is_logged_in' => is_user_logged_in(),
+            ),
+            'wp'      => array(
+                'adminbar_visible' => is_admin_bar_showing(),
+            ),
+        )
+    );
 }
 
 /**
@@ -51,15 +60,16 @@ function stage_build_js_object() {
  *
  * @return object Each feature and its state
  */
-function stage_get_features_status() {
-	$features = stage_get_default( 'features' );
-	$status   = array();
+function stage_get_features_status()
+{
+    $features = stage_get_default('features');
+    $status   = array();
 
-	foreach ( $features as $feature => $settings ) {
-		$status[ $feature ] = stage_is_feature_active( $feature );
-	}
+    foreach ($features as $feature => $settings) {
+        $status[ $feature ] = stage_is_feature_active($feature);
+    }
 
-	return (object) $status;
+    return (object) $status;
 }
 
 /**
@@ -70,10 +80,11 @@ function stage_get_features_status() {
  *
  * @return bool
  */
-function stage_is_feature_active( $feature ) {
-	$status = stage_get_fallback( 'features' . '.' . $feature . '.' . 'activate' );
-	//todo: Replace this when value is true/false instead of true or '1'
-	return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
+function stage_is_feature_active($feature)
+{
+    $status = stage_get_fallback('features' . '.' . $feature . '.' . 'activate');
+    // todo: Replace this when value is true/false instead of true or '1'
+    return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
 }
 
 /**
@@ -81,16 +92,17 @@ function stage_is_feature_active( $feature ) {
  * from Settings::get_fallback_template_path()
  *
  * @param $chosen_key string
- * @param null $default_key
+ * @param null              $default_key
  * @param $data array
  *
  * @return string Rendered template
  * @throws Throwable
  */
-function stage_get_fallback_template( $chosen_key, $default_key = null, $data = array() ) {
-	// Does the file exist -> return
-	$path = Settings::get_fallback_template_path( $chosen_key, $default_key );
-	return stage_render_template( $path, $data );
+function stage_get_fallback_template($chosen_key, $default_key = null, $data = array())
+{
+    // Does the file exist -> return
+    $path = Settings::getFallbackTemplatePath($chosen_key, $default_key);
+    return stage_render_template($path, $data);
 }
 
 /**
@@ -102,8 +114,9 @@ function stage_get_fallback_template( $chosen_key, $default_key = null, $data = 
  * @return array|string
  * @throws Throwable
  */
-function stage_render_template( $path, $data ) {
-	return view( $path, view( $path )->getData(), $data )->render();
+function stage_render_template($path, $data)
+{
+    return view($path, view($path)->getData(), $data)->render();
 }
 
 /**
@@ -117,8 +130,9 @@ function stage_render_template( $path, $data ) {
  *
  * @return mixed|string
  */
-function stage_get_fallback( $request, $fallback = false, $pop = false ) {
-	return Settings::get_fallback( $request, $fallback, $pop );
+function stage_get_fallback($request, $fallback = false, $pop = false)
+{
+    return Settings::getFallback($request, $fallback, $pop);
 }
 
 /**
@@ -130,20 +144,22 @@ function stage_get_fallback( $request, $fallback = false, $pop = false ) {
  *
  * @return mixed|string
  */
-function stage_get_default( $request, $pop = false ) {
-	return Settings::get_default( $request, $pop );
+function stage_get_default($request, $pop = false)
+{
+    return Settings::getDefault($request, $pop);
 }
 
 /**
  * Get a list of all post types that the user might care about.
  */
-function post_types() {
-	return collect( get_post_types( array( '_builtin' => false ), 'objects' ) )
-		->pluck( 'label', 'name' )
-		->except( array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ) )
-		->prepend( get_post_type_object( 'page' )->labels->name, 'page' )
-		->prepend( get_post_type_object( 'post' )->labels->name, 'post' )
-		->all();
+function post_types()
+{
+     return collect(get_post_types(array( '_builtin' => false ), 'objects'))
+        ->pluck('label', 'name')
+        ->except(array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ))
+        ->prepend(get_post_type_object('page')->labels->name, 'page')
+        ->prepend(get_post_type_object('post')->labels->name, 'post')
+        ->all();
 }
 
 /**
@@ -155,15 +171,16 @@ function post_types() {
  *
  * @return string
  */
-function build_url( $parts ) {
-	return ( isset( $parts['scheme'] ) ? "{$parts['scheme']}:" : '' ) .
-		   ( ( isset( $parts['user'] ) || isset( $parts['host'] ) ) ? '//' : '' ) .
-		   ( isset( $parts['user'] ) ? "{$parts['user']}" : '' ) .
-		   ( isset( $parts['pass'] ) ? ":{$parts['pass']}" : '' ) .
-		   ( isset( $parts['user'] ) ? '@' : '' ) .
-		   ( isset( $parts['host'] ) ? "{$parts['host']}" : '' ) .
-		   ( isset( $parts['port'] ) ? ":{$parts['port']}" : '' ) .
-		   ( isset( $parts['path'] ) ? "{$parts['path']}" : '' ) .
-		   ( isset( $parts['query'] ) ? "?{$parts['query']}" : '' ) .
-		   ( isset( $parts['fragment'] ) ? "#{$parts['fragment']}" : '' );
+function build_url($parts)
+{
+    return ( isset($parts['scheme']) ? "{$parts['scheme']}:" : '' ) .
+           ( ( isset($parts['user']) || isset($parts['host']) ) ? '//' : '' ) .
+           ( isset($parts['user']) ? "{$parts['user']}" : '' ) .
+           ( isset($parts['pass']) ? ":{$parts['pass']}" : '' ) .
+           ( isset($parts['user']) ? '@' : '' ) .
+           ( isset($parts['host']) ? "{$parts['host']}" : '' ) .
+           ( isset($parts['port']) ? ":{$parts['port']}" : '' ) .
+           ( isset($parts['path']) ? "{$parts['path']}" : '' ) .
+           ( isset($parts['query']) ? "?{$parts['query']}" : '' ) .
+           ( isset($parts['fragment']) ? "#{$parts['fragment']}" : '' );
 }

@@ -1,5 +1,5 @@
 <?php
-return [
+return array(
     // Path to the tailwind.json file generated using the Laravel Nix Extension
-    "cache_path" => \Roots\base_path('tailwind.json'),
-];
+    'cache_path' => \Roots\base_path('tailwind.json'),
+);

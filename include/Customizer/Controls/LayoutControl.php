@@ -1,19 +1,14 @@
 <?php
+
 /**
  * Range Value Control
+ *
+ * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+ * @phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
+ * @phpcs:disable Generic.Files.LineLength.TooLong
  */
 
 namespace Stage\Customizer\Controls;
-
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-// Exit if WP_Customize_Control does not exist.
-if ( ! class_exists( 'WP_Customize_Control' ) ) {
-	return null;
-}
 
 /**
  * This class is for the layout control in the Customizer.
@@ -21,93 +16,126 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
  *
  * @access public
  */
-class LayoutControl extends \WP_Customize_Control {
-	/**
-	 * The type of customize control.
-	 *
-	 * @access public
-	 * @var    string
-	 */
-	public $type = 'layout';
+class LayoutControl extends \WP_Customize_Control
+{
 
-	/**
-	 * Enqueue scripts and styles.
-	 */
-	public function enqueue() {
+    /**
+     * The type of customize control.
+     *
+     * @access public
+     * @var    string
+     */
+    public $type = 'layout';
 
-		wp_enqueue_style( 'stage/customizer/css', \Roots\asset( 'styles/customizer/controls.css', 'stage' )->uri(), false, '1.0.0', 'all' );
-		wp_enqueue_script( 'stage/customizer/layout-js', \Roots\asset( 'scripts/customizer/layout.js', 'stage' )->uri(), array( 'jquery' ), '1.0.0', true );
+    /**
+     * Enqueue scripts and styles.
+     */
+    public function enqueue()
+    {
 
-		// Localization.
-		$layout_control_l10n['open']  = esc_html__( 'Change', 'stage' );
-		$layout_control_l10n['close'] = esc_html__( 'Close', 'stage' );
+        wp_enqueue_style(
+            'stage/customizer/css',
+            \Roots\asset('styles/customizer/controls.css', 'stage')->uri(),
+            false,
+            '1.0.0',
+            'all'
+        );
+        wp_enqueue_script(
+            'stage/customizer/layout-js',
+            \Roots\asset(
+                'scripts/customizer/layout.js',
+                'stage'
+            )->uri(),
+            array( 'jquery' ),
+            '1.0.0',
+            true
+        );
 
-		wp_localize_script( 'stage/customizer/layout-js', 'layoutLocalization', $layout_control_l10n );
-	}
+        // Localization.
+        $layout_control_l10n['open']  = esc_html__('Change', 'stage');
+        $layout_control_l10n['close'] = esc_html__('Close', 'stage');
 
-	/**
-	 * Refresh the parameters passed to the JavaScript via JSON.
-	 *
-	 * @uses WP_Customize_Control::to_json()
-	 */
-	public function to_json() {
-		parent::to_json();
+        wp_localize_script('stage/customizer/layout-js', 'layoutLocalization', $layout_control_l10n);
+    }
 
-		// The setting value.
-		$this->json['id']      = $this->id;
-		$this->json['value']   = $this->value();
-		$this->json['link']    = $this->get_link();
-		$this->json['choices'] = $this->choices;
+    /**
+     * Refresh the parameters passed to the JavaScript via JSON.
+     *
+     * @uses WP_Customize_Control::to_json()
+     */
+    public function to_json()
+    {
+        parent::to_json();
 
-	}
+        // The setting value.
+        $this->json['id']      = $this->id;
+        $this->json['value']   = $this->value();
+        $this->json['link']    = $this->get_link();
+        $this->json['choices'] = $this->choices;
+    }
 
-	/**
-	 * Don't render the control content from PHP, as it's rendered via JS on load.
-	 */
-	public function render_content() {}
+    /**
+     * Don't render the control content from PHP, as it's rendered via JS on load.
+     */
+    public function render_content()
+    {
+    }
 
-	/**
-	 * Render a JS template for the content of the control.
-	 */
-	protected function content_template() {
-		?>
+    /**
+     * Render a JS template for the content of the control.
+     */
+    protected function content_template()
+    {
+        ?>
 
-		<# if ( ! data.choices ) {
-		return;
-		} #>
+        <# if ( ! data.choices ) {
+        return;
+        } #>
 
-		<div class="components-base-control components-layout-control">
-			<div class="components-base-control__field">
-				<# if ( data.label ) { #>
-				<span class="components-layout-control__label customize-control-title">{{ data.label }}</span>
-				<# } #>
+        <div class="components-base-control components-layout-control">
+            <div class="components-base-control__field">
+                <# if ( data.label ) { #>
+                <span class="components-layout-control__label customize-control-title">{{ data.label }}</span>
+                <# } #>
 
-				<# if ( data.description ) { #>
-				<span class="customize-control-description">{{ data.description }}</span>
-				<# } #>
+                <# if ( data.description ) { #>
+                <span class="customize-control-description">{{ data.description }}</span>
+                <# } #>
 
-				<button id="layout-switcher" class="button layout-switcher"><?php esc_html_e( 'Change', 'stage' ); ?></button>
+                <button id="layout-switcher" class="button layout-switcher">
+                    <?php esc_html_e('Change', 'stage'); ?>
+                </button>
 
-				<div class="layout-switcher__wrapper">
+                <div class="layout-switcher__wrapper">
 
-					<# for ( choice in data.choices ) { #>
+                    <# for ( choice in data.choices ) { #>
 
-					<input type="radio" value="{{ choice }}" name="_customize-{{ data.id }}" id="{{ data.id }}-{{ choice }}" class="layout" {{{ data.link }}} <# if ( data.value === choice ) { #> checked="checked" <# } #> />
+                    <input
+                        type="radio"
+                        value="{{ choice }}"
+                        name="_customize-{{ data.id }}"
+                        id="{{ data.id }}-{{ choice }}"
+                        class="layout"
+                        {{{ data.link }}}
+                        <# if ( data.value === choice ) { #> checked="checked" <# } #>
+                    />
 
-					<label for="{{ data.id }}-{{ choice }}" class="login-designer-templates__label">
+                    <label for="{{ data.id }}-{{ choice }}" class="login-designer-templates__label">
 
-						<div class="intrinsic">
-							<div class="layout-screenshot" style="background-image: url( {{ data.choices[ choice ] }} );"></div>
-						</div>
+                        <div class="intrinsic">
+                            <div class="layout-screenshot"
+                                 style="background-image: url( {{ data.choices[ choice ] }} );">
+                            </div>
+                        </div>
 
-					</label>
+                    </label>
 
-					<# } #>
+                    <# } #>
 
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
 
-		<?php
-	}
+        <?php
+    }
 }

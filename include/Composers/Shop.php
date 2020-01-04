@@ -6,35 +6,36 @@ use Roots\Acorn\View\Composer;
 
 class Shop extends Composer
 {
+
     /**
      * List of views served by this composer.
      *
      * @var array
      */
-    protected static $views = [
+    protected static $views = array(
         'partials.header',
-    ];
+    );
 
-	/**
-	 * Data to be passed to view before rendering.
-	 *
-	 * @return array
-	 */
+    /**
+     * Data to be passed to view before rendering.
+     *
+     * @return array
+     */
     public function with()
     {
-        $shop = [
-            'shop' => $this->site_has_shop(),
-        ];
+        $shop = array(
+            'shop' => $this->siteHasShop(),
+        );
 
-        if ( $shop['shop'] && ! is_admin() ) {
+        if ($shop['shop'] && ! is_admin()) {
             array_merge(
                 $shop,
-                [
+                array(
                     'is_cart'             => is_cart(),
                     'is_checkout'         => is_checkout(),
-                    'cart_url'            => esc_url( wc_get_cart_url() ),
+                    'cart_url'            => esc_url(wc_get_cart_url()),
                     'cart_contents_count' => WC()->cart->get_cart_contents_count(),
-                ]
+                )
             );
         }
 
@@ -46,7 +47,8 @@ class Shop extends Composer
      *
      * @return bool
      */
-    public static function site_has_shop() {
-        return defined( 'WC_ABSPATH' );
+    public static function siteHasShop()
+    {
+        return defined('WC_ABSPATH');
     }
 }

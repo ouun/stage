@@ -2,7 +2,7 @@
 
 use function Roots\env;
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud'   => env('FILESYSTEM_CLOUD', 's3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -43,28 +43,28 @@ return [
     |
     */
 
-    'disks' => [
-        'local' => [
-            'driver' => 'local',
-            'root' => WP_CONTENT_DIR,
-            'url' => content_url(),
+    'disks'   => array(
+        'local'     => array(
+            'driver'     => 'local',
+            'root'       => WP_CONTENT_DIR,
+            'url'        => content_url(),
             'visibility' => 'public',
-        ],
+        ),
 
-        'wordpress' => [
-            'driver' => 'local',
-            'root' => ABSPATH,
-            'url' => site_url(),
+        'wordpress' => array(
+            'driver'     => 'local',
+            'root'       => ABSPATH,
+            'url'        => site_url(),
             'visibility' => 'public',
-        ],
+        ),
 
-        's3' => [
+        's3'        => array(
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
+            'key'    => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-        ],
-    ],
-];
+            'url'    => env('AWS_URL'),
+        ),
+    ),
+);
