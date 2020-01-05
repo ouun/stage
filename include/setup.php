@@ -27,7 +27,7 @@ add_action(
         wp_enqueue_script(
             'stage/app.js',
             asset('scripts/app.js', 'stage')->uri(),
-            array( 'stage/manifest.js', 'jquery' ),
+            array( 'jquery' ),
             null,
             true
         );
