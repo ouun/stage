@@ -14,27 +14,26 @@ use function Roots\asset;
 add_action(
     'wp_enqueue_scripts',
     function () {
-        /* todo: manifest.js is missing as long as JS is not .extract()
-        wp_enqueue_script(
-            'stage/manifest.js',
-            asset('scripts/manifest.js', 'stage')->uri(),
-            array( 'jquery' ),
-            null,
-            true
-        );
-        */
+	    wp_enqueue_script(
+		    'stage/manifest.js',
+		    asset('scripts/manifest.js', 'stage')->uri(),
+		    array( 'jquery' ),
+		    null,
+		    true
+	    );
 
         wp_enqueue_script(
             'stage/app.js',
             asset('scripts/app.js', 'stage')->uri(),
-            array( 'jquery' ),
+            array(
+            	'jquery',
+	            'scripts/manifest.js'
+            ),
             null,
             true
         );
 
-        /* todo: manifest.js is missing as long as JS is not .extract()
-            wp_add_inline_script('stage/manifest.js', asset('scripts/manifest.js', 'stage')->contents(), 'before');
-        */
+	    wp_add_inline_script('stage/manifest.js', asset('scripts/manifest.js', 'stage')->contents(), 'before');
 
         // Collect data for 'stage' JS object via 'stage_localize_script' filter
         wp_localize_script('stage/app.js', 'stage', stage_build_js_object());
