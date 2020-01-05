@@ -789,6 +789,26 @@ module.exports = {
     stroke: {
       'current': 'currentColor',
     },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Aspect Ratio Plugin       https://github.com/webdna/tailwindcss-aspect-ratio
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .aspect-ratio-{name}
+    |
+    */
+
+    aspectRatio: { // defaults to {}
+      'square': [1, 1],
+      '16/9': [16, 9],
+      '2/3': [2, 3],
+      '3/2': [3, 2],
+      '3/4': [3, 4],
+      '4/3': [4, 3],
+      '21/9': [21, 9],
+    },
   },
 
 
@@ -812,6 +832,7 @@ module.exports = {
   */
 
   variants: {
+    aspectRatio: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundColor: ['responsive', 'hover', 'focus'],
@@ -899,6 +920,7 @@ module.exports = {
 
   plugins: [
     wordpressUtilities,
+    require('tailwindcss-aspect-ratio')(),
     require('tailwindcss-visuallyhidden')({
       variants: ['responsive', 'hover'],
     }),
@@ -915,17 +937,6 @@ module.exports = {
         'slow-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
       },
       variants: ['responsive', 'hover'],
-    }),
-    require('tailwindcss-aspect-ratio')({
-      ratios: {
-        'square': [1, 1],
-        '16/9': [16, 9],
-        '2/3': [2, 3],
-        '3/2': [3, 2],
-        '3/4': [3, 4],
-        '4/3': [4, 3],
-        '21/9': [21, 9],
-      },
     }),
     require('tailwindcss-grid')({
       grids: [2, 3, 5, 6, 8, 10, 12],
