@@ -1,8 +1,8 @@
 const mix = require('laravel-mix');
-            require('mix-tailwindcss');
-            require('laravel-mix-wp-blocks');
-            require('laravel-mix-purgecss');
-            require('laravel-mix-copy-watched');
+require('mix-tailwindcss');
+require('laravel-mix-wp-blocks');
+require('laravel-mix-purgecss');
+require('laravel-mix-copy-watched');
 
 const { whitelist, whitelistPatterns } = require('purgecss-with-wordpress');
 
@@ -22,9 +22,10 @@ mix.setPublicPath('./dist')
   .browserSync('tn-l.test');
 
 // JavaScript
+// Todo: .extract() is removed: https://github.com/roots/sage/issues/2204
+// So there is no manifest.js file available
 mix.js('resources/assets/scripts/app.js', 'scripts')
-  .block('resources/assets/scripts/editor.js', 'scripts')
-  .extract();
+  .block('resources/assets/scripts/editor.js', 'scripts');
 
 // Styles
 mix.sass('resources/assets/styles/stage.scss', 'styles')
