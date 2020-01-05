@@ -26,6 +26,7 @@ export const lazy = {
       threshold: 0.1,
       load: function (el) {
         // Custom implementation to load an element
+        el.srcset = el.dataset.srcset;
         el.src = el.dataset.src;
         // console.log('loading element: ' + el.src + el.srcset);
       },
