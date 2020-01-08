@@ -50,6 +50,10 @@
   @screen xl {
     max-width: var(--block-width-xl);
   }
+
+  @screen xxl {
+    max-width: var(--block-width-xxl);
+  }
 }
 
 /*
@@ -69,9 +73,20 @@
   }
 
   @screen lg {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+    @apply px-gutter;
+
+    min-width: var(--block-width-lg);
     max-width: calc(var(--block-width-lg) + var(--gutter) + 20%);
+  }
+
+  @screen xl {
+    min-width: var(--block-width-xl);
+    max-width: calc(var(--block-width-xl) + var(--gutter) + 20%);
+  }
+
+  @screen xxl {
+    min-width: var(--block-width-xxl);
+    max-width: calc(var(--block-width-xxl) + var(--gutter) + 20%);
   }
 }
 
