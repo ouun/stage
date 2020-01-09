@@ -3,6 +3,7 @@ require('mix-tailwindcss');
 require('@tinypixelco/laravel-mix-wp-blocks');
 require('laravel-mix-purgecss');
 require('laravel-mix-copy-watched');
+require('laravel-mix-export-tailwind-config');
 
 const { whitelist, whitelistPatterns } = require('purgecss-with-wordpress');
 
@@ -19,7 +20,10 @@ const { whitelist, whitelistPatterns } = require('purgecss-with-wordpress');
 
 // Public Path & Development Domain
 mix.setPublicPath('./dist')
-  .browserSync('tn-l.test');
+  .browserSync({
+    proxy: 'stage.test',
+    port: '1984',
+  });
 
 // JavaScript
 // Todo: .extract() is removed: https://github.com/roots/sage/issues/2204
@@ -58,6 +62,9 @@ mix.options({
 // Generate source maps when not in production
 mix.sourceMaps(false, 'source-map')
   .version();
+
+// Export Tailwind config to json
+mix.exportTailwindConfig('tailwind.config.js', 'tailwind.json');
 
 // Remove unused styles in production
 mix.purgeCss({

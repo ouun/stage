@@ -1,0 +1,461 @@
+{
+  "theme": {
+    "screens": {
+      "sm": "576px",
+      "md": "768px",
+      "lg": "992px",
+      "xl": "1200px",
+      "xxl": "1600px"
+    },
+    "colors": {
+      "inherit": "inherit",
+      "transparent": "transparent",
+      "body": "var(--color-body)",
+      "accent": "var(--color-accent)",
+      "link": "var(--color-link)",
+      "copy": "var(--color-copy)",
+      "heading": "var(--color-heading)",
+      "primary": "var(--color-primary)",
+      "secondary": "var(--color-secondary)",
+      "black": "var(--color-black)",
+      "white": "var(--color-white)",
+      "gray": {
+        "100": "var(--color-gray-100)",
+        "200": "var(--color-gray-200)",
+        "300": "var(--color-gray-300)",
+        "400": "var(--color-gray-400)",
+        "500": "var(--color-gray-500)",
+        "600": "var(--color-gray-600)",
+        "700": "var(--color-gray-700)",
+        "800": "var(--color-gray-800)",
+        "900": "var(--color-gray-900)"
+      },
+      "red": {
+        "100": "var(--color-red-100)",
+        "200": "var(--color-red-200)",
+        "300": "var(--color-red-300)",
+        "400": "var(--color-red-400)",
+        "500": "var(--color-red-500)",
+        "600": "var(--color-red-600)",
+        "700": "var(--color-red-700)",
+        "800": "var(--color-red-800)",
+        "900": "var(--color-red-900)"
+      },
+      "orange": {
+        "100": "var(--color-orange-100)",
+        "200": "var(--color-orange-200)",
+        "300": "var(--color-orange-300)",
+        "400": "var(--color-orange-400)",
+        "500": "var(--color-orange-500)",
+        "600": "var(--color-orange-600)",
+        "700": "var(--color-orange-700)",
+        "800": "var(--color-orange-800)",
+        "900": "var(--color-orange-900)"
+      },
+      "green": {
+        "100": "var(--color-green-100)",
+        "200": "var(--color-green-200)",
+        "300": "var(--color-green-300)",
+        "400": "var(--color-green-400)",
+        "500": "var(--color-green-500)",
+        "600": "var(--color-green-600)",
+        "700": "var(--color-green-700)",
+        "800": "var(--color-green-800)",
+        "900": "var(--color-green-900)"
+      },
+      "blue": {
+        "100": "var(--color-blue-100)",
+        "200": "var(--color-blue-200)",
+        "300": "var(--color-blue-300)",
+        "400": "var(--color-blue-400)",
+        "500": "var(--color-blue-500)",
+        "600": "var(--color-blue-600)",
+        "700": "var(--color-blue-700)",
+        "800": "var(--color-blue-800)",
+        "900": "var(--color-blue-900)"
+      }
+    },
+    "spacing": {
+      "0": "0",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "10": "2.5rem",
+      "12": "3rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "32": "8rem",
+      "40": "10rem",
+      "48": "12rem",
+      "56": "14rem",
+      "64": "16rem",
+      "px": "1px",
+      "half-block-spacing": "calc( var( --block-spacing ) / 2 )",
+      "block-spacing": "var( --block-spacing )",
+      "gutter": "var( --gutter )",
+      "initial": "initial"
+    },
+    "fontFamily": {
+      "heading": "var(--heading-font-family)",
+      "copy": "var(--copy-font-family)",
+      "sans": [
+        "Inter",
+        "system-ui",
+        "BlinkMacSystemFont",
+        "-apple-system",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "serif": [
+        "Constantia",
+        "Lucida Bright",
+        "Lucidabright",
+        "Lucida Serif",
+        "Lucida",
+        "DejaVu Serif",
+        "Bitstream Vera Serif",
+        "Liberation Serif",
+        "Georgia",
+        "serif"
+      ],
+      "mono": [
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        "Liberation Mono",
+        "Courier New",
+        "monospace"
+      ]
+    },
+    "fontSize": {
+      "xs": "var(--font-size-xs)",
+      "sm": "var(--font-size-sm)",
+      "base": "var(--font-size-base)",
+      "lg": "var(--font-size-lg)",
+      "xl": "var(--font-size-xl)",
+      "2xl": "var(--font-size-2xl)",
+      "3xl": "var(--font-size-3xl)",
+      "4xl": "var(--font-size-4xl)",
+      "5xl": "var(--font-size-5xl)"
+    },
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.1em",
+      "widest": "0.2em"
+    },
+    "lineHeight": {
+      "none": "1",
+      "tight": "1.25",
+      "snug": "1.375",
+      "normal": "1.5",
+      "relaxed": "1.625",
+      "loose": "2"
+    },
+    "borderWidth": {
+      "0": "0",
+      "2": "2px",
+      "3": "3px",
+      "4": "4px",
+      "6": "6px",
+      "8": "8px",
+      "default": "1px"
+    },
+    "boxShadow": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.04)",
+      "default": "0 2px 4px 0 rgba(0,0,0,0.10)",
+      "md": "0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)",
+      "lg": "0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)",
+      "inner": "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
+      "outline": "0 0 0 3px rgba(52,144,220,0.5)",
+      "none": "none"
+    },
+    "zIndex": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "10": 10,
+      "20": 20,
+      "30": 30,
+      "40": 40,
+      "50": 50,
+      "auto": "auto",
+      "-1": -1
+    },
+    "opacity": {
+      "0": "0",
+      "25": ".25",
+      "50": ".5",
+      "75": ".75",
+      "90": ".9",
+      "100": "1"
+    },
+    "gridRow": {
+      "min-content": "min-content"
+    },
+    "fill": {
+      "current": "currentColor",
+      "none": "none"
+    },
+    "stroke": {
+      "current": "currentColor"
+    },
+    "aspectRatio": {
+      "square": [
+        1,
+        1
+      ],
+      "16/9": [
+        16,
+        9
+      ],
+      "2/3": [
+        2,
+        3
+      ],
+      "3/2": [
+        3,
+        2
+      ],
+      "3/4": [
+        3,
+        4
+      ],
+      "4/3": [
+        4,
+        3
+      ],
+      "21/9": [
+        21,
+        9
+      ]
+    }
+  },
+  "variants": {
+    "aspectRatio": [
+      "responsive"
+    ],
+    "appearance": [
+      "responsive"
+    ],
+    "backgroundAttachment": [
+      "responsive"
+    ],
+    "backgroundColor": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "backgroundPosition": [
+      "responsive"
+    ],
+    "backgroundRepeat": [
+      "responsive"
+    ],
+    "backgroundSize": [
+      "responsive"
+    ],
+    "borderCollapse": [],
+    "borderColor": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "borderRadius": [
+      "responsive"
+    ],
+    "borderStyle": [
+      "responsive"
+    ],
+    "borderWidth": [
+      "responsive"
+    ],
+    "cursor": [
+      "responsive"
+    ],
+    "display": [
+      "responsive"
+    ],
+    "flexDirection": [
+      "responsive"
+    ],
+    "flexWrap": [
+      "responsive"
+    ],
+    "alignItems": [
+      "responsive"
+    ],
+    "alignSelf": [
+      "responsive"
+    ],
+    "justifyContent": [
+      "responsive"
+    ],
+    "alignContent": [
+      "responsive"
+    ],
+    "flex": [
+      "responsive"
+    ],
+    "flexGrow": [
+      "responsive"
+    ],
+    "flexShrink": [
+      "responsive"
+    ],
+    "float": [
+      "responsive"
+    ],
+    "fontFamily": [
+      "responsive"
+    ],
+    "fontWeight": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "height": [
+      "responsive"
+    ],
+    "lineHeight": [
+      "responsive"
+    ],
+    "listStylePosition": [
+      "responsive"
+    ],
+    "listStyleType": [
+      "responsive"
+    ],
+    "margin": [
+      "responsive"
+    ],
+    "maxHeight": [
+      "responsive"
+    ],
+    "maxWidth": [
+      "responsive"
+    ],
+    "minHeight": [
+      "responsive"
+    ],
+    "minWidth": [
+      "responsive"
+    ],
+    "negativeMargin": [
+      "responsive"
+    ],
+    "objectFit": [
+      "responsive"
+    ],
+    "objectPosition": [
+      "responsive"
+    ],
+    "opacity": [
+      "responsive"
+    ],
+    "outline": [
+      "focus"
+    ],
+    "overflow": [
+      "responsive"
+    ],
+    "padding": [
+      "responsive"
+    ],
+    "pointerEvents": [
+      "responsive"
+    ],
+    "position": [
+      "responsive"
+    ],
+    "inset": [
+      "responsive"
+    ],
+    "resize": [
+      "responsive"
+    ],
+    "boxShadow": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "fill": [],
+    "stroke": [],
+    "tableLayout": [
+      "responsive"
+    ],
+    "textAlign": [
+      "responsive"
+    ],
+    "textColor": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "fontSize": [
+      "responsive"
+    ],
+    "fontStyle": [
+      "responsive"
+    ],
+    "textTransform": [
+      "responsive"
+    ],
+    "textDecoration": [
+      "responsive",
+      "hover",
+      "focus"
+    ],
+    "fontSmoothing": [
+      "responsive"
+    ],
+    "letterSpacing": [
+      "responsive"
+    ],
+    "userSelect": [
+      "responsive"
+    ],
+    "verticalAlign": [
+      "responsive"
+    ],
+    "visibility": [
+      "responsive"
+    ],
+    "whitespace": [
+      "responsive"
+    ],
+    "wordBreak": [
+      "responsive"
+    ],
+    "width": [
+      "responsive"
+    ],
+    "zIndex": [
+      "responsive"
+    ]
+  },
+  "corePlugins": {
+    "container": false
+  },
+  "plugins": [
+    {},
+    null
+  ]
+}
