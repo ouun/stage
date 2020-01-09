@@ -15,6 +15,36 @@ const { wordpressUtilities } = require('tailwindcss-wordpress');
 
 module.exports = {
   theme: {
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Screens                      https://tailwindcss.com/docs/responsive-design
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .{screen}:{utility}
+    |
+    */
+
+    screens: {
+      'sm': '576px',
+      'md': '768px',
+      'lg': '992px',
+      'xl': '1200px',
+      'xxl': '1600px',
+    },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Default Colors               https://tailwindcss.com/docs/customizing-colors
+    |-----------------------------------------------------------------------------
+    |
+    | By default these colors are automatically shared by the textColor, borderColor,
+    | and backgroundColor utilities, so the above configuration would generate
+    | classes like .text-indigo, .border-blue, and .bg-red.
+    |
+    */
+
     colors: {
       'inherit': 'inherit',
       'transparent': 'transparent',
@@ -22,6 +52,7 @@ module.exports = {
       'body':       'var(--color-body)',
       'accent':     'var(--color-accent)',
 
+      'link':       'var(--color-link)',
       'copy':       'var(--color-copy)',
       'heading':    'var(--color-heading)',
 
@@ -42,6 +73,7 @@ module.exports = {
         800: 'var(--color-gray-800)',
         900: 'var(--color-gray-900)',
       },
+
       'red': {
         100: 'var(--color-red-100)',
         200: 'var(--color-red-200)',
@@ -53,6 +85,7 @@ module.exports = {
         800: 'var(--color-red-800)',
         900: 'var(--color-red-900)',
       },
+
       'orange': {
         100: 'var(--color-orange-100)',
         200: 'var(--color-orange-200)',
@@ -64,17 +97,7 @@ module.exports = {
         800: 'var(--color-orange-800)',
         900: 'var(--color-orange-900)',
       },
-      'yellow': {
-        100: 'var(--color-yellow-100)',
-        200: 'var(--color-yellow-200)',
-        300: 'var(--color-yellow-300)',
-        400: 'var(--color-yellow-400)',
-        500: 'var(--color-yellow-500)',
-        600: 'var(--color-yellow-600)',
-        700: 'var(--color-yellow-700)',
-        800: 'var(--color-yellow-800)',
-        900: 'var(--color-yellow-900)',
-      },
+
       'green': {
         100: 'var(--color-green-100)',
         200: 'var(--color-green-200)',
@@ -86,17 +109,7 @@ module.exports = {
         800: 'var(--color-green-800)',
         900: 'var(--color-green-900)',
       },
-      'teal': {
-        100: 'var(--color-teal-100)',
-        200: 'var(--color-teal-200)',
-        300: 'var(--color-teal-300)',
-        400: 'var(--color-teal-400)',
-        500: 'var(--color-teal-500)',
-        600: 'var(--color-teal-600)',
-        700: 'var(--color-teal-700)',
-        800: 'var(--color-teal-800)',
-        900: 'var(--color-teal-900)',
-      },
+
       'blue': {
         100: 'var(--color-blue-100)',
         200: 'var(--color-blue-200)',
@@ -108,39 +121,44 @@ module.exports = {
         800: 'var(--color-blue-800)',
         900: 'var(--color-blue-900)',
       },
-      'indigo': {
-        100: 'var(--color-indigo-100)',
-        200: 'var(--color-indigo-200)',
-        300: 'var(--color-indigo-300)',
-        400: 'var(--color-indigo-400)',
-        500: 'var(--color-indigo-500)',
-        600: 'var(--color-indigo-600)',
-        700: 'var(--color-indigo-700)',
-        800: 'var(--color-indigo-800)',
-        900: 'var(--color-indigo-900)',
-      },
-      'purple': {
-        100: 'var(--color-purple-100)',
-        200: 'var(--color-purple-200)',
-        300: 'var(--color-purple-300)',
-        400: 'var(--color-purple-400)',
-        500: 'var(--color-purple-500)',
-        600: 'var(--color-purple-600)',
-        700: 'var(--color-purple-700)',
-        800: 'var(--color-purple-800)',
-        900: 'var(--color-purple-900)',
-      },
-      'pink': {
-        100: 'var(--color-pink-100)',
-        200: 'var(--color-pink-200)',
-        300: 'var(--color-pink-300)',
-        400: 'var(--color-pink-400)',
-        500: 'var(--color-pink-500)',
-        600: 'var(--color-pink-600)',
-        700: 'var(--color-pink-700)',
-        800: 'var(--color-pink-800)',
-        900: 'var(--color-pink-900)',
-      },
+    },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Default Spacing             https://tailwindcss.com/docs/customizing-spacing
+    |-----------------------------------------------------------------------------
+    |
+    | By default the spacing scale is shared by the padding, margin, width, and
+    | height utilities so the above configuration would generate classes like
+    | .p-2, .mt-3, .w-5, .h-6, .gap- etc.
+    |
+    */
+
+    spacing: {
+      'px': '1px',
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': '2.5rem',
+      '12': '3rem',
+      '16': '4rem',
+      '20': '5rem',
+      '24': '6rem',
+      '32': '8rem',
+      '40': '10rem',
+      '48': '12rem',
+      '56': '14rem',
+      '64': '16rem',
+      'half-block-spacing': 'calc( var( --block-spacing ) / 2 )',
+      'block-spacing': 'var( --block-spacing )',
+      'gutter': 'var( --gutter )',
+      'initial': 'initial',
     },
 
     /*
@@ -160,58 +178,16 @@ module.exports = {
     | Background colors             https://tailwindcss.com/docs/background-color
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your background colors. By default these use
-    | the color palette we defined above, however you're welcome to set
-    | these independently if that makes sense for your project.
-    |
     | Class name: .bg-{color}
     |
     */
 
     backgroundColor: theme => theme('colors'),
 
-
-    /*
-  |-----------------------------------------------------------------------------
-  | Screens                      https://tailwindcss.com/docs/responsive-design
-  |-----------------------------------------------------------------------------
-  |
-  | Screens in Tailwind are translated to CSS media queries. They define the
-  | responsive breakpoints for your project. By default Tailwind takes a
-  | "mobile first" approach, where each screen size represents a minimum
-  | viewport width. Feel free to have as few or as many screens as you
-  | want, naming them in whatever way you'd prefer for your project.
-  |
-  | Tailwind also allows for more complex screen definitions, which can be
-  | useful in certain situations. Be sure to see the full responsive
-  | documentation for a complete list of options.
-  |
-  | Class name: .{screen}:{utility}
-  |
-  */
-
-    screens: {
-      'sm': '576px',
-      'md': '768px',
-      'lg': '992px',
-      'xl': '1200px',
-      'xxl': '1600px',
-    },
-
-
     /*
     |-----------------------------------------------------------------------------
     | Fonts                                    https://tailwindcss.com/docs/fonts
     |-----------------------------------------------------------------------------
-    |
-    | Here is where you define your project's font stack, or font families.
-    | Keep in mind that Tailwind doesn't actually load any fonts for you.
-    | If you're using custom fonts you'll need to import them prior to
-    | defining them here.
-    |
-    | By default we provide a native font stack that works remarkably well on
-    | any device or OS you're using, since it just uses the default fonts
-    | provided by the platform.
     |
     | Class name: .font-{name}
     | CSS property: font-family
@@ -222,6 +198,7 @@ module.exports = {
       'heading': 'var(--heading-font-family)',
       'copy': 'var(--copy-font-family)',
       'sans': [
+        'Inter',
         'system-ui',
         'BlinkMacSystemFont',
         '-apple-system',
@@ -262,16 +239,6 @@ module.exports = {
     |-----------------------------------------------------------------------------
     | Font sizes                         https://tailwindcss.com/docs/text-sizing
     |-----------------------------------------------------------------------------
-    |
-    | Here is where you define your text sizes. Name these in whatever way
-    | makes the most sense to you. We use size names by default, but
-    | you're welcome to use a numeric scale or even something else
-    | entirely.
-    |
-    | By default Tailwind uses the "rem" unit type for most measurements.
-    | This allows you to set a root font size which all other sizes are
-    | then based on. That said, you are free to use whatever units you
-    | prefer, be it rems, ems, pixels or other.
     |
     | Class name: .text-{size}
     | CSS property: font-size
@@ -335,17 +302,6 @@ module.exports = {
     | Width                                    https://tailwindcss.com/docs/width
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your width utility sizes. These can be
-    | percentage based, pixels, rems, or any other units. By default
-    | we provide a sensible rem based numeric scale, a percentage
-    | based fraction scale, plus some other common use-cases. You
-    | can, of course, modify these values as needed.
-    |
-    |
-    | It's also worth mentioning that Tailwind automatically escapes
-    | invalid CSS class name characters, which allows you to have
-    | awesome classes like .w-2/3.
-    |
     | Class name: .w-{size}
     |
     */
@@ -403,12 +359,6 @@ module.exports = {
     | Height                                  https://tailwindcss.com/docs/height
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your height utility sizes. These can be
-    | percentage based, pixels, rems, or any other units. By default
-    | we provide a sensible rem based numeric scale plus some other
-    | common use-cases. You can, of course, modify these values as
-    | needed.
-    |
     | Class name: .h-{size}
     |
     */
@@ -446,11 +396,6 @@ module.exports = {
     | Minimum width                        https://tailwindcss.com/docs/min-width
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your minimum width utility sizes. These can
-    | be percentage based, pixels, rems, or any other units. We provide a
-    | couple common use-cases by default. You can, of course, modify
-    | these values as needed.
-    |
     | Class name: .min-w-{size}
     |
     */
@@ -468,11 +413,6 @@ module.exports = {
     | Minimum height                      https://tailwindcss.com/docs/min-height
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your minimum height utility sizes. These can
-    | be percentage based, pixels, rems, or any other units. We provide a
-    | few common use-cases by default. You can, of course, modify these
-    | values as needed.
-    |
     | Class name: .min-h-{size}
     |
     */
@@ -489,12 +429,6 @@ module.exports = {
     |-----------------------------------------------------------------------------
     | Maximum width                        https://tailwindcss.com/docs/max-width
     |-----------------------------------------------------------------------------
-    |
-    | Here is where you define your maximum width utility sizes. These can
-    | be percentage based, pixels, rems, or any other units. By default
-    | we provide a sensible rem based scale and a "full width" size,
-    | which is basically a reset utility. You can, of course,
-    | modify these values as needed.
     |
     | Class name: .max-w-{size}
     |
@@ -522,11 +456,6 @@ module.exports = {
     | Maximum height                      https://tailwindcss.com/docs/max-height
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your maximum height utility sizes. These can
-    | be percentage based, pixels, rems, or any other units. We provide a
-    | couple common use-cases by default. You can, of course, modify
-    | these values as needed.
-    |
     | Class name: .max-h-{size}
     |
     */
@@ -546,37 +475,11 @@ module.exports = {
     | Padding                                https://tailwindcss.com/docs/padding
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your padding utility sizes. These can be
-    | percentage based, pixels, rems, or any other units. By default we
-    | provide a sensible rem based numeric scale plus a couple other
-    | common use-cases like "1px". You can, of course, modify these
-    | values as needed.
-    |
     | Class name: .p{side?}-{size}
     |
     */
 
-    padding: {
-      'px': '1px',
-      '0': '0',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': '2.5rem',
-      '12': '3rem',
-      '16': '4rem',
-      '20': '5rem',
-      '24': '6rem',
-      '32': '8rem',
-      'half-block-spacing': 'calc(var(--block-spacing) / 2 )',
-      'block-spacing': 'var(--block-spacing)',
-      'gutter': 'var(--gutter)',
-      'initial': 'initial',
-    },
+    padding: theme => theme('spacing'),
 
 
     /*
@@ -584,52 +487,29 @@ module.exports = {
     | Margin                                  https://tailwindcss.com/docs/margin
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your margin utility sizes. These can be
-    | percentage based, pixels, rems, or any other units. By default we
-    | provide a sensible rem based numeric scale plus a couple other
-    | common use-cases like "1px". You can, of course, modify these
-    | values as needed.
-    |
+    | Extended spacing
     | Class name: .m{side?}-{size}
     |
     */
 
-    margin: {
-      'auto': 'auto',
-      'px': '1px',
-      '0': '0',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': '2.5rem',
-      '12': '3rem',
-      '16': '4rem',
-      '20': '5rem',
-      '24': '6rem',
-      '32': '8rem',
-      '-px': '-1px',
-      '-1': '-0.25rem',
-      '-2': '-0.5rem',
-      '-3': '-0.75rem',
-      '-4': '-1rem',
-      '-5': '-1.25rem',
-      '-6': '-1.5rem',
-      '-8': '-2rem',
-      '-10': '-2.5rem',
-      '-12': '-3rem',
-      '-16': '-4rem',
-      '-20': '-5rem',
-      '-24': '-6rem',
-      '-32': '-8rem',
-      'half': '50%',
-      'full': '100%',
-      'half-block-spacing': 'calc(var(--block-spacing) / 2 )',
-      'block-spacing': 'var(--block-spacing)',
-      'gutter': 'var(--gutter)',
+    extend: {
+      margin: {
+        'auto': 'auto',
+        '-px': '-1px',
+        '-1': '-0.25rem',
+        '-2': '-0.5rem',
+        '-3': '-0.75rem',
+        '-4': '-1rem',
+        '-5': '-1.25rem',
+        '-6': '-1.5rem',
+        '-8': '-2rem',
+        '-10': '-2.5rem',
+        '-12': '-3rem',
+        '-16': '-4rem',
+        '-20': '-5rem',
+        '-24': '-6rem',
+        '-32': '-8rem',
+      },
     },
 
 
@@ -678,18 +558,12 @@ module.exports = {
     | Shadows                                https://tailwindcss.com/docs/shadows
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your shadow utilities. As you can see from
-    | the defaults we provide, it's possible to apply multiple shadows
-    | per utility using comma separation.
-    |
-    | If a `default` shadow is provided, it will be made available as the non-
-    | suffixed `.shadow` utility.
-    |
     | Class name: .shadow-{size?}
     |
     */
 
     boxShadow: {
+      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.04)',
       default: '0 2px 4px 0 rgba(0,0,0,0.10)',
       'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
       'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
@@ -703,10 +577,6 @@ module.exports = {
     |-----------------------------------------------------------------------------
     | Z-index                                https://tailwindcss.com/docs/z-index
     |-----------------------------------------------------------------------------
-    |
-    | Here is where you define your z-index utility values. By default we
-    | provide a sensible numeric scale. You can, of course, modify these
-    | values as needed.
     |
     | Class name: .z-{index}
     |
@@ -734,10 +604,6 @@ module.exports = {
     | Opacity                                https://tailwindcss.com/docs/opacity
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your opacity utility values. By default we
-    | provide a sensible numeric scale. You can, of course, modify these
-    | values as needed.
-    |
     | Class name: .opacity-{name}
     |
     */
@@ -754,13 +620,21 @@ module.exports = {
 
     /*
     |-----------------------------------------------------------------------------
-    | SVG fill                                   https://tailwindcss.com/docs/svg
+    | CSS Grid Row            https://github.com/tailwindcss/tailwindcss/pull/1274
     |-----------------------------------------------------------------------------
     |
-    | Here is where you define your SVG fill colors. By default we just provide
-    | `fill-current` which sets the fill to the current text color. This lets you
-    | specify a fill color using existing text color utilities and helps keep the
-    | generated CSS file size down.
+    | Class name: .grid-row-{name}
+    |
+    */
+
+    gridRow: {
+      'min-content': 'min-content',
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
+    | SVG fill                                   https://tailwindcss.com/docs/svg
+    |-----------------------------------------------------------------------------
     |
     | Class name: .fill-{name}
     |
@@ -776,11 +650,6 @@ module.exports = {
     |-----------------------------------------------------------------------------
     | SVG stroke                                 https://tailwindcss.com/docs/svg
     |-----------------------------------------------------------------------------
-    |
-    | Here is where you define your SVG stroke colors. By default we just provide
-    | `stroke-current` which sets the stroke to the current text color. This lets
-    | you specify a stroke color using existing text color utilities and helps
-    | keep the generated CSS file size down.
     |
     | Class name: .stroke-{name}
     |
@@ -800,7 +669,7 @@ module.exports = {
     |
     */
 
-    aspectRatio: { // defaults to {}
+    aspectRatio: {
       'square': [1, 1],
       '16/9': [16, 9],
       '2/3': [2, 3],
@@ -921,40 +790,5 @@ module.exports = {
   plugins: [
     wordpressUtilities,
     require('tailwindcss-aspect-ratio')(),
-    require('tailwindcss-visuallyhidden')({
-      variants: ['responsive', 'hover'],
-    }),
-    require('tailwindcss-flexbox-order')({
-      range: false,
-      values: [-1, 1, 5, 10],
-      variants: ['responsive'],
-    }),
-    require('tailwindcss-transitions')({
-      standard: 'all .3s ease',
-      transitions: {
-        'slow': 'all 2s ease',
-        'normal-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-        'slow-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-      },
-      variants: ['responsive', 'hover'],
-    }),
-    require('tailwindcss-grid')({
-      grids: [2, 3, 5, 6, 8, 10, 12],
-      gaps: {
-        0: '0',
-        2: '0.5rem',
-        4: '1rem',
-        8: '2rem',
-        '4-x': '1rem',
-        '4-y': '1rem',
-        'block-spacing': 'var(--block-spacing)',
-      },
-      autoMinWidths: {
-        '16': '4rem',
-        '24': '6rem',
-        '300px': '300px',
-      },
-      variants: ['responsive'],
-    }),
   ],
 };

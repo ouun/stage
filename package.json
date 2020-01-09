@@ -45,12 +45,8 @@
     "sass-loader": "^8.0.0",
     "stylelint": "^12.0.1",
     "stylelint-config-standard": "^19.0.0",
-    "tailwindcss": "^1.0",
+    "tailwindcss": "^1.2.0-canary.5",
     "tailwindcss-aspect-ratio": "^2.0.0",
-    "tailwindcss-flexbox-order": "^1.0.0",
-    "tailwindcss-grid": "^1.2.1",
-    "tailwindcss-transitions": "^2.0.1",
-    "tailwindcss-visuallyhidden": "^1.0.1",
     "tailwindcss-wordpress": "^0.1.1",
     "vue-template-compiler": "^2.6.10"
   },
