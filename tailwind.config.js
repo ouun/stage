@@ -11,8 +11,6 @@ View the full documentation at https://tailwindcss.com.
 
 */
 
-const { wordpressUtilities } = require('tailwindcss-wordpress');
-
 module.exports = {
   theme: {
 
@@ -129,8 +127,8 @@ module.exports = {
     | Default Spacing             https://tailwindcss.com/docs/customizing-spacing
     |-----------------------------------------------------------------------------
     |
-    | By default the spacing scale is shared by the padding, margin, width, and
-    | height utilities so the above configuration would generate classes like
+    | By default the spacing scale is shared by the padding, margin, gap, etc.
+    | utilities so the above configuration would generate classes like
     | .p-2, .mt-3, .w-5, .h-6, .gap- etc.
     |
     */
@@ -160,6 +158,60 @@ module.exports = {
       'gutter': 'var( --gutter )',
       'initial': 'initial',
     },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Default Sizes                                                 Stage Specific
+    |-----------------------------------------------------------------------------
+    |
+    | By default the sizes scale is shared by the height, width, max-height, etc.
+    | utilities and extends the spacing. so the above configuration would generate
+    | classes like .w-2, .h-3, .max-w-1/3, .max-h-6, etc.
+    |
+    */
+
+    sizes: theme => ({
+      'xs': '20rem',
+      'sm': '30rem',
+      'md': '40rem',
+      'lg': '50rem',
+      'xl': '60rem',
+      '2xl': '70rem',
+      '3xl': '80rem',
+      '4xl': '90rem',
+      '5xl': '100rem',
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '2/6': '33.33334%',
+      '3/6': '50%',
+      '4/6': '66.66668%',
+      '5/6': '83.33333%',
+      '1/12': '8.33333%',
+      '2/12': '16.66667%',
+      '3/12': '25%',
+      '4/12': '33.33333%',
+      '5/12': '41.66667%',
+      '6/12': '50%',
+      '7/12': '58.33333%',
+      '8/12': '66.66667%',
+      '9/12': '75%',
+      '10/12': '83.33333%',
+      '11/12': '91.66667%',
+      'full': '100%',
+      'half': '50%',
+      'auto': 'auto',
+      'none': 'none',
+      ...theme('spacing'),
+    }),
 
     /*
     |-----------------------------------------------------------------------------
@@ -306,52 +358,11 @@ module.exports = {
     |
     */
 
-    width: {
-      'auto': 'auto',
-      '0': '0',
-      'px': '1px',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': '2.5rem',
-      '12': '3rem',
-      '16': '4rem',
-      '24': '6rem',
-      '32': '8rem',
-      '48': '12rem',
-      '64': '16rem',
-      '1/2': '50%',
-      '1/3': '33.33333%',
-      '2/3': '66.66667%',
-      '1/4': '25%',
-      '3/4': '75%',
-      '1/5': '20%',
-      '2/5': '40%',
-      '3/5': '60%',
-      '4/5': '80%',
-      '1/6': '16.66667%',
-      '2/6': '33.33334%',
-      '3/6': '50%',
-      '4/6': '66.66668%',
-      '5/6': '83.33333%',
-      '1/12': '8.33333%',
-      '2/12': '16.66667%',
-      '3/12': '25%',
-      '4/12': '33.33333%',
-      '5/12': '41.66667%',
-      '6/12': '50%',
-      '7/12': '58.33333%',
-      '8/12': '66.66667%',
-      '9/12': '75%',
-      '10/12': '83.33333%',
-      '11/12': '91.66667%',
-      'full': '100%',
+    width: theme => ({
       'screen': '100vw',
-    },
+      'half-screen': '50vw',
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -363,32 +374,11 @@ module.exports = {
     |
     */
 
-    height: {
-      'auto': 'auto',
-      'inherit': 'inherit',
-      '0': '0',
-      'px': '1px',
-      '2px': '2px',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': '2.5rem',
-      '12': '3rem',
-      '16': '4rem',
-      '20': '5rem',
-      '24': '6rem',
-      '32': '8rem',
-      '48': '12rem',
-      '64': '16rem',
-      'full': '100%',
-      'half': '50%',
+    height: theme => ({
       'screen': '100vh',
       'half-screen': '50vh',
-    },
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -400,12 +390,11 @@ module.exports = {
     |
     */
 
-    minWidth: {
-      '0': '0',
-      '80': '20rem',
-      'full': '100%',
+    minWidth: theme => ({
       'screen': '100vw',
-    },
+      'half-screen': '50vw',
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -417,12 +406,11 @@ module.exports = {
     |
     */
 
-    minHeight: {
-      '0': '0',
-      '12': '3rem',
-      'full': '100%',
+    minHeight: theme => ({
       'screen': '100vh',
-    },
+      'half-screen': '50vh',
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -434,21 +422,11 @@ module.exports = {
     |
     */
 
-    maxWidth: {
-      'none': 'none',
-      '15': '15rem',
-      'xs': '20rem',
-      'sm': '30rem',
-      'md': '40rem',
-      'lg': '50rem',
-      'xl': '60rem',
-      '2xl': '70rem',
-      '3xl': '80rem',
-      '4xl': '90rem',
-      '5xl': '100rem',
-      'full': '100%',
+    maxWidth: theme => ({
       'screen': '100vw',
-    },
+      'half-screen': '50vw',
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -460,14 +438,11 @@ module.exports = {
     |
     */
 
-    maxHeight: {
-      '0': '0',
-      '5xl': '100rem',
-      'full': '100%',
-      'half': '50%',
-      'half-screen': '50vh',
+    maxHeight: theme => ({
       'screen': '100vh',
-    },
+      'half-screen': '50vh',
+      ...theme('sizes'),
+    }),
 
 
     /*
@@ -492,25 +467,24 @@ module.exports = {
     |
     */
 
-    extend: {
-      margin: {
-        'auto': 'auto',
-        '-px': '-1px',
-        '-1': '-0.25rem',
-        '-2': '-0.5rem',
-        '-3': '-0.75rem',
-        '-4': '-1rem',
-        '-5': '-1.25rem',
-        '-6': '-1.5rem',
-        '-8': '-2rem',
-        '-10': '-2.5rem',
-        '-12': '-3rem',
-        '-16': '-4rem',
-        '-20': '-5rem',
-        '-24': '-6rem',
-        '-32': '-8rem',
-      },
-    },
+    margin: theme => ({
+      'auto': 'auto',
+      '-px': '-1px',
+      '-1': '-0.25rem',
+      '-2': '-0.5rem',
+      '-3': '-0.75rem',
+      '-4': '-1rem',
+      '-5': '-1.25rem',
+      '-6': '-1.5rem',
+      '-8': '-2rem',
+      '-10': '-2.5rem',
+      '-12': '-3rem',
+      '-16': '-4rem',
+      '-20': '-5rem',
+      '-24': '-6rem',
+      '-32': '-8rem',
+      ...theme('spacing'),
+    }),
 
 
     /*
@@ -522,17 +496,10 @@ module.exports = {
     |
     */
 
-    inset: {
-      '0': 0,
-      'auto': 'auto',
-      '1/3': '33.3333%',
-      '2/3': '66.6666%',
-      '1/4': '25%',
-      '3/4': '75%',
-      '85': '85%',
-      'half': '50%',
-      'full': '100%',
-    },
+    inset: theme => ({
+      ...theme('sizes'),
+    }),
+
 
     /*
     |-----------------------------------------------------------------------------
@@ -552,6 +519,7 @@ module.exports = {
       '6': '6px',
       '8': '8px',
     },
+
 
     /*
     |-----------------------------------------------------------------------------
@@ -788,7 +756,7 @@ module.exports = {
   */
 
   plugins: [
-    wordpressUtilities,
+    require('tailwindcss-wordpress'),
     require('tailwindcss-aspect-ratio')(),
   ],
 };
