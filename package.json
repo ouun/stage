@@ -23,9 +23,9 @@
     "translate:js": "wp i18n make-json ./resources/languages --no-purge --pretty-print"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.8",
     "@tinypixelco/laravel-mix-wp-blocks": "^1.0.0",
-    "@wordpress/babel-preset-default": "^4.7.0",
+    "@wordpress/babel-preset-default": "^4.9.0",
     "@wordpress/browserslist-config": "^2.6.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.1.0",
     "babel-eslint": "^10.0.3",
@@ -44,7 +44,7 @@
     "rimraf": "^3.0",
     "sass": "^1.24.4",
     "sass-loader": "^8.0.2",
-    "stylelint": "^12.0.1",
+    "stylelint": "^13.0.0",
     "stylelint-config-standard": "^19.0.0",
     "tailwindcss": "^1.2.0-canary.5",
     "tailwindcss-aspect-ratio": "^2.0.0",
