@@ -1,3 +1,7 @@
 #wpadminbar {
   @apply absolute inset-x-0 top-0;
 }
+
+body.admin-bar {
+  margin-top: 32px;
+}

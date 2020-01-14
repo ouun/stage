@@ -51,7 +51,7 @@ require_once $composer;
  */
 array_map(
     function ($file) use ($sage_error) {
-        $file = "include/{$file}.php";
+        $file = "app/{$file}.php";
         if (! locate_template($file, true, true)) {
             $sage_error(
                 sprintf(

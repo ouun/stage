@@ -9,7 +9,7 @@ Product Archives
     @action('get_before_main_content')
 
     @if( $show_page_title )
-        @include('partials.page-header')
+        @include('partials.single.page-title')
     @endif
 
     @action('get_archive_description')

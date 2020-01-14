@@ -156,7 +156,6 @@ module.exports = {
       'half-block-spacing': 'calc( var( --block-spacing ) / 2 )',
       'block-spacing': 'var( --block-spacing )',
       'gutter': 'var( --gutter )',
-      'initial': 'initial',
     },
 
 
@@ -454,7 +453,10 @@ module.exports = {
     |
     */
 
-    padding: theme => theme('spacing'),
+    padding: theme => ({
+      'initial': 'initial',
+      ...theme('spacing'),
+    }),
 
 
     /*
@@ -467,23 +469,10 @@ module.exports = {
     |
     */
 
-    margin: theme => ({
+    margin: (theme, { negative }) => ({
       'auto': 'auto',
-      '-px': '-1px',
-      '-1': '-0.25rem',
-      '-2': '-0.5rem',
-      '-3': '-0.75rem',
-      '-4': '-1rem',
-      '-5': '-1.25rem',
-      '-6': '-1.5rem',
-      '-8': '-2rem',
-      '-10': '-2.5rem',
-      '-12': '-3rem',
-      '-16': '-4rem',
-      '-20': '-5rem',
-      '-24': '-6rem',
-      '-32': '-8rem',
       ...theme('spacing'),
+      ...negative(theme('spacing')),
     }),
 
 
@@ -503,10 +492,10 @@ module.exports = {
 
     /*
     |-----------------------------------------------------------------------------
-    | Bordere Width                      https://tailwindcss.com/border-width.html
+    | Border Width                      https://tailwindcss.com/border-width.html
     |-----------------------------------------------------------------------------
     |
-    | Class name: .bortder-{size?}
+    | Class name: .border-{size?}
     |
     */
 
@@ -578,6 +567,7 @@ module.exports = {
 
     opacity: {
       '0': '0',
+      '10': '10',
       '25': '.25',
       '50': '.5',
       '75': '.75',
@@ -598,6 +588,7 @@ module.exports = {
     gridRow: {
       'min-content': 'min-content',
     },
+
 
     /*
     |-----------------------------------------------------------------------------
@@ -672,12 +663,12 @@ module.exports = {
     aspectRatio: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'focus-within'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],

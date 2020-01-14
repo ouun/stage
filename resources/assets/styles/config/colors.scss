@@ -1,0 +1,13 @@
+/**
+ * Must reflect tailwind.js
+ * And registered pallets from defaults.php
+ */
+
+$colors: (
+  "primary":    var(--color-primary),
+  "secondary":  var(--color-secondary),
+  "gray-200":   var(--color-gray-200),
+  "gray-800":   var(--color-gray-800),
+  "white":      var(--color-white),
+  "black":      var(--color-black),
+);

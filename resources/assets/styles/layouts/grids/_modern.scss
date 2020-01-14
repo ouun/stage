@@ -1,9 +1,8 @@
 @screen sm {
   @supports (display: grid) {
     .grid-modern {
-      @apply grid grid-gap-4;
+      @apply grid grid-cols-12 gap-block-spacing;
 
-      grid-template-columns: repeat(12, 1fr);
       grid-template-rows: min-content;
       grid-auto-rows: auto;
 

@@ -17,7 +17,6 @@
 
 // PhotoSwipe CSS
 @import "~photoswipe/src/css/main";
-// @import "~photoswipe/src/css/default-skin/default-skin";
 
 /**
  * Tailwind components. Define your own below or use/write a plugin.
@@ -54,6 +53,7 @@
 @import "common/global";
 @import "common/typo";
 @import "common/loader";
+@import "common/alignments";
 @import "components/admin-bar";
 @import "components/animations";
 @import "components/accordion";

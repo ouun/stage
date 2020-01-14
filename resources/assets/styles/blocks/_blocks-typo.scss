@@ -1,0 +1,26 @@
+@import "../config/font-sizes";
+
+/* WP Blocks font sizes */
+@each $name, $size in $font-sizes {
+  .has-#{$name}-font-size {
+    font-size: $size;
+  }
+}
+
+/* WP Blocks font families & weights */
+// Main headline of the article
+.editor-post-title .editor-post-title__input {
+  @apply text-5xl;
+
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: 1;
+}
+
+// Block content
+.wp-block {
+  font-family: var(--copy-font-family);
+  font-weight: var(--copy-font-weight);
+
+  @import "../common/typo";
+}

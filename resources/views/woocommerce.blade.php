@@ -12,6 +12,8 @@ This gets the template parts from WC plugin path
 
 @section('content')
   <section class="wp-blocks">
-    @php(woocommerce_content())
+    @if( function_exists( 'woocommerce_content' ) )
+      @php( woocommerce_content() )
+    @endif
   </section>
 @endsection

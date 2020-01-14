@@ -1,0 +1,19 @@
+@import "../config/colors";
+
+@each $name, $color in $colors {
+  .has-#{$name}-color {
+    color: $color !important;
+  }
+
+  .has-#{$name}-background-color > *,
+  .has-#{$name}-background-color::before {
+    background-color: $color !important;
+    border-color: $color !important;
+  }
+}
+
+@for $i from 1 through 10 {
+  .has-background-dim-#{ $i * 10 }::before {
+    opacity: $i * 0.1;
+  }
+}

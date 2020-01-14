@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Stage\\": "include/"
+      "Stage\\": "app/"
     }
   },
   "repositories": [
@@ -32,6 +32,13 @@
       "name": "ouun/kirki-module-fonts_upload",
       "type": "vcs",
       "url": "https://github.com/ouun/kirki-module-fonts_upload"
+    },
+    {
+      "type": "path",
+      "url": "/Volumes/Webprojekte/Repositories/laravel-tailwind-config",
+      "options": {
+        "symlink": true
+      }
     }
   ],
   "require": {
@@ -54,8 +61,9 @@
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
-    "ouun/kirki-module-sync_controls": "^1.0",
-    "ouun/kirki-module-fonts_upload": "^1.0",
+    "ouun/kirki-module-sync_controls": "dev-master",
+    "ouun/kirki-module-fonts_upload": "dev-master",
+    "ouun/laravel-tailwind-config": "dev-master",
     "roots/acorn": "dev-master"
   },
   "require-dev": {

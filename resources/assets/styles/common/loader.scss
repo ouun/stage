@@ -1,0 +1,46 @@
+@import "../mixins/loader";
+
+/* appear: active state, define the transition */
+.fade-appear-active {
+  transition: opacity 450ms ease;
+}
+
+/* appear: initial state */
+.fade-appear {
+  @apply relative opacity-0;
+}
+
+/* appear: ending state */
+.fade-appear-to {
+  @apply opacity-100;
+}
+
+/* fade and slide transition active states (same for leave and enter) */
+.fade-leave-active,
+.fade-enter-active,
+.slide-leave-active,
+.slide-enter-active {
+  transition: opacity 450ms ease, transform 650ms ease-in-out;
+}
+
+/* fade transition states */
+.fade-leave,
+.fade-enter-to {
+  @apply opacity-100;
+}
+
+.fade-enter,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+/* slide transition states */
+.slide-leave,
+.slide-enter-to {
+  transform: translateX(0);
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(100%);
+}

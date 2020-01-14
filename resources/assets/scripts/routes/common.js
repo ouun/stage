@@ -15,18 +15,22 @@ export default () => {
   stage.menu = menu;
   menu.init();
 
+  // Init barba.js loader
   if ( stage.features.loader ) {
     loader.init();
   }
 
+  // Init lozad.js lazy loading
   if ( stage.features.lazy ) {
     lazy.init();
   }
 
+  // Init PhotoSwipe
   if ( stage.features.gallery ) {
     gallery.init();
   }
 
+  // Init WP Adminbar
   if ( stage.wp.adminbar_visible ) {
     adminbar.init();
   }

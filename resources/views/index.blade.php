@@ -1,24 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+  @include('partials.archive.title')
 
   @if(! have_posts())
     @alert(['type' => 'warning'])
       {{ __('Sorry, no results were found.', 'stage') }}
     @endalert
 
-    <div class="text-xl max-w-sm border-2 border-black py-3 my-6">
-      {!! get_search_form(false) !!}
-    </div>
+    @include('components.search')
+  @else
+    @includeFirst(['partials.archive.content-' . get_post_type(), 'partials.archive.content'])
   @endif
-
-  <div class="flex-1 archive-wrap">
-    @include( 'partials.grids.' . $layout )
-
-    {!! get_the_posts_navigation() !!}
-  </div>
-
 @endsection
 
 @if( $display_sidebar )

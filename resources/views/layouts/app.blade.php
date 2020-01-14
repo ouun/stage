@@ -1,10 +1,15 @@
 <!doctype html>
 <html {!! get_language_attributes() !!} class="h-full overflow-x-hidden overflow-y-scroll">
-  @include('partials.head')
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @php wp_head() @endphp
+  </head>
   <body @php body_class() @endphp data-loader="wrapper">
     @php wp_body_open() @endphp
     @php do_action('get_header') @endphp
-    @include('partials.header')
+    @include('layouts.header')
 
     <div id="app" class="flex" data-loader="container" data-loader-namespace="page">
       <main id="main" class="main flex-1 flex-auto h-auto min-h-0 overflow-hidden @hasSection('sidebar') flex-wrap lg:flex-no-wrap content-wrap @endif">
@@ -17,13 +22,13 @@
         </aside>
       @endif
 
-      @include('partials.footer')
+      @include('layouts.footer')
     </div>
 
-    @include('partials.footer.overlay')
+    @include('layouts.footer.overlay')
 
     @if( $features->gallery )
-      @include('partials.footer.psw-container')
+      @include('layouts.footer.gallery')
     @endif
 
     @php do_action('get_footer') @endphp

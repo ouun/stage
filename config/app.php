@@ -120,9 +120,9 @@ return array(
     */
 
     'providers'       => array(
-        Stage\Gutenberg\Gutenberg::class,
         Stage\Customizer\Customizer::class,
         Stage\Providers\ImagesServiceProvider::class,
+	    Stage\Providers\BlockEditorServiceProvider::class,
     ),
 
     /*

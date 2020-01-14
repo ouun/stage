@@ -19,9 +19,9 @@ fieldset {
   @apply border my-4 p-4;
 
   legend {
-    @include label_style();
-
     @apply text-center px-4;
+
+    @include label_style();
   }
 }
 
@@ -32,22 +32,11 @@ Title: Quantity input
 -------------------------------- */
 
 .quantity {
-  position: relative;
+  @apply relative;
+
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none;
 }
-
-/*
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-*/
 
 .quantity input {
   @apply block h-full w-full text-center px-3 py-3;
@@ -60,7 +49,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* --------------------------------
 
 Title: Radios and Checkboxes
-Descr: Custom radio and checkbox buttons
+Custom radio and checkbox buttons
 
 -------------------------------- */
 input[type="radio"],

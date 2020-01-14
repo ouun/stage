@@ -1,0 +1,7 @@
+@import "../mixins/container";
+
+body {
+  [data-loader="container"] {
+    display: contents;
+  }
+}

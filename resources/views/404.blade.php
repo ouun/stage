@@ -1,17 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="content-wrap h-full">
-    @include('partials.page-header')
+  <div class="h-full content-wrap">
+    @include('partials.archive.title')
 
-    @if (!have_posts())
-      <div class="alert alert-warning mb-6">
+    @if (! have_posts())
+      @alert(['type' => 'warning'])
         {{ __('Sorry, but the page you were trying to view does not exist.', 'stage') }}
-      </div>
+      @endalert
 
-      <div class="h-12 border py-2">
-        {!! get_search_form(false) !!}
-      </div>
+      @include('components.search')
     @endif
   </div>
 @endsection

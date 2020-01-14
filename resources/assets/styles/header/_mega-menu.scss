@@ -36,7 +36,7 @@ header {
             }
 
             a {
-              @apply overflow-hidden whitespace-no-wrap max-w-15 py-1 pr-16 pl-12;
+              @apply overflow-hidden whitespace-no-wrap max-w-xs py-1 pr-16 pl-12;
 
               text-overflow: ellipsis;
               transform: translateZ(0);

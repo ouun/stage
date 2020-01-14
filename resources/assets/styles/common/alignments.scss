@@ -1,0 +1,57 @@
+@import "../mixins/container";
+
+.container,
+.blocks-container,
+.blocks-wrap,
+.content-wrap,
+.archive-wrap {
+  & > * {
+    &:not(.alignfull):not(.alignscreen):not(.alignwide) {
+      @apply w-full max-w-full mx-auto px-gutter;
+
+      @include blocks_align();
+    }
+
+    & > * {
+      @apply mx-auto;
+    }
+  }
+
+  & > .alignwide {
+    @include blocks_align__wide();
+
+    & > * {
+      @apply w-full;
+    }
+  }
+
+  & > .alignscreen {
+    @include blocks_align__screen();
+
+    & > * {
+      @apply mx-0 w-full;
+    }
+  }
+
+  & > .alignfull {
+    @include blocks_align__full();
+
+    & > * {
+      @apply mx-0 w-full;
+    }
+  }
+}
+
+// Add some default spacing
+.blocks-wrap,
+.blocks-container {
+  & > * {
+    &:not(.alignfull):not(.alignscreen):not(.alignwide) {
+      @apply my-block-spacing;
+
+      &:first-child {
+        @apply mt-0;
+      }
+    }
+  }
+}
