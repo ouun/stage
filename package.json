@@ -33,7 +33,7 @@
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^6.0.3",
     "eslint": "^6.3.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-import": "^2.20.1",
     "laravel-mix": "^5.0.0",
     "laravel-mix-copy-watched": "^2.2.1",
     "laravel-mix-export-tailwind-config": "^0.1.2",
