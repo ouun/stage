@@ -26,14 +26,14 @@ class Shop extends Composer {
 		);
 
 		if ( $shop['shop'] && ! is_admin() ) {
-			array_merge(
-				$shop,
+			$shop = wp_parse_args(
 				array(
 					'is_cart'             => is_cart(),
 					'is_checkout'         => is_checkout(),
 					'cart_url'            => esc_url( wc_get_cart_url() ),
 					'cart_contents_count' => WC()->cart->get_cart_contents_count(),
-				)
+				),
+				$shop
 			);
 		}
 

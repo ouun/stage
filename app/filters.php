@@ -19,7 +19,7 @@ add_filter(
     function ($classes) {
         // Stage defaults classes
         $classes = array_merge(
-            stage_get_default('body.classes'),
+            (array) stage_get_default('body.classes'),
             $classes
         );
 
