@@ -120,9 +120,12 @@ return array(
     */
 
     'providers'       => array(
+	    Stage\Providers\Images::class,
+	    Stage\Providers\BlockEditor::class,
         Stage\Customizer\Customizer::class,
-        Stage\Providers\ImagesServiceProvider::class,
-	    Stage\Providers\BlockEditorServiceProvider::class,
+	    Stage\Providers\ShopFilters::class,
+	    Stage\Providers\ShopExtras::class,
+	    Stage\Providers\ShopCheckout::class,
     ),
 
     /*

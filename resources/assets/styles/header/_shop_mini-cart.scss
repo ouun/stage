@@ -12,7 +12,7 @@
   }
 
   .widget_shopping_cart {
-    @apply w-full max-w-full min-w-80;
+    @apply w-full max-w-full min-w-xs;
 
     @screen sm {
       @apply max-w-xs;

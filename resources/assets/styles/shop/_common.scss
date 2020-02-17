@@ -1,0 +1,27 @@
+@import "../mixins/loader";
+
+/**
+ * Global styles
+ */
+.blockUI.blockOverlay {
+  position: relative;
+  background-color: white !important;
+  opacity: 0.9 !important;
+
+  @include loader();
+}
+
+// Demo store notice
+.demo_store,
+.woocommerce-store-notice {
+  @apply fixed left-0 right-0 bottom-0 w-full px-block-spacing py-3 text-white bg-red-400 z-40 hidden;
+
+  a {
+    @apply text-white underline float-right;
+
+    &:active,
+    &:hover {
+      @apply text-white;
+    }
+  }
+}

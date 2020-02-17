@@ -1,0 +1,62 @@
+@import "../mixins/mask-icon";
+@import "../mixins/bg-full";
+
+.shop-notice {
+  @apply relative;
+
+  li {
+    @apply border-inherit text-inherit inline-block align-middle leading-loose pl-10;
+
+    &::before {
+      content: '';
+      transform: translateY(-50%);
+
+      @apply absolute left-0 top-half w-6 h-6 bg-blue-500;
+
+      @include mask-icon(info, cover, center left);
+    }
+
+    a {
+      @apply float-right no-underline p-0 pl-6 ml-6 my-0 border-inherit border-t-0 border-b-0 border-r-0 text-inherit uppercase;
+
+      transition: all 0.3s;
+
+      &:hover {
+        @apply pl-8;
+      }
+    }
+
+    // After the first notice
+    & + li {
+      &::before {
+        @apply invisible;
+      }
+    }
+  }
+
+  &.shop-success {
+    li::before {
+      @include mask-icon(check-circle, cover, center left);
+
+      @apply bg-green-500;
+    }
+  }
+
+  &.shop-error {
+    li::before {
+      @include mask-icon(compass, cover, center left);
+
+      @apply bg-red-500;
+    }
+  }
+}
+
+// Notification toggles, e.g. checkout coupon
+div[class$="-toggle"] + form {
+  @apply bg-gray-100 px-6 py-8;
+}
+
+// Apply bg-full if following another element with background
+.bg-full-width ~ .shop-notice {
+  @include bg-full(#eee);
+}

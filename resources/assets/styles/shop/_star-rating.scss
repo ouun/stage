@@ -1,0 +1,110 @@
+@import "../mixins/mask-icon";
+// Size of the stars
+// todo: Replace later with customize options
+$star-size: 1rem;
+
+.star-rating {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  height: $star-size;
+  line-height: $star-size;
+  width: $star-size * 5;
+  margin-right: $star-size / 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    mask: url('../icons/star.svg') repeat-x left top;
+    mask-size: contain;
+    height: $star-size;
+    width: $star-size * 5; // 15px * 5
+    top: 0;
+    left: 0;
+    opacity: 0.25;
+  }
+
+  & > span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: $star-size * 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: var(--color-primary);
+      mask: url('../icons/star.svg') repeat-x left top;
+      mask-size: contain;
+      height: $star-size;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/* stylelint-disable no-descending-specificity */
+p.stars {
+  a {
+    @apply relative inline-block h-6 w-6;
+
+    text-indent: -999em;
+
+    &::before {
+      content: '';
+      text-indent: 0;
+
+      @apply absolute block inset-0 w-full h-full;
+
+      @include mask-icon(star, contain, center);
+    }
+  }
+
+  &:hover ~ a::before {
+    @apply bg-gray-700;
+  }
+
+  &:not(.selected) {
+    a::before {
+      @apply bg-gray-700;
+    }
+
+    & > span:hover a:hover::before,
+    & > span:hover a::before {
+      @apply bg-primary;
+    }
+
+    & > span:hover a:hover ~ a::before {
+      @apply bg-gray-700;
+    }
+  }
+
+  &.selected {
+    a:not(.active)::before {
+      @apply bg-primary;
+    }
+
+    a.active {
+      &::before {
+        @apply bg-primary;
+      }
+
+      ~ a::before {
+        @apply bg-gray-700;
+      }
+    }
+
+    & > span:hover a::before {
+      @apply bg-primary;
+    }
+
+    a:hover ~ a::before {
+      @apply bg-gray-700;
+    }
+  }
+}
+/* stylelint-enable no-descending-specificity */

@@ -1,0 +1,133 @@
+@import "../../mixins/mask-icon";
+
+.woocommerce-product-gallery {
+  @apply flex flex-wrap flex-row-reverse relative;
+  @apply h-auto #{$important};
+
+  .zoomImg {
+    @apply bg-gray-200;
+  }
+
+  .woocommerce-product-gallery__trigger {
+    @apply absolute block top-0 right-0 z-1 m-5 w-6 h-6 text-transparent bg-gray-800;
+
+    @include mask-icon(plus, cover, center left);
+
+    &:hover {
+      @apply bg-primary;
+    }
+  }
+
+  img {
+    @apply mb-0;
+  }
+
+  .woocommerce-product-gallery__wrapper {
+    @apply flex-1 z-0;
+
+    img {
+      @apply w-full;
+    }
+  }
+
+  .flex-control-thumbs {
+    @apply flex-initial w-24;
+
+    li {
+      @apply mb-2 pr-4 cursor-pointer;
+
+      img {
+        opacity: 0.5;
+        transition: all, ease, 0.2s;
+
+        &.flex-active {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .flex-direction-nav {
+    @apply absolute w-full inset-0 pl-24 z-0 pointer-events-none;
+
+    li.flex-nav-prev,
+    li.flex-nav-next {
+      @apply mt-half mx-5;
+
+      transform: translateY(-50%);
+
+      a {
+        @apply pointer-events-auto opacity-0 text-transparent w-6 h-6;
+
+        transition: all 300ms;
+      }
+    }
+
+    li.flex-nav-prev {
+      a.flex-prev {
+        @apply float-left;
+
+        @include mask-icon(chevron-left, cover, center left);
+
+        transform: translateX(-50%);
+      }
+    }
+
+    li.flex-nav-next {
+      a.flex-next {
+        @apply float-right;
+
+        @include mask-icon(chevron-right, cover, center right);
+
+        transform: translateX(50%);
+      }
+    }
+  }
+
+  &:hover {
+    .flex-direction-nav {
+      li.flex-nav-prev,
+      li.flex-nav-next {
+        & > a {
+          @apply bg-gray-800 opacity-100;
+
+          transform: translateX(0);
+
+          &:hover {
+            @apply bg-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .images {
+    .woocommerce-main-image {
+      @apply block mb-4;
+    }
+
+    .thumbnails {
+      a.zoom {
+        display: block;
+        width: 22.05%;
+        margin-right: 3.8%;
+        float: left;
+        margin-bottom: 1em;
+
+        &.last {
+          margin-right: 0;
+        }
+
+        &.first {
+          clear: both;
+        }
+      }
+    }
+  }
+}

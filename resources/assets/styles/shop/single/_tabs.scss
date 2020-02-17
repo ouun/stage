@@ -1,0 +1,43 @@
+@import "../../mixins/screen-reader-text";
+
+div.woocommerce-tabs {
+  @apply mb-10 border-b border-gray-500;
+
+  & > * {
+    @apply max-w-xl mx-auto mb-10;
+  }
+
+  ul.tabs {
+    @apply flex justify-center flex-wrap content-center;
+
+    li[role="tab"] {
+      @apply text-base px-4;
+
+      & > a {
+        @apply no-underline;
+      }
+
+      &.active > * {
+        @apply text-primary;
+      }
+    }
+  }
+
+  div[role="tabpanel"] {
+    @apply text-base;
+
+    h2 {
+      @include screen-reader-text();
+    }
+
+    table.shop_attributes {
+      tr {
+        @apply h-10;
+
+        th {
+          @apply font-medium pr-8;
+        }
+      }
+    }
+  }
+}

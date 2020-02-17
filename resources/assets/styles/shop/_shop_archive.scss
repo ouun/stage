@@ -1,0 +1,176 @@
+@import "../mixins/container";
+@import "../mixins/mask-icon";
+@import "../mixins/bg-full";
+@import "../mixins/bg-blur";
+
+/*
+body.post-type-archive-product,
+body.woocommerce.archive {
+  main.main > * {
+    @include container();
+  }
+}
+*/
+
+// Categories
+.product-categories {
+  @apply flex -mx-2 w-full;
+
+  @include bg-full(var(--color-gray-100), var(--color-gray-300));
+
+  .product-category {
+    @apply w-1/3 p-2;
+
+    a {
+      @apply relative aspect-ratio-square no-underline block overflow-hidden shadow;
+
+      transition: box-shadow 0.2s ease-out;
+      min-width: 33.33%;
+
+      h2 {
+        @apply text-2xl bottom-0 left-0 flex flex-col mx-3 my-3 px-3 py-2 justify-center self-center text-center;
+      }
+
+      img {
+        @apply absolute inset-0 object-cover h-full w-full;
+
+        transition: transform 0.2s;
+
+        // Only if category has an image
+        & + h2 {
+          @apply absolute text-primary bg-white opacity-0;
+
+          transform: translateY(200%);
+          transition: all 0.3s, transform 0.2s ease-in-out, opacity 0.25s ease-in;
+        }
+      }
+
+      &:hover {
+        @apply shadow-lg;
+      }
+    }
+
+    &:hover {
+      a {
+        h2 {
+          @apply opacity-100;
+
+          transform: translateY(0);
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+// Products Loop
+.product.type-product {
+  min-width: 200px;
+
+  & > .product-inner {
+    @apply relative h-full overflow-hidden;
+
+    & > a:first-child {
+      @apply flex flex-col h-full shadow-none no-underline;
+
+      transition: box-shadow 0.3s;
+
+      .product-image-container {
+        @apply relative w-full h-auto flex-grow-0 leading-none;
+
+        &::after {
+          content: '';
+          transition: opacity 0.3s 0.2s;
+
+          @include mask_icon('eye', cover);
+
+          @apply absolute block w-12 h-12 inset-0 m-auto bg-white opacity-0;
+        }
+
+        span.onsale {
+          @apply absolute top-0 left-0 right-auto m-3 z-1;
+          @apply bg-red-500 text-white px-1 py-1 uppercase font-medium;
+        }
+
+        img {
+          @apply w-full h-auto flex-grow-0 align-bottom transition-transform duration-100;
+
+          z-index: -1;
+        }
+      }
+
+      .product-description {
+        @apply absolute inset-x-0 bottom-0 inline-block flex-col flex-grow justify-center py-5 w-full z-1 bg-white;
+
+        @include bgBlur(#fff);
+
+        transition: opacity 0.2s 0.1s, transform 0.3s;
+        transform: translateY(100%);
+        opacity: 0;
+
+        h2 {
+          @apply mx-4 mb-2 leading-tight text-2xl;
+        }
+
+        div.star-rating {
+          @apply mr-4 float-right;
+        }
+
+        span.price {
+          @apply block mx-4 text-base;
+
+          del {
+            @apply text-gray-800;
+          }
+
+          ins {
+            @apply text-primary no-underline;
+          }
+
+          .vat_notice {
+            @apply inline-block text-xs;
+          }
+        }
+      }
+
+      & + a.button {
+        @apply absolute w-1/3 bg-gray-500 bottom-0 right-0 w-8 h-8 m-4 text-transparent z-10;
+
+        transition: background-color 0.3s;
+
+        @include mask_icon('shopping-bag');
+
+        &:hover {
+          @apply bg-primary;
+        }
+      }
+
+      &:hover {
+        @apply shadow-lg;
+
+        & .product-image-container::after {
+          @apply opacity-100;
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+
+        .product-description {
+          transform: translateY(0);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  // Outstanding featured products
+  &.featured {
+    & .product-inner {
+      @apply shadow;
+    }
+  }
+}

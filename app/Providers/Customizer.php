@@ -4,7 +4,7 @@ namespace Stage\Providers;
 
 use Roots\Acorn\ServiceProvider;
 
-class CustomizerServiceProvider extends ServiceProvider
+class Customizer extends ServiceProvider
 {
     /**
      * Register services.

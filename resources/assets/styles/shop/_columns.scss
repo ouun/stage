@@ -1,0 +1,14 @@
+.col2-set,
+.row {
+  @apply -mx-4 flex flex-row flex-wrap;
+
+  .col,
+  .col-1,
+  .col-2 {
+    @apply px-4;
+
+    @screen md {
+      @apply w-1/2;
+    }
+  }
+}

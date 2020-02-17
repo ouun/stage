@@ -1,0 +1,218 @@
+@import "../mixins/mask-icon";
+@import "../mixins/buttons";
+@import "../mixins/inputs";
+
+/**
+ *  WooCommerce Forms
+ */
+.form-row {
+  @apply w-auto mb-4;
+
+  label {
+    @include label_style();
+
+    @apply my-2;
+  }
+
+  input + span {
+    @apply text-xs;
+  }
+
+  &.woocommerce-invalid {
+    input.input-text {
+      @apply border-red-500 bg-red-100;
+      // box-shadow: inset 2px 0 0 var(--color-red-500);
+    }
+
+    input.input-checkbox + span::before {
+      border: 2px solid var(--color-red-500) !important;
+    }
+
+    .select2-selection {
+      border-color: var(--color-gray-500);
+      border-width: 2px;
+    }
+  }
+
+  &.woocommerce-validated {
+    input.input-text:not(input[type="password"]) {
+      @apply border-green-500 bg-green-100;
+      // box-shadow: inset 2px 0 0 var(--color-green-500);
+    }
+  }
+
+  input[type="password"] + .woocommerce-password-strength {
+    @apply text-sm font-semibold;
+
+    transition: color 0.2s;
+
+    &.short {
+      @apply text-red-500;
+    }
+
+    &.bad {
+      @apply text-red-500;
+    }
+
+    &.good {
+      @apply text-orange-500;
+    }
+
+    &.strong {
+      @apply text-green-500;
+    }
+  }
+}
+
+*[class$="__field-wrapper"] {
+  @apply flex flex-wrap -mx-3;
+
+  .form-row {
+    @apply px-3 w-full;
+
+    &.form-row-wide {
+      @apply w-full;
+    }
+
+    &.form-row-last,
+    &.form-row-first {
+      @apply w-full;
+
+      @screen md {
+        @apply w-1/2;
+      }
+    }
+  }
+}
+
+/**
+ * Product tables
+ */
+form.variations_form,
+form.grouped_form,
+form.cart {
+  @apply my-5 shadow-lg bg-white;
+
+  table.variations,
+  table.group_table {
+    @apply table-fixed w-full m-0 border-0;
+
+    tbody {
+      tr {
+        @apply inline-block relative w-full flex flex-1 items-center border-t;
+
+        &:first-of-type {
+          @apply border-t-0;
+        }
+
+        td {
+          @apply border-0 p-0;
+        }
+
+        td.label,
+        td.woocommerce-grouped-product-list-item__label {
+          @apply pl-4 py-3;
+
+          label {
+            @apply inline-block normal-case tracking-normal text-base font-medium m-0;
+          }
+        }
+
+        td.value {
+          @apply flex-1;
+
+          select {
+            @apply m-0 bg-transparent border-0 shadow-none text-right pr-12;
+
+            direction: rtl;
+          }
+
+          .reset_variations {
+            @apply absolute top-half left-0 w-5 h-5 text-transparent bg-gray-800;
+
+            transform: translate(-150%, -50%);
+
+            @include mask-icon(x, cover, center left);
+
+            &:hover {
+              @apply bg-black;
+            }
+          }
+        }
+
+        /* Grouped Product table specific */
+        td.woocommerce-grouped-product-list-item__quantity {
+          @apply whitespace-no-wrap;
+
+          input[type="number"] {
+            @apply pr-0 w-12 py-0;
+          }
+        }
+
+        td.woocommerce-grouped-product-list-item__label {
+          @apply w-full;
+        }
+
+        td.woocommerce-grouped-product-list-item__price {
+          @apply w-auto text-right px-3 py-3;
+
+          del {
+            @apply text-gray-800;
+
+            & > span {
+              @apply mb-3 text-xs;
+            }
+          }
+
+          .vat_notice {
+            @apply hidden;
+          }
+        }
+      }
+    }
+  }
+
+  div.single_variation_wrap {
+    .woocommerce-variation {
+      & > div > * {
+        @apply p-4 block border-t;
+      }
+
+      .woocommerce-variation-price {
+        @apply text-base font-medium;
+      }
+    }
+
+    .woocommerce-variation-add-to-cart {
+      @apply border-t border-inherit;
+
+      // Add to cart disabled
+      &.woocommerce-variation-add-to-cart-disabled {
+        & > * {
+          @apply hidden #{$important};
+        }
+      }
+
+      .quantity {
+        @apply border-inherit;
+
+        input {
+          &:focus,
+          &:hover {
+            @apply outline-none border-transparent;
+          }
+        }
+      }
+    }
+  }
+
+  input.qty {
+    @apply m-0 pr-4 bg-transparent text-right;
+  }
+
+  & button.single_add_to_cart_button {
+    @include button();
+
+    @apply w-full bg-black text-white mt-0 py-4;
+  }
+}

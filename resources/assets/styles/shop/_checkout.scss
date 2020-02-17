@@ -1,0 +1,94 @@
+@import "../mixins/container";
+@import "../mixins/screen-reader-text";
+
+body.woocommerce-checkout {
+  .page-header {
+    @include screen-reader-text();
+  }
+
+  .entry-content .woocommerce {
+    @include container();
+
+    @apply my-12;
+
+    h3 {
+      @apply mb-8;
+    }
+
+    ol,
+    ul {
+      @apply list-none;
+    }
+
+    #payment {
+      .create-account {
+        clear: both;
+      }
+
+      .payment_methods {
+        @apply mb-6 border;
+
+        > .wc_payment_method {
+          > label {
+            @apply block p-4 cursor-pointer bg-gray-200;
+
+            &:hover {
+              @apply bg-gray-300;
+            }
+          }
+        }
+
+        li {
+          img {
+            @apply float-right;
+          }
+
+          .payment_box {
+            @apply p-4 bg-gray-100;
+          }
+        }
+      }
+
+      .place-order {
+        @apply w-full;
+
+        .woocommerce-terms-and-conditions-wrapper {
+          @apply border bg-gray-100 p-4 pb-3 mb-6;
+
+          .woocommerce-privacy-policy-text {
+            @apply mb-4;
+          }
+
+          .woocommerce-terms-and-conditions {
+            @apply p-4 mb-4 shadow-inner bg-gray-200;
+          }
+        }
+
+        .button {
+          @apply w-full whitespace-pre-wrap uppercase m-0 py-4;
+          @apply w-full whitespace-pre-wrap uppercase m-0 py-4;
+        }
+      }
+    }
+
+    .woocommerce-password-strength {
+      @apply text-right text-sm font-semibold px-4 py-2;
+
+      &.strong {
+        @apply text-green-500;
+      }
+
+      &.short {
+        @apply text-red-500;
+      }
+
+      &.bad {
+        @apply text-red-500;
+      }
+
+      &.good {
+        @apply text-blue-500;
+      }
+    }
+  }
+}

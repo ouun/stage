@@ -1,0 +1,21 @@
+/** !important usage: # {$important} */
+$important: !important;
+
+// Add shop specific styles
+@import "shop/common";
+@import "shop/forms";
+@import "shop/notification";
+@import "header/shop_mini-cart";
+@import "shop/shop_archive";
+@import "shop/archive/shop_grid";
+@import "shop/single_product";
+@import "shop/star-rating";
+@import "shop/reviews";
+@import "shop/cart";
+@import "shop/checkout";
+@import "shop/thankyou";
+@import "shop/accounts";
+@import "shop/columns";
+@import "shop/buttons";
+
+@tailwind utilities;

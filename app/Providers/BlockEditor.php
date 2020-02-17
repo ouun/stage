@@ -8,7 +8,7 @@ use function Roots\asset;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback;
 
-class BlockEditorServiceProvider extends ServiceProvider {
+class BlockEditor extends ServiceProvider {
 
 	/**
 	 * Boot Gutenberg application services.

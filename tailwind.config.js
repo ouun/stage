@@ -153,6 +153,8 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      'half': '50%',
+      'full': '100%',
       'half-block-spacing': 'calc( var( --block-spacing ) / 2 )',
       'block-spacing': 'var( --block-spacing )',
       'gutter': 'var( --gutter )',

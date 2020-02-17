@@ -33,6 +33,7 @@ mix.js('resources/assets/scripts/app.js', 'scripts')
 
 // Styles
 mix.sass('resources/assets/styles/stage.scss', 'styles')
+  .sass('resources/assets/styles/shop.scss', 'styles')
   .sass('resources/assets/styles/blocks.scss', 'styles/blocks')
   .sass('resources/assets/styles/blocks-editor.scss', 'styles/blocks')
   .sass('app/Customizer/assets/styles/customizer.scss', 'styles/customizer')

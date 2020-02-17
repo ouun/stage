@@ -1,3 +1,3 @@
 <p class="flex-grow copyright">
-  {{ $copyright }}
+  {!! $copyright !!}
 </p>

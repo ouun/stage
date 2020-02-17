@@ -1,0 +1,23 @@
+#comments {
+  .woocommerce-noreviews {
+    @apply text-center italic;
+  }
+
+  ol.commentlist {
+    & > li.review {
+      .comment_container {
+        .comment-text {
+          .star-rating {
+            @apply float-right;
+          }
+
+          .meta {
+            .woocommerce-review__dash {
+              @apply hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}

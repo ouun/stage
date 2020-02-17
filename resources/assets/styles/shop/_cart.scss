@@ -1,0 +1,31 @@
+@import "../mixins/container";
+@import "../mixins/screen-reader-text";
+
+body.woocommerce-cart {
+  .entry-content .woocommerce {
+    @include container();
+  }
+
+  ol,
+  ul {
+    @apply list-none;
+  }
+}
+
+dl.variation {
+  @apply flex flex-row flex-wrap;
+
+  dt {
+    flex-basis: 40%;
+    padding-right: 5px;
+  }
+
+  dd {
+    flex-basis: 60%;
+    flex-grow: 1;
+  }
+}
+
+.woocommerce-shipping-destination {
+  @apply text-xs;
+}

@@ -6,7 +6,7 @@ use Roots\Acorn\ServiceProvider;
 
 use function Stage\stage_is_feature_active;
 
-class ImagesServiceProvider extends ServiceProvider
+class Images extends ServiceProvider
 {
 
     public $lazy;

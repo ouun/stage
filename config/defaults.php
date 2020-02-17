@@ -5,6 +5,8 @@
  * Overwrite them here or via the Customizer settings
  */
 
+use function Stage\stage_get_default;
+
 return array(
 
 	/*
@@ -192,7 +194,6 @@ return array(
 			'position'  => 'sticky',
 			'align'     => 'alignscreen', // align, alignwide, alignscreen, alignfull
 			'layout'    => 'partials.header.horizontal-left', // Template path.
-			'fullwidth' => false, // todo: Remove this in favor of "align" setting
 			'open'      => 'click-open', // click-open or hover-open sub-menu.
 			'padding-x' => '0',
 			'padding-y' => '4',
@@ -239,10 +240,12 @@ return array(
 	'footer'   => array(
 		'settings' => array(
 			'copyright' => sprintf(
-				__( '© Copyright %1$s, all rights reserved by %2$s.', 'stage' ),
-				date( 'Y' ),
-				get_bloginfo( 'name', 'display' )
+			/* translators: %1$s is replaced with the current year, %2$s with the site name */
+				esc_html__( '&#169; Copyright %1$s, all rights reserved by %2$s.', 'stage' ), date("Y"), get_bloginfo( 'name', 'display' )
 			),
+		),
+		'desktop'  => array(
+			'align' => stage_get_default('header.desktop.align'),
 		),
 	),
 );

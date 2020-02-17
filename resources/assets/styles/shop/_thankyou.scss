@@ -1,0 +1,98 @@
+@import "../mixins/container";
+@import "../mixins/clearfix";
+@import "../mixins/mask-icon";
+
+body.woocommerce-checkout.woocommerce-order-received {
+  .woocommerce-order {
+    @apply flex flex-wrap mt-16;
+
+    @include blocks_align();
+
+    h2 {
+      @apply text-xl mb-4;
+    }
+
+    .woocommerce-notice {
+      @apply flex-1 w-full text-center text-4xl uppercase font-serif mt-10;
+
+      @screen md {
+        @apply w-2/3 p-8 my-0 justify-center self-center;
+      }
+
+      &.woocommerce-notice--success {
+        &::before {
+          content: '';
+          transform: translateY(-50%);
+
+          @apply bg-green-500;
+
+          @include mask-icon(info, cover, center left);
+        }
+      }
+    }
+
+    ul.order_details {
+      @include clearfix;
+
+      @apply w-full relative mt-8 bg-gray-100 text-sm;
+
+      @screen md {
+        @apply w-1/3 mt-0;
+      }
+
+      &::before,
+      &::after {
+        @apply absolute block w-full left-0;
+
+        content: '';
+        top: -16px;
+        height: 16px;
+        background:
+          -webkit-linear-gradient(transparent 0, transparent 0),
+          -webkit-linear-gradient(135deg, var(--color-gray-100) 33.33%, transparent 33.33%),
+          -webkit-linear-gradient(45deg, var(--color-gray-100) 33.33%, transparent 33.33%);
+        background-size: 0 100%, 16px 16px, 16px 16px;
+      }
+
+      &::after {
+        top: auto;
+        bottom: -16px;
+        transform: rotate(180deg);
+      }
+
+      li {
+        @apply px-4 py-2 text-xs uppercase border-b border-gray-200;
+
+        &:first-child {
+          @apply pt-4;
+        }
+
+        &:last-child {
+          @apply border-b-0 pb-4;
+        }
+
+        strong {
+          @apply block text-sm normal-case;
+        }
+      }
+    }
+
+    section {
+      @apply mt-10 text-sm w-full;
+
+      &.sw-myaccount__order__customer {
+        &.row {
+          @apply flex flex-wrap;
+        }
+
+        & > .col {
+          @apply mb-8 w-full;
+
+          @screen sm {
+            @apply w-1/2;
+          }
+        }
+      }
+    }
+  }
+}
