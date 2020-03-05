@@ -65,7 +65,7 @@ array_map(
 			);
 		}
 	},
-	array( 'helpers', 'setup', 'filters', 'shop', 'admin' )
+	array( 'helpers', 'setup', 'shop', 'filters', 'admin' )
 );
 
 /**

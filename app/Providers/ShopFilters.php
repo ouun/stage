@@ -3,6 +3,7 @@
 namespace Stage\Providers;
 
 use Roots\Acorn\ServiceProvider;
+use function Stage\stage_config;
 
 class ShopFilters extends ServiceProvider {
 
@@ -113,7 +114,7 @@ class ShopFilters extends ServiceProvider {
 		add_filter(
 			'woocommerce_get_price_suffix',
 			function ( $html, $product, $price, $qty ) {
-				$html .= ' <span class="vat_notice">' . __( 'incl. VAT', 'woocommerce' ) . '</span>';
+				// $html .= ' <span class="vat_notice">' . __( 'incl. VAT', 'woocommerce' ) . '</span>';
 				return $html;
 			},
 			10,
@@ -186,8 +187,8 @@ class ShopFilters extends ServiceProvider {
 	public static function shop_reorder_product_tabs( $tabs ) {
 
 		// Change the priority.
-		$tabs['description']['priority'] = 5;               // Description first.
-		$tabs['reviews']['priority']     = 10;                  // Reviews second.
+		$tabs['description']['priority'] = 5;  // Description first.
+		$tabs['reviews']['priority']     = 10; // Reviews second.
 
 		return $tabs;
 	}

@@ -6,35 +6,42 @@ Product Archives
 @extends('layouts.app')
 
 @section('content')
-    @action('get_before_main_content')
+    @action('woocommerce_before_main_content')
 
     @if( $show_page_title )
         @include('partials.single.page-title')
     @endif
 
-    @action('get_archive_description')
-    @if_posts
+    @action('woocommerce_archive_description')
 
-    {{--
-    <div class="flex items-end content-center justify-between flex-wrap pb-5 mb-5">
-      @action('get_before_shop_loop')
-    </div>
-    --}}
+    @if( woocommerce_product_loop() )
 
-    @php woocommerce_product_loop_start() @endphp
+        {{--
+        <div class="flex items-end content-center justify-between flex-wrap pb-5 mb-5">
+          @action('woocommerce_before_shop_loop')
+        </div>
+        --}}
 
-      @if($total_loop_prop)
-        @while_posts @post
-          @action('get_shop_loop')
-          @include('shop.content-product')
-        @endwhile
-      @endif
+        @php woocommerce_product_loop_start() @endphp
 
-    @php woocommerce_product_loop_end() @endphp
+        @if($total_loop_prop)
+          @hasposts
+            @posts
+              @php
+                the_post();
+                do_action('woocommerce_shop_loop');
+                wc_get_template_part('content', 'product');
+              @endphp
+            @endposts
+          @endhasposts
+        @endif
 
-      @action('get_after_shop_loop')
+        @php woocommerce_product_loop_end() @endphp
+
+      @action('woocommerce_after_shop_loop')
     @else
-      @action('get_no_products_found')
+      @action('woocommerce_no_products_found')
     @endif
-    @action('get_after_main_content')
+
+    @action('woocommerce_after_main_content')
 @endsection

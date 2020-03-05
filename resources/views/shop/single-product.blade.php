@@ -5,9 +5,11 @@ Content Product Category
 
 @extends('layouts.app')
 @section('content')
-  @action('get_before_main_content')
-  @while_posts @post
+  @action('woocommerce_before_main_content')
+
+  @posts
     @include('shop.content-single-product')
-  @endwhile
-  @action('get_after_main_content')
+  @endposts
+
+  @action('woocommerce_after_main_content')
 @endsection

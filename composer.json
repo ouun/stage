@@ -61,8 +61,8 @@
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
-    "ouun/kirki-module-sync_controls": "dev-master",
     "ouun/kirki-module-fonts_upload": "dev-master",
+    "ouun/kirki-module-sync_controls": "dev-master",
     "ouun/laravel-tailwind-config": "dev-master",
     "roots/acorn": "dev-master"
   },

@@ -9,6 +9,7 @@
 
 namespace Stage;
 
+use Illuminate\Support\Facades\Config;
 use Stage\Customizer\Settings;
 use Stage\Providers\TailwindServiceProvider;
 use Throwable;
@@ -28,6 +29,35 @@ function stage_dump( $dump ) {
 	}
 
 	wp_die( $message );
+}
+
+/**
+ * Helper function to access Stage config variables via
+ * workaround until Laravel allows config access between apps
+ * todo: Move & separate this to child theme: 1. Set config on load, add helper to get parent config
+ *
+ * @param null $key
+ * @param null $default
+ *
+ * @return mixed|\Roots\Acorn\Config
+ */
+function stage_config( $key = null, $default = null ) {
+	// Requested config file
+	$config = explode( '.', $key )[0];
+	$file   = get_template_directory() . '/config' . '/' . $config . '.php';
+
+	if ( file_exists( $file ) ) {
+		// Get Stage defaults config
+		$stage['config'] = include $file;
+
+		// Set as new config "Stage"
+		\Roots\config( array( "stage.{$config}" => $stage['config'] ) );
+
+		// Return the config
+		return \Roots\config( "stage.{$key}", $default );
+	}
+
+	return \Roots\config( $key, $default );
 }
 
 /**
@@ -152,15 +182,31 @@ function stage_get_default( $request, $pop = false ) {
 }
 
 /**
+ * Customized do_action() for usage in blade
+ *
+ * @param string $action
+ * @param string $arg
+ * @return string
+ */
+function stage_do_action( $action, $arg = '' ) {
+	// If action starts with "_" we request a WooCommerce action
+	$action = mb_substr( $action, 0, 4 ) === 'get_' ? str_replace( 'get', 'woocommerce', $action ) : $action;
+	return do_action( $action, $arg );
+}
+
+
+/**
  * Get a list of all post types that the user might care about.
  */
 function post_types() {
-	  return collect( get_post_types( array( '_builtin' => false ), 'objects' ) )
+	  $collection = collect( get_post_types( array( '_builtin' => false ), 'objects' ) )
 		->pluck( 'label', 'name' )
 		->except( array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ) )
 		->prepend( get_post_type_object( 'page' )->labels->name, 'page' )
 		->prepend( get_post_type_object( 'post' )->labels->name, 'post' )
 		->all();
+
+	  return $collection;
 }
 
 /**

@@ -12,7 +12,7 @@ use Kirki\Section;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback_template;
 
-class ArchivesPanel
+class  ArchivesPanel
 {
 
     // Set panel ID

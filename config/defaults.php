@@ -196,7 +196,7 @@ return array(
 			'layout'    => 'partials.header.horizontal-left', // Template path.
 			'open'      => 'click-open', // click-open or hover-open sub-menu.
 			'padding-x' => '0',
-			'padding-y' => '4',
+			'padding-y' => '2',
 		),
 		'search'   => array(
 			'layout' => 'partials.header.search.fullscreen',
@@ -210,6 +210,18 @@ return array(
 	'archive'  => array(
 		'post'     => array(
 			'layout'  => 'partials.grids.modern',
+			'display' => array(
+				'sidebar'     => false,
+				'thumbnail'   => true,
+				'placeholder' => false,
+				'headline'    => true,
+				'meta'        => false,
+				'excerpt'     => true,
+				'tags'        => false,
+			),
+		),
+		'product'  => array(
+			'layout'  => 'partials.grids.masonry',
 			'display' => array(
 				'sidebar'     => false,
 				'thumbnail'   => true,
@@ -241,11 +253,13 @@ return array(
 		'settings' => array(
 			'copyright' => sprintf(
 			/* translators: %1$s is replaced with the current year, %2$s with the site name */
-				esc_html__( '&#169; Copyright %1$s, all rights reserved by %2$s.', 'stage' ), date("Y"), get_bloginfo( 'name', 'display' )
+				esc_html__( '&#169; Copyright %1$s, all rights reserved by %2$s.', 'stage' ),
+				date( 'Y' ),
+				get_bloginfo( 'name', 'display' )
 			),
 		),
 		'desktop'  => array(
-			'align' => stage_get_default('header.desktop.align'),
+			'align' => stage_get_default( 'header.desktop.align' ),
 		),
 	),
 );

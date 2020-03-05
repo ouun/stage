@@ -13,6 +13,7 @@ class Shop extends Composer {
 	 */
 	protected static $views = array(
 		'layouts.header',
+		'shop.*',
 	);
 
 	/**
@@ -30,8 +31,10 @@ class Shop extends Composer {
 				array(
 					'is_cart'             => is_cart(),
 					'is_checkout'         => is_checkout(),
+					'total_loop_prop'     => wc_get_loop_prop( 'total' ),
 					'cart_url'            => esc_url( wc_get_cart_url() ),
 					'cart_contents_count' => WC()->cart->get_cart_contents_count(),
+					'show_page_title'     => apply_filters( 'woocommerce_show_page_title', false ),
 				),
 				$shop
 			);

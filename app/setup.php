@@ -11,6 +11,13 @@ namespace Stage;
 
 use function Roots\asset;
 
+/*
+ * todo: Remove this after autoload is fixed
+ * @see https://github.com/Log1x/sage-directives/issues/32
+ */
+$directives      = new \Log1x\SageDirectives\Directives();
+$directives_util = new \Log1x\SageDirectives\Util();
+
 add_action(
 	'wp_enqueue_scripts',
 	function () {
@@ -161,3 +168,54 @@ add_action(
 		);
 	}
 );
+
+
+add_action(
+	'after_setup_theme',
+	function () {
+
+		/*
+		\Roots\app( 'blade.compiler' )->directive(
+			'return',
+			function () {
+				return '<?php return; ?>';
+			}
+		);
+
+
+
+		\Roots\app( 'blade.compiler' )->directive(
+			'while_posts',
+			function () {
+				return '<?php while(have_posts()) : ?>';
+			}
+		);
+
+
+		\Roots\app( 'blade.compiler' )->directive(
+			'action',
+			function ( $expression ) {
+				if ( ! empty( $expression ) ) {
+					return '<?= ' . __NAMESPACE__ . "\\stage_do_action({$expression}); ?>";
+
+				}
+				return '';
+			}
+		);
+
+		\Roots\app( 'blade.compiler' )->directive(
+			'action_new',
+			function ( $expression ) {
+				if ( ! empty( $expression ) ) {
+					$expression = mb_substr( $expression, 0, 4 ) === 'get_' ? str_replace( 'get', 'woocommerce', $expression ) : $expression;
+
+					return "<?php do_action( {$expression} ); ?>";
+
+				}
+				return '';
+			}
+		);
+		*/
+	}
+);
+
