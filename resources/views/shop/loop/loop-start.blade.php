@@ -9,5 +9,7 @@ Product Loop Start
   defined( 'ABSPATH' ) || exit;
 @endphp
 
+{{--
 <div class="content-wrap">
 <div class="products items-wrap flex flex-wrap grid">
+--}}

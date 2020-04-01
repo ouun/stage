@@ -9,5 +9,7 @@ Product Loop End
   defined( 'ABSPATH' ) || exit;
 @endphp
 
+{{--
   </div>
 </div>
+--}}

@@ -11,7 +11,7 @@
     @php do_action('get_header') @endphp
     @include('layouts.header')
 
-    <div id="app" class="flex" data-loader="container" data-loader-namespace="page">
+    <div id="app" class="flex flex-col flex-1" data-loader="container" data-loader-namespace="page">
       <main id="main" class="main flex-1 flex-auto h-auto min-h-0 overflow-hidden @hasSection('sidebar') flex-wrap lg:flex-no-wrap content-wrap @endif">
         @yield('content')
       </main>

@@ -8,12 +8,6 @@ body.search-results {
   main.main {
     & > * {
       @include container();
-
-      &.breadcrumbs,
-      &.woocommerce-notices-wrapper,
-      &.product > .product-header {
-        @include bg-full( var(--color-gray-100)  );
-      }
     }
   }
 

@@ -84,7 +84,7 @@ class Item extends Composer
             );
         }
 
-        return implode(' ', apply_filters('stage_archive_item_classes', $classes));
+        return implode(' ', apply_filters('stage_' . get_post_type() . '_archive_item_classes', $classes));
     }
 
     /**
@@ -110,7 +110,7 @@ class Item extends Composer
             $classes[] = 'flex-1';
         }
 
-        return implode(' ', apply_filters('stage_archive_item_inner_classes', $classes));
+        return implode(' ', apply_filters('stage_' . get_post_type() . '_archive_item_inner_classes', $classes));
     }
 
     /**

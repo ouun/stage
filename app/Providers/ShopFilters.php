@@ -34,6 +34,21 @@ class ShopFilters extends ServiceProvider {
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 		remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+		// Customize Stage loop item classes
+		add_filter('stage_product_archive_item_classes', function ($classes) {
+			global $product;
+
+			// Add WooCommerce item classes
+			$classes = array_merge($classes, wc_get_product_class( $product ));
+			$classes[] = "grid-item";
+			$classes[] = "w-full";
+			$classes[] = "sm:w-1/2";
+			$classes[] = "md:w-1/3";
+			$classes[] = "lg:w-1/" . wc_get_loop_prop( 'columns' );
+
+			return $classes;
+		});
+
 		// Fade animation for Flexslider.
 		add_filter(
 			'woocommerce_single_product_carousel_options',
