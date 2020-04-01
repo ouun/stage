@@ -47,7 +47,7 @@
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^19.0.0",
     "tailwindcss": "^1.2.0-canary.5",
-    "tailwindcss-aspect-ratio": "^2.0.0",
+    "tailwindcss-aspect-ratio": "^3.0.0",
     "tailwindcss-wordpress": "^0.1.1",
     "vue-template-compiler": "^2.6.10",
     "write-webpack-plugin": "^1.1.0"
