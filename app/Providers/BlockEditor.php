@@ -151,18 +151,10 @@ class BlockEditor extends ServiceProvider {
 			'enqueue_block_editor_assets',
 			function () {
 				if ( $manifest = asset( 'scripts/editor.asset.php' )->get() ) {
-					wp_enqueue_script(
-						'stage/editor.js',
-						asset( 'scripts/editor.js' )->uri(),
-						$manifest['dependencies'],
-						$manifest['version']
-					);
+					wp_enqueue_script('stage/vendor.js', asset('scripts/vendor.js')->uri(), $manifest['dependencies'], null, true);
+					wp_enqueue_script('stage/editor.js', asset('scripts/editor.js')->uri(), ['stage/vendor.js'], null, true);
 
-					wp_add_inline_script(
-						'stage/editor.js',
-						asset( 'scripts/manifest.js', 'stage' )->contents(),
-						'before'
-					);
+					wp_add_inline_script('stage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
 				}
 
 				wp_enqueue_style(

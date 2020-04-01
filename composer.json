@@ -79,10 +79,10 @@
   "prefer-stable": true,
   "scripts": {
     "lint": [
-      "phpcs --ignore=vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
+      "phpcs --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
     ],
     "fix": [
-      "phpcbf -q --ignore=vendor,resources,storage,dist --extensions=php --standard=PSR12 . && composer lint"
+      "phpcbf -q --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 . && composer lint"
     ],
     "post-autoload-dump": [
       "Roots\\Acorn\\ComposerScripts::postAutoloadDump"

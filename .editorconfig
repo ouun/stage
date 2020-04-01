@@ -22,3 +22,6 @@ indent_size = 2
 [resources/views/**.php]
 indent_style = space
 indent_size = 2
+
+[index.php]
+indent_size = 2
