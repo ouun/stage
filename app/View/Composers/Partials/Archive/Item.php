@@ -1,6 +1,6 @@
 <?php
 
-namespace Stage\Composers\Partials\Archive;
+namespace Stage\View\Composers\Partials\Archive;
 
 use Roots\Acorn\View\Composer;
 

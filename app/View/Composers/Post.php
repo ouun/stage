@@ -1,32 +1,33 @@
 <?php
 
-namespace Stage\Composers\Components;
+namespace Stage\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class Title extends Composer
+class Post extends Composer
 {
-
     /**
      * List of views served by this composer.
      *
      * @var array
      */
-    protected static $views = array(
+    protected static $views = [
         'partials.single.title',
         'partials.archive.title',
-    );
+        'partials.content',
+        'partials.content-*',
+    ];
 
     /**
-     * Data to be passed to view before rendering.
+     * Data to be passed to view before rendering, but after merging.
      *
      * @return array
      */
-    public function with()
+    public function override()
     {
-        return array(
+        return [
             'title' => $this->title(),
-        );
+        ];
     }
 
     /**
@@ -54,7 +55,7 @@ class Title extends Composer
 
         if (is_search()) {
             return sprintf(
-                /* translators: %s is replaced with the search query */
+            /* translators: %s is replaced with the search query */
                 __('Search Results for %s', 'stage'),
                 get_search_query()
             );

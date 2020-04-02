@@ -1,12 +1,13 @@
 <?php
 
+use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
 use function Roots\env;
 use function Roots\storage_path;
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ return array(
     |
     */
 
-    'default'  => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'stack'),
 
     /*
     |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | Here you may configure the log channels for your application. Out of
-    | the box, Acorn uses the Monolog PHP logging library. This gives
+    | the box, the framework uses the Monolog PHP logging library. This gives
     | you a variety of powerful log handlers / formatters to utilize.
     |
     | Available Drivers: "single", "daily", "slack", "syslog",
@@ -36,62 +37,70 @@ return array(
     |
     */
 
-    'channels' => array(
-        'stack'      => array(
-            'driver'            => 'stack',
-            'channels'          => array( 'daily' ),
+    'channels' => [
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single'],
             'ignore_exceptions' => false,
-        ),
+        ],
 
-        'single'     => array(
+        'single' => [
             'driver' => 'single',
-            'path'   => storage_path('logs/stage.log'),
-            'level'  => 'debug',
-        ),
+            'path' => storage_path('logs/sage.log'),
+            'level' => 'debug',
+        ],
 
-        'daily'      => array(
+        'daily' => [
             'driver' => 'daily',
-            'path'   => storage_path('logs/stage.log'),
-            'level'  => 'debug',
-            'days'   => 14,
-        ),
+            'path' => storage_path('logs/sage.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
 
-        'slack'      => array(
-            'driver'   => 'slack',
-            'url'      => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Sage Log',
-            'emoji'    => ':boom:',
-            'level'    => 'critical',
-        ),
+        'slack' => [
+            'driver' => 'slack',
+            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Stage Log',
+            'emoji' => ':boom:',
+            'level' => 'critical',
+        ],
 
-        'papertrail' => array(
-            'driver'       => 'monolog',
-            'level'        => 'debug',
-            'handler'      => SyslogUdpHandler::class,
-            'handler_with' => array(
+        'papertrail' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => SyslogUdpHandler::class,
+            'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-            ),
-        ),
+            ],
+        ],
 
-        'stderr'     => array(
-            'driver'    => 'monolog',
-            'handler'   => StreamHandler::class,
+        'stderr' => [
+            'driver' => 'monolog',
+            'handler' => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with'      => array(
+            'with' => [
                 'stream' => 'php://stderr',
-            ),
-        ),
+            ],
+        ],
 
-        'syslog'     => array(
+        'syslog' => [
             'driver' => 'syslog',
-            'level'  => 'debug',
-        ),
+            'level' => 'debug',
+        ],
 
-        'errorlog'   => array(
+        'errorlog' => [
             'driver' => 'errorlog',
-            'level'  => 'debug',
-        ),
-    ),
+            'level' => 'debug',
+        ],
 
-);
+        'null' => [
+            'driver' => 'monolog',
+            'handler' => NullHandler::class,
+        ],
+
+        'emergency' => [
+            'path' => storage_path('logs/sage.log'),
+        ],
+    ],
+];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Stage\Composers\Partials;
+namespace Stage\View\Composers\Partials;
 
 use Roots\Acorn\View\Composer;
 
@@ -66,7 +66,7 @@ class Header extends Composer
             'bg-body',
             'font-copy',
             'border-accent',
-	        'z-30'
+            'z-30'
         );
 
         return implode(' ', apply_filters('stage_header_classes', $classes));

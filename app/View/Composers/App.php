@@ -1,11 +1,14 @@
 <?php
 
-namespace Stage\Composers\Components;
+namespace Stage\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class Alert extends Composer
+use function Stage\stage_get_features_status;
+
+class App extends Composer
 {
+
 
     /**
      * List of views served by this composer.
@@ -13,7 +16,7 @@ class Alert extends Composer
      * @var array
      */
     protected static $views = array(
-        'components.alert',
+        '*',
     );
 
     /**
@@ -24,17 +27,18 @@ class Alert extends Composer
     public function with()
     {
         return array(
-            'type' => $this->type(),
+            'siteName' => $this->siteName(),
+            'features' => stage_get_features_status(),
         );
     }
 
     /**
-     * Returns the alert type.
+     * Returns the site name.
      *
      * @return string
      */
-    public function type()
+    public function siteName()
     {
-        return $this->data->get('type', 'primary');
+        return get_bloginfo('name', 'display');
     }
 }

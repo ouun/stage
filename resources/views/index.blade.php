@@ -4,9 +4,7 @@
   @include('partials.archive.title')
 
   @if(! have_posts())
-    @alert(['type' => 'warning'])
-      {{ __('Sorry, no results were found.', 'stage') }}
-    @endalert
+    <x-alert type="warning" message="Sorry, no results were found" />
 
     @include('components.search')
   @else

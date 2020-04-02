@@ -2,16 +2,16 @@
 
 use function Roots\env;
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the default filesystem disk that should be used.
-    | The "local" disk, as well as a variety of cloud-based disks are
-    | available to your application. Just store away!
+    | Here you may specify the default filesystem disk that should be used
+    | by the framework. The "local" disk, as well as a variety of cloud
+    | based disks are available to your application. Just store away!
     |
     */
 
@@ -28,7 +28,7 @@ return array(
     |
     */
 
-    'cloud'   => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,32 +39,32 @@ return array(
     | may even configure multiple disks of the same driver. Defaults have
     | been setup for each driver as an example of the required options.
     |
-    | Supported Drivers: "local", "ftp", "sftp", "s3", "rackspace"
+    | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
 
-    'disks'   => array(
-        'local'     => array(
-            'driver'     => 'local',
-            'root'       => WP_CONTENT_DIR,
-            'url'        => content_url(),
+    'disks' => [
+        'local' => [
+            'driver' => 'local',
+            'root' => WP_CONTENT_DIR,
+            'url' => content_url(),
             'visibility' => 'public',
-        ),
+        ],
 
-        'wordpress' => array(
-            'driver'     => 'local',
-            'root'       => ABSPATH,
-            'url'        => site_url(),
+        'wordpress' => [
+            'driver' => 'local',
+            'root' => ABSPATH,
+            'url' => site_url(),
             'visibility' => 'public',
-        ),
+        ],
 
-        's3'        => array(
+        's3' => [
             'driver' => 's3',
-            'key'    => env('AWS_ACCESS_KEY_ID'),
+            'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
-            'url'    => env('AWS_URL'),
-        ),
-    ),
-);
+            'url' => env('AWS_URL'),
+        ],
+    ],
+];

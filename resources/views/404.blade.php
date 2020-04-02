@@ -5,9 +5,7 @@
     @include('partials.archive.title')
 
     @if (! have_posts())
-      @alert(['type' => 'warning'])
-        {{ __('Sorry, but the page you were trying to view does not exist.', 'stage') }}
-      @endalert
+      <x-alert type="warning" message="Sorry, but the page you are trying to view does not exist." />
 
       @include('components.search')
     @endif

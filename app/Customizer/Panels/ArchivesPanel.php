@@ -3,7 +3,7 @@
 namespace Stage\Customizer\Panels;
 
 use WP_Customize_Manager;
-use Stage\Composers\Partials\Archive;
+use Stage\View\Composers\Partials\Archive;
 use Stage\Customizer\Controls\LayoutControl;
 use Stage\Customizer\Controls\ToggleControl;
 use Kirki\Compatibility\Kirki;
@@ -12,7 +12,7 @@ use Kirki\Section;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback_template;
 
-class  ArchivesPanel
+class ArchivesPanel
 {
 
     // Set panel ID

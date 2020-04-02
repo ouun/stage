@@ -1,6 +1,6 @@
 <?php
 
-namespace Stage\Composers\Partials\Header;
+namespace Stage\View\Composers\Partials\Footer;
 
 use Log1x\Navi\NaviFacade as Navi;
 use Roots\Acorn\View\Composer;
@@ -14,7 +14,7 @@ class Navigation extends Composer
      * @var array
      */
     protected static $views = array(
-        'layouts.header.navigation.*'
+        'layouts.footer.navigation'
     );
 
     /**
@@ -36,10 +36,10 @@ class Navigation extends Composer
      */
     public function navigation()
     {
-        if (! has_nav_menu('primary_navigation')) {
+        if (! has_nav_menu('footer_navigation')) {
             return array();
         }
 
-        return Navi::build('primary_navigation')->toArray();
+        return Navi::build('footer_navigation')->toArray();
     }
 }
