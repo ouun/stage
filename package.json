@@ -35,7 +35,7 @@
     "eslint": "^6.3.0",
     "eslint-plugin-import": "^2.20.2",
     "laravel-mix": "^5.0.0",
-    "laravel-mix-copy-watched": "^2.2.1",
+    "laravel-mix-copy-watched": "^2.2.3",
     "laravel-mix-export-tailwind-config": "^0.1.2",
     "laravel-mix-purgecss": "^4.2.0",
     "mix-tailwindcss": "^1.0.2",
