@@ -18,7 +18,7 @@ class ShopExtras extends ServiceProvider
             'woocommerce_sale_flash',
             function ($text, $post, $product) {
 
-                $sale_saving = self::get_sale_saving($product);
+                $sale_saving = self::getSaleSaving($product);
 
                 if (! empty($sale_saving)) {
                     $text = '<span class="onsale">' . $sale_saving['percentage'] . '</span>';
@@ -40,7 +40,9 @@ class ShopExtras extends ServiceProvider
         add_filter(
             'woocommerce_add_to_cart_fragments',
             function ($fragments) {
-                $fragments['.cart-count'] = '<sup class="cart-count count text-primary">' . WC()->cart->get_cart_contents_count() . '</sup>';
+                $fragments['.cart-count'] = '<sup class="cart-count count text-primary">' .
+                                            WC()->cart->get_cart_contents_count() .
+                                            '</sup>';
                 return $fragments;
             }
         );
@@ -54,7 +56,7 @@ class ShopExtras extends ServiceProvider
    *
    * @return array|string|null
    */
-    public static function get_sale_saving($product, $as_string = false)
+    public static function getSaleSaving($product, $as_string = false)
     {
 
         if (is_numeric($product)) {
@@ -63,8 +65,13 @@ class ShopExtras extends ServiceProvider
 
         $saving = [];
 
-      // Only on sale products on frontend and excluding min/max price on variable products
-        if ($product->is_on_sale() && ! is_admin() && ! $product->is_type('variable') && ! $product->is_type('grouped')) {
+        // Only on sale products on frontend and excluding min/max price on variable products
+        if (
+            $product->is_on_sale() &&
+            ! is_admin() &&
+            ! $product->is_type('variable') &&
+            ! $product->is_type('grouped')
+        ) {
           // Get product prices
             $regular_price = (float) $product->get_regular_price(); // Regular price
             $sale_price = (float) $product->get_price(); // Active price (the "Sale price" when on-sale)
@@ -92,7 +99,7 @@ class ShopExtras extends ServiceProvider
    *
    * @return string
    */
-    function woocommerce_custom_sales_price($price, $regular_price, $sale_price)
+    public static function woocommerceCustomSalesPrice($price, $regular_price, $sale_price)
     {
       // Getting the clean numeric prices (without html and currency).
         $regular_price = floatval(strip_tags($regular_price));

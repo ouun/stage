@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1b68f985a3dfe21e1a1cc75714a0f54",
+    "content-hash": "555662e91f9293d6a693ed65baae8601",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2178,6 +2178,34 @@
             }
         },
         {
+            "name": "ouun/stage-woocommerce",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "/Volumes/Webprojekte/Repositories/stage-woocommerce",
+                "reference": "fe3fd00dcccd1f8b68384b1b5761a92d813505be"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/woocommerce.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp",
+                    "email": "philipp@ouun.io"
+                }
+            ],
+            "description": "WooCommerce integration for Stage & Sage 10",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -2323,16 +2351,16 @@
         },
         {
             "name": "roots/acorn",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/acorn.git",
-                "reference": "112b62759c19b1ef4f5f9a87f4250e51276fdb94"
+                "reference": "3c81ead4000d49e413ef39963e9486bac5d1039c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn/zipball/112b62759c19b1ef4f5f9a87f4250e51276fdb94",
-                "reference": "112b62759c19b1ef4f5f9a87f4250e51276fdb94",
+                "url": "https://api.github.com/repos/roots/acorn/zipball/3c81ead4000d49e413ef39963e9486bac5d1039c",
+                "reference": "3c81ead4000d49e413ef39963e9486bac5d1039c",
                 "shasum": ""
             },
             "require": {
@@ -2396,7 +2424,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-03-24T03:54:52+00:00"
+            "time": "2020-04-03T01:21:19+00:00"
         },
         {
             "name": "roots/support",
@@ -3293,6 +3321,7 @@
         "kirki-framework/module-sections": 20,
         "kirki-framework/module-selective-refresh": 20,
         "kirki-framework/module-webfonts": 20,
+        "ouun/stage-woocommerce": 20,
         "ouun/kirki-module-fonts_upload": 20,
         "ouun/kirki-module-sync_controls": 20,
         "ouun/laravel-tailwind-config": 20

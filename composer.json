@@ -39,6 +39,13 @@
       "options": {
         "symlink": true
       }
+    },
+    {
+      "type": "path",
+      "url": "/Volumes/Webprojekte/Repositories/stage-woocommerce",
+      "options": {
+        "symlink": true
+      }
     }
   ],
   "require": {
@@ -61,6 +68,7 @@
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
+    "ouun/stage-woocommerce": "dev-master",
     "ouun/kirki-module-fonts_upload": "dev-master",
     "ouun/kirki-module-sync_controls": "dev-master",
     "ouun/laravel-tailwind-config": "dev-master",
@@ -79,7 +87,7 @@
   "prefer-stable": true,
   "scripts": {
     "lint": [
-      "phpcs --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
+      "phpcs --colors --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
     ],
     "fix": [
       "phpcbf -q --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 . && composer lint"

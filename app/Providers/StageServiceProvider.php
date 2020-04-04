@@ -10,71 +10,71 @@ use Symfony\Component\Finder\Finder;
 
 class StageServiceProvider extends ServiceProvider
 {
-	/**
-	 * Register any application services.
-	 * Note: As parent theme no effect
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->app->bind('stage', function() {
-			return [
-				'path' => get_template_directory() . '/app',
-				'namespace' => 'Stage\\',
-			];
-		});
-	}
+    /**
+     * Register any application services.
+     * Note: As parent theme no effect
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind('stage', function () {
+            return [
+                'path' => get_template_directory() . '/app',
+                'namespace' => 'Stage\\',
+            ];
+        });
+    }
 
-	/**
-	 * Bootstrap any application services.
-	 * Note: As parent theme no effect
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		//
-	}
+    /**
+     * Bootstrap any application services.
+     * Note: As parent theme no effect
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
 
-	/**
-	 * Return an instance of View.
-	 *
-	 * @return \Illuminate\View\View
-	 */
-	protected function view()
-	{
-		return $this->app['view'];
-	}
+    /**
+     * Return an instance of View.
+     *
+     * @return \Illuminate\View\View
+     */
+    protected function view()
+    {
+        return $this->app['view'];
+    }
 
-	/**
-	 * Attach Stage View Composers
-	 *
-	 * @return void
-	 * @throws \ReflectionException
-	 */
-	public function attachStageComposers()
-	{
-		if (! isset($this->app['stage']) || ! is_dir($path = $this->app['stage']['path']  . '/View/Composers')) {
-			return;
-		}
+    /**
+     * Attach Stage View Composers
+     *
+     * @return void
+     * @throws \ReflectionException
+     */
+    public function attachStageComposers()
+    {
+        if (! isset($this->app['stage']) || ! is_dir($path = $this->app['stage']['path']  . '/View/Composers')) {
+            return;
+        }
 
-		$namespace = $this->app['stage']['namespace'];
+        $namespace = $this->app['stage']['namespace'];
 
-		// TODO: This should be cacheable, perhaps via `wp acorn` command
-		foreach ((new Finder())->in($path)->files() as $composer) {
-			$composer = $namespace . str_replace(
-					['/', '.php'],
-					['\\', ''],
-					Str::after($composer->getPathname(), $this->app['stage']['path'] . DIRECTORY_SEPARATOR)
-				);
+        // TODO: This should be cacheable, perhaps via `wp acorn` command
+        foreach ((new Finder())->in($path)->files() as $composer) {
+            $composer = $namespace . str_replace(
+                ['/', '.php'],
+                ['\\', ''],
+                Str::after($composer->getPathname(), $this->app['stage']['path'] . DIRECTORY_SEPARATOR)
+            );
 
-			if (
-				is_subclass_of($composer, Composer::class) &&
-				! (new ReflectionClass($composer))->isAbstract()
-			) {
-				$this->view()->composer($composer::views(), $composer);
-			}
-		}
-	}
+            if (
+                is_subclass_of($composer, Composer::class) &&
+                ! (new ReflectionClass($composer))->isAbstract()
+            ) {
+                $this->view()->composer($composer::views(), $composer);
+            }
+        }
+    }
 }

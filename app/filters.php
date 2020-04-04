@@ -17,9 +17,9 @@ namespace Stage;
 add_filter(
     'body_class',
     function ($classes) {
-    	// Stage Framework Classes, critical for JS
-	    $classes[] = 'app';
-	    $classes[] = 'stage';
+        // Stage Framework Classes, critical for JS
+        $classes[] = 'app';
+        $classes[] = 'stage';
 
         // Config classes
         $classes = array_merge(

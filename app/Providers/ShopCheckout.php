@@ -24,15 +24,15 @@ class ShopCheckout extends ServiceProvider
 
                 if (empty($errors->errors) && 'address' === $step) {
                     $errors->add(
-                    	'digthis',
-	                    __('<span id="digthis-prevent-error">Successfully validated ' . $step . '</span>', 'stage')
+                        'digthis',
+                        __('<span id="digthis-prevent-error">Successfully validated ' . $step . '</span>', 'stage')
                     );
                 }
 
                 if (wc_terms_and_conditions_checkbox_enabled() && empty($errors->errors) && 'address' === $step) {
                     $errors->add(
-                    	'digthis',
-	                    __('<span id="digthis-prevent-error">Successfully validated ' . $step . '</span>', 'stage')
+                        'digthis',
+                        __('<span id="digthis-prevent-error">Successfully validated ' . $step . '</span>', 'stage')
                     );
                 }
             },
@@ -74,7 +74,8 @@ class ShopCheckout extends ServiceProvider
                 foreach ($steps as $key => $value) {
                     if ('cart' === $key) {
                         echo '<li class="step done step-' . esc_html($key) . '" data-step="' . esc_html($key) . '">';
-                        echo '<a href="' . esc_html(wc_get_cart_url()) . '" data-step="' . esc_html($key) . '">' . esc_html($value) . '</a>';
+                        echo '<a href="' . esc_html(wc_get_cart_url()) . '"
+                                 data-step="' . esc_html($key) . '">' . esc_html($value) . '</a>';
                         echo '</li>';
                     } else {
                         echo '<li class="step step-' . esc_html($key) . '" data-step="' . esc_html($key) . '">';
@@ -107,7 +108,12 @@ class ShopCheckout extends ServiceProvider
                 ?>
               <div class="form-row">
                   <input type="hidden" name="current_step" id="current_step" value="address">
-                  <button type="submit" name="verify-checkout" id="verify-checkout" class="btn w-full" data-current="address" data-next="payment">
+                  <button type="submit"
+                          name="verify-checkout"
+                          id="verify-checkout"
+                          class="btn w-full"
+                          data-current="address"
+                          data-next="payment">
                       <?php esc_html_e('Proceed to payment', 'stage'); ?>
                   </button>
               </div>

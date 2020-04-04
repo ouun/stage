@@ -31,7 +31,7 @@ class ShopFilters extends ServiceProvider
         );
 
         // Remove WC styles.
-        add_filter('woocommerce_enqueue_styles', array( $this, 'shop_dequeue_wc_styles' ));
+        add_filter('woocommerce_enqueue_styles', array( $this, 'shopDequeueStyles' ));
 
         // Remove WC <main> tags.
         remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
@@ -92,16 +92,16 @@ class ShopFilters extends ServiceProvider
         add_filter('woocommerce_subcategory_count_html', '__return_null');
 
         // Customize single product tabs.
-        add_filter('woocommerce_product_tabs', array( $this, 'shop_reorder_product_tabs' ), 98);
+        add_filter('woocommerce_product_tabs', array( $this, 'shopReorderProductTabs' ), 98);
 
         // Change review tab title.
-        add_filter('woocommerce_product_reviews_tab_title', array( $this, 'shop_review_tab_title' ));
+        add_filter('woocommerce_product_reviews_tab_title', array( $this, 'shopReviewTabTitle' ));
 
         // Pagination links.
-        add_filter('woocommerce_pagination_args', array( $this, 'shop_pagination_args' ));
+        add_filter('woocommerce_pagination_args', array( $this, 'shopPaginationArgs' ));
 
         // Remove WC placeholder image.
-        add_filter('woocommerce_placeholder_img_src', array( $this, 'shop_custom_woocommerce_placeholder' ), 10);
+        add_filter('woocommerce_placeholder_img_src', array( $this, 'shopCustomImagePlaceholder' ), 10);
 
         // Controls the size used in the product grid/catalog for category images.
         add_filter(
@@ -118,8 +118,18 @@ class ShopFilters extends ServiceProvider
 
                 // Separate product variables if available.
                 if ($product_data['variation_id']) {
-                    $link_text  = str_replace('- ' . wc_get_formatted_variation($product_data['variation'], true, false), '', $link_text);
-                    $link_text .= '<span class="flex text-xs uppercase text-gray-500">' . wc_get_formatted_variation($product_data['variation'], false) . '</span>';
+                    $link_text  = str_replace(
+                        '- ' . wc_get_formatted_variation(
+                            $product_data['variation'],
+                            true,
+                            false
+                        ),
+                        '',
+                        $link_text
+                    );
+                    $link_text .= '<span class="flex text-xs uppercase text-gray-500">' .
+                                  wc_get_formatted_variation($product_data['variation'], false) .
+                                  '</span>';
                 }
 
                 return $link_text;
@@ -172,7 +182,11 @@ class ShopFilters extends ServiceProvider
                 $min_active_price  = $product->get_variation_price('min', true);
 
                 $price_html = ( $min_sale_price === $min_regular_price ) ? wc_price($min_active_price) :
-                    '<del class="text-xs text-black">' . wc_price($min_regular_price) . '</del> <ins>' . wc_price($min_active_price) . '</ins>';
+                    '<del class="text-xs text-black">' .
+                    wc_price($min_regular_price) .
+                    '</del> <ins>' .
+                    wc_price($min_active_price) .
+                    '</ins>';
 
                 return $min_active_price === $max_active_price ? $price_html : sprintf('%s %s', $prefix, $price_html);
             },
@@ -188,7 +202,7 @@ class ShopFilters extends ServiceProvider
      *
      * @return mixed
      */
-    public static function shop_dequeue_wc_styles($enqueue_styles)
+    public static function shopDequeueStyles($enqueue_styles)
     {
         unset($enqueue_styles['woocommerce-general']);     // Remove the gloss.
         unset($enqueue_styles['woocommerce-layout']);      // Remove the layout.
@@ -203,7 +217,7 @@ class ShopFilters extends ServiceProvider
      *
      * @return mixed
      */
-    public static function shop_reorder_product_tabs($tabs)
+    public static function shopReorderProductTabs($tabs)
     {
 
         // Change the priority.
@@ -220,7 +234,7 @@ class ShopFilters extends ServiceProvider
      *
      * @return string
      */
-    public static function shop_review_tab_title($title)
+    public static function shopReviewTabTitle($title)
     {
         $count = substr($title, -2, -1);    // returns "3".
         $title = substr($title, 0, -3);      // removes (3).
@@ -235,7 +249,7 @@ class ShopFilters extends ServiceProvider
      *
      * @return mixed
      */
-    public static function shop_pagination_args($args)
+    public static function shopPaginationArgs($args)
     {
         $args['prev_text'] = get_svg('arrow-left');
         $args['next_text'] = get_svg('arrow-right');
@@ -248,7 +262,7 @@ class ShopFilters extends ServiceProvider
      *
      * @return bool
      */
-    public static function shop_custom_woocommerce_placeholder()
+    public static function shopCustomImagePlaceholder()
     {
         return false;
     }

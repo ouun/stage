@@ -1,5 +1,5 @@
 {{--
-@see 	https://docs.woocommerce.com/document/template-structure/
+@see    https://docs.woocommerce.com/document/template-structure/
 @author  WooThemes
 @package WooCommerce/Templates
 @version 3.3.0
@@ -11,7 +11,9 @@
 <section class="sw-myaccount__order__customer row">
 
     <div class="col">
-        <h2 class="woocommerce-column__title"><?php _e( 'Billing address', 'woocommerce' ); ?></h2>
+        <h2 class="woocommerce-column__title"><?php
+
+_e('Billing address', 'woocommerce'); ?></h2>
 
         <address>
           {!! wp_kses_post( $order->get_formatted_billing_address( __( 'N/A', 'woocommerce' ) ) ) !!}
