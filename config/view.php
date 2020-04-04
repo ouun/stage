@@ -65,38 +65,6 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
-    | View Composers
-    |--------------------------------------------------------------------------
-    |
-    | View composers allow data to always be passed to certain views. This can
-    | be useful when passing data to components such as hero elements,
-    | navigation, banners, etc.
-    |
-    */
-
-    'composers'  => array(
-        Stage\View\Composers\App::class,
-
-        // Stage\View\Components\Alert::class,
-        // Stage\View\Components\Title::class,
-
-        Stage\View\Composers\Partials\Header::class,
-        Stage\View\Composers\Partials\Header\Navigation::class,
-
-        Stage\View\Composers\Partials\Footer::class,
-        Stage\View\Composers\Partials\Footer\Navigation::class,
-
-        Stage\View\Composers\Partials\Archive::class,
-        Stage\View\Composers\Partials\Archive\Item::class,
-
-        Stage\View\Composers\Shop::class,
-        Stage\View\Composers\Shop\MiniCart::class,
-        Stage\View\Composers\Shop\SingleProduct::class,
-    ),
-
-
-    /*
-    |--------------------------------------------------------------------------
     | View Directives
     |--------------------------------------------------------------------------
     |

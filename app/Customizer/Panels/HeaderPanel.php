@@ -115,15 +115,15 @@ class HeaderPanel
                             'section' => $section,
                             'choices' => array(
                                 'horizontal-left'   => asset(
-                                    'images/customizer/header-horizontal-left.svg',
+                                    'images/header-horizontal-left.svg',
                                     'stage'
                                 )->uri(),
                                 'horizontal-center' => asset(
-                                    'images/customizer/header-horizontal-center.svg',
+                                    'images/header-horizontal-center.svg',
                                     'stage'
                                 )->uri(),
                                 'horizontal-right'  => asset(
-                                    'images/customizer/header-horizontal-right.svg',
+                                    'images/header-horizontal-right.svg',
                                     'stage'
                                 )->uri(),
                             ),
@@ -157,11 +157,11 @@ class HeaderPanel
                             'section' => $section,
                             'choices' => array(
                                 'below-header' => asset(
-                                    'images/customizer/header-horizontal-left.svg',
+                                    'images/header-horizontal-left.svg',
                                     'stage'
                                 )->uri(),
                                 'fullscreen'   => asset(
-                                    'images/customizer/header-horizontal-center.svg',
+                                    'images/header-horizontal-center.svg',
                                     'stage'
                                 )->uri(),
                             ),

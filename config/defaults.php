@@ -49,6 +49,7 @@ return array(
             'xl'  => '1200px',
             'xxl' => '1600px',
         ),
+
         // All colors are registered as wp-blocks colors.
         'colors'  => array(
             'main'     => array(
@@ -156,24 +157,24 @@ return array(
         ),
     ),
 
-    /**
-     * Body Settings
-     */
+	/**
+	 * Body Settings
+	 */
     'body'     => array(
-        'classes' => array(
-            'app',
-            'stage',
-            'flex',
-            'flex-col',
-            'min-h-full',
-            'antialiased',
-            'bg-body',
-            'font-copy',
-            'text-copy',
-        ),
+	    'classes' => array(
+		    'app',
+		    'stage',
+		    'flex',
+		    'flex-col',
+		    'min-h-full',
+		    'antialiased',
+		    'bg-body',
+		    'font-copy',
+		    'text-copy',
+	    ),
     ),
 
-    /**
+	/**
      * Header Settings
      */
     'header'   => array(

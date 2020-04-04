@@ -97,9 +97,9 @@ class ArchivesPanel
                                 'label'   => esc_html__('Grid Layout', 'stage'),
                                 'section' => $section,
                                 'choices' => array(
-                                    'cards'   => \Roots\asset('images/customizer/grid-cards.svg', 'stage')->uri(),
-                                    'modern'  => \Roots\asset('images/customizer/grid-modern.svg', 'stage')->uri(),
-                                    'masonry' => \Roots\asset('images/customizer/grid-masonry.svg', 'stage')->uri(),
+                                    'cards'   => \Roots\asset('images/grid-cards.svg', 'stage')->uri(),
+                                    'modern'  => \Roots\asset('images/grid-modern.svg', 'stage')->uri(),
+                                    'masonry' => \Roots\asset('images/grid-masonry.svg', 'stage')->uri(),
                                 ),
                             )
                         )

@@ -18,6 +18,6 @@ import archive from './routes/archive';
  * See: {@link http://goo.gl/EUTi53 | Markup-based Unobtrusive Comprehensive DOM-ready Execution} by Paul Irish
  */
 router
-  .on('app', common)
+  .on('stage', common)
   .on('archive', archive)
   .ready();

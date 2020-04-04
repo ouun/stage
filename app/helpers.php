@@ -9,7 +9,6 @@
 
 namespace Stage;
 
-use Illuminate\Support\Facades\Config;
 use Stage\Customizer\Settings;
 use Stage\Providers\TailwindServiceProvider;
 use Throwable;

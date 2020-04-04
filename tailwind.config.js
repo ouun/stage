@@ -11,6 +11,9 @@ View the full documentation at https://tailwindcss.com.
 
 */
 
+const wordpress = require('tailwindcss-wordpress');
+const aspectRatio = require('tailwindcss-aspect-ratio');
+
 module.exports = {
   theme: {
 
@@ -749,7 +752,7 @@ module.exports = {
   */
 
   plugins: [
-    require('tailwindcss-wordpress'),
-    require('tailwindcss-aspect-ratio')(),
+    wordpress,
+    aspectRatio,
   ],
 };

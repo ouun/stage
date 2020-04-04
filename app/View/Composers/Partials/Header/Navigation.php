@@ -2,8 +2,8 @@
 
 namespace Stage\View\Composers\Partials\Header;
 
-use Log1x\Navi\NaviFacade as Navi;
 use Roots\Acorn\View\Composer;
+use Log1x\Navi\Facades\Navi;
 
 class Navigation extends Composer
 {

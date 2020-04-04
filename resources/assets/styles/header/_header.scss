@@ -33,7 +33,7 @@ header.main-header {
       // Logo
       div.logo-wrap {
         img {
-          @apply align-middle;
+          @apply align-middle max-h-6 w-auto my-2;
         }
       }
 

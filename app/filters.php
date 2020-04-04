@@ -17,9 +17,13 @@ namespace Stage;
 add_filter(
     'body_class',
     function ($classes) {
-        // Stage defaults classes
+    	// Stage Framework Classes, critical for JS
+	    $classes[] = 'app';
+	    $classes[] = 'stage';
+
+        // Config classes
         $classes = array_merge(
-            (array) stage_get_default('global.body.classes'),
+            (array) stage_get_default('body.classes'),
             $classes
         );
 
