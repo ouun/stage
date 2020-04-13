@@ -3,11 +3,15 @@
   @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
 }
 
-/** Colors */
+/** Default Colors, overwritten via Customizer */
 :root {
   /* Black & White */
   --color-black: rgb(0, 0, 0);
   --color-white: rgb(255, 255, 255);
+
+  /* Text colors */
+  --color-copy: #{hex_rgb(#333)};
+  --color-heading: #{hex_rgb(#333)};
 
   /* Body / Main background */
   --color-body: #{hex_rgb(#f9f9f9)};

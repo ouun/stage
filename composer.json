@@ -24,25 +24,8 @@
   },
   "repositories": [
     {
-      "name": "ouun/kirki-module-sync_controls",
-      "type": "vcs",
-      "url": "https://github.com/ouun/kirki-module-sync_controls"
-    },
-    {
-      "name": "ouun/kirki-module-fonts_upload",
-      "type": "vcs",
-      "url": "https://github.com/ouun/kirki-module-fonts_upload"
-    },
-    {
       "type": "path",
-      "url": "/Volumes/Webprojekte/Repositories/laravel-tailwind-config",
-      "options": {
-        "symlink": true
-      }
-    },
-    {
-      "type": "path",
-      "url": "/Volumes/Webprojekte/Repositories/stage-woocommerce",
+      "url": "/Volumes/Webprojekte/Repositories/kirki-module-sync_controls",
       "options": {
         "symlink": true
       }
@@ -68,10 +51,10 @@
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
-    "ouun/stage-woocommerce": "dev-master",
     "ouun/kirki-module-fonts_upload": "dev-master",
     "ouun/kirki-module-sync_controls": "dev-master",
-    "ouun/laravel-tailwind-config": "dev-master",
+    "ouun/stage-laravel-tailwind-config": "dev-master",
+    "ouun/stage-woocommerce": "^1.0",
     "roots/acorn": "^1.0.1"
   },
   "require-dev": {

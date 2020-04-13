@@ -289,32 +289,25 @@ class GlobalPanel
             array(
                 'type'      => 'multicolor',
                 'label'     => esc_html__('Main Colors', 'stage'),
-                'settings'  => $section . '_main',
+                'settings'  => $section,
                 'section'   => $section,
                 'priority'  => 10,
                 'choices'   => array(
-                    'body'      => esc_html__('Default Background Color', 'stage'),
                     'copy'      => esc_html__('Default Text Color', 'stage'),
+                    'heading'      => esc_html__('Default Heading Color', 'stage'),
                     'primary'   => esc_html__('Primary Color', 'stage'),
                     'secondary' => esc_html__('Secondary Color', 'stage'),
+                    'body'      => esc_html__('Default Background Color', 'stage'),
                 ),
                 'default'   => array(
-                    'body'      => stage_get_default($default_key . 'main.body'),
                     'copy'      => stage_get_default($default_key . 'main.copy'),
+                    'heading'   => stage_get_default($default_key . 'main.copy'),
                     'primary'   => stage_get_default($default_key . 'main.primary'),
                     'secondary' => stage_get_default($default_key . 'main.secondary'),
+                    'body'      => stage_get_default($default_key . 'main.body'),
                 ),
                 'transport' => 'auto',
                 'output'    => array(
-                    array(
-                        'choice'   => 'body',
-                        'element'  => ':root',
-                        'property' => '--color-body',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
                     array(
                         'choice'   => 'copy',
                         'element'  => ':root',
@@ -324,6 +317,15 @@ class GlobalPanel
                             'front',
                         ),
                     ),
+	                array(
+		                'choice'   => 'heading',
+		                'element'  => ':root',
+		                'property' => '--color-heading',
+		                'context'  => array(
+			                'editor',
+			                'front',
+		                ),
+	                ),
                     array(
                         'choice'   => 'primary',
                         'element'  => ':root',
@@ -342,6 +344,15 @@ class GlobalPanel
                             'front',
                         ),
                     ),
+	                array(
+		                'choice'   => 'body',
+		                'element'  => ':root',
+		                'property' => '--color-body',
+		                'context'  => array(
+			                'editor',
+			                'front',
+		                ),
+	                ),
                 ),
             )
         );

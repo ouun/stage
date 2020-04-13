@@ -4,7 +4,9 @@ namespace Stage\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
+use function Stage\post_types;
 use function Stage\stage_get_features_status;
+use function Stage\stage_is_shop_active;
 
 class App extends Composer
 {
@@ -29,6 +31,7 @@ class App extends Composer
         return array(
             'siteName' => $this->siteName(),
             'features' => stage_get_features_status(),
+            'loaderNamespace' => $this->loaderNamespace(),
         );
     }
 
@@ -40,5 +43,23 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    /**
+     * Returns current JS loader namespace
+     * @see https://barba.js.org/docs/userguide/markup/
+     *
+     * @return string
+     */
+    public function loaderNamespace()
+    {
+        if (stage_is_shop_active()) {
+            // Checkout
+            if (is_shop() || is_checkout() || is_cart() || is_product()) {
+                return 'shop';
+            }
+        }
+
+        return get_post_type();
     }
 }

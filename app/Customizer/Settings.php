@@ -93,6 +93,7 @@ class Settings
         // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
         if (empty($theme_mod)) {
             $key       = array_pop($request_array);
+	        $theme_mod = self::getThemeMod((string) implode('_', $request_array));
             $theme_mod = isset($theme_mod[ $key ]) ? $theme_mod[ $key ] : self::getThemeMod($request, $default);
         }
 

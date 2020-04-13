@@ -2,6 +2,7 @@ import {menu} from "../modules/menu";
 import {lazy} from "../modules/lazy";
 import {loader} from "../modules/loader";
 import {gallery} from "../modules/gallery";
+import {accordions} from "../modules/accordions";
 import {adminbar} from "../modules/menu/adminbar";
 
 /**
@@ -34,5 +35,8 @@ export default () => {
   if ( stage.wp.adminbar_visible ) {
     adminbar.init();
   }
+
+  // Init Accordions
+  accordions.init();
 
 };

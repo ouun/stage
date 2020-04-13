@@ -9,6 +9,9 @@ import 'jquery';
  */
 import common from './routes/common';
 import archive from './routes/archive';
+import product from './routes/product';
+import {checkout} from './routes/checkout';
+import cart from './routes/cart';
 
 /**
  * Set up DOM router
@@ -20,4 +23,7 @@ import archive from './routes/archive';
 router
   .on('stage', common)
   .on('archive', archive)
+  .on('single-product', product)
+  .on('checkout', checkout.init)
+  .on('cart', cart)
   .ready();

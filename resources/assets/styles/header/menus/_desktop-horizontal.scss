@@ -85,7 +85,7 @@ div.icons-wrap {
   &.click-open-menu > ul.menu > li.menu-item.nav-is-visible > .sub-menu,
   &.hover-open-menu > ul.menu > li.menu-item:hover > .sub-menu,
   &.hover-open-menu > ul.menu > li.menu-item:focus > .sub-menu {
-    @apply visible opacity-100 shadow;
+    @apply visible opacity-100 shadow transition-shadow duration-150 ease-in-out;
 
     &:hover {
       @apply shadow-lg;

@@ -65,19 +65,20 @@ class Item extends Composer
                 'w-full',
                 'float-left',
                 'mb-8',
-                'lg:mb-24',
+                'lg:mb-12',
             )
         );
 
         // Cards specific classes
         if ($this->layout() === 'cards') {
-            array_merge(
+            $classes = array_merge(
                 $classes,
                 array(
                     'flex',
                     'flex-wrap',
                     'flex-grow-0',
                     'flex-shrink',
+                    'md:px-2',
                     'md:w-1/2',
                     'lg:w-1/3',
                 )

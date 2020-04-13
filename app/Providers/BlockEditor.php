@@ -44,8 +44,8 @@ class BlockEditor extends ServiceProvider
         // Merge more color pallets if required
         $register = array();
         $palettes = array(
+	        'global.colors.main',
             'global.colors',
-            'global.colors.main',
         );
 
         foreach ($palettes as $palette) {
@@ -55,17 +55,18 @@ class BlockEditor extends ServiceProvider
                 if (! is_array($color)) {
                     $color = self::registerColor($id, $palette);
 
-                    // Add color title if color already registered
+                    // Add color title if color is already registered
                     if (isset($register[ $color['color'] ])) {
                         $color['name'] = $register[ $color['color'] ]['name'] . ', ' . $color['name'];
                     }
 
+                    // Overwrite existing colors
                     $register[ $color['color'] ] = $color;
                 }
             }
         }
 
-        return $register;
+        return array_values($register);
     }
 
     /**

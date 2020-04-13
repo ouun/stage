@@ -20,9 +20,11 @@
         </sup>
       </a>
 
-      <div class="menu-cart-content sub-menu">
-        @include('layouts.header.shop.mini-cart')
-      </div>
+      @if( ! is_cart() && ! is_checkout() )
+        <div class="menu-cart-content sub-menu">
+          @include('layouts.header.shop.mini-cart')
+        </div>
+      @endif
     </li>
   @endif
 

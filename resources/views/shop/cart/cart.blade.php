@@ -1,6 +1,6 @@
 {{--
 Cart Page
-@version  3.5.0
+@version  3.8.0
 @overwrite false
 --}}
 
@@ -24,8 +24,8 @@ Cart Page
           <th class="product-thumbnail text-left"><?php esc_html_e('Product', 'woocommerce'); ?></th>
           <th class="product-name">&nbsp;</th>
           <th class="product-price">&nbsp;</th>
-          <th class="product-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
-          <th class="product-subtotal text-right"><?php esc_html_e('Total', 'woocommerce'); ?></th>
+          <th class="product-quantity text-center"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
+          <th class="product-subtotal text-center"><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
         </tr>
         </thead>
         <tbody>
@@ -42,18 +42,21 @@ Cart Page
 
           <td class="product-remove md:pr-4 ">
             <?php
-            // @codingStandardsIgnoreLine
-            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">' . get_svg('x', 'ml-auto text-gray-300 hover:text-gray-500') . '</a>',
-                esc_url(wc_get_cart_remove_url($cart_item_key)),
-                __('Remove this item', 'woocommerce'),
-                esc_attr($product_id),
-                esc_attr($_product->get_sku())
-            ), $cart_item_key );
+            echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+              'woocommerce_cart_item_remove_link',
+              sprintf(
+                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                esc_html__( 'Remove this item', 'woocommerce' ),
+                esc_attr( $product_id ),
+                esc_attr( $_product->get_sku() )
+              ),
+              $cart_item_key
+            );
             ?>
           </td>
 
-          <td class="product-thumbnail md:py-4 py-4">
+          <td class="product-thumbnail md:py-4 py-4 max-w-6">
             <?php
             $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
             if (! $product_permalink) {
@@ -92,19 +95,23 @@ Cart Page
             if ($_product->is_sold_individually()) {
               $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key);
             } else {
-              $product_quantity = woocommerce_quantity_input(array(
-                'input_name'   => "cart[{$cart_item_key}][qty]",
-                'input_value'  => $cart_item['quantity'],
-                'max_value'    => $_product->get_max_purchase_quantity(),
-                'min_value'    => '0',
-                'product_name' => $_product->get_name(),
-              ), $_product, false);
+              $product_quantity = woocommerce_quantity_input(
+                array(
+                  'input_name'   => "cart[{$cart_item_key}][qty]",
+                  'input_value'  => $cart_item['quantity'],
+                  'max_value'    => $_product->get_max_purchase_quantity(),
+                  'min_value'    => '0',
+                  'product_name' => $_product->get_name(),
+                ),
+                $_product,
+                false
+              );
             }
             echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
             ?>
           </td>
 
-          <td class="product-subtotal py-4" data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>">
+          <td class="product-subtotal py-4 text-center" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
             <?php
             echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
             ?>
@@ -134,6 +141,8 @@ Cart Page
       <?php do_action('woocommerce_after_cart_table'); ?>
 
   </div>
+
+  <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
   <div class="cart-collaterals w-full md:w-1/3 lg:w-2/5 md:px-4">
 

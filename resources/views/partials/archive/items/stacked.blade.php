@@ -18,7 +18,7 @@
 
         @if( $display_meta )
           <div class="my-4">
-            @include('partials.single.entry-meta')
+            @include('partials.single.meta')
           </div>
         @endif
 

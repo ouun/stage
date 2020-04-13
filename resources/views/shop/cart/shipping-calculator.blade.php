@@ -1,6 +1,6 @@
 {{--
 Shipping Calculator
-@version  3.5.0
+@version  4.0.0
 @overwrite false
 --}}
 
@@ -44,7 +44,7 @@ esc_attr_e('Calculate shipping', 'woocommerce'); ?>
             $states     = WC()->countries->get_states($current_cc);
             if (is_array($states) && empty($states)) {
             ?>
-            <input type="hidden" name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php esc_attr_e('State / County', 'woocommerce'); ?>" />
+            <input type="hidden" name="calc_shipping_state" id="calc_shipping_state" data-placeholder="<?php esc_attr_e('State / County', 'woocommerce'); ?>" />
             <?php
             } elseif (is_array($states)) {
             ?>

@@ -1,6 +1,6 @@
 {{--
 Displays a single product content
-@version     3.4.0
+@version     3.6.0
 --}}
 
 @action('woocommerce_before_single_product')

@@ -5,7 +5,7 @@
 .blocks-wrap,
 .content-wrap,
 .archive-wrap {
-  & > * {
+  &:not(.alignfull):not(.alignscreen):not(.alignwide) > * {
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply w-full max-w-full mx-auto px-gutter;
 
@@ -17,6 +17,7 @@
     }
   }
 
+  &.alignwide,
   & > .alignwide {
     @include blocks_align__wide();
 
@@ -25,6 +26,7 @@
     }
   }
 
+  &.alignscreen,
   & > .alignscreen {
     @include blocks_align__screen();
 
@@ -33,6 +35,7 @@
     }
   }
 
+  &.alignfull,
   & > .alignfull {
     @include blocks_align__full();
 
@@ -45,6 +48,7 @@
 // Add some default spacing
 .blocks-wrap,
 .blocks-container {
+  &,
   & > * {
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply my-block-spacing;

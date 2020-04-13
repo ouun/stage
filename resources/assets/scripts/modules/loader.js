@@ -165,30 +165,23 @@ export const loader = {
         {
           name: 'fade',
           from: {
-            namespace: ['page', 'shop'],
+            namespace: ['page', 'post', 'shop'],
           },
           to: {
-            namespace: ['page'],
+            namespace: ['page', 'post'],
           },
           appear() {
-          },
-        },
-        {
-          name: 'test',
-          from: {
-            namespace: ['page', 'shop'],
-          },
-          to: {
-            namespace: ['shop'],
-          },
-          appear() {
-          },
-          beforeLeave(data) {
-            // Force regular load of product
-            barba.force(data.next.url.path);
           },
         },
       ],
+      views: [{
+        namespace: 'shop',
+        beforeLeave({ next }) {
+          // Force regular load of products
+          // todo: Await @barba/head to load <head> at https://barba.js.org/docs/plugins/head/
+          barba.force(next.url.path);
+        },
+      }],
     });
   },
 };

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "555662e91f9293d6a693ed65baae8601",
+    "content-hash": "0db57fd99fd0aa45237f3cfa1b4e8cc8",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,7 +75,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -126,7 +126,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -170,7 +170,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -224,16 +224,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "9108edffa95b34df94dc36721d92f380dd59bea3"
+                "reference": "10c5802e360595f5f2a8b6afa176b9542851e580"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/9108edffa95b34df94dc36721d92f380dd59bea3",
-                "reference": "9108edffa95b34df94dc36721d92f380dd59bea3",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/10c5802e360595f5f2a8b6afa176b9542851e580",
+                "reference": "10c5802e360595f5f2a8b6afa176b9542851e580",
                 "shasum": ""
             },
             "require": {
@@ -264,20 +264,20 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-18T13:25:12+00:00"
+            "time": "2020-04-06T13:33:36+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "f13c89509345ceee05f3527a83f38c77c0f74579"
+                "reference": "2db7e8a936cc09e396d14902178ea177f4dc42ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/f13c89509345ceee05f3527a83f38c77c0f74579",
-                "reference": "f13c89509345ceee05f3527a83f38c77c0f74579",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/2db7e8a936cc09e396d14902178ea177f4dc42ac",
+                "reference": "2db7e8a936cc09e396d14902178ea177f4dc42ac",
                 "shasum": ""
             },
             "require": {
@@ -308,11 +308,11 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-31T14:24:32+00:00"
+            "time": "2020-04-04T15:13:36+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -357,7 +357,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -410,7 +410,7 @@
         },
         {
             "name": "illuminate/log",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
@@ -455,16 +455,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "6b5a135637bf901e5dd9c0e3d906a97d550d4cee"
+                "reference": "b8d805437c075a44bf53737763c3b979932445c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/6b5a135637bf901e5dd9c0e3d906a97d550d4cee",
-                "reference": "6b5a135637bf901e5dd9c0e3d906a97d550d4cee",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/b8d805437c075a44bf53737763c3b979932445c7",
+                "reference": "b8d805437c075a44bf53737763c3b979932445c7",
                 "shasum": ""
             },
             "require": {
@@ -513,20 +513,20 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-30T13:52:20+00:00"
+            "time": "2020-04-08T13:18:06+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "506317ae4c8e3f14a3b9b82882a2141156bcaf1f"
+                "reference": "617d19b00ff8372401debe1df4eb5829b99fed9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/506317ae4c8e3f14a3b9b82882a2141156bcaf1f",
-                "reference": "506317ae4c8e3f14a3b9b82882a2141156bcaf1f",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/617d19b00ff8372401debe1df4eb5829b99fed9a",
+                "reference": "617d19b00ff8372401debe1df4eb5829b99fed9a",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +561,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-31T14:12:04+00:00"
+            "time": "2020-04-06T01:34:32+00:00"
         },
         {
             "name": "kirki-framework/compatibility",
@@ -2046,12 +2046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ouun/kirki-module-fonts_upload.git",
-                "reference": "ad032a4ed6d16339c72ae26ca351d157275ae56d"
+                "reference": "29be30eb3f8f550d412b22707aff789e725c05f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ouun/kirki-module-fonts_upload/zipball/ad032a4ed6d16339c72ae26ca351d157275ae56d",
-                "reference": "ad032a4ed6d16339c72ae26ca351d157275ae56d",
+                "url": "https://api.github.com/repos/ouun/kirki-module-fonts_upload/zipball/29be30eb3f8f550d412b22707aff789e725c05f7",
+                "reference": "29be30eb3f8f550d412b22707aff789e725c05f7",
                 "shasum": ""
             },
             "require": {
@@ -2063,6 +2063,7 @@
                     "Kirki\\Module\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2074,31 +2075,21 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Easy custom fonts file upload and CSS injection with Kirki WordPress plugin.",
+            "description": "Easy custom fonts upload and CSS injection with Kirki WordPress plugin.",
             "keywords": [
                 "customizer",
                 "framework",
                 "wordpress"
             ],
-            "support": {
-                "source": "https://github.com/ouun/kirki-module-fonts_upload/tree/master",
-                "issues": "https://github.com/ouun/kirki-module-fonts_upload/issues"
-            },
-            "time": "2020-01-10T12:50:49+00:00"
+            "time": "2020-04-07T16:08:04+00:00"
         },
         {
             "name": "ouun/kirki-module-sync_controls",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ouun/kirki-framework-sync_controls.git",
-                "reference": "5e5ca09faa253226d4e6915fde3305c93141b75d"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ouun/kirki-framework-sync_controls/zipball/5e5ca09faa253226d4e6915fde3305c93141b75d",
-                "reference": "5e5ca09faa253226d4e6915fde3305c93141b75d",
-                "shasum": ""
+                "type": "path",
+                "url": "/Volumes/Webprojekte/Repositories/kirki-module-sync_controls",
+                "reference": "9c721d477813a60ac36ad4a20529833e029efba3"
             },
             "require": {
                 "kirki-framework/url-getter": "*",
@@ -2127,19 +2118,24 @@
                 "framework",
                 "wordpress"
             ],
-            "support": {
-                "source": "https://github.com/ouun/kirki-framework-sync_controls/tree/master",
-                "issues": "https://github.com/ouun/kirki-framework-sync_controls/issues"
-            },
-            "time": "2020-01-09T19:25:36+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
-            "name": "ouun/laravel-tailwind-config",
+            "name": "ouun/stage-laravel-tailwind-config",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ouun/stage-laravel-tailwind-config.git",
+                "reference": "a33375f35864684ba4f57fa41c741c2dfb557a59"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Volumes/Webprojekte/Repositories/laravel-tailwind-config",
-                "reference": "1c02a9212274c4286d08c704d077b79231e8d490"
+                "type": "zip",
+                "url": "https://api.github.com/repos/ouun/stage-laravel-tailwind-config/zipball/a33375f35864684ba4f57fa41c741c2dfb557a59",
+                "reference": "a33375f35864684ba4f57fa41c741c2dfb557a59",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -2165,6 +2161,7 @@
                     "Stage\\Tailwind\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2175,21 +2172,25 @@
                 },
                 {
                     "name": "Philipp Wellmer",
-                    "email": "philipp@wellmer.com"
+                    "email": "philipp@ouun.io"
                 }
             ],
             "description": "Get access to the tailwind config values in your Sage & Stage Project",
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2020-04-07T12:22:30+00:00"
         },
         {
             "name": "ouun/stage-woocommerce",
-            "version": "dev-master",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ouun/stage-woocommerce.git",
+                "reference": "2da0708f26607c447887620677d2dd87d5cb1c22"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Volumes/Webprojekte/Repositories/stage-woocommerce",
-                "reference": "fe3fd00dcccd1f8b68384b1b5761a92d813505be"
+                "type": "zip",
+                "url": "https://api.github.com/repos/ouun/stage-woocommerce/zipball/2da0708f26607c447887620677d2dd87d5cb1c22",
+                "reference": "2da0708f26607c447887620677d2dd87d5cb1c22",
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -2197,6 +2198,7 @@
                     "src/woocommerce.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2207,9 +2209,7 @@
                 }
             ],
             "description": "WooCommerce integration for Stage & Sage 10",
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2020-04-07T09:58:58+00:00"
         },
         {
             "name": "psr/container",
@@ -2357,16 +2357,16 @@
         },
         {
             "name": "roots/acorn",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/acorn.git",
-                "reference": "3176bcafa479d2fa06041e82df04323db6f4f595"
+                "reference": "7056a801a19834d837b92728f08fcf68b4217dae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn/zipball/3176bcafa479d2fa06041e82df04323db6f4f595",
-                "reference": "3176bcafa479d2fa06041e82df04323db6f4f595",
+                "url": "https://api.github.com/repos/roots/acorn/zipball/7056a801a19834d837b92728f08fcf68b4217dae",
+                "reference": "7056a801a19834d837b92728f08fcf68b4217dae",
                 "shasum": ""
             },
             "require": {
@@ -2430,7 +2430,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-04-05T21:57:40+00:00"
+            "time": "2020-04-08T09:29:53+00:00"
         },
         {
             "name": "roots/support",
@@ -3327,10 +3327,9 @@
         "kirki-framework/module-sections": 20,
         "kirki-framework/module-selective-refresh": 20,
         "kirki-framework/module-webfonts": 20,
-        "ouun/stage-woocommerce": 20,
         "ouun/kirki-module-fonts_upload": 20,
         "ouun/kirki-module-sync_controls": 20,
-        "ouun/laravel-tailwind-config": 20
+        "ouun/stage-laravel-tailwind-config": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

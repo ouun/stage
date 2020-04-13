@@ -34,7 +34,7 @@ body.woocommerce-checkout.woocommerce-order-received {
     ul.order_details {
       @include clearfix;
 
-      @apply w-full relative mt-8 bg-gray-100 text-sm;
+      @apply w-full relative mt-8 bg-gray-100 text-sm list-none;
 
       @screen md {
         @apply w-1/3 mt-0;
