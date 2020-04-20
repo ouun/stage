@@ -54,6 +54,8 @@ module.exports = {
       'accent':     'var(--color-accent)',
 
       'link':       'var(--color-link)',
+      'hover':       'var(--color-primary)',
+
       'copy':       'var(--color-copy)',
       'heading':    'var(--color-heading)',
 

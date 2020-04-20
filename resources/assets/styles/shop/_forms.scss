@@ -207,12 +207,12 @@ form.cart {
   }
 
   input.qty {
-    @apply m-0 pr-4 bg-transparent text-right;
+    @apply m-0 pr-4 px-3 py-3 float-right bg-transparent text-right;
   }
 
   & button.single_add_to_cart_button {
     @include button();
 
-    @apply w-full bg-black text-white mt-0 py-4;
+    @apply w-full bg-black border-black text-white mt-0 py-4;
   }
 }

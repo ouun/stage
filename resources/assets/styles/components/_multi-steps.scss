@@ -54,7 +54,7 @@ ol.multi-steps {
       margin-right: 0.1rem;
 
       & > * {
-        @apply relative h-12 p-4 bg-gray-100 border-gray-100 pl-8;
+        @apply relative px-4 py-2 bg-gray-100 border-gray-100 pl-6;
       }
 
       &.done > * {
@@ -71,14 +71,6 @@ ol.multi-steps {
         @apply text-gray-500 bg-gray-100 border-gray-100;
       }
 
-      &:first-of-type > * {
-        @apply pl-6;
-      }
-
-      &:last-of-type > * {
-        @apply pr-6;
-      }
-
       /*
 				li > *::after is the colored triangle after each item
 				li::after is the white separator between two items
@@ -86,8 +78,8 @@ ol.multi-steps {
       &::after,
       & > *::after {
         content: '';
-        border-width: 1.5rem;
-        border-left-width: 1.4rem;
+        border-width: 1rem;
+        border-left-width: 0.9rem;
 
         @apply absolute top-0 left-full h-0 w-0 border-transparent border-r-0;
       }

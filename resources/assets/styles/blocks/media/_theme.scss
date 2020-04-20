@@ -1,44 +1,13 @@
 @import "../../mixins/container";
 
 .wp-block-media-text {
-  @apply flex items-start;
+  @apply p-0;
 
   .wp-block-media-text__media {
     @apply mb-0 mr-block-spacing;
   }
 
-  .wp-block-media-text__media img {
-    @apply w-full;
-  }
-
-  .wp-block-media-text__content {
-    @apply flex-1;
-  }
-
-  &.has-media-on-the-right .wp-block-media-text__media {
-    @apply ml-block-spacing;
-
-    -ms-flex-order: 2;
-    order: 2;
-  }
-
-  &.has-media-on-the-right .wp-block-media-text__content {
-    -ms-flex-order: 1;
-    order: 1;
-  }
-
-  @media (max-width: theme('screens.md')) {
-    @apply flex-col;
-
-    .wp-block-media-text__media,
-    &.has-media-on-the-right .wp-block-media-text__media {
-      @apply w-full mx-0 mt-0 mb-block-spacing;
-    }
-
-    .wp-block-media-text__content {
-      @apply mx-auto;
-
-      @include container;
-    }
+  .wp-block-media-text__content > * {
+    @apply my-block-spacing;
   }
 }

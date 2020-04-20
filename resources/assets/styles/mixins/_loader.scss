@@ -4,12 +4,16 @@ $loader_color: black;
 
 @mixin loader() {
   &::before {
-    @apply absolute block w-4 h-4 -mt-2 -ml-2 top-half left-half visible;
+    @apply block w-4 h-4 -mt-2 -ml-2 visible;
 
-    content: '';
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
     animation: loading 2s infinite;
-    border-radius: 50%;
-    background: $loader_color;
+    border-width: 0 !important;
+    border-radius: 50% !important;
+    background: $loader_color !important;
   }
 }
 

@@ -1,0 +1,106 @@
+@import "../mixins/container";
+@import "../mixins/mask-icon";
+@import "../mixins/bg-full";
+@import "../mixins/bg-blur";
+
+// Categories
+.product-categories {
+  @apply flex -mx-2 w-full;
+
+  .product-category {
+    @apply w-1/3 p-2;
+
+    a {
+      @apply relative aspect-ratio-square no-underline block overflow-hidden shadow;
+
+      transition: box-shadow 0.2s ease-out;
+      min-width: 33.33%;
+
+      h2 {
+        @apply text-2xl bottom-0 left-0 flex flex-col mx-3 my-3 px-3 py-2 justify-center self-center text-center;
+      }
+
+      img {
+        @apply absolute inset-0 object-cover h-full w-full;
+
+        transition: transform 0.2s;
+
+        // Only if category has an image
+        & + h2 {
+          @apply absolute text-primary bg-white opacity-0;
+
+          transform: translateY(200%);
+          transition: all 0.3s, transform 0.2s ease-in-out, opacity 0.25s ease-in;
+        }
+      }
+
+      &:hover {
+        @apply shadow-lg;
+      }
+    }
+
+    &:hover {
+      a {
+        h2 {
+          @apply opacity-100;
+
+          transform: translateY(0);
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.product.type-product {
+  .product-inner {
+    @apply flex flex-wrap;
+
+    .woocommerce-loop-product__link {
+      .product-description {
+        @apply absolute inset-x-0 bottom-0 inline-block py-5 w-full z-1 bg-white;
+
+        h2 {
+          @apply mx-4 mb-2 leading-tight text-2xl;
+        }
+
+        div.star-rating {
+          @apply mr-4 float-right;
+        }
+
+        span.price {
+          @apply block mx-4 text-base;
+
+          del {
+            @apply text-gray-800;
+          }
+
+          ins {
+            @apply text-primary no-underline;
+          }
+
+          .vat_notice {
+            @apply inline-block text-xs;
+          }
+        }
+      }
+    }
+
+    & > .button,
+    & > .wc-forward {
+      @apply flex-grow opacity-0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      & > .button,
+      & > .wc-forward {
+        @apply opacity-100;
+      }
+    }
+  }
+}

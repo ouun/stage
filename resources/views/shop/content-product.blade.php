@@ -8,7 +8,7 @@ Product Content
   @return
 @endif
 
-<div class="product-inner">
+<div class="product-inner {{ $product_class }}">
   @action( 'woocommerce_before_shop_loop_item' )
   <div class="product-image-container">
     @action( 'woocommerce_before_shop_loop_item_title' )

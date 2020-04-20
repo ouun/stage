@@ -5,7 +5,7 @@
     color: $color !important;
   }
 
-  .has-#{$name}-background-color > *,
+  .has-#{$name}-background-color,
   .has-#{$name}-background-color::before {
     background-color: $color !important;
     border-color: $color !important;

@@ -8,7 +8,7 @@
     </li>
 
     @foreach ($item->children as $item)
-      <li class="menu-item w-full {{ 'depth-' . $loop->depth }} {{ $loop->depth > 2 && $item->children ? 'hide-children' : '' }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
+      <li class="menu-item {{ 'depth-' . $loop->depth }} {{ $loop->depth > 2 && $item->children ? 'hide-children' : '' }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
         <a href="{{ $item->url }}" title="{{ $item->label }}" class="block {{ $item->children ? 'prevent' : '' }}">
           {{ $item->label }}
         </a>

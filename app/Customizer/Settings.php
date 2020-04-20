@@ -81,21 +81,21 @@ class Settings
 
         // 1st: Check against header.desktop.layout as option or theme_mod
         $theme_mod = self::getThemeMod((string) implode('.', $request_array));
-        $theme_mod = empty($theme_mod)
+        $theme_mod = $theme_mod === null
             ? self::getThemeOption((string) implode('.', $request_array))
             : $theme_mod;
 
-        // 2nd: Check against header_desktop_layout
-        if (empty($theme_mod)) {
-            $theme_mod = self::getThemeMod((string) implode('_', $request_array));
-        }
+	    // 2nd: Check against header_desktop_layout
+	    if ( $theme_mod === null ) {
+		    $theme_mod = self::getThemeMod( (string) implode( '_', $request_array ) );
+	    }
 
-        // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
-        if (empty($theme_mod)) {
-            $key       = array_pop($request_array);
-	        $theme_mod = self::getThemeMod((string) implode('_', $request_array));
-            $theme_mod = isset($theme_mod[ $key ]) ? $theme_mod[ $key ] : self::getThemeMod($request, $default);
-        }
+	    // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
+	    if ( $theme_mod === null ) {
+		    $key       = array_pop( $request_array );
+		    $theme_mod = self::getThemeMod( (string) implode( '_', $request_array ) );
+		    $theme_mod = isset( $theme_mod[ $key ] ) ? $theme_mod[ $key ] : self::getThemeMod( $request, $default );
+	    }
 
         return $theme_mod;
     }
@@ -108,7 +108,7 @@ class Settings
      *
      * @return mixed|void|null
      */
-    public static function getThemeOption($name, $default = false)
+    public static function getThemeOption($name, $default = null)
     {
         $options = get_option('stage_options');
 
@@ -127,15 +127,11 @@ class Settings
      *
      * @return mixed|void|null
      */
-    public static function getThemeMod($name, $default = false)
+    public static function getThemeMod($name, $default = null)
     {
         $theme_mod = get_theme_mod($name);
 
-        if (! empty($theme_mod)) {
-            return apply_filters("stage_option_{$name}", $theme_mod);
-        }
-
-        return apply_filters("stage_option_{$name}", $default);
+        return apply_filters("stage_option_{$name}", ! empty($theme_mod) ? $theme_mod : $default);
     }
 
     /**

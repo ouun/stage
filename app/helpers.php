@@ -125,6 +125,10 @@ function stage_is_feature_active($feature)
 {
     $status = stage_get_fallback('features' . '.' . $feature . '.' . 'activate');
     // todo: Replace this when value is true/false instead of true or '1'
+
+
+
+
     return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
 }
 

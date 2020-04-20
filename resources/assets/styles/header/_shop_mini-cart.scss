@@ -100,11 +100,7 @@
       }
 
       .woocommerce-mini-cart__buttons {
-        @apply;
-
         .button {
-          @include button('outline');
-
           @apply block w-full my-2;
 
           &:not(.checkout) {

@@ -3,8 +3,8 @@
 @import "./single/_gallery.scss";
 @import "./single/_tabs.scss";
 
-body.single-product,
-body.search-results {
+.product,
+.single-product {
   main.main {
     & > * {
       @include container();

@@ -1,6 +1,10 @@
 @import "../mixins/mask-icon";
 @import "../mixins/bg-full";
 
+.woocommerce-notices-wrapper {
+  @apply w-full mb-5;
+}
+
 .shop-notice {
   @apply relative;
 

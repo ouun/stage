@@ -19,7 +19,7 @@ Product Archives
 
       @if( woocommerce_product_loop() )
 
-        <div class="alignwide">
+        <div class="alignwide text-xs flex flex-wrap">
           @action('woocommerce_before_shop_loop')
         </div>
 

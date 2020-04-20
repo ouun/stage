@@ -13,8 +13,7 @@ class Item extends Composer
      * @var array
      */
     protected static $views = array(
-        'partials.archive.content',
-        'partials.archive.content-*',
+	    'partials.archive.items.*',
     );
 
     /**
@@ -25,6 +24,7 @@ class Item extends Composer
     public function with()
     {
         return array(
+        	'id'            => get_the_ID(),
             'title'         => get_the_title(),
             'excerpt'       => get_the_excerpt(),
             'tags'          => $this->itemTags(),

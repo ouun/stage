@@ -1,12 +1,9 @@
 a {
-  @apply relative;
-
-  color: var(--color-link);
-  transition: color 0.2s;
+  @apply relative text-link transition-colors duration-200;
 
   &:hover,
   &:focus {
-    color: var(--color-hover);
+    @apply text-hover;
   }
 
   // The link has a counter

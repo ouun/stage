@@ -8,8 +8,3 @@ Product Loop End
 @php
   defined( 'ABSPATH' ) || exit;
 @endphp
-
-{{--
-  </div>
-</div>
---}}

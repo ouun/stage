@@ -8,7 +8,7 @@
     @apply text-center;
   }
 
-  > figure {
+  & > figure {
     @apply inline-block p-0;
 
     &.alignleft,
@@ -39,7 +39,7 @@
       }
 
       &.alignright > figcaption {
-        @apply mt-0 mb-block-spacing;
+        @apply mt-0 ml-block-spacing mb-block-spacing;
 
         clear: right;
       }

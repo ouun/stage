@@ -2,6 +2,26 @@
 @import "../mixins/container";
 @import "../mixins/clearfix";
 
+.woocommerce-password-strength {
+  @apply text-right text-sm font-semibold px-4 py-2;
+
+  &.strong {
+    @apply text-green-500;
+  }
+
+  &.short {
+    @apply text-red-500;
+  }
+
+  &.bad {
+    @apply text-red-500;
+  }
+
+  &.good {
+    @apply text-blue-500;
+  }
+}
+
 body.woocommerce-account {
   @apply bg-gray-100;
 

@@ -13,13 +13,11 @@ div.icons-wrap {
     li.active > a,
     li:focus > a,
     li:hover > a {
-      color: var(--color-hover);
+      @apply text-hover;
     }
 
     & > li.menu-item {
-      @apply flex items-stretch relative;
-
-      transition: opacity 0.3s;
+      @apply flex items-stretch relative transition-opacity;
 
       & > button,
       & > a {
@@ -38,6 +36,8 @@ div.icons-wrap {
         @apply bg-white px-4 py-2;
         @apply border border-accent;
 
+        min-width: 300%;
+
         @screen sm {
           @apply absolute;
         }
@@ -49,10 +49,10 @@ div.icons-wrap {
         }
       }
 
-      &.menu-item-has-children {
+      &.has-children {
         &::after,
         & > .sub-menu {
-          transition: all 0.2s cubic-bezier(0.77, 0.11, 0.22, 0.9), box-shadow 0.5s ease-out;
+          @apply transition ease-out;
         }
 
         &::after {
@@ -60,9 +60,8 @@ div.icons-wrap {
           @apply border border-gray-300 border-b-0 border-r-0;
 
           content: '';
-          transform: translateX(-50%) translateY(0) rotate(45deg);
+          transform: translateX(-50%) translateY(0%) rotate(45deg);
           transform-origin: center;
-          transition: opacity 0.2s ease-in 0.05s;
         }
 
         &.click-open.nav-is-visible,

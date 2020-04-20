@@ -6,11 +6,11 @@
   <div class="archive-wrap">
     <div class="alignwide">
       @include('components.search')
-    </div>
 
-    @if (! have_posts())
-      <x-alert type="warning" message="Sorry, no results were found." />
-    @endif
+      @if (! have_posts())
+        @include('partials.archive.no-posts')
+      @endif
+    </div>
   </div>
 
   @include( 'partials.archive.content' )

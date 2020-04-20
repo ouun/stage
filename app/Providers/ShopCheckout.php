@@ -69,7 +69,7 @@ class ShopCheckout extends ServiceProvider
                   'thankyou' => esc_html__('Order Confirmation', 'stage'),
                 ];
 
-                echo '<div id="checkout-step-indicator" class="hidden my-12">';
+                echo '<div id="checkout-step-indicator" class="hidden">';
                 echo '<ol class="multi-steps triangle">';
                 foreach ($steps as $key => $value) {
                     if ('cart' === $key) {
@@ -111,7 +111,7 @@ class ShopCheckout extends ServiceProvider
                   <button type="submit"
                           name="verify-checkout"
                           id="verify-checkout"
-                          class="btn w-full"
+                          class="checkout button w-full"
                           data-current="address"
                           data-next="payment">
                       <?php esc_html_e('Proceed to payment', 'stage'); ?>

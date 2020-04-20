@@ -5,10 +5,8 @@
         {!! get_the_post_thumbnail( get_the_ID(), 'full', [ 'class' => 'w-full h-full object-cover object-center' ]) !!}
       </div>
     @endif
-    <div class="container {{ $align ?? 'align' }} mt-12 text-center post-meta px-block-spacing md:text-left md:px-0">
-      <h1 class="entry-title">
-        {!! get_the_title() !!}
-      </h1>
+    <div class="post-meta container {{ $align ?? 'align' }} mt-12">
+      @include('partials.single.title')
     </div>
   </header>
   <div class="blocks-wrap {{ $align ?? 'align' }}">

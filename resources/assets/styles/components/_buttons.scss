@@ -1,13 +1,15 @@
 @import "../mixins/buttons";
 
 .btn,
+.button,
 input[type="submit"],
 button.button {
   @include button();
 }
 
 // Button with primary bg
-.btn-primary {
+.btn.primary,
+.button.primary {
   @include button('primary');
 }
 

@@ -67,7 +67,7 @@ Cart Page
             ?>
           </td>
 
-          <td class="product-name md:py-4 md:pl-4 md:text-xl" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+          <td class="product-name md:py-4 md:pl-4 md:text-base" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
             <?php
             if (! $product_permalink) {
               echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key) . '&nbsp;');

@@ -141,7 +141,7 @@ export const loader = {
       if ( this.href.indexOf('/wp-admin/') !== -1
         || this.href.indexOf('/wp-login.php') !== -1
         || this.href.indexOf('#') !== -1
-        || $(this).parent().hasClass('menu-item-has-children')
+        || $(this).parent().hasClass('has-children')
       ) {
         $( this ).addClass('prevent');
       }

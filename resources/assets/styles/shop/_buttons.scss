@@ -1,94 +1,12 @@
 @import '../mixins/buttons';
 
-.woocommerce-Button {
-  @include button('outline');
-}
-
-/*
-@keyframes loading {
-  from {
-    opacity: 0;
-    background-color: transparent;
+.woocommerce {
+  .button {
+    @include button('primary');
   }
 
-  to {
-    opacity: 1;
-    background-color: white;
+  .wc-forward,
+  .button.outline {
+    @include button('outline');
   }
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
-  }
-}
-
-.add_to_cart_button,
-.product-add-to-cart {
-  @apply relative;
-
-  &.loading {
-    @apply bg-transparent text-transparent border-transparent #{$important};
-
-    &::before {
-      @apply absolute block pin bg-white;
-
-      content: '';
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 15s ease alternate infinite;
-    }
-
-    &::after {
-      @apply absolute pin w-auto;
-
-      content: '';
-      mask: url(../icons/activity.svg) no-repeat 50% 50%;
-      animation: loading 0.5s ease alternate infinite;
-    }
-  }
-
-  // Item added state
-  &.added {
-    @apply text-transparent w-1/2 inline-block float-left;
-
-    &:not(:hover)::after {
-      @apply absolute pin w-auto bg-black;
-
-      content: '';
-      mask: url(../icons/check.svg) no-repeat 50% 50%;
-    }
-
-    // Button to cart
-    & + .added_to_cart {
-      @extend .button;
-
-      @apply relative text-transparent text-blue overflow-hidden w-1/2 inline-block -ml-px float-left;
-      @apply text-transparent #{$important};
-
-      text-overflow: ellipsis;
-
-      &::after {
-        @apply absolute pin w-auto bg-black;
-
-        content: '';
-        mask: url(../icons/shopping-bag.svg) no-repeat 50% 50%;
-      }
-
-      &:hover {
-        &::after {
-          @apply bg-white;
-        }
-      }
-    }
-  }
-}
-*/

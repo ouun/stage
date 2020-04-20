@@ -1,7 +1,7 @@
 @mixin button($style:'') {
-  transition: all 0.2s;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
 
-  @apply z-0 relative inline-block bg-black text-white border-2 border-solid m-0 py-2 px-4 font-medium text-center whitespace-no-wrap select-none cursor-pointer shadow-none rounded-none no-underline;
+  @apply z-0 relative inline-block bg-black text-white border-black border-2 border-solid m-0 py-2 px-4 font-medium text-center whitespace-no-wrap select-none cursor-pointer shadow-none rounded-none no-underline;
 
   &::before {
     content: '';
@@ -10,19 +10,21 @@
     @apply absolute inset-0 bg-black border-black border-2 opacity-100 -z-1;
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    @apply bg-transparent text-white;
+  &:not(input) {
+    &:hover,
+    &:focus,
+    &:active {
+      @apply bg-transparent text-white;
 
-    &::before {
-      @apply opacity-90;
+      &::before {
+        @apply opacity-90;
+      }
     }
   }
 
   // Not used in blocks as color is selectable
   @if $style == 'primary' {
-    @apply text-white bg-transparent border-0;
+    @apply text-white bg-transparent border-primary;
 
     &::before {
       @apply bg-primary border-primary;
@@ -59,16 +61,8 @@
     @apply py-4 px-6 uppercase;
   }
 
-  // Fix non-container elements
-  &[type="submit"] {
-    &:hover,
-    &:focus,
-    &:active {
-      @apply text-black;
-    }
-  }
-
-  &:disabled {
+  &:disabled,
+  &.loading {
     @apply bg-gray-200 border-gray-200 text-gray-400 cursor-not-allowed;
 
     &::before {

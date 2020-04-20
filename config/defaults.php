@@ -260,7 +260,7 @@ return array(
             ),
         ),
         'desktop'  => array(
-            'align' => stage_get_default('header.desktop.align'),
+            'align' => stage_get_fallback('header.desktop.align', 'alignwide'),
         ),
     ),
 );

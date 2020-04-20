@@ -1,14 +1,12 @@
 <article @php post_class() @endphp>
   <header class="mt-0 mb-12">
     @if( has_post_thumbnail() )
-      <div class="overflow-hidden h-half-screen">
-        {!! get_the_post_thumbnail( get_the_ID(), 'full', [ 'class' => 'w-full h-full object-cover object-center' ]) !!}
+      <div class="container overflow-hidden h-half-screen">
+        {!! get_the_post_thumbnail( get_the_ID(), 'full', [ 'class' => 'alignscreen w-full h-full object-cover object-center' ]) !!}
       </div>
     @endif
-    <div class="container mt-12 text-center post-meta px-block-spacing md:text-left md:px-0">
-      <h1 class="entry-title">
-        {!! get_the_title() !!}
-      </h1>
+    <div class="post-meta container mt-12">
+      @include('partials.single.title')
       @include('partials.single.meta')
     </div>
   </header>

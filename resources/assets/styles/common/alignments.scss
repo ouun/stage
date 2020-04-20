@@ -20,10 +20,6 @@
   &.alignwide,
   & > .alignwide {
     @include blocks_align__wide();
-
-    & > * {
-      @apply w-full;
-    }
   }
 
   &.alignscreen,

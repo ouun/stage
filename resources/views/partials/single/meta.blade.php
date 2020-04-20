@@ -1,5 +1,5 @@
 <div class="flex items-center">
-  <div class="flex-none px-2 py-2 mr-2">
+  <div class="flex-none mr-2">
     <img class="w-10 h-10 rounded-full" src="{{ esc_url( get_avatar_url( get_post() ) ) }}" alt="{{ __('Avatar by ', 'stage') }} {{ get_the_author() }}">
   </div>
   <div class="flex-grow text-sm px-2 py-2 m-2">

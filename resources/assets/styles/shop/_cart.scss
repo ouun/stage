@@ -1,14 +1,10 @@
-@import "../mixins/container";
-@import "../mixins/screen-reader-text";
-
 body.woocommerce-cart {
-  .entry-content .woocommerce {
-    @include container();
-  }
-
-  ol,
   ul {
     @apply list-none;
+  }
+
+  .cart_item {
+    @apply mb-12;
   }
 }
 

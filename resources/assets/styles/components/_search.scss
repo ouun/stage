@@ -19,6 +19,10 @@ form[role="search"].search-form {
   }
 
   & input[type="search"] {
+    &:invalid {
+      @apply shadow-none;
+    }
+
     &:not(:placeholder-shown) {
       & ~ button[type="submit"] {
         @apply opacity-100;

@@ -12,10 +12,9 @@
   @include blocks_align();
 
   &[data-align="wide"] {
-    @apply px-initial mx-auto;
+    @include blocks_align__wide();
 
-    width: calc(100% - var(--block-spacing) * 2);
-    max-width: 100% !important;
+    @apply px-0;
   }
 
   &[data-align="full"] {
@@ -24,5 +23,5 @@
 }
 
 // Get the editor specific styles
-@import "blocks/button/editor";
-@import "blocks/cover/editor";
+// @import "blocks/button/editor";
+// @import "blocks/cover/editor";

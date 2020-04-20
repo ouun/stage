@@ -1,28 +1,34 @@
 table {
-  @apply w-full border-collapse mb-6;
+  @apply w-full border-collapse border border-gray-300 mb-6;
 
   thead {
-    @apply border;
-  }
-
-  tfoot {
-    @apply border text-sm;
+    @apply border bg-gray-300;
   }
 
   th {
-    @apply py-3 px-4 bg-gray-100 font-bold uppercase text-xs text-left text-gray-900 border-b border-gray-300;
+    @apply py-3 px-4 font-bold uppercase text-xs text-left text-gray-900;
   }
 
   td {
-    @apply py-2 px-3 border-b border-gray-300;
+    @apply py-2 px-3;
   }
 
-  tr {
-    &:last-of-type {
-      th:last-of-type,
-      td:last-of-type {
-        // @apply border-b-0;
+  tbody,
+  tfoot {
+    & > * {
+      @apply bg-gray-100;
+
+      &:nth-child(odd) {
+        @apply bg-gray-200;
       }
     }
+  }
+
+  tbody {
+    @apply border-b;
+  }
+
+  tfoot {
+    @apply border-t;
   }
 }

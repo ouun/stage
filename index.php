@@ -1,7 +1,5 @@
 <!doctype html>
-<html <?php
-
-language_attributes(); ?> class="h-full overflow-x-hidden overflow-y-scroll">
+<html <?php language_attributes(); ?> class="h-full overflow-x-hidden overflow-y-scroll">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">

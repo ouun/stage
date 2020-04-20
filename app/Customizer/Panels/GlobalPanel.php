@@ -289,7 +289,7 @@ class GlobalPanel
             array(
                 'type'      => 'multicolor',
                 'label'     => esc_html__('Main Colors', 'stage'),
-                'settings'  => $section,
+                'settings'  => $section . '_main',
                 'section'   => $section,
                 'priority'  => 10,
                 'choices'   => array(

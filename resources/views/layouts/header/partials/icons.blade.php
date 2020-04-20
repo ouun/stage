@@ -11,7 +11,7 @@
 
   <!-- Mini Cart Icon (If WC is active) -->
   @if($shop)
-    <li class="menu-item hover-open menu-item-has-children @if($is_cart)) active @endif">
+    <li class="menu-item hover-open has-children @if($is_cart)) active @endif">
 
       <a class="cart-contents prevent" href="{{ $cart_url }}" title="{!! __( 'View your shopping cart', 'stage' ) !!}">
         @svg('shopping-bag')

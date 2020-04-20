@@ -60,7 +60,7 @@
  * Adds style to wide aligned blocks
  */
 @mixin blocks_align__wide() {
-  @apply px-block-spacing mx-auto;
+  @apply mx-auto px-block-spacing;
 
   @screen sm {
     min-width: var(--block-width-sm);
@@ -73,20 +73,20 @@
   }
 
   @screen lg {
-    @apply px-gutter;
+    @apply px-initial;
 
     min-width: var(--block-width-lg);
-    max-width: calc(var(--block-width-lg) + var(--gutter) + 20%);
+    max-width: calc(var(--block-width-lg) - var(--gutter) + 20%);
   }
 
   @screen xl {
     min-width: var(--block-width-xl);
-    max-width: calc(var(--block-width-xl) + var(--gutter) + 20%);
+    max-width: calc(var(--block-width-xl) - var(--gutter) + 20%);
   }
 
   @screen xxl {
     min-width: var(--block-width-xxl);
-    max-width: calc(var(--block-width-xxl) + var(--gutter) + 20%);
+    max-width: calc(var(--block-width-xxl) - var(--gutter) + 20%);
   }
 }
 

@@ -1,8 +1,10 @@
 <footer class="py-8 bg-body text-copy">
   <div class="container footer-inner {{ $desktop['align'] }}">
     @if( $has_widgets )
-      <div class="flex items-stretch justify-between flex-grow -mx-4 widgets-wrap">
-        @php dynamic_sidebar( 'sidebar-footer' ) @endphp
+      <div class="widgets-wrap my-12">
+        <div class="flex items-stretch justify-between flex-grow -mx-4">
+          @php dynamic_sidebar( 'sidebar-footer' ) @endphp
+        </div>
       </div>
     @endif
 
