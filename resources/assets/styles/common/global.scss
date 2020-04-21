@@ -5,3 +5,8 @@ body {
     // display: contents;
   }
 }
+
+// Helper class to inherit colors from parent
+.colors-inherit {
+  @apply bg-inherit text-inherit border-inherit;
+}

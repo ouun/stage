@@ -1,14 +1,14 @@
 /** Desktop Primary Navigation */
 nav.nav-wrap,
 div.icons-wrap {
-  @apply relative text-base bg-inherit;
+  @apply relative text-base;
 
   font-size: var(--copy-font-size);
   font-weight: var(--copy-font-weight);
 
   // First menu level
   ul.menu {
-    @apply flex items-stretch self-stretch flex flex-wrap bg-inherit;
+    @apply flex items-stretch self-stretch flex flex-wrap;
 
     li.active > a,
     li:focus > a,
@@ -30,19 +30,15 @@ div.icons-wrap {
 
       // First sub-menu
       & > .sub-menu {
-        @apply invisible fixed right-0 top-full opacity-0 shadow-none cursor-auto;
+        @apply invisible fixed right-0 top-full opacity-0 cursor-auto;
         @apply flex flex-col whitespace-no-wrap;
         @apply z-30;
-        @apply bg-white px-4 py-2;
-        @apply border border-accent;
-
-        min-width: 300%;
+        @apply px-4 py-2;
+        @apply border;
 
         @screen sm {
-          @apply absolute;
+          @apply absolute min-w-32;
         }
-
-        will-change: opacity, box-shadow;
 
         .menu-item {
           @apply flex-col p-3;
@@ -52,12 +48,11 @@ div.icons-wrap {
       &.has-children {
         &::after,
         & > .sub-menu {
-          @apply transition ease-out;
         }
 
         &::after {
-          @apply invisible absolute w-3 h-3 bg-white left-half top-full z-30 opacity-0;
-          @apply border border-gray-300 border-b-0 border-r-0;
+          @apply invisible absolute w-3 h-3 left-half top-full z-30 opacity-0;
+          @apply bg-inherit border border-inherit border-b-0 border-r-0;
 
           content: '';
           transform: translateX(-50%) translateY(0%) rotate(45deg);
@@ -71,10 +66,6 @@ div.icons-wrap {
 
             transform: translateX(-50%) translateY(-50%) rotate(45deg);
           }
-
-          & > ul.sub-menu {
-            @apply bg-white;
-          }
         }
       }
     }
@@ -84,12 +75,6 @@ div.icons-wrap {
   &.click-open-menu > ul.menu > li.menu-item.nav-is-visible > .sub-menu,
   &.hover-open-menu > ul.menu > li.menu-item:hover > .sub-menu,
   &.hover-open-menu > ul.menu > li.menu-item:focus > .sub-menu {
-    @apply visible opacity-100 shadow transition-shadow duration-150 ease-in-out;
-
-    &:hover {
-      @apply shadow-lg;
-
-      transition-delay: 0s;
-    }
+    @apply visible opacity-100;
   }
 }

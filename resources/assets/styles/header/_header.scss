@@ -56,8 +56,8 @@ header.main-header {
             }
           }
 
-          a {
-            @apply cursor-pointer bg-transparent text-black border-0 overflow-visible;
+          a:not(.button) {
+            @apply cursor-pointer bg-transparent border-0 overflow-visible;
 
             &:focus,
             &:hover,

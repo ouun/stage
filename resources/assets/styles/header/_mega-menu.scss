@@ -1,36 +1,26 @@
-@import "../mixins/container";
-
-header {
+header.main-header {
   .header-wrap {
     nav.nav-wrap {
       ul.menu {
         & > li.menu-item.mega-menu {
           &.has-children.depth-1 > ul.sub-menu {
-            @apply fixed flex flex-row left-0 mx-auto mt-0 pl-0 pr-0 py-12;
-
-            @include container();
+            @apply fixed top-full left-0 right-0 flex flex-row mt-0 pl-0 pr-0 py-12 my-auto;
 
             transform: translateX(0);
-
-            ul {
-              @apply static h-auto w-auto overflow-hidden z-3;
-
-              background: 0 0;
-              transform: translateZ(0);
-              transition: transform 0.2s;
-            }
 
             li {
               @apply overflow-x-hidden p-0 m-0 leading-tight;
 
               -webkit-overflow-scrolling: touch;
 
+              & > ul {
+                @apply opacity-100 transform translate-x-0 transition-all duration-200;
+              }
+
               // Hidden sub-menu
               &.hide-children {
                 & > ul {
-                  @apply absolute top-0 left-0 h-full w-full;
-
-                  transform: translateX(100%);
+                  @apply opacity-0 translate-x-full top-0 left-0 h-0 w-auto m-0 whitespace-no-wrap overflow-hidden border-0;
                 }
               }
             }
@@ -101,7 +91,7 @@ header {
             }
 
             & > li.menu-item {
-              @apply flex-grow border-r border-accent overflow-hidden;
+              @apply flex-1 border-r overflow-hidden;
 
               @screen lg {
                 & > a {
@@ -127,10 +117,10 @@ header {
                 &.moves-out {
                   & > li > a,
                   & > .go-back {
-                    @apply absolute opacity-0;
+                    @apply absolute opacity-0 invisible;
 
                     transform: translateX(-100%);
-                    transition: transform 0.2s 0.1s, opacity 0.2s;
+                    transition: transform 0.1s, opacity 0s;
                   }
                 }
               }

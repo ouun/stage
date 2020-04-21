@@ -1,14 +1,14 @@
 @if ($item->children)
-  <ul class="sub-menu is-hidden">
+  <ul class="sub-menu is-hidden colors-inherit">
 
-    <li class="go-back hidden overflow-hidden">
+    <li class="go-back hidden overflow-hidden colors-inherit">
       <a href="#" class="relative block prevent" >
         <span>{{ $item->label }}</span>
       </a>
     </li>
 
     @foreach ($item->children as $item)
-      <li class="menu-item {{ 'depth-' . $loop->depth }} {{ $loop->depth > 2 && $item->children ? 'hide-children' : '' }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
+      <li class="menu-item colors-inherit {{ 'depth-' . $loop->depth }} {{ $loop->depth > 2 && $item->children ? 'hide-children' : '' }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
         <a href="{{ $item->url }}" title="{{ $item->label }}" class="block {{ $item->children ? 'prevent' : '' }}">
           {{ $item->label }}
         </a>

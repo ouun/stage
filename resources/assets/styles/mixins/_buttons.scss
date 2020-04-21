@@ -10,18 +10,6 @@
     @apply absolute inset-0 bg-black border-black border-2 opacity-100 -z-1;
   }
 
-  &:not(input) {
-    &:hover,
-    &:focus,
-    &:active {
-      @apply bg-transparent text-white;
-
-      &::before {
-        @apply opacity-90;
-      }
-    }
-  }
-
   // Not used in blocks as color is selectable
   @if $style == 'primary' {
     @apply text-white bg-transparent border-primary;

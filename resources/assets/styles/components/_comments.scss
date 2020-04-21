@@ -4,7 +4,7 @@
 @import "../mixins/buttons";
 
 #respond {
-  @apply mt-6 px-3;
+  @apply mt-6;
 
   #reply-title {
     @apply block mb-2 text-xl font-light;

@@ -1,7 +1,7 @@
 @if ($navigation)
-  <ul class="menu w-auto">
+  <ul class="menu bg-inherit colors-inherit w-auto">
     @foreach ($navigation as $item)
-      <li class="menu-item click-open {{ $item->classes }}  {{ 'depth-' . $loop->depth }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
+      <li class="menu-item click-open colors-inherit {{ $item->classes }}  {{ 'depth-' . $loop->depth }} {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }}">
         <a class="relative" href="{{ $item->url }}" title="{{ $item->label }}">
           {{ $item->label }}
         </a>
