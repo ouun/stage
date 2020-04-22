@@ -1,7 +1,5 @@
 @mixin button($style:'') {
-  transition: background 0.2s, color 0.2s, opacity 0.2s;
-
-  @apply z-0 relative inline-block bg-black text-white border-black border-2 border-solid m-0 py-2 px-4 font-medium text-center whitespace-no-wrap select-none cursor-pointer shadow-none rounded-none no-underline;
+  @apply z-0 relative inline-block bg-black text-white border-black border-2 border-solid m-0 py-2 px-4 font-medium text-center whitespace-no-wrap select-none cursor-pointer shadow-none rounded-none no-underline transition;
 
   &::before {
     content: '';

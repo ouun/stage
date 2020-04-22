@@ -5,6 +5,12 @@ namespace Stage\Providers;
 use Roots\Acorn\ServiceProvider;
 use WP_Term;
 
+/**
+ * Class MegaMenu
+ * @package Stage\Providers
+ *
+ * Adds option to menu items to activate mega menu
+ */
 class MegaMenu extends ServiceProvider
 {
 	/**
@@ -80,7 +86,7 @@ class MegaMenu extends ServiceProvider
 	 */
 	public static function stage_mega_menu_items( $items, $menu, $args ) {
 
-		if( get_nav_menu_locations()['primary_navigation'] !== $menu->term_id) {
+		if( get_nav_menu_locations()['primary_navigation'] !== $menu->term_id || is_admin() ) {
 			return $items;
 		}
 

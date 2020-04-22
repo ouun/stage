@@ -48,14 +48,6 @@ header.main-header {
 
       div.icons-wrap {
         .menu {
-          svg {
-            @apply relative inline-block align-middle;
-
-            & + sup {
-              @apply absolute top-1/3 left-10/12;
-            }
-          }
-
           a:not(.button) {
             @apply cursor-pointer bg-transparent border-0 overflow-visible;
 
@@ -71,41 +63,6 @@ header.main-header {
               }
             }
 
-            // Menu search icons
-            &.search-trigger {
-              @apply w-6 h-6;
-
-              svg {
-                @apply absolute w-full h-full;
-
-                transform: rotate(0);
-                transition: transform 0.2s, opacity 0.2s;
-
-                &.search--open {
-                  @apply opacity-100;
-                }
-
-                &.search--close {
-                  @apply opacity-0;
-                }
-              }
-
-              &.is-visible {
-                svg {
-                  transform: rotate(-90deg);
-                  transition: transform 0.2s;
-
-                  &.search--open {
-                    @apply opacity-0;
-                  }
-
-                  &.search--close {
-                    @apply opacity-100;
-                  }
-                }
-              }
-            }
-
             // Active state for menu items
             &.active {
               @apply text-primary;
@@ -113,9 +70,35 @@ header.main-header {
           }
         }
 
-        // Hamburger inline fix
-        .hamburger-box {
-          margin-top: -4px;
+        // Menu search icons
+        [class*="-trigger"] {
+          svg {
+            transform: rotate(0);
+            transition: transform 0.2s, opacity 0.2s;
+          }
+
+          [class*="--open"] {
+            @apply opacity-100;
+          }
+
+          [class*="--close"] {
+            @apply opacity-0;
+          }
+
+          &.is-visible {
+            svg {
+              transform: rotate(-90deg);
+              transition: transform 0.2s;
+            }
+
+            [class*='--open'] {
+              @apply opacity-0;
+            }
+
+            [class*="--close"] {
+              @apply opacity-100;
+            }
+          }
         }
       }
     }

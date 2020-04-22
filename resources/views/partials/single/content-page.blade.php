@@ -16,5 +16,5 @@
     {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'stage'), 'after' => '</p></nav>']) !!}
   </footer>
 
-  @php comments_template('/partials/single/comments.blade.php') @endphp
+  @php comments_template('/partials/comments.blade.php') @endphp
 </article>

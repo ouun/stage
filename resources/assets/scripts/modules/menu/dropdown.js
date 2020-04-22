@@ -19,8 +19,8 @@ export const dropdown = {
       // Add Event Listener
       dropdown.clickOpen();
 
-      // Init Mega Menu
-      megaMenu.init();
+      // Init Nested Menu Items
+      nestedMenu.init();
 
       // Set state cause we init only once
       this.isInitialized = true;
@@ -35,7 +35,14 @@ export const dropdown = {
       e.preventDefault();
 
       if ( dropdown.isOpen ) {
-        dropdown.close();
+        // Open new item if requested
+        if ( $(this).parent().is('.has-children, .has-children') ) {
+          if ( ! $(this).hasClass('nav-is-visible') ) {
+            dropdown.open( $(this) )
+          } else {
+            dropdown.close();
+          }
+        }
       } else {
         dropdown.open( $(this) )
       }
@@ -81,16 +88,16 @@ export const dropdown = {
 };
 
 /**
- * Main Menu: Dropdown Mega Menu
+ * Main Menu: Dropdown with  Nested Menu
  */
-const megaMenu = {
+const nestedMenu = {
 
-  $menu: $('nav.nav-primary .has-children.depth-1').find('li.depth-2 > ul.sub-menu').find('.has-children'),
+  $menu: $('nav.nav-primary .has-children.depth-1 > ul.sub-menu').find('.has-children'),
 
   init: function() {
-    megaMenu.preventClick();
-    megaMenu.addBackLinks();
-    megaMenu.openItem();
+    nestedMenu.preventClick();
+    nestedMenu.addBackLinks();
+    nestedMenu.openItem();
   },
 
   preventClick: function () {

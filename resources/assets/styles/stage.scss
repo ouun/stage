@@ -9,9 +9,6 @@
  */
 @tailwind base;
 
-/** Import everything from autoload */
-// @import "./autoload/**/*";
-
 // Hamburger CSS
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 
@@ -58,7 +55,7 @@
 @import "components/animations";
 @import "components/accordion";
 @import "components/breadcrumbs";
-// @import "components/buttons";
+@import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/gallery";
@@ -74,9 +71,9 @@
 @import "components/widgets";
 @import "components/wp-classes";
 @import "header/header";
+@import "header/slide-out-menu";
 @import "header/menus/desktop-horizontal";
 @import "header/menus/off-canvas";
-@import "header/mega-menu";
 @import "header/search";
 @import "layouts/archive";
 @import "layouts/blog";

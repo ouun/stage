@@ -27,6 +27,8 @@ export const offCanvas = {
     objects.navTrigger.on('click', function ( e ) {
       e.preventDefault();
 
+      console.log('trigger');
+
       if ( offCanvas.isOpen ) {
         offCanvas.close();
       } else {
@@ -37,7 +39,7 @@ export const offCanvas = {
 
   open: function () {
     // Change burger to close icon
-    objects.navTrigger.addClass('nav-is-visible is-active');
+    objects.navTrigger.addClass('is-visible is-active');
 
     // Set-Up submenu
     if ( !offCanvas.isInitialized ) {
@@ -57,10 +59,10 @@ export const offCanvas = {
     objects.offCanvasMenu.removeClass('invisible').removeClass('is-hidden');
 
     // Add visible class to main header
-    objects.mainHeader.addClass('nav-is-visible');
+    objects.mainHeader.addClass('is-visible');
 
     // Add visible class to main container and hide body overflow
-    objects.main.addClass('nav-is-visible');
+    objects.main.addClass('is-visible');
 
     // objects.document.addClass('overflow-y-hidden');
     // Fix cut of menu for relative menu
@@ -79,10 +81,10 @@ export const offCanvas = {
   },
 
   close: function () {
-    objects.navTrigger.removeClass('nav-is-visible is-active');
+    objects.navTrigger.removeClass('is-visible is-active');
     objects.offCanvasMenu.addClass('is-hidden');
 
-    $('.nav-is-visible').removeClass('nav-is-visible');
+    $('.is-visible').removeClass('is-visible');
     objects.document.removeClass('overflow-y-hidden');
     if (objects.mainHeader.hasClass('relative')) {
       $('html, body').removeClass('overflow-hidden fixed h-full');

@@ -1,23 +1,12 @@
-<ul class="icons menu colors-inherit">
-  {{-- Search Icon --}}
-  <li class="menu-item colors-inherit {{ is_search() ? 'active' : '' }}">
-    <a class="search-trigger prevent" href="{{ get_search_link() }}">
-      <span class="align-text-bottom hover:text-primary">
-        @svg('search', 'search--open opacity-100 absolute inset-0', ['aria-label' => 'search'])
-        @svg('x', 'search--close opacity-0 absolute inset-0', ['aria-label' => 'close'])
-      </span>
-    </a>
-  </li>
-
+<ul class="icons menu colors-inherit h-full">
   {{-- WooCommerce Cart Icon --}}
   @if($shop)
-    <li class="menu-item colors-inherit hover-open has-children {{ $is_cart ? 'active hide-submenu' : '' }}">
-
-      <a class="cart-contents prevent" href="{{ $cart_url }}" title="{!! __( 'View your shopping cart', 'stage' ) !!}">
-        @svg('shopping-bag')
-        <sup class="cart-count count text-primary">
+    <li class="menu-item menu-icon colors-inherit hover-open has-children {{ $is_cart ? 'active hide-submenu' : '' }}">
+      <a class="w-6 h-6 relative cart-trigger self-center mx-2 overflow-visible prevent" href="{{ $cart_url }}" title="{!! __( 'View your shopping cart', 'stage' ) !!}">
+        @svg('shopping-cart', 'search--open opacity-100 absolute inset-0')
+        <span class="absolute bottom-2/3 left-3/4 text-xs text-primary">
           {{ $cart_contents_count }}
-        </sup>
+        </span>
       </a>
 
       <div class="menu-cart-content sub-menu colors-inherit">
@@ -26,12 +15,19 @@
     </li>
   @endif
 
-  {{-- Hamburger Mobile Icons --}}
-  <li class="menu-item">
-    <button class="nav-trigger lg:hidden hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation">
-      <span class="hamburger-box align-middle">
-        <span class="hamburger-inner"></span>
-      </span>
+  {{-- Search Icon --}}
+  <li class="menu-item menu-icon colors-inherit {{ is_search() ? 'active' : '' }}">
+    <a class="w-6 h-6 relative search-trigger self-center mx-2 cursor-pointer prevent" href="{{ get_search_link() }}">
+      @svg('search', 'search--open opacity-100 absolute inset-0')
+      @svg('x', 'search--close opacity-0 absolute inset-0')
+    </a>
+  </li>
+
+  {{-- Mobile Off-Canvas-Menu--}}
+  <li class="menu-item menu-icon colors-inherit">
+    <button class="w-6 h-6 relative nav-trigger self-center ml-2 lg:hidden" type="button" aria-label="Menu" aria-controls="navigation">
+      @svg('menu', 'nav--open opacity-100 absolute inset-0')
+      @svg('x', 'nav--close opacity-0 absolute inset-0')
     </button>
   </li>
 </ul>

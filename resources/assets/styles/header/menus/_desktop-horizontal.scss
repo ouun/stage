@@ -10,17 +10,20 @@ div.icons-wrap {
   ul.menu {
     @apply flex items-stretch self-stretch flex flex-wrap;
 
-    li.active > a,
-    li:focus > a,
-    li:hover > a {
-      @apply text-hover;
+    li.current-page-ancestor,
+    li.active,
+    li:focus,
+    li:hover {
+      & > a {
+        @apply text-hover;
+      }
     }
 
     & > li.menu-item {
       @apply flex items-stretch relative transition-opacity;
 
-      & > button,
-      & > a {
+      &:not(.menu-icon) > button,
+      &:not(.menu-icon) > a {
         @apply self-center leading-none mx-1 py-2 px-2 my-3 cursor-pointer;
       }
 
@@ -28,12 +31,12 @@ div.icons-wrap {
         transform: translate(50%, -10%);
       }
 
-      // First sub-menu
+      // Second menu level / First sub-menu
       & > .sub-menu {
         @apply invisible fixed right-0 top-full opacity-0 cursor-auto;
         @apply flex flex-col whitespace-no-wrap;
         @apply z-30;
-        @apply px-4 py-2;
+        @apply px-6 py-4;
         @apply border;
 
         @screen sm {
@@ -46,10 +49,6 @@ div.icons-wrap {
       }
 
       &.has-children {
-        &::after,
-        & > .sub-menu {
-        }
-
         &::after {
           @apply invisible absolute w-3 h-3 left-half top-full z-30 opacity-0;
           @apply bg-inherit border border-inherit border-b-0 border-r-0;

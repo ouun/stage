@@ -29,24 +29,12 @@
         @apply pt-2 -mr-8 pr-4 overflow-x-hidden overflow-y-auto max-h-half-screen border-inherit;
 
         .mini_cart_item {
-          @apply relative my-3 pb-3 mr-4 border-b border-inherit;
+          @apply relative my-3 pb-3 border-b border-inherit;
 
           @include clearfix();
 
           .remove_from_cart_button {
-            @apply absolute z-1 top-0 right-0 p-0 w-4 h-4 text-transparent bg-gray-500;
-
-            mask: url(../icons/x.svg) no-repeat 50% 50%;
-            mask-size: contain;
-
-            /*
-            background: url(../icons/x.svg) no-repeat;
-            background-size: contain;
-            */
-
-            &:hover {
-              @apply bg-black;
-            }
+            @apply absolute z-1 top-0 right-0;
           }
 
           a:not(.remove_from_cart_button) {
@@ -71,7 +59,7 @@
             @apply absolute text-gray-500 text-sm bottom-0 right-0 p-0 pb-3;
 
             span.amount {
-              @apply text-black;
+              @apply text-black pr-2;
             }
           }
 

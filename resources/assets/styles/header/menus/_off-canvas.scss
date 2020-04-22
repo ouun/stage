@@ -1,5 +1,5 @@
 .off-canvas-menu {
-  @apply absolute block w-full max-w-xs bottom-0 z-50 overflow-x-hidden shadow-lg;
+  @apply absolute block w-full max-w-xs bottom-0 z-50 overflow-x-hidden border -mx-1;
 
   height: calc(100vh - 100%);
   top: 100%;
@@ -51,7 +51,7 @@
 
       /* stylelint-disable-next-line */
       a {
-        @apply block w-full text-copy px-6 py-5 border-b border-gray-300;
+        @apply block w-full px-6 py-5;
 
         transition: transform 0.3s, opacity 0.4s;
         will-change: transform, opacity;
@@ -60,23 +60,7 @@
       /* Menu item arrow < / > */
       &.has-children,
       &.go-back {
-        @apply relative block;
-
-        & > a {
-          &::before {
-            @apply absolute inline-block bg-gray-700;
-
-            content: '';
-            right: 1.5rem;
-            width: 20px;
-            height: 20px;
-            mask: url('../icons/chevron-right.svg') no-repeat left center;
-            mask-size: contain;
-            top: 50%;
-            transform: translate(0, -50%);
-            opacity: 1;
-          }
-        }
+        @apply relative block bg-inherit;
       }
 
       &.go-back {
@@ -87,17 +71,10 @@
         z-index: -1;
 
         & > a {
-          @apply pl-10 border-none text-gray-700 text-sm;
+          @apply border-none text-inherit text-sm opacity-75;
 
-          &::before {
-            @apply ml-4;
-
-            visibility: visible;
-            transform: translate(0, -50%);
-            mask: url('../icons/chevron-left.svg') no-repeat right center;
-            mask-size: contain;
-            right: auto;
-            left: 0;
+          &:hover {
+            @apply opacity-100;
           }
         }
       }
