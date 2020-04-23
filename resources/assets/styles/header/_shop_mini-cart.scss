@@ -2,10 +2,7 @@
 @import "../mixins/buttons";
 
 .menu-cart-content {
-  @apply pr-0 left-0 right-0 -mt-px;
-  @apply pt-0 #{$important};
-
-  min-width: 250px;
+  @apply pt-0 pr-0 left-0 right-0 -mt-px;
 
   @screen sm {
     @apply pr-0 left-auto right-auto mt-0;
@@ -26,12 +23,10 @@
       }
 
       .cart_list {
-        @apply pt-2 -mr-8 pr-4 overflow-x-hidden overflow-y-auto max-h-half-screen border-inherit;
+        @apply pt-2 -mr-8 pr-4 overflow-x-hidden overflow-y-scroll max-h-half-screen border-inherit;
 
         .mini_cart_item {
-          @apply relative my-3 pb-3 border-b border-inherit;
-
-          @include clearfix();
+          @apply flow-root relative my-3 pb-3 border-b border-inherit;
 
           .remove_from_cart_button {
             @apply absolute z-1 top-0 right-0;
@@ -47,8 +42,6 @@
 
           .variation {
             @apply mt-1 w-3/4 overflow-hidden;
-
-            // transform: translateY(-100%);
 
             &:last-of-type {
               @apply mb-2;
@@ -70,7 +63,7 @@
       }
 
       .woocommerce-mini-cart__total {
-        @apply py-3 mb-3 border-t border-b font-semibold border-inherit;
+        @apply flow-root py-3 mb-3 border-t border-b font-semibold border-inherit;
 
         & > strong {
           @apply float-left;
@@ -83,8 +76,6 @@
         .tax_label {
           @apply ml-2 text-gray-700;
         }
-
-        @include clearfix();
       }
 
       .woocommerce-mini-cart__buttons {

@@ -44,7 +44,7 @@ class BlockEditor extends ServiceProvider
         // Merge more color pallets if required
         $register = array();
         $palettes = array(
-	        'global.colors.main',
+            'global.colors.main',
             'global.colors',
         );
 

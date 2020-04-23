@@ -85,17 +85,17 @@ class Settings
             ? self::getThemeOption((string) implode('.', $request_array))
             : $theme_mod;
 
-	    // 2nd: Check against header_desktop_layout
-	    if ( $theme_mod === null ) {
-		    $theme_mod = self::getThemeMod( (string) implode( '_', $request_array ) );
-	    }
+        // 2nd: Check against header_desktop_layout
+        if ($theme_mod === null) {
+            $theme_mod = self::getThemeMod((string) implode('_', $request_array));
+        }
 
-	    // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
-	    if ( $theme_mod === null ) {
-		    $key       = array_pop( $request_array );
-		    $theme_mod = self::getThemeMod( (string) implode( '_', $request_array ) );
-		    $theme_mod = isset( $theme_mod[ $key ] ) ? $theme_mod[ $key ] : self::getThemeMod( $request, $default );
-	    }
+        // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
+        if ($theme_mod === null) {
+            $key       = array_pop($request_array);
+            $theme_mod = self::getThemeMod((string) implode('_', $request_array));
+            $theme_mod = isset($theme_mod[ $key ]) ? $theme_mod[ $key ] : self::getThemeMod($request, $default);
+        }
 
         return $theme_mod;
     }

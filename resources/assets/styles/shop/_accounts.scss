@@ -114,43 +114,9 @@ body.woocommerce-account {
     }
   }
 
-  &.logged-in {
-    .entry-content {
-      @include container();
-
-      .woocommerce {
-        @apply -mx-4 mt-8 flex flex-row flex-wrap max-w-full;
-
-        & > nav {
-          @apply w-full px-8 text-center;
-
-          @screen md {
-            @apply w-1/4 text-right;
-          }
-
-          ul {
-            li {
-              @apply border-b;
-
-              a {
-                @apply block w-full h-full py-3 px-6 no-underline;
-              }
-
-              &:hover {
-                @apply bg-gray-200;
-              }
-            }
-          }
-        }
-
-        & > div { /* stylelint-disable-line */
-          @apply w-full px-8;
-
-          @screen md {
-            @apply w-3/4;
-          }
-        }
-      }
+  .woocommerce-MyAccount-content {
+    & > * {
+      @apply mb-4;
     }
   }
 }

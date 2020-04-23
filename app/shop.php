@@ -20,7 +20,7 @@ if (stage_is_shop_active()) {
     /**
      * Remove WooCommerce Generator tag
      */
-	remove_action('wp_head', 'wc_generator');
+    remove_action('wp_head', 'wc_generator');
 
     /**
      *  Wide allign shop pages
@@ -33,8 +33,8 @@ if (stage_is_shop_active()) {
         return $classes;
     });
 
-	/**
-	 * Remove Coupon Code from checkout, it is already in cart
-	 */
-	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+    /**
+     * Remove Coupon Code from checkout, it is already in cart
+     */
+    remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 }

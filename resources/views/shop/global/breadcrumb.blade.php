@@ -17,7 +17,7 @@ foreach ($breadcrumb as $key => $crumb) : ?>
                   <li class="breadcrumb-item flex-initial mr-0 text-gray-500">
                       <a class="text-gray-500 hover:text-primary" href="{{ esc_url( $crumb[1] ) }}">{!! esc_html( $crumb[0] ) !!}</a>
                       <span>
-                        @svg('chevron-right', 'text-gray-500 w-4 h-4 align-middle inline-block')
+                        @svg('chevron-right', 'text-gray-500 w-4 h-4 align-text-top inline-block')
                       </span>
                   </li>
               @else

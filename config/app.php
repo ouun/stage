@@ -124,7 +124,7 @@ return array(
          * Application Service Providers
          */
         // Stage\Providers\StageServiceProvider::class,
-	    Stage\Providers\MegaMenu::class,
+        Stage\Providers\MegaMenu::class,
         Stage\Providers\Images::class,
         Stage\Providers\BlockEditor::class,
         Stage\Customizer\Customizer::class,

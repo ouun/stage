@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0db57fd99fd0aa45237f3cfa1b4e8cc8",
+    "content-hash": "afd44c4e68bfa439da52824f368e95e4",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,7 +75,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -126,7 +126,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -170,16 +170,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "5bce1dfc670091a812c9b390830e541753b4b651"
+                "reference": "364648fc102ca0b3a7834934ed5885c11e285f29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/5bce1dfc670091a812c9b390830e541753b4b651",
-                "reference": "5bce1dfc670091a812c9b390830e541753b4b651",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/364648fc102ca0b3a7834934ed5885c11e285f29",
+                "reference": "364648fc102ca0b3a7834934ed5885c11e285f29",
                 "shasum": ""
             },
             "require": {
@@ -220,20 +220,20 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-11T12:44:28+00:00"
+            "time": "2020-04-20T09:32:33+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "10c5802e360595f5f2a8b6afa176b9542851e580"
+                "reference": "aa8dfe90a3eb31dc760adc911647be5d2e129c8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/10c5802e360595f5f2a8b6afa176b9542851e580",
-                "reference": "10c5802e360595f5f2a8b6afa176b9542851e580",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/aa8dfe90a3eb31dc760adc911647be5d2e129c8a",
+                "reference": "aa8dfe90a3eb31dc760adc911647be5d2e129c8a",
                 "shasum": ""
             },
             "require": {
@@ -264,11 +264,11 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2020-04-06T13:33:36+00:00"
+            "time": "2020-04-20T14:17:11+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -312,7 +312,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -357,7 +357,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -410,7 +410,7 @@
         },
         {
             "name": "illuminate/log",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
@@ -455,16 +455,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "8ca7b4ca00eb22f23f7cfbc055066088c233fd57"
+                "reference": "7143690b5b718a4a89f8a1ecda79833e75dd138c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/8ca7b4ca00eb22f23f7cfbc055066088c233fd57",
-                "reference": "8ca7b4ca00eb22f23f7cfbc055066088c233fd57",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/7143690b5b718a4a89f8a1ecda79833e75dd138c",
+                "reference": "7143690b5b718a4a89f8a1ecda79833e75dd138c",
                 "shasum": ""
             },
             "require": {
@@ -513,11 +513,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-04-13T14:10:19+00:00"
+            "time": "2020-04-21T15:58:25+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v7.6.1",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -1498,12 +1498,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-webfonts.git",
-                "reference": "8b983b126e0dd20550c33ccfdad10d367bc18636"
+                "reference": "9f2dac5397214ed932f82555970bfa33d96d210c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/8b983b126e0dd20550c33ccfdad10d367bc18636",
-                "reference": "8b983b126e0dd20550c33ccfdad10d367bc18636",
+                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/9f2dac5397214ed932f82555970bfa33d96d210c",
+                "reference": "9f2dac5397214ed932f82555970bfa33d96d210c",
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1535,7 @@
                 "framework",
                 "wordpress"
             ],
-            "time": "2020-03-07T12:11:11+00:00"
+            "time": "2020-04-20T14:49:24+00:00"
         },
         {
             "name": "kirki-framework/url-getter",
@@ -1625,16 +1625,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.66",
+            "version": "1.0.67",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "021569195e15f8209b1c4bebb78bd66aa4f08c21"
+                "reference": "5b1f36c75c4bdde981294c2a0ebdb437ee6f275e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/021569195e15f8209b1c4bebb78bd66aa4f08c21",
-                "reference": "021569195e15f8209b1c4bebb78bd66aa4f08c21",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5b1f36c75c4bdde981294c2a0ebdb437ee6f275e",
+                "reference": "5b1f36c75c4bdde981294c2a0ebdb437ee6f275e",
                 "shasum": ""
             },
             "require": {
@@ -1705,13 +1705,7 @@
                 "sftp",
                 "storage"
             ],
-            "funding": [
-                {
-                    "url": "https://offset.earth/frankdejonge",
-                    "type": "other"
-                }
-            ],
-            "time": "2020-03-17T18:58:12+00:00"
+            "time": "2020-04-16T13:21:26+00:00"
         },
         {
             "name": "log1x/navi",
@@ -2086,10 +2080,16 @@
         {
             "name": "ouun/kirki-module-sync_controls",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "/Volumes/Webprojekte/Repositories/kirki-module-sync_controls",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ouun/kirki-framework-sync_controls.git",
                 "reference": "9c721d477813a60ac36ad4a20529833e029efba3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ouun/kirki-framework-sync_controls/zipball/9c721d477813a60ac36ad4a20529833e029efba3",
+                "reference": "9c721d477813a60ac36ad4a20529833e029efba3",
+                "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
@@ -2101,6 +2101,7 @@
                     "Kirki\\Module\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2118,10 +2119,7 @@
                 "framework",
                 "wordpress"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "time": "2020-04-07T18:34:22+00:00"
         },
         {
             "name": "ouun/stage-laravel-tailwind-config",
@@ -2180,16 +2178,16 @@
         },
         {
             "name": "ouun/stage-woocommerce",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ouun/stage-woocommerce.git",
-                "reference": "2da0708f26607c447887620677d2dd87d5cb1c22"
+                "reference": "4baa6748a47162b7e0a274f108874faca154b28c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ouun/stage-woocommerce/zipball/2da0708f26607c447887620677d2dd87d5cb1c22",
-                "reference": "2da0708f26607c447887620677d2dd87d5cb1c22",
+                "url": "https://api.github.com/repos/ouun/stage-woocommerce/zipball/4baa6748a47162b7e0a274f108874faca154b28c",
+                "reference": "4baa6748a47162b7e0a274f108874faca154b28c",
                 "shasum": ""
             },
             "type": "library",
@@ -2209,7 +2207,7 @@
                 }
             ],
             "description": "WooCommerce integration for Stage & Sage 10",
-            "time": "2020-04-07T09:58:58+00:00"
+            "time": "2020-04-17T16:41:30+00:00"
         },
         {
             "name": "psr/container",
@@ -3254,16 +3252,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.4",
+            "version": "3.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "dceec07328401de6211037abbb18bda423677e26"
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
-                "reference": "dceec07328401de6211037abbb18bda423677e26",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
                 "shasum": ""
             },
             "require": {
@@ -3301,7 +3299,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2020-01-30T22:20:29+00:00"
+            "time": "2020-04-17T01:09:41+00:00"
         }
     ],
     "aliases": [],

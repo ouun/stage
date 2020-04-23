@@ -46,6 +46,42 @@ class ShopExtras extends ServiceProvider
                 return $fragments;
             }
         );
+
+        /**
+         * Align navigation and content on My Account pages
+         */
+        add_action('woocommerce_before_account_navigation', function () {
+            echo '<div class="flex flex-col md:flex-row">';
+            echo '<div class="container align mb-12">';
+        });
+
+        add_action('woocommerce_after_account_navigation', function () {
+            echo '</div>';
+            echo '<div class="container alignwide">';
+        });
+
+        add_action('woocommerce_account_content', function () {
+            echo '</div>';
+            echo '</div>';
+        });
+
+        /**
+         * My Account menu items classes
+         */
+        add_filter('woocommerce_account_menu_item_classes', function ($classes) {
+
+            $add_classes = [
+                'nav-item',
+                'list-none',
+                'pb-2',
+            ];
+
+            if (in_array('is-active', $classes)) {
+                $add_classes[] = 'text-primary';
+            }
+
+            return array_merge($add_classes, $classes);
+        });
     }
 
   /**

@@ -1,6 +1,9 @@
 /** !important usage: # {$important} */
 $important: !important;
 
+// Add globals
+@import "common/global";
+
 // Add shop specific styles
 @import "shop/common";
 @import "shop/forms";

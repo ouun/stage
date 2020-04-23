@@ -38,8 +38,8 @@ class ShopFilters extends ServiceProvider
         remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
         // Replace the ugly WC x with a beautiful svg x
-        add_filter( 'woocommerce_cart_item_remove_link', function ($html) {
-	        return str_replace( '&times;', \get_svg('x', 'w-4 h-auto text-gray-500 hover:text-black'), $html );
+        add_filter('woocommerce_cart_item_remove_link', function ($html) {
+            return str_replace('&times;', \get_svg('x', 'w-4 h-auto text-gray-500 hover:text-black'), $html);
         }, 10, 1);
 
         // Customize Stage loop item classes

@@ -1,6 +1,6 @@
 <div class="header-wrap colors-inherit {{ $desktop['layout'] }}">
   <div class="container-inner colors-inherit">
-    <div class="flex items-center flex-shrink-0 my-3 mr-6 colors-inherit logo-wrap">
+    <div class="flex items-center flex-shrink-0 my-4 mr-6 colors-inherit logo-wrap">
       @include('layouts.header.partials.logo')
     </div>
 

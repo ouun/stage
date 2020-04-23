@@ -3,6 +3,7 @@
 namespace Stage\View\Composers\Shop;
 
 use Roots\Acorn\View\Composer;
+
 use function Stage\stage_is_shop_active;
 
 class MiniCart extends Composer
@@ -28,7 +29,7 @@ class MiniCart extends Composer
 
         return array(
             'minicart' => $this->getMiniCartHtml(),
-	        'mini_cart_default_menu' => $this->miniCartDefaultMenu()
+            'mini_cart_default_menu' => $this->miniCartDefaultMenu()
         );
     }
 
@@ -39,52 +40,56 @@ class MiniCart extends Composer
         return ob_get_clean();
     }
 
-	function miniCartDefaultMenu() {
-		$out = '';
+    public function miniCartDefaultMenu()
+    {
+        $out = '';
 
-		if(!stage_is_shop_active()) {
-			return '';
-		}
+        if (!stage_is_shop_active()) {
+            return '';
+        }
 
-		if ( stage_is_shop_active() && ! is_admin() ) {
-			$items = array_merge(
-				[
-					'cart' => [
-						'label' => sprintf( __( "Cart <sup class='cart-count count'>%d</sup>", 'stage' ), WC()->cart->get_cart_contents_count() ),
-						'link'  => esc_url( wc_get_cart_url() ),
-					],
-				],
-				wc_get_account_menu_items()
-			);
+        if (stage_is_shop_active() && ! is_admin()) {
+            $items = array_merge(
+                [
+                    'cart' => [
+                        'label' => sprintf(
+                            __("Cart <sup class='cart-count count'>%d</sup>", 'stage'),
+                            WC()->cart->get_cart_contents_count()
+                        ),
+                        'link'  => esc_url(wc_get_cart_url()),
+                    ],
+                ],
+                wc_get_account_menu_items()
+            );
 
-			// Unset not needed links
-			unset( $items['edit-address'] );
-			unset( $items['edit-account'] );
+            // Unset not needed links
+            unset($items['edit-address']);
+            unset($items['edit-account']);
 
-			if ( ! is_user_logged_in() ) {
-				unset( $items['customer-logout'] );
-			}
+            if (! is_user_logged_in()) {
+                unset($items['customer-logout']);
+            }
 
-			foreach ( $items as $slug => $item ) {
-				if ( ! isset( $item['link'] ) || ! isset( $item['label'] ) ) {
-					$items[ $slug ] = [
-						'label' => esc_html( $item ),
-						'link'  => esc_url( wc_get_account_endpoint_url( $slug ) ),
-						'icon'  => $slug,
-					];
-				}
-			}
+            foreach ($items as $slug => $item) {
+                if (! isset($item['link']) || ! isset($item['label'])) {
+                    $items[ $slug ] = [
+                        'label' => esc_html($item),
+                        'link'  => esc_url(wc_get_account_endpoint_url($slug)),
+                        'icon'  => $slug,
+                    ];
+                }
+            }
 
-			$out .= '<ul class="colors-inherit">';
-			foreach ( $items as $slug => $item ) {
-				$out .= '<li class="nav-item px-2 py-2 border-t colors-inherit ' . $item['label'] . '">';
-				// $out .= get_svg_icon($item['icon']);
-				$out .= '<a href="' . $item['link'] . '">' . $item['label'] . '</a>';
-				$out .= '</li>';
-			}
-			$out .= '</ul>';
-		}
+            $out .= '<ul class="colors-inherit">';
+            foreach ($items as $slug => $item) {
+                $out .= '<li class="nav-item px-2 py-2 border-t colors-inherit ' . $item['label'] . '">';
+                // $out .= get_svg_icon($item['icon']);
+                $out .= '<a href="' . $item['link'] . '">' . $item['label'] . '</a>';
+                $out .= '</li>';
+            }
+            $out .= '</ul>';
+        }
 
-		return $out;
-	}
+        return $out;
+    }
 }

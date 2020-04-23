@@ -13,6 +13,7 @@ View the full documentation at https://tailwindcss.com.
 
 const wordpress = require('tailwindcss-wordpress');
 const aspectRatio = require('tailwindcss-aspect-ratio');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
@@ -514,6 +515,21 @@ module.exports = {
       '4': '4px',
       '6': '6px',
       '8': '8px',
+    },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Border Radius                    https://tailwindcss.com/docs/border-radius/
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .{top|right|bottom|left|inset}-{size]
+    |
+    */
+
+    borderRadius: {
+      'inherit': 'inherit',
+      ...defaultTheme.borderRadius,
     },
 
 

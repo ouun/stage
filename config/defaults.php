@@ -54,11 +54,11 @@ return array(
         // All colors are registered as wp-blocks colors.
         'colors'  => array(
             'main'     => array(
-	            'copy'      => stage_get_fallback('global.colors.copy', 'rgb(51, 51, 51)'),
-	            'heading'   => stage_get_fallback('global.colors.heading', 'rgb(51, 51, 51)'),
+                'copy'      => stage_get_fallback('global.colors.copy', 'rgb(51, 51, 51)'),
+                'heading'   => stage_get_fallback('global.colors.heading', 'rgb(51, 51, 51)'),
                 'primary'   => stage_get_fallback('global.colors.primary', 'rgb(43, 108, 176)'),
                 'secondary' => stage_get_fallback('global.colors.secondary', 'rgb(221, 107, 32)'),
-                'body'      => stage_get_fallback('global.colors.body','rgb(249, 249, 249)'),
+                'body'      => stage_get_fallback('global.colors.body', 'rgb(249, 249, 249)'),
             ),
             'links'    => array(
                 'link'  => '',

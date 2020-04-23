@@ -2,7 +2,7 @@
 
 .woocommerce {
   .button {
-    @include button('primary');
+    @include button();
   }
 
   .wc-forward,

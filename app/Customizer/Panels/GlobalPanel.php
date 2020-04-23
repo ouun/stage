@@ -317,15 +317,15 @@ class GlobalPanel
                             'front',
                         ),
                     ),
-	                array(
-		                'choice'   => 'heading',
-		                'element'  => ':root',
-		                'property' => '--color-heading',
-		                'context'  => array(
-			                'editor',
-			                'front',
-		                ),
-	                ),
+                    array(
+                        'choice'   => 'heading',
+                        'element'  => ':root',
+                        'property' => '--color-heading',
+                        'context'  => array(
+                            'editor',
+                            'front',
+                        ),
+                    ),
                     array(
                         'choice'   => 'primary',
                         'element'  => ':root',
@@ -344,15 +344,15 @@ class GlobalPanel
                             'front',
                         ),
                     ),
-	                array(
-		                'choice'   => 'body',
-		                'element'  => ':root',
-		                'property' => '--color-body',
-		                'context'  => array(
-			                'editor',
-			                'front',
-		                ),
-	                ),
+                    array(
+                        'choice'   => 'body',
+                        'element'  => ':root',
+                        'property' => '--color-body',
+                        'context'  => array(
+                            'editor',
+                            'front',
+                        ),
+                    ),
                 ),
             )
         );
