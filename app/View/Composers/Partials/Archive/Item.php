@@ -13,7 +13,7 @@ class Item extends Composer
      * @var array
      */
     protected static $views = array(
-	    'partials.archive.content-*',
+        'partials.archive.content-*',
         'partials.archive.items.*',
     );
 
