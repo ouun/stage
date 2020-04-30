@@ -4,8 +4,7 @@
 .blocks-container,
 .blocks-wrap,
 .content-wrap,
-.archive-wrap,
-.widgets-wrap {
+.archive-wrap {
   &:not(.alignfull):not(.alignscreen):not(.alignwide) > * {
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply w-full max-w-full mx-auto px-gutter;
