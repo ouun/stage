@@ -4,9 +4,12 @@
     <li class="menu-item menu-icon colors-inherit hover-open has-children {{ $is_cart ? 'active hide-submenu' : '' }}">
       <a class="w-6 h-6 relative cart-trigger self-center mx-2 overflow-visible prevent" href="{{ $cart_url }}" title="{!! __( 'View your shopping cart', 'stage' ) !!}">
         @svg('shopping-cart', 'search--open opacity-100 absolute inset-0')
-        <span class="cart-count absolute bottom-2/3 left-3/4 text-xs text-primary">
-          {{ $cart_contents_count }}
-        </span>
+        <div class="absolute bottom-2/3 left-3/4 text-xs text-primary">
+          {{-- WC replaces element with counter --}}
+          <span class="cart-count">
+            {{ $cart_contents_count }}
+          </span>
+        </div>
       </a>
 
       <div class="menu-cart-content sub-menu colors-inherit">

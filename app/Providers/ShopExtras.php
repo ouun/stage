@@ -40,9 +40,9 @@ class ShopExtras extends ServiceProvider
         add_filter(
             'woocommerce_add_to_cart_fragments',
             function ($fragments) {
-                $fragments['.cart-count'] = '<sup class="cart-count count text-primary">' .
+                $fragments['.cart-count'] = '<span class="cart-count">' .
                                             WC()->cart->get_cart_contents_count() .
-                                            '</sup>';
+                                            '</span>';
                 return $fragments;
             }
         );

@@ -3,6 +3,7 @@
 namespace Stage\View\Composers\Partials\Archive;
 
 use Roots\Acorn\View\Composer;
+use Stage\View\Composers\Partials\Archive;
 
 class Item extends Composer
 {
@@ -13,8 +14,8 @@ class Item extends Composer
      * @var array
      */
     protected static $views = array(
-        'partials.archive.content-*',
-        'partials.archive.items.*',
+        '*item*',
+        '*content-*',
     );
 
     /**
@@ -24,17 +25,17 @@ class Item extends Composer
      */
     public function with()
     {
-        return array(
-            'id'            => get_the_ID(),
-            'title'         => get_the_title(),
-            'excerpt'       => get_the_excerpt(),
-            'tags'          => $this->itemTags(),
-            'classes'       => $this->itemClasses(),
-            'inner_classes' => $this->itemInnerClasses(),
-            'permalink'     => get_permalink(),
-            'has_thumbnail' => has_post_thumbnail(),
-            'thumbnail'     => $this->itemThumbnail(),
-        );
+	    return array(
+		    'id'            => get_the_ID(),
+		    'title'         => get_the_title(),
+		    'excerpt'       => get_the_excerpt(),
+		    'tags'          => $this->itemTags(),
+		    'classes'       => $this->itemClasses(),
+		    'inner_classes' => $this->itemInnerClasses(),
+		    'permalink'     => get_permalink(),
+		    'has_thumbnail' => has_post_thumbnail(),
+		    'thumbnail'     => $this->itemThumbnail(),
+	    );
     }
 
     /**
@@ -65,8 +66,8 @@ class Item extends Composer
                 'grid-item',
                 'w-full',
                 'float-left',
-                'mb-8',
-                'lg:mb-12',
+                'mb-4',
+                'lg:mb-4',
             )
         );
 

@@ -1,5 +1,4 @@
 @import "../mixins/clearfix";
-@import "../mixins/buttons";
 
 .menu-cart-content {
   @apply pt-0 pr-0 left-0 right-0 -mt-px;
@@ -23,7 +22,7 @@
       }
 
       .cart_list {
-        @apply pt-2 -mr-8 pr-4 overflow-x-hidden overflow-y-scroll max-h-half-screen border-inherit;
+        @apply -mr-8 pr-4 overflow-x-hidden overflow-y-scroll max-h-half-screen border-inherit;
 
         .mini_cart_item {
           @apply flow-root relative my-3 pb-3 border-b border-inherit;

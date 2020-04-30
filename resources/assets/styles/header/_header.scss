@@ -1,6 +1,3 @@
-@import "../mixins/container";
-@import "../mixins/bg-blur";
-
 header.main-header {
   transform: translate3d(0, 0, 1px);
   font-size: var(--heading-font-size);

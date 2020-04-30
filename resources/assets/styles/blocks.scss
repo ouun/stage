@@ -1,10 +1,13 @@
+// Add globals
+@import "common/global";
+
 // General styles
 @import "blocks/blocks-colors";
 @import "blocks/blocks-typo";
 
 // Specific blocks
 @import "blocks/audio/theme";
-// @import "blocks/button/theme";
+@import "blocks/button/theme";
 @import "blocks/cover/theme";
 @import "blocks/embed/theme";
 @import "blocks/gallery/theme";

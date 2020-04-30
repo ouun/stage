@@ -3,9 +3,7 @@
 }
 
 @mixin input_style() {
-  @apply appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 mb-2 leading-tight;
-
-  transition: border 0.5s;
+  @apply appearance-none block w-full bg-gray-200 border border-gray-200 py-3 px-4 mb-2 leading-tight transition duration-500;
 
   &:hover,
   &:focus {

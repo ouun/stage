@@ -1,24 +1,20 @@
-@import "../../mixins/buttons";
+@import "../../components/buttons";
 
 .wp-block-button {
   .wp-block-button__link {
-    @include button();
-  }
+    @extend %button-base-text;
+    @extend %button-base-spacing;
 
-  &.is-style-outline .wp-block-button__link {
-    @include button('outline');
-  }
+    &::before {
+      @apply content block absolute inset-0 rounded-inherit colors-inherit border-none opacity-0 z-1;
+    }
 
-  &.is-style-rounded .wp-block-button__link {
-    @include button('rounded');
-  }
-
-  &.is-style-rounded-outline .wp-block-button__link {
-    @include button('rounded-outline');
-  }
-
-  &.is-style-cta .wp-block-button__link {
-    @include button('cta');
+    &:hover,
+    &:focus {
+      &::before {
+        @apply bg-body opacity-25;
+      }
+    }
   }
 
   &.alignleft {

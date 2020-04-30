@@ -1,8 +1,7 @@
-@import "../mixins/mask-icon";
-@import "../mixins/bg-full";
-
 .woocommerce-notices-wrapper {
+  @apply w-full mb-5;
+
   .wc-forward {
-    @apply absolute right-0 px-2 py-1 colors-inherit;
+    @apply colors-inherit order-last ml-auto;
   }
 }

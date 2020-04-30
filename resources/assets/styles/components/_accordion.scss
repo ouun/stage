@@ -1,4 +1,3 @@
-@import "../mixins/screen-reader-text";
 @import "../mixins/inputs";
 
 .animated-accordion__panel {
@@ -102,7 +101,7 @@
       @apply pb-2 pt-4;
 
       &.animated-accordion__title {
-        @include screen-reader-text();
+        @apply sr-only;
       }
     }
   }

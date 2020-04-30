@@ -6,14 +6,12 @@ Title: Search Forms
 
 form[role="search"].search-form {
   & button[type="submit"] {
-    @apply opacity-0;
-
-    transition: opacity 0.2s;
+    @apply opacity-0 transition-colors;
 
     svg {
       @apply w-auto;
 
-      height: 1em;
+      height: 1.2em;
       max-height: 2rem;
     }
   }
@@ -38,8 +36,7 @@ form[role="search"].search-form {
     // Autofill style
     @-webkit-keyframes autofill {
       to {
-        color: var(--color-black);
-        background: transparent;
+        @apply bg-transparent text-black;
       }
     }
 

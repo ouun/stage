@@ -1,4 +1,4 @@
-<footer class="py-8 bg-body text-copy">
+<footer class="py-8 bg-body text-copy w-screen">
   <div class="container footer-inner {{ $desktop['align'] }}">
     @if( $has_widgets )
       <div class="widgets-wrap my-12">

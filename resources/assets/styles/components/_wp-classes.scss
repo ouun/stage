@@ -5,5 +5,5 @@
 
 /** Text meant only for screen readers */
 .screen-reader-text {
-  @include screen-reader-text;
+  @apply sr-only;
 }

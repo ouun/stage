@@ -1,12 +1,8 @@
-@import '../mixins/buttons';
+@import '../components/buttons';
 
 .woocommerce {
-  .button {
-    @include button();
-  }
-
-  .wc-forward,
-  .button.outline {
-    @include button('outline');
+  .wc-forward {
+    @extend %button;
+    @extend %button-default;
   }
 }

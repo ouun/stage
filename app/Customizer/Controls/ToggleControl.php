@@ -142,6 +142,6 @@ class ToggleControl extends \WP_Customize_Control
     public static function sanitize_toggle($checked)
     {
         // Boolean check.
-        return ( ( isset($checked) && true === $checked ) ? true : false );
+		return rest_sanitize_boolean( isset($checked) && true === $checked );
     }
 }

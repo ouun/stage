@@ -61,6 +61,10 @@ export const loader = {
 
     // After enter hook
     barba.hooks.beforeEnter(data => {
+
+      // todo: Remove this temp fix for <footer> jumping above <main>: https://github.com/barbajs/barba/issues/479
+      $( 'body' ).append($( 'body > footer' ));
+
       // Trigger for resetting features states
       $(document).trigger('loader-before-enter');
 

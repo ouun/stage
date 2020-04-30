@@ -22,7 +22,9 @@ class Archive extends Composer
         'index',
         'search',
         'front-page',
+        '*.archive-*',
         'partials.archive.grids.*',
+        'shop.content-*',
     );
 
     /**
@@ -62,7 +64,7 @@ class Archive extends Composer
         $config = stage_get_fallback($chosen_key, false, true);
 
         // No setting, get from default
-        return empty($config) ? stage_get_default($default_key, true) : $config;
+        return !isset($config) ? stage_get_default($default_key, true) : $config;
     }
 
     /**
@@ -128,6 +130,6 @@ class Archive extends Composer
             }
         }
 
-        return $post_types;
+        return apply_filters( 'stage_register_customizer_post_types', $post_types);
     }
 }

@@ -203,17 +203,10 @@ Title: Select2.js
     .select2-selection__rendered {
       @apply bg-inherit;
     }
-
-    /*
-    .select2-selection__arrow {
-      height: 2.3em;
-      top: 0;
-    }
-    */
   }
 
   .select2-dropdown {
-    @apply block absolute inset-x-0 top-0 w-full border bg-inherit rounded z-50;
+    @apply block absolute inset-x-0 top-0 w-full border bg-inherit z-50;
 
     .select2-search {
       .select2-search__field {

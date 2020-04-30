@@ -1,5 +1,4 @@
 @import "../mixins/container";
-@import "../mixins/bg-full";
 @import "./single/_gallery.scss";
 @import "./single/_tabs.scss";
 
@@ -7,7 +6,7 @@
 .single-product {
   main.main {
     & > * {
-      @include container();
+      // @include container();
     }
   }
 

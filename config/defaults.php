@@ -226,7 +226,7 @@ return array(
             'display' => array(
                 'sidebar'     => false,
                 'thumbnail'   => true,
-                'placeholder' => false,
+                'placeholder' => true,
                 'headline'    => true,
                 'meta'        => false,
                 'excerpt'     => true,

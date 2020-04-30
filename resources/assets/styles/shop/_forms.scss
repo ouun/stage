@@ -1,5 +1,4 @@
 @import "../mixins/mask-icon";
-@import "../mixins/buttons";
 @import "../mixins/inputs";
 
 /**
@@ -91,7 +90,7 @@
 form.variations_form,
 form.grouped_form,
 form.cart {
-  @apply my-5 shadow-lg bg-white;
+  @apply my-5;
 
   table.variations,
   table.group_table {
@@ -211,8 +210,6 @@ form.cart {
   }
 
   & button.single_add_to_cart_button {
-    @include button();
-
     @apply w-full bg-black border-black text-white mt-0 py-4;
   }
 }

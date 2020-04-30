@@ -4,16 +4,13 @@
 .blocks-container,
 .blocks-wrap,
 .content-wrap,
-.archive-wrap {
+.archive-wrap,
+.widgets-wrap {
   &:not(.alignfull):not(.alignscreen):not(.alignwide) > * {
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply w-full max-w-full mx-auto px-gutter;
 
       @include blocks_align();
-    }
-
-    & > * {
-      @apply mx-auto;
     }
   }
 
@@ -27,7 +24,7 @@
     @include blocks_align__screen();
 
     & > * {
-      @apply mx-0 w-full;
+      @apply mx-0;
     }
   }
 

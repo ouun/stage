@@ -1,9 +1,6 @@
-@import "../mixins/container";
-
-body {
-  [data-loader="container"] {
-    // display: contents;
-  }
+// Helper to add empty content to pseudo elements
+.content {
+  content: '';
 }
 
 // Helper class to inherit colors from parent

@@ -1,5 +1,3 @@
-@import "../../mixins/screen-reader-text";
-
 div.woocommerce-tabs {
   @apply mb-10 border-b border-gray-500;
 
@@ -27,7 +25,7 @@ div.woocommerce-tabs {
     @apply text-base;
 
     h2 {
-      @include screen-reader-text();
+      @apply sr-only;
     }
 
     table.shop_attributes {

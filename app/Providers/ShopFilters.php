@@ -5,6 +5,7 @@ namespace Stage\Providers;
 use Roots\Acorn\ServiceProvider;
 
 use function Stage\stage_config;
+use function Stage\stage_is_shop_active;
 
 class ShopFilters extends ServiceProvider
 {
@@ -37,6 +38,16 @@ class ShopFilters extends ServiceProvider
         remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
         remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
+        // Register product/shop archive to register
+	    add_filter('stage_register_customizer_post_types', function ($post_types) {
+
+	    	if(stage_is_shop_active()) {
+	    		$post_types['product'] = __('Shop', 'stage');
+		    }
+
+	    	return $post_types;
+	    });
+
         // Replace the ugly WC x with a beautiful svg x
         add_filter('woocommerce_cart_item_remove_link', function ($html) {
             return str_replace('&times;', \get_svg('x', 'w-4 h-auto text-gray-500 hover:text-black'), $html);
@@ -44,10 +55,7 @@ class ShopFilters extends ServiceProvider
 
         // Customize Stage loop item classes
         add_filter('stage_product_archive_item_classes', function ($classes) {
-            global $product;
-
             // Add WooCommerce item classes
-            $classes = array_merge($classes, wc_get_product_class($product));
             $classes[] = "grid-item";
             $classes[] = "w-full";
             $classes[] = "sm:w-1/2";

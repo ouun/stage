@@ -6,7 +6,7 @@
 
   .grid-col {
     .grid-item {
-      @apply opacity-100;
+      @apply opacity-100 w-full;
     }
   }
 }

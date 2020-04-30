@@ -1,7 +1,6 @@
 @import "../mixins/clearfix";
 @import "../mixins/container";
 @import "../mixins/inputs";
-@import "../mixins/buttons";
 
 #respond {
   @apply mt-6;
@@ -42,8 +41,6 @@
 
     .form-submit {
       input.submit {
-        @include button();
-
         @apply float-right m-0;
       }
     }

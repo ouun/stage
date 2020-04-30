@@ -1,4 +1,3 @@
-@import "../mixins/buttons";
 @import "../mixins/container";
 @import "../mixins/clearfix";
 
@@ -31,8 +30,6 @@ body.woocommerce-account {
     }
 
     button {
-      @include button('outline');
-
       @apply w-full;
     }
 

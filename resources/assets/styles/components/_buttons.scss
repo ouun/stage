@@ -1,19 +1,117 @@
-@import "../mixins/buttons";
+// Buttons Basic Style
+%button-base-spacing {
+  @apply py-2 px-4;
+}
 
+%button-base-text {
+  @apply font-medium text-center whitespace-no-wrap select-none cursor-pointer no-underline;
+}
+
+%button {
+  @apply z-0 relative inline-block border-none border-transparent border-solid m-0 transition-colors duration-300 ease-out;
+
+  @extend %button-base-text;
+  @extend %button-base-spacing;
+
+  &::before {
+    @apply content block absolute inset-0 rounded-inherit colors-inherit border-2 opacity-100 -z-1;
+  }
+
+  &:disabled,
+  &.loading {
+    @apply bg-gray-200 border-gray-200 text-gray-400 cursor-not-allowed;
+
+    &::before {
+      @apply opacity-0;
+    }
+  }
+}
+
+// Default Button
+%button-default {
+  @apply border-copy bg-copy text-white;
+
+  &:hover,
+  &:focus {
+    @apply border-primary bg-primary text-white;
+  }
+}
+
+// Primary Colors
+%button-primary {
+  @apply border-primary bg-primary text-white;
+
+  &:hover,
+  &:focus {
+    @apply bg-transparent text-primary;
+  }
+}
+
+// Secondary Colors
+%button-secondary {
+  @apply border-secondary bg-secondary text-white;
+
+  &:hover,
+  &:focus {
+    @apply bg-transparent text-secondary;
+  }
+}
+
+// Outline Styles
+%button-outline {
+  @apply bg-transparent text-copy;
+
+  &:hover,
+  &:focus {
+    @apply bg-copy text-white;
+  }
+}
+
+%button-outline-primary {
+  @apply bg-transparent text-primary;
+
+  &:hover,
+  &:focus {
+    @apply bg-primary text-white;
+  }
+}
+
+%button-outline-secondary {
+  @apply bg-transparent text-secondary;
+
+  &:hover,
+  &:focus {
+    @apply bg-secondary text-white;
+  }
+}
+
+// Button Classes
 .btn,
 .button,
 input[type="submit"],
 button.button {
-  @include button();
-}
+  @extend %button;
+  @extend %button-default;
 
-// Button with primary bg
-.btn.primary,
-.button.primary {
-  @include button('primary');
-}
+  &.outline {
+    @extend %button-outline;
+  }
 
-.btn.outline,
-.button.outline {
-  @include button('outline');
+  // Primary Colors
+  &.primary {
+    @extend %button-primary;
+
+    &.outline {
+      @extend %button-outline-primary;
+    }
+  }
+
+  // Secondary Colors
+  &.secondary {
+    @extend %button-secondary;
+
+    &.outline {
+      @extend %button-outline-secondary;
+    }
+  }
 }

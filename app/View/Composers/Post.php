@@ -90,7 +90,7 @@ class Post extends Composer
 
         // Wide align shop cart & checkout
         if (stage_is_shop_active()) {
-            if (is_woocommerce()) {
+            if (is_woocommerce() || is_cart() || is_checkout()) {
                 $align = 'alignwide';
             }
 

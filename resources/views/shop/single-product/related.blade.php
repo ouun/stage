@@ -10,7 +10,7 @@ Related Products
     <h2>{!! esc_html( apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) ) ) !!}</h2>
 
     @php(woocommerce_product_loop_start())
-      <div class="grid grid-flow-row grid-cols-2 md:grid-cols-4 lg:grid-cols-6 grid-rows-auto gap-4 my-10">
+      <div class="grid grid-flow-row grid-cols-2 md:grid-cols-4 xxl:grid-cols-6 grid-rows-auto gap-4 my-10">
         @foreach( $related_products as $i => $related_product )
           <div class="product type-product">
             @php($post_object = get_post( $related_product->get_id() ))

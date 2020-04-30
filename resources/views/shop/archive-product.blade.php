@@ -25,7 +25,7 @@ Product Archives
 
         @php woocommerce_product_loop_start() @endphp
 
-          @includeFirst(['partials.archive.content-' . get_post_type(), 'partials.archive.content'], [ 'layout' => 'modern'])
+          @includeFirst(['partials.archive.content-' . get_post_type(), 'partials.archive.content'])
 
         @php woocommerce_product_loop_end() @endphp
 
@@ -37,3 +37,9 @@ Product Archives
     @action('woocommerce_after_main_content')
   </div>
 @endsection
+
+@if( $display_sidebar )
+  @section('sidebar')
+    @include('partials.sidebar')
+  @endsection
+@endif
