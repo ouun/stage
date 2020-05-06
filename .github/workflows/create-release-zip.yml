@@ -24,3 +24,9 @@ jobs:
           path: '.'
           filename: 'stage-installable.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
+      - name: Update release
+        uses: johnwbyrd/update-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./stage-installable.zip
+          draft: true
