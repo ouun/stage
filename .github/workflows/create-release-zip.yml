@@ -12,19 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # This step checks out a copy of your repository.
-      - uses: actions/checkout@master
-      # Create the release
-      - name: Create GitHub release
-        uses: Roang-zero1/github-create-release-action@master
-        with:
-          version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
-          prerelease_regex: "^v[[:digit:]]+.[[:digit:]]+$" # v1.0 tag as pre-releases!
-          create_draft: true
-          update_existing: true
-          changelog_file: 'Changelog.md'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Following steps reference actions.
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Get & Compile Composer & NPM assets
       - name: Get Composer Dependencies
         uses: pxgamer/composer-action@master
         with:
@@ -35,16 +25,30 @@ jobs:
           node-version: '12'
       - run: yarn install --ignore-optional
       - run: yarn build:production
+      # Build Release Zip
       - name: ZIP Release
         uses: thedoctor0/zip-release@master
         with:
           path: '.'
-          filename: 'stage-installable.zip'
+          filename: 'stage.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
-      - name: Upload release
-        uses: yakuhzi/action-release@v1
+      # Create GitHub Release
+      - name: Create GitHub release
+        uses: Roang-zero1/github-create-release-action@master
         with:
-          file: './stage-installable.zip'
-          changelog: './CHANGELOG.md'
+          version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
+          prerelease_regex: "^v[[:digit:]]+\.[[:digit:]]+$" # v1.0 tag as pre-releases!
+          create_draft: true
+          update_existing: true
+          created_tag: true
+          release_title: ${{ github.ref }} is on Stage
+          changelog_file: 'Changelog.md'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # One ZIP upload directly to Release
+      - name: Upload Releases I
+        uses: AButler/upload-release-assets@v2.0
+        with:
+          files: 'stage.zip'
+          release-tag: ${{ github.ref }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
