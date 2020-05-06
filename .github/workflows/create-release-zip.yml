@@ -14,6 +14,19 @@ jobs:
       # This step checks out a copy of your repository.
       - name: Checkout code
         uses: actions/checkout@v2
+      # Create GitHub Release
+      - name: Create GitHub release
+        uses: Roang-zero1/github-create-release-action@master
+        with:
+          version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
+          prerelease_regex: ^v[[:digit:]]+\.[[:digit:]]+$ # v1.0 tag as pre-releases!
+          create_draft: true
+          update_existing: true
+          created_tag: true
+          # release_title: ${{ github.ref }} is on Stage # Outputs refs/tags/v1.0.0
+          changelog_file: 'Changelog.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Get & Compile Composer & NPM assets
       - name: Get Composer Dependencies
         uses: pxgamer/composer-action@master
@@ -32,19 +45,6 @@ jobs:
           path: '.'
           filename: 'stage.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
-      # Create GitHub Release
-      - name: Create GitHub release
-        uses: Roang-zero1/github-create-release-action@master
-        with:
-          version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
-          prerelease_regex: ^v[[:digit:]]+\.[[:digit:]]+$ # v1.0 tag as pre-releases!
-          create_draft: true
-          update_existing: true
-          created_tag: true
-          release_title: ${{ github.ref }} is on Stage
-          changelog_file: 'Changelog.md'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # One ZIP upload directly to Release
       - name: Upload Releases I
         uses: AButler/upload-release-assets@v2.0
