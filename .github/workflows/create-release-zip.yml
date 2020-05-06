@@ -7,6 +7,17 @@ jobs:
     steps:
       # This step checks out a copy of your repository.
       - uses: actions/checkout@master
+      # Create the release
+      - name: Create GitHub release
+        uses: Roang-zero1/github-create-release-action@master
+        with:
+          version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
+          prerelease_regex: ^v[[:digit:]]+.[[:digit:]]+$ # v1.0 tag as pre-releases!
+          create_draft: true
+          update_existing: true
+          changelog_file: 'Changelog.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Following steps reference actions.
       - name: Get Composer Dependencies
         uses: pxgamer/composer-action@master
@@ -24,9 +35,10 @@ jobs:
           path: '.'
           filename: 'stage-installable.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
-      - name: Update release
-        uses: johnwbyrd/update-release@v1
+      - name: Upload release
+        uses: yakuhzi/action-release@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./stage-installable.zip
-          draft: true
+          file: './stage-installable.zip'
+          changelog: './CHANGELOG.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
