@@ -13,9 +13,11 @@ jobs:
         with:
           command: install --no-dev --optimize-autoloader --prefer-dist
       - name: Get Yarn and compile assets
-        uses: borales/actions-yarn@v2.0.0
+        uses: actions/setup-node@v1
         with:
-          cmd: install --ignore-optional && build:production # will run `yarn install` and compile assets
+          node-version: '12'
+      - run: yarn install --ignore-optional
+      - run: yarn build:production
       - name: ZIP Release
         uses: thedoctor0/zip-release@master
         with:
