@@ -19,7 +19,7 @@ jobs:
         uses: Roang-zero1/github-create-release-action@master
         with:
           version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+ # v1.0.0 tag
-          prerelease_regex: ^v[[:digit:]]+\.[[:digit:]]+$ # v1.0 tag as pre-releases!
+          # prerelease_regex: ^v[[:digit:]]+\.[[:digit:]]+$ # v1.0 tag as pre-releases!
           create_draft: true
           update_existing: true
           created_tag: true
