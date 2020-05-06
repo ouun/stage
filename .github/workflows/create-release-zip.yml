@@ -9,16 +9,16 @@ jobs:
       - uses: actions/checkout@master
       # Following steps reference actions.
       - name: Get Composer Dependencies
-          uses: pxgamer/composer-action@master
-          with:
-            command: install --no-dev --optimize-autoloader --prefer-dist
+        uses: pxgamer/composer-action@master
+        with:
+          command: install --no-dev --optimize-autoloader --prefer-dist
       - name: Get Yarn and compile assets
-          uses: borales/actions-yarn@v2.0.0
-          with:
-            cmd: install && build:production # will run `yarn install` and compile assets
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install && build:production # will run `yarn install` and compile assets
       - name: ZIP Release
-          uses: thedoctor0/zip-release@master
-          with:
-            path: '.'
-            filename: 'stage-installable.zip'
-            exclusions: '*.git* /*node_modules/* .editorconfig'
+        uses: thedoctor0/zip-release@master
+        with:
+          path: '.'
+          filename: 'stage-installable.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
