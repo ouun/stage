@@ -15,7 +15,7 @@ jobs:
       - name: Get Yarn and compile assets
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install && build:production # will run `yarn install` and compile assets
+          cmd: install --ignore-optional && build:production # will run `yarn install` and compile assets
       - name: ZIP Release
         uses: thedoctor0/zip-release@master
         with:
