@@ -1,0 +1,15 @@
+name: Create Release Archive
+on: [push]
+jobs:
+  build:
+    name: Get deps & zip
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+     - uses: actions/checkout@master
+      # Following steps reference actions.
+     - uses: ./.github/actions/composer
+     - uses: ./.github/actions/yarn
+     - uses: ./.github/actions/zip
+
+

@@ -1,0 +1,6 @@
+- name: ZIP Release
+    uses: thedoctor0/zip-release@master
+    with:
+      path: '.'
+      filename: 'stage-installable.zip'
+      exclusions: '*.git* /*node_modules/* .editorconfig'

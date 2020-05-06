@@ -1,0 +1,4 @@
+- name: Get Composer Dependencies
+    uses: pxgamer/composer-action@master
+    with:
+      command: install --no-dev --optimize-autoloader --prefer-dist
