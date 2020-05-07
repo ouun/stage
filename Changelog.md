@@ -4,7 +4,7 @@
 ## [Unreleased]
 
 
-## [1.0.0-alpha.5] - 2020-05-07
+## [1.0.0-alpha.4] - 2020-05-07
 
 This is still a pre-release and has some bugs. Please do not use in production.
 
