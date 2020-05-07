@@ -1,7 +1,0 @@
-# Build Release Zip
-- name: ZIP Release
-  uses: thedoctor0/zip-release@master
-  with:
-    path: '.'
-    filename: 'go-on-stage.zip'
-    exclusions: '*.git* *.circleci* *.DS_Store* /*node_modules/* /resources/*assets/* .editorconfig .eslintrc.js .stylelintrc package.json yarn.lock webpack.mix.js tailwind.config.js'
