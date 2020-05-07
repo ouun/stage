@@ -30,18 +30,18 @@ return array(
 
     'class'      => 'icons',
 
-	/*
-	|--------------------------------------------------------------------------
-	| Attributes
-	|--------------------------------------------------------------------------
-	|
-	| Here you can specify default attributes to be added on all inlined SVGs.
-	|   ↪ <https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute>
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Attributes
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify default attributes to be added on all inlined SVGs.
+    |   ↪ <https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute>
+    |
+    */
 
     'attributes' => [
-	    'stroke-width' => '1.5',
+        'stroke-width' => '1.5',
     ],
 
     /*

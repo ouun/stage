@@ -31,7 +31,7 @@ class SingleProduct extends Composer
             'placeholder'       => false,
             'loaderNamespace'   => 'shop',
             'id'                => get_the_ID(),
-            'product_class'     => esc_attr(implode(' ', wc_get_product_class('', get_the_ID()))),
+            'product_class'     => esc_attr(implode(' ', wc_get_product_class('container', get_the_ID()))),
             'password_required' => post_password_required(),
             'password_form'     => get_the_password_form(),
         );

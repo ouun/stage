@@ -79,7 +79,7 @@ class Settings
 
         // 1st: Check against header.desktop.layout as option or theme_mod
         $theme_mod = self::getThemeMod((string) implode('.', $request_array));
-	    $theme_mod = empty($theme_mod)
+        $theme_mod = empty($theme_mod)
             ? self::getThemeOption((string) implode('.', $request_array))
             : $theme_mod;
 
@@ -96,11 +96,11 @@ class Settings
         }
 
         // 4th: Try whatever was given if is not a bool
-	    if (empty($theme_mod) && !is_bool($theme_mod) && !is_null($theme_mod)) {
-	    	$theme_mod = self::getThemeMod($request, $default);
-	    }
+        if (empty($theme_mod) && !is_bool($theme_mod) && !is_null($theme_mod)) {
+            $theme_mod = self::getThemeMod($request, $default);
+        }
 
-	    return $theme_mod;
+        return $theme_mod;
     }
 
     /**

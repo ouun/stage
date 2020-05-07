@@ -130,6 +130,6 @@ class Archive extends Composer
             }
         }
 
-        return apply_filters( 'stage_register_customizer_post_types', $post_types);
+        return apply_filters('stage_register_customizer_post_types', $post_types);
     }
 }

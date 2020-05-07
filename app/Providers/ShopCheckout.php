@@ -6,12 +6,11 @@ use Roots\Acorn\ServiceProvider;
 
 class ShopCheckout extends ServiceProvider
 {
-
-  /**
-   * Bootstrap services.
-   *
-   * @return void
-   */
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
     public function boot()
     {
         /**
@@ -63,10 +62,10 @@ class ShopCheckout extends ServiceProvider
             'woocommerce_before_checkout_form',
             function ($checkout) {
                 $steps = [
-                  'cart'     => esc_html__('Cart', 'stage'),
-                  'address'  => esc_html__('Invoice & Shipping', 'stage'),
-                  'payment'  => esc_html__('Review & Payment', 'stage'),
-                  'thankyou' => esc_html__('Order Confirmation', 'stage'),
+                    'cart'     => esc_html__('Cart', 'stage'),
+                    'address'  => esc_html__('Invoice & Shipping', 'stage'),
+                    'payment'  => esc_html__('Review & Payment', 'stage'),
+                    'thankyou' => esc_html__('Order Confirmation', 'stage'),
                 ];
 
                 echo '<div id="checkout-step-indicator" class="hidden">';
@@ -106,18 +105,18 @@ class ShopCheckout extends ServiceProvider
             'woocommerce_checkout_after_customer_details',
             function () {
                 ?>
-              <div class="form-row">
-                  <input type="hidden" name="current_step" id="current_step" value="address">
-                  <button type="submit"
-                          name="verify-checkout"
-                          id="verify-checkout"
-                          class="checkout button w-full"
-                          data-current="address"
-                          data-next="payment">
-                      <?php esc_html_e('Proceed to payment', 'stage'); ?>
-                  </button>
-              </div>
-              </div> <!-- closing: #checkout-address -->
+                <div class="form-row">
+                    <input type="hidden" name="current_step" id="current_step" value="address">
+                    <button type="submit"
+                            name="verify-checkout"
+                            id="verify-checkout"
+                            class="checkout button w-full"
+                            data-current="address"
+                            data-next="payment">
+                        <?php esc_html_e('Proceed to payment', 'stage'); ?>
+                    </button>
+                </div>
+                </div> <!-- closing: #checkout-address -->
                 <?php
             }
         );

@@ -25,17 +25,17 @@ class Item extends Composer
      */
     public function with()
     {
-	    return array(
-		    'id'            => get_the_ID(),
-		    'title'         => get_the_title(),
-		    'excerpt'       => get_the_excerpt(),
-		    'tags'          => $this->itemTags(),
-		    'classes'       => $this->itemClasses(),
-		    'inner_classes' => $this->itemInnerClasses(),
-		    'permalink'     => get_permalink(),
-		    'has_thumbnail' => has_post_thumbnail(),
-		    'thumbnail'     => $this->itemThumbnail(),
-	    );
+        return array(
+            'id'            => get_the_ID(),
+            'title'         => get_the_title(),
+            'excerpt'       => get_the_excerpt(),
+            'tags'          => $this->itemTags(),
+            'classes'       => $this->itemClasses(),
+            'inner_classes' => $this->itemInnerClasses(),
+            'permalink'     => get_permalink(),
+            'has_thumbnail' => has_post_thumbnail(),
+            'thumbnail'     => $this->itemThumbnail(),
+        );
     }
 
     /**

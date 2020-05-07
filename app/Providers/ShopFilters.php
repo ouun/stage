@@ -39,14 +39,14 @@ class ShopFilters extends ServiceProvider
         remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
         // Register product/shop archive to register
-	    add_filter('stage_register_customizer_post_types', function ($post_types) {
+        add_filter('stage_register_customizer_post_types', function ($post_types) {
 
-	    	if(stage_is_shop_active()) {
-	    		$post_types['product'] = __('Shop', 'stage');
-		    }
+            if (stage_is_shop_active()) {
+                $post_types['product'] = __('Shop', 'stage');
+            }
 
-	    	return $post_types;
-	    });
+            return $post_types;
+        });
 
         // Replace the ugly WC x with a beautiful svg x
         add_filter('woocommerce_cart_item_remove_link', function ($html) {
