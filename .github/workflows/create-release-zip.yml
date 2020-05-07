@@ -14,17 +14,7 @@ jobs:
       # This step checks out a copy of your repository.
       - name: Checkout code
         uses: actions/checkout@v2
-      # Create GitHub Release
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }} on Stage
-          draft: false
-          prerelease: true
+
       # Get & Compile Composer & NPM assets
       - name: Get Composer Dependencies
         uses: pxgamer/composer-action@master
@@ -41,8 +31,19 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           path: '.'
-          filename: 'get-on-stage.zip'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
+          filename: 'go-on-stage.zip'
+          exclusions: '*.git* *.circleci* *.DS_Store* /*node_modules/* /resources/*assets/* .editorconfig .eslintrc.js .stylelintrc package.json yarn.lock webpack.mix.js tailwind.config.js'
+      # Create GitHub Release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }} is on Stage
+          draft: false
+          prerelease: true
       # One ZIP upload directly to Release
       - name: Upload Release Asset
         id: upload-release-asset
@@ -51,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./get-on-stage.zip
+          asset_path: ./go-on-stage.zip
           asset_name: stage.zip
           asset_content_type: application/zip
