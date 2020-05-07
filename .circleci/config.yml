@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   sage:
     executors:
-      node-10:
+      node-12:
         docker:
           - image: 'circleci/node:12-stretch'
       php-73:
