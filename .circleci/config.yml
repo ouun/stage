@@ -5,7 +5,7 @@ orbs:
     executors:
       node-10:
         docker:
-          - image: 'circleci/node:10-stretch'
+          - image: 'circleci/node:12-stretch'
       php-73:
         docker:
           - image: 'circleci/php:7.3-stretch'
@@ -32,7 +32,7 @@ orbs:
               paths:
                 - vendor
       build-node:
-        executor: node-10
+        executor: node-12
         steps:
           - run: yarn versions
           - checkout
