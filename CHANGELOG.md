@@ -4,6 +4,13 @@
 
 This is still a pre-release and has some bugs. Please do not use in production.
 
+## [1.0.0-alpha.6] - 2020-05-11
+### Changed
+- Wide align views by default
+- Extract View Alignment setter to separate Class
+- Use Tailwinds own PurgeCSS config for the moment
+- Various style and template fixes
+
 ## [1.0.0-alpha.5] - 2020-05-07
 ### Changed
 - Extract GitHub workflow into single actions
