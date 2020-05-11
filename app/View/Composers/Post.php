@@ -30,7 +30,6 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
-            'align' => $this->align(),
         ];
     }
 
@@ -70,35 +69,5 @@ class Post extends Composer
         }
 
         return get_the_title();
-    }
-
-    /**
-     * Set logic to align posts and pages
-     * Adds class '.alignwide', '.alignscreen' or '.alignfull'
-     *
-     * @return mixed|void|null Alignment class
-     */
-    public function align()
-    {
-
-        $align = 'align';
-
-        // Wide align data privacy
-        if (is_privacy_policy()) {
-            $align = 'alignwide';
-        }
-
-        // Wide align shop cart & checkout
-        if (stage_is_shop_active()) {
-            if (is_woocommerce() || is_cart() || is_checkout()) {
-                $align = 'alignwide';
-            }
-
-            if (is_account_page()) {
-                $align = 'alignscreen';
-            }
-        }
-
-        return apply_filters('stage_single_align_content', $align);
     }
 }
