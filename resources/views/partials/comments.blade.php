@@ -32,7 +32,9 @@
   @endif
 
   @if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments'))
-    <x-alert type="warning" message="Comments are closed." />
+      <x-alert type="warning">
+        {!! __('Comments are closed.', 'stage') !!}
+      </x-alert>
   @endif
 
   @php comment_form() @endphp
