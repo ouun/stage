@@ -8,7 +8,7 @@
   defined( 'ABSPATH' ) || exit;
 @endphp
 
-@svg('alert-circle', 'w-24 h-auto text-center mt-24 mb-6')
+@svg('alert-circle', 'w-24 h-auto text-center mx-auto mt-24 mb-6')
 
 <div class="text-center text-3xl font-serif">
   <x-alert type="warning" message="{{ apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) }}" />

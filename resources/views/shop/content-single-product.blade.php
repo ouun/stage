@@ -10,7 +10,7 @@ Displays a single product content
   @php return; @endphp
 @endif
 
-<div id="product-{{ $id }}" class="{{ $product_class }}">
+<div id="product-{{ $id }}" class="{{ $product_class }} {{ $align }}">
   <div class="product-header flex flex-wrap clearfix py-5">
     <div class="w-full md:w-2/3 clearfix flex-initial relative pb-10">
       @action('woocommerce_before_single_product_summary')

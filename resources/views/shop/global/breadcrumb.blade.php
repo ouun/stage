@@ -8,7 +8,7 @@ Breadcrump navigations
 @endphp
 
 @if(!empty($breadcrumb))
-    <nav class="breadcrumbs alignwide content-wrap relative pt-5 pb-5 text-xs" aria-label="breadcrumb">
+    <nav class="breadcrumbs content-wrap relative pt-5 pb-5 text-xs {{ $align }}" aria-label="breadcrumb">
       <ol class="breadcrumb inline-flex">
         <?php
 
