@@ -59,7 +59,7 @@ input[type="checkbox"] {
   // Default state
   & + span,
   & + label {
-    @apply inline relative leading-normal font-sans normal-case text-base cursor-pointer;
+    @apply inline align-text-top relative leading-normal font-sans normal-case text-base cursor-pointer;
 
     box-decoration-break: clone;
 
@@ -69,7 +69,7 @@ input[type="checkbox"] {
       height: var(--checkbox-radio-size);
       transition: transform 0.2s;
       vertical-align: middle;
-      margin-top: -4px;
+      float: left;
 
       @apply inline-block mr-2 flex-shrink-0 bg-white bg-no-repeat bg-center border border-gray-800 shadow-inner;
     }

@@ -12,7 +12,7 @@
       @apply float-right;
 
       a {
-        @apply rounded-full bg-gray-200 uppercase px-2 py-1 text-sm font-medium;
+        @apply rounded-full bg-gray-200 uppercase px-2 py-1 text-xs font-sans font-medium;
       }
     }
   }
@@ -88,7 +88,7 @@
 
           /* stylelint-disable-next-line no-descending-specificity */
           a {
-            @apply text-sm font-medium uppercase;
+            @apply text-xs font-sans font-medium uppercase;
           }
         }
 
@@ -106,7 +106,7 @@
       }
 
       .children {
-        @apply pt-6 pl-6;
+        @apply pt-6 pl-6 border-l border-gray-200;
       }
 
       li.depth-4 {

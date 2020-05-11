@@ -16,13 +16,25 @@
   &::before {
     @apply content block absolute inset-0 rounded-inherit colors-inherit border-2 opacity-100 -z-1;
   }
+}
 
+// Default Button
+%button-disabled {
   &:disabled,
   &.loading {
     @apply bg-gray-200 border-gray-200 text-gray-400 cursor-not-allowed;
 
     &::before {
       @apply opacity-0;
+    }
+
+    &:hover,
+    &:focus {
+      @apply bg-gray-200 border-gray-200 text-gray-400 cursor-not-allowed;
+
+      &::before {
+        @apply opacity-0;
+      }
     }
   }
 }
@@ -63,7 +75,7 @@
 
   &:hover,
   &:focus {
-    @apply bg-copy text-white;
+    @apply bg-copy border-copy text-white;
   }
 }
 
@@ -72,7 +84,7 @@
 
   &:hover,
   &:focus {
-    @apply bg-primary text-white;
+    @apply bg-primary border-primary text-white;
   }
 }
 
@@ -81,7 +93,7 @@
 
   &:hover,
   &:focus {
-    @apply bg-secondary text-white;
+    @apply bg-secondary border-secondary text-white;
   }
 }
 
@@ -114,4 +126,6 @@ button.button {
       @extend %button-outline-secondary;
     }
   }
+
+  @extend %button-disabled;
 }

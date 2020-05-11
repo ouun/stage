@@ -63,29 +63,29 @@
   @apply mx-auto px-block-spacing;
 
   @screen sm {
-    min-width: var(--block-width-sm);
+    // min-width: var(--block-width-sm);
     max-width: calc(var(--block-width-sm) + 20%);
   }
 
   @screen md {
-    min-width: var(--block-width-md);
+    // min-width: var(--block-width-md);
     max-width: calc(var(--block-width-md) + 20%);
   }
 
   @screen lg {
     @apply px-initial;
 
-    min-width: var(--block-width-lg);
+    // min-width: var(--block-width-lg);
     max-width: calc(var(--block-width-lg) - var(--gutter) + 20%);
   }
 
   @screen xl {
-    min-width: var(--block-width-xl);
+    // min-width: var(--block-width-xl);
     max-width: calc(var(--block-width-xl) - var(--gutter) + 20%);
   }
 
   @screen xxl {
-    min-width: var(--block-width-xxl);
+    // min-width: var(--block-width-xxl);
     max-width: calc(var(--block-width-xxl) - var(--gutter) + 20%);
   }
 }
