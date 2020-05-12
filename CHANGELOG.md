@@ -7,7 +7,6 @@ This is still a pre-release and has some bugs. Please do not use in production.
 ## [1.0.0-alpha.7] - 2020-05-12
 ### Changed
 - Save Customizer bools as string
-- Composer folder is now /packages
 - Includes more Tailwind Classes for colors and spacings
 
 ### Fixed
