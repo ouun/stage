@@ -11,13 +11,6 @@ namespace Stage;
 
 use function Roots\asset;
 
-/*
- * todo: Remove this after autoload is fixed
- * @see https://github.com/Log1x/sage-directives/issues/32
- */
-$directives      = new \Log1x\SageDirectives\Directives();
-$directives_util = new \Log1x\SageDirectives\Util();
-
 add_action(
     'wp_enqueue_scripts',
     function () {

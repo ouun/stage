@@ -13,6 +13,6 @@ class ActionDirective
      */
     public function __invoke($expression)
     {
-        return sprintf('123<?= %s(%s); ?>', '\\Stage\\stage_do_action', $expression);
+        return sprintf('<?= %s(%s); ?>', '\\Stage\\stage_do_action', $expression);
     }
 }

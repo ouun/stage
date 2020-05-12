@@ -32,7 +32,7 @@ export default () => {
   }
 
   // Init WP Adminbar
-  if ( stage.wp.adminbar_visible ) {
+  if ( stage.wp.adminbar.visible ) {
     adminbar.init();
   }
 

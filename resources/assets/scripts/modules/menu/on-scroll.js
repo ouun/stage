@@ -41,7 +41,7 @@ export const menuOnScroll = {
    */
   setOffset: function () {
     // Add offset if adminbar is visible
-    if( stage.wp.adminbar_visible ) {
+    if( stage.wp.adminbar.visible ) {
       menuOnScroll.offsetTop = adminbar.getAdminbarHeight();
     }
   },
