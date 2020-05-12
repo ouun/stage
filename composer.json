@@ -53,7 +53,6 @@
     "squizlabs/php_codesniffer": "^3.5"
   },
   "config": {
-    "vendor-dir": "packages",
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "sort-packages": true
