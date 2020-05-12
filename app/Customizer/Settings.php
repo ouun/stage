@@ -67,9 +67,9 @@ class Settings
      *
      * @param $request 'header.desktop.layout'
      * @param $default
-     * @return bool|string
+     * @return string
      */
-    public static function getChosen($request, $default = false)
+    public static function getChosen($request, $default = '')
     {
         // This can either be stored as mix of 'global_colors' and 'global_colors[secondary]'
         // Check against both to go sure that we get the value
@@ -79,25 +79,20 @@ class Settings
 
         // 1st: Check against header.desktop.layout as option or theme_mod
         $theme_mod = self::getThemeMod((string) implode('.', $request_array));
-        $theme_mod = empty($theme_mod)
+        $theme_mod = $theme_mod === ''
             ? self::getThemeOption((string) implode('.', $request_array))
             : $theme_mod;
 
         // 2nd: Check against header_desktop_layout
-        if (!isset($theme_mod)) {
+        if ($theme_mod === '') {
             $theme_mod = self::getThemeMod((string) implode('_', $request_array));
         }
 
-        // 3rd: Check against header_desktop[layout]
-        if (!isset($theme_mod)) {
+        // 3rd: Check against header_desktop[layout] and otherwise 4th try whatever was given
+        if ($theme_mod === '') {
             $key       = array_pop($request_array);
             $theme_mod = self::getThemeMod((string) implode('_', $request_array));
-            $theme_mod = isset($theme_mod[ $key ]) ? $theme_mod[ $key ] : $theme_mod;
-        }
-
-        // 4th: Try whatever was given if is not a bool
-        if (empty($theme_mod) && !is_bool($theme_mod) && !is_null($theme_mod)) {
-            $theme_mod = self::getThemeMod($request, $default);
+            $theme_mod = isset($theme_mod[ $key ]) ? $theme_mod[ $key ] : self::getThemeMod($request, $default);
         }
 
         return $theme_mod;
@@ -107,13 +102,13 @@ class Settings
      * Get value for a option from the 'stage_options' table
      *
      * @param $name
-     * @param string|false $default
+     * @param bool $default
      *
      * @return mixed|void|null
      */
     public static function getThemeOption($name, $default = '')
     {
-        $options = get_option('stage_options');
+        $options = get_option('stage');
 
         if (isset($options[ $name ])) {
             return apply_filters("stage_option_{$name}", $options[ $name ]);
@@ -126,7 +121,7 @@ class Settings
      * Get and filter value from the theme_mods table
      *
      * @param $name
-     * @param string|false $default
+     * @param string $default
      *
      * @return mixed|void|null
      */
