@@ -80,7 +80,9 @@ function stage_build_js_object()
                 'is_logged_in' => is_user_logged_in(),
             ),
             'wp'      => array(
-                'adminbar_visible' => is_admin_bar_showing(),
+                'adminbar' => array(
+                    'visible' => is_admin_bar_showing()
+                ),
             ),
         )
     );
@@ -115,7 +117,6 @@ function stage_get_features_status()
 
 /**
  * Checks the activation status of a given Stage feature
- * todo: Edit after this is fixed: https://github.com/kirki-framework/control-checkbox/issues/3
  *
  * @param $feature
  *
@@ -123,10 +124,7 @@ function stage_get_features_status()
  */
 function stage_is_feature_active($feature)
 {
-    $status = stage_get_fallback('features' . '.' . $feature . '.' . 'activate');
-    // todo: Replace this when value is true/false instead of true or '1'
-
-    return ( '0' !== $status || 'false' !== $status || $status == true ) ? (bool) $status : false;
+    return stage_string_to_bool(stage_get_fallback('features' . '.' . $feature . '.' . 'activate'));
 }
 
 /**
@@ -205,6 +203,30 @@ function stage_do_action($action, $arg = '')
     return do_action($action, $arg);
 }
 
+/**
+ * Converts a string (e.g. 'yes' or 'no') to a bool.
+ *
+ * @param string $string String to convert.
+ * @return bool
+ */
+function stage_string_to_bool($string)
+{
+    return is_bool($string) ? $string : ( 'yes' === $string || 1 === $string || 'true' === $string || '1' === $string );
+}
+
+/**
+ * Converts a bool to a 'yes' or 'no'.
+ *
+ * @param bool $bool String to convert.
+ * @return string
+ */
+function stage_bool_to_string($bool)
+{
+    if (! is_bool($bool)) {
+        $bool = wc_string_to_bool($bool);
+    }
+    return true === $bool ? 'yes' : 'no';
+}
 
 /**
  * Get a list of all post types that the user might care about.
