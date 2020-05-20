@@ -2,12 +2,12 @@
 
 namespace Stage\Customizer\Panels;
 
+use Kirki\Control\Checkbox_Switch;
+use Kirki\Panel;
+use Kirki\Section;
 use WP_Customize_Manager;
 use Stage\View\Composers\Partials\Archive;
 use Stage\Customizer\Controls\LayoutControl;
-use Stage\Customizer\Controls\ToggleControl;
-use Kirki\Compatibility\Kirki;
-use Kirki\Section;
 
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback_template;
@@ -17,33 +17,17 @@ class ArchivesPanel
 
     // Set panel ID
     private static $panel  = 'archives';
-    private static $config = 'archives_conf';
 
     public function __construct()
     {
-        /**
-         * Register Global Config
-         */
-        Kirki::add_config(
-            self::$config,
-            array(
-                'capability'     => 'edit_theme_options',
-                'option_type'    => 'theme_mod',
-                'disable_output' => false,
-            )
-        );
 
         /**
-         * Register Panel
+         * Set up the panel
          */
-        // Layout Panel
-        Kirki::add_panel(
-            self::$panel,
-            array(
-                'priority' => 20,
-                'title'    => esc_attr__('Archives', 'stage'),
-            )
-        );
+        new Panel(self::$panel, array(
+            'priority'    => 20,
+            'title'       => esc_html__('Archives', 'stage'),
+        ));
 
         foreach (Archive::archivesToRegister() as $cpt_name => $cpt_label) {
             // Set section & settings ID
@@ -71,7 +55,7 @@ class ArchivesPanel
                 'customize_register',
                 function (WP_Customize_Manager $wp_customize) use ($section, $cpt_name, $cpt_label) {
                     // Archive layout settings
-                    $id                        = 'archive.' . $cpt_name . '.layout';
+                    $id                        = "archive.$cpt_name.layout";
                     $config                    = Archive::getPostTypeArchiveConfigKey($cpt_name) . '.layout';
                     $display_configs['layout'] = $id;
 
@@ -116,24 +100,22 @@ class ArchivesPanel
                                 'type'              => 'theme_mod',
                                 'capability'        => 'edit_theme_options',
                                 'default'           => $display_config,
-                                'transport'         => 'postMessage', // Or postMessage.
-                                'sanitize_callback' => array(
-                                    'Stage\Customizer\Controls\ToggleControl',
-                                    'sanitize_toggle'
-                                ),
+                                'transport'         => $key == 'display_sidebar' ?
+                                    'refresh' :
+                                    'postMessage',
+                                'sanitize_callback'    => 'Stage\stage_bool_to_string',
+                                'sanitize_js_callback' => 'Stage\stage_string_to_bool',
                             )
                         );
 
-                        $wp_customize->add_control(
-                            new ToggleControl(
-                                $wp_customize,
-                                $id,
-                                array(
-                                    'label'   => __(ucwords(str_replace('_', ' ', $key)), 'stage'),
-                                    'section' => $section,
-                                )
-                            )
-                        );
+                        // Add control.
+                        $wp_customize->add_control(new Checkbox_Switch($wp_customize, $id, [
+                            'section'   => $section,
+                            'choices'   => [
+                                'on' => __(ucwords(str_replace('_', ' ', $key)), 'stage'),
+                                'off'  => __(ucwords(str_replace('_', ' ', $key)), 'stage'),
+                            ],
+                        ]));
                     }
 
                     // Add common refresh partial
@@ -141,9 +123,9 @@ class ArchivesPanel
                         $wp_customize->selective_refresh->add_partial(
                             $id,
                             array(
-                                'selector'            => 'body.' . $cpt_name . '-archive .archive-wrap',
+                                'selector'            => 'body.' . $cpt_name . '-archive .archive-wrap .wrap-inner',
                                 'settings'            => array_values($display_configs),
-                                'container_inclusive' => false,
+                                'container_inclusive' => true,
                                 'render_callback'     => function () use ($cpt_name) {
                                     // Get $layout based on available setting
                                     $chosen_key  = 'archive.' . $cpt_name . '.layout'; // theme_mod() or option() key

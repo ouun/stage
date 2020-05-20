@@ -65,7 +65,7 @@ class Header extends Composer
             'banner',
             'bg-body',
             'font-copy',
-            'border-accent',
+            'border-gray-300',
             'z-30'
         );
 

@@ -53,19 +53,60 @@ return array(
 
         // All colors are registered as wp-blocks colors.
         'colors'  => array(
-            'main'     => array(
-                'copy'      => stage_get_fallback('global.colors.copy', 'rgb(51, 51, 51)'),
-                'heading'   => stage_get_fallback('global.colors.heading', 'rgb(51, 51, 51)'),
-                'primary'   => stage_get_fallback('global.colors.primary', 'rgb(43, 108, 176)'),
-                'secondary' => stage_get_fallback('global.colors.secondary', 'rgb(221, 107, 32)'),
-                'body'      => stage_get_fallback('global.colors.body', 'rgb(249, 249, 249)'),
-            ),
-            'links'    => array(
-                'link'  => '',
-                'hover' => '',
-            ),
-            'gray-200' => 'var(--color-gray-200)',
-            'gray-800' => 'var(--color-gray-800)',
+            'copy'      => stage_get_fallback('global.colors.copy', 'rgb(51, 51, 51)'),
+            'heading'   => stage_get_fallback('global.colors.heading', 'rgb(51, 51, 51)'),
+            'primary'   => stage_get_fallback('global.colors.primary', 'rgb(43, 108, 176)'),
+            'secondary' => stage_get_fallback('global.colors.secondary', 'rgb(221, 107, 32)'),
+            'body'      => stage_get_fallback('global.colors.body', 'rgb(249, 249, 249)'),
+            'link'  => '',
+            'hover' => '',
+
+            'palettes' => [
+                'gray' => [
+                    '100' => '#f7fafc',
+                    '200' => '#edf2f7',
+                    '300' => '#e2e8f0',
+                    '400' => '#cbd5e0',
+                    '500' => '#a0aec0',
+                    '600' => '#718096',
+                    '700' => '#4a5568',
+                    '800' => '#2d3748',
+                    '900' => '#1a202c',
+                ],
+                'red' => [
+                    '100' => '#fff5f5',
+                    '200' => '#fed7d7',
+                    '300' => '#feb2b2',
+                    '400' => '#fc8181',
+                    '500' => '#f56565',
+                    '600' => '#e53e3e',
+                    '700' => '#c53030',
+                    '800' => '#9b2c2c',
+                    '900' => '#742a2a',
+                ],
+                'green' => [
+                    '100' => '#f0fff4',
+                    '200' => '#c6f6d5',
+                    '300' => '#9ae6b4',
+                    '400' => '#68d391',
+                    '500' => '#48bb78',
+                    '600' => '#38a169',
+                    '700' => '#2f855a',
+                    '800' => '#276749',
+                    '900' => '#22543d',
+                ],
+                'blue' => [
+                    '100' => '#ebf8ff',
+                    '200' => '#bee3f8',
+                    '300' => '#90cdf4',
+                    '400' => '#63b3ed',
+                    '500' => '#4299e1',
+                    '600' => '#3182ce',
+                    '700' => '#2b6cb0',
+                    '800' => '#2c5282',
+                    '900' => '#2a4365',
+                ],
+            ],
         ),
 
         // All font sizes are registered as wp-blocks font-sizes.
@@ -210,7 +251,7 @@ return array(
      */
     'archive'  => array(
         'post'     => array(
-            'layout'  => 'partials.grids.modern',
+            'layout'  => 'partials.archive.grids.modern',
             'display' => array(
                 'sidebar'     => false,
                 'thumbnail'   => true,
@@ -222,7 +263,7 @@ return array(
             ),
         ),
         'product'  => array(
-            'layout'  => 'partials.grids.masonry',
+            'layout'  => 'partials.archive.grids.masonry',
             'display' => array(
                 'sidebar'     => false,
                 'thumbnail'   => true,
@@ -234,7 +275,7 @@ return array(
             ),
         ),
         'fallback' => array(
-            'layout'  => 'partials.grids.masonry',
+            'layout'  => 'partials.archive.grids.masonry',
             'display' => array(
                 'sidebar'     => true,
                 'thumbnail'   => true,

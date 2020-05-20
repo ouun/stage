@@ -1,15 +1,17 @@
 @include('layouts.header')
 
 <div id="app" class="flex flex-col lg:flex-row flex-1 justify-between @hasSection('sidebar') has-sidebar container alignscreen @endif" data-loader="container" data-loader-namespace="{{ $loaderNamespace }}">
-  <main id="main" class="main flex-1 flex-auto h-auto min-h-0 overflow-hidden">
+  <main id="main" class="flex-1 h-auto min-h-0 overflow-hidden flex-grow-2 lg:flex-grow-3 xxl:flex-grow-5 main">
     @yield('content')
   </main>
 
   @hasSection('sidebar')
-    <aside class="sidebar w-full md:w-1/4 lg:w-1/5 self-start flex-shrink sticky top-gutter lg:border-l border-accent lg:px-block-spacing lg:mx-block-spacing">
-      <div class="container">
-        <div class="widgets-wrap -mx-4">
-          @yield('sidebar')
+    <aside class="sticky top-0 self-start flex-shrink w-full sidebar flex-grow-1 xxl:flex-grow-2 lg:w-0 lg:pt-gutter">
+      <div class="lg:border-l border-gray-300 lg:pl-block-spacing lg:ml-block-spacing">
+        <div class="container {{ $align }}">
+          <div class="-mx-4 widgets-wrap">
+            @yield('sidebar')
+          </div>
         </div>
       </div>
     </aside>

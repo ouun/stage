@@ -7,11 +7,10 @@ use Roots\Acorn\View\Composer;
 use function Stage\post_types;
 use function Stage\stage_get_default;
 use function Stage\stage_get_fallback;
+use function Stage\stage_string_to_bool;
 
 class Archive extends Composer
 {
-
-
 
     /**
      * List of views served by this composer.
@@ -96,7 +95,9 @@ class Archive extends Composer
         $configs     = stage_get_default($configs_key);
 
         foreach ($configs as $key => $config) {
-            $data[ 'display_' . $key ] = (bool) self::getArchiveConfig($post_type, '.display' . '.' . $key);
+            $data[ 'display_' . $key ] = (bool) stage_string_to_bool(
+                self::getArchiveConfig($post_type, '.display' . '.' . $key)
+            );
         }
 
         return $data;
@@ -124,12 +125,27 @@ class Archive extends Composer
     {
         $post_types = post_types();
 
-        foreach ($post_types as $name => $label) {
-            if (! get_post_type_archive_link($name)) {
-                unset($post_types[ $name ]);
+        foreach ($post_types as $post_type => $label) {
+            $archive_link = get_post_type_archive_link($post_type);
+            if (! $archive_link) {
+                unset($post_types[ $post_type ]);
             }
         }
 
         return apply_filters('stage_register_customizer_post_types', $post_types);
+    }
+
+    public static function registeredArchives()
+    {
+        $archives = [];
+
+        foreach (self::archivesToRegister() as $post_type => $label) {
+            $archives[$post_type] = [
+                'label' => $label,
+                'url' => get_post_type_archive_link($post_type)
+            ];
+        }
+
+        return $archives;
     }
 }

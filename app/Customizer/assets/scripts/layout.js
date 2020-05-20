@@ -7,7 +7,7 @@
 
             api(control.id, function ( value ) {
                 value.bind(function ( newLayout ) {
-                  // Set the new value
+                    // Set the new value
                     control.setting.set(newLayout);
                 });
             });
@@ -26,7 +26,7 @@
                     $(this).text(layoutLocalization.open);
                 }
             });
-        }
+        },
     });
 
 } )(jQuery, wp.customize);

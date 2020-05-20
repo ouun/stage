@@ -164,7 +164,7 @@ class Settings
     {
         // Get the chosen layout e.g. "masonry"
         $fallback = self::getFallback($request, false, true);
-        // Get path & default layout (e.g. "partials.grids.modern")
+        // Get path & default layout (e.g. "partials.archive.grids.modern")
         $config  = self::toArray(self::getConfig($default_key ?: $request));
         $default = array_pop($config);
 

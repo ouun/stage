@@ -7,7 +7,6 @@ class WebsitePanel
 
     // Set panel ID
     private static $panel  = 'website';
-    private static $config = 'website_conf';
 
     public function __construct()
     {

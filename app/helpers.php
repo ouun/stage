@@ -244,6 +244,27 @@ function post_types()
 }
 
 /**
+ * Flatten multidimensional array concatenating keys
+ * e.g. [data][user][ben] to [data.user.ben]
+ *
+ * @param $array
+ * @param string $prefix
+ * @return array|mixed
+ */
+function stage_flatten($array, $prefix = '')
+{
+    $result = array();
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
+            $result = $result + stage_flatten($value, $prefix . $key . '.');
+        } else {
+            $result[$prefix . $key] = $value;
+        }
+    }
+    return $result;
+}
+
+/**
  * Build a URL string based on URL parts.
  *
  * @see https://stackoverflow.com/a/35207936/319855

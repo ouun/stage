@@ -1,4 +1,4 @@
-<div class="alignwide">
+<div class="wrap-inner {{ $align }}">
   <div class="md:-mx-2">
     <div class="flex flex-wrap items-start flex-auto grid-masonry infinity-wrap items-wrap">
       {{-- Items are sorted into columns --}}

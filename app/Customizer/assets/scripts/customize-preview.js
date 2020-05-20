@@ -7,7 +7,7 @@
 ( function ( $, api ) {
     $(document).ready(function () {
 
-    // Run when Preview ist active
+        // Run when Preview ist active
         api.preview.bind('active', function () {
             if ( 'undefined' !== typeof wp && api && api.selectiveRefresh ) {
               /**
@@ -19,19 +19,20 @@
                * Trigger custom events on layout elements when layout control changes
                */
                 api.selectiveRefresh.bind('partial-content-rendered', function (placement) {
-              // When new content is rendered run with each control of the partial
+                    // When new content is rendered run with each control of the partial
                     $.each(placement.partial.params.settings, function ( index, controlID ) {
-                            // Trigger custom event on the elements
-                            api(controlID, function ( control ) {
-                                $(placement.partial.params.selector).trigger('stage-customizer-layout-changed', {
-                                    layout: control.get(),
-                                    selector: placement.partial.params.selector
-                                });
+                        // Trigger custom event on the elements
+                        api(controlID, function ( control ) {
+                            $(placement.partial.params.selector).trigger('stage-customizer-layout-changed', {
+                                layout: control.get(),
+                                selector: placement.partial.params.selector,
                             });
+                        });
                     });
                 });
             }
         });
+
 
 
     /**
@@ -41,12 +42,12 @@
 
     // Update the site title in real time...
     /*
-    api( 'blogname', function( value ) {
-      value.bind( function( newval ) {
-        console.log(newval);
-        $( '#site-title a' ).html( newval );
-      } );
-    } );
+    api('blogname', function ( value ) {
+          value.bind(function ( newval ) {
+              console.log(newval);
+              $('#site-title a').html(newval);
+          });
+      });
     */
 
     // New content loaded via selective refresh

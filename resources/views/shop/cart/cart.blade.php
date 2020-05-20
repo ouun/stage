@@ -19,7 +19,7 @@ Cart Page
 
       <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents w-full" cellspacing="0">
         <thead>
-        <tr class="text-xs uppercase text-accent border-b">
+        <tr class="text-xs uppercase text-gray-300 border-b">
           <th class="product-remove">&nbsp;</th>
           <th class="product-thumbnail text-left"><?php esc_html_e('Product', 'woocommerce'); ?></th>
           <th class="product-name">&nbsp;</th>

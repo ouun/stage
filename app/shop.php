@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add WooCommerce support
+ * WooCommerce Hooks
  *
  * @package App
  */
@@ -23,14 +23,14 @@ if (stage_is_shop_active()) {
     remove_action('wp_head', 'wc_generator');
 
     /**
-     *  Wide allign shop pages
+     *  Wide align shop pages
      */
-    add_filter('post_class', function ($classes) {
+    add_filter('stage_single_align_content', function ($align) {
         if (is_shop() || is_cart() || is_checkout()) {
-            $classes[] = 'alignwide';
+            $align = 'alignwide';
         }
 
-        return $classes;
+        return $align;
     });
 
     /**

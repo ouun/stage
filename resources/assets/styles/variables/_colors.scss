@@ -13,17 +13,18 @@
   --color-copy: #{hex_rgb(#333)};
   --color-heading: #{hex_rgb(#333)};
 
-  /* Body / Main background */
+  /* Link colors */
+  --color-link: var(--color-copy);
+  --color-hover: var(--color-blue-700);
+
+  /* Background */
   --color-body: #{hex_rgb(#f9f9f9)};
 
   /* Primary */
-  --color-primary: var(--color-teal-500);
+  --color-primary: var(--color-blue-700);
 
   /* Secondary */
   --color-secondary: #{hex_rgb(#dd6b20)};
-
-  /* Accent */
-  --color-accent: var(--color-gray-300);
 
   /* Gray */
   --color-gray-100: #{hex_rgb(#f7fafc)};
@@ -47,28 +48,6 @@
   --color-red-800: #{hex_rgb(#9b2c2c)};
   --color-red-900: #{hex_rgb(#742a2a)};
 
-  /* Orange */
-  --color-orange-100: #{hex_rgb(#fffaf0)};
-  --color-orange-200: #{hex_rgb(#feebc8)};
-  --color-orange-300: #{hex_rgb(#fbd38d)};
-  --color-orange-400: #{hex_rgb(#f6ad55)};
-  --color-orange-500: #{hex_rgb(#ed8936)};
-  --color-orange-600: #{hex_rgb(#dd6b20)};
-  --color-orange-700: #{hex_rgb(#c05621)};
-  --color-orange-800: #{hex_rgb(#9c4221)};
-  --color-orange-900: #{hex_rgb(#7b341e)};
-
-  /* Yellow */
-  --color-yellow-100: #{hex_rgb(#fffff0)};
-  --color-yellow-200: #{hex_rgb(#fefcbf)};
-  --color-yellow-300: #{hex_rgb(#faf089)};
-  --color-yellow-400: #{hex_rgb(#f6e05e)};
-  --color-yellow-500: #{hex_rgb(#ecc94b)};
-  --color-yellow-600: #{hex_rgb(#d69e2e)};
-  --color-yellow-700: #{hex_rgb(#b7791f)};
-  --color-yellow-800: #{hex_rgb(#975a16)};
-  --color-yellow-900: #{hex_rgb(#744210)};
-
   /* Green */
   --color-green-100: #{hex_rgb(#f0fff4)};
   --color-green-200: #{hex_rgb(#c6f6d5)};
@@ -80,17 +59,6 @@
   --color-green-800: #{hex_rgb(#276749)};
   --color-green-900: #{hex_rgb(#22543d)};
 
-  /* Teal */
-  --color-teal-100: #{hex_rgb(#e6fffa)};
-  --color-teal-200: #{hex_rgb(#b2f5ea)};
-  --color-teal-300: #{hex_rgb(#81e6d9)};
-  --color-teal-400: #{hex_rgb(#4fd1c5)};
-  --color-teal-500: #{hex_rgb(#38b2ac)};
-  --color-teal-600: #{hex_rgb(#319795)};
-  --color-teal-700: #{hex_rgb(#2c7a7b)};
-  --color-teal-800: #{hex_rgb(#285e61)};
-  --color-teal-900: #{hex_rgb(#234e52)};
-
   /* Blue */
   --color-blue-100: #{hex_rgb(#ebf8ff)};
   --color-blue-200: #{hex_rgb(#bee3f8)};
@@ -101,37 +69,4 @@
   --color-blue-700: #{hex_rgb(#2b6cb0)};
   --color-blue-800: #{hex_rgb(#2c5282)};
   --color-blue-900: #{hex_rgb(#2a4365)};
-
-  /* Indigo */
-  --color-indigo-100: #{hex_rgb(#ebf4ff)};
-  --color-indigo-200: #{hex_rgb(#c3dafe)};
-  --color-indigo-300: #{hex_rgb(#a3bffa)};
-  --color-indigo-400: #{hex_rgb(#7f9cf5)};
-  --color-indigo-500: #{hex_rgb(#667eea)};
-  --color-indigo-600: #{hex_rgb(#5a67d8)};
-  --color-indigo-700: #{hex_rgb(#4c51bf)};
-  --color-indigo-800: #{hex_rgb(#434190)};
-  --color-indigo-900: #{hex_rgb(#3c366b)};
-
-  /* Purple */
-  --color-purple-100: #{hex_rgb(#faf5ff)};
-  --color-purple-200: #{hex_rgb(#e9d8fd)};
-  --color-purple-300: #{hex_rgb(#d6bcfa)};
-  --color-purple-400: #{hex_rgb(#b794f4)};
-  --color-purple-500: #{hex_rgb(#9f7aea)};
-  --color-purple-600: #{hex_rgb(#805ad5)};
-  --color-purple-700: #{hex_rgb(#6b46c1)};
-  --color-purple-800: #{hex_rgb(#553c9a)};
-  --color-purple-900: #{hex_rgb(#44337a)};
-
-  /* Pink */
-  --color-pink-100: #{hex_rgb(#fff5f7)};
-  --color-pink-200: #{hex_rgb(#fed7e2)};
-  --color-pink-300: #{hex_rgb(#fbb6ce)};
-  --color-pink-400: #{hex_rgb(#f687b3)};
-  --color-pink-500: #{hex_rgb(#ed64a6)};
-  --color-pink-600: #{hex_rgb(#d53f8c)};
-  --color-pink-700: #{hex_rgb(#b83280)};
-  --color-pink-800: #{hex_rgb(#97266d)};
-  --color-pink-900: #{hex_rgb(#702459)};
 }

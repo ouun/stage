@@ -2,7 +2,9 @@
 
 namespace Stage\Customizer;
 
+use Kirki\Compatibility\Kirki;
 use Stage\Customizer\Panels\ArchivesPanel;
+use Stage\Customizer\Panels\ColorsPanel;
 use Stage\Customizer\Panels\FooterPanel;
 use Stage\Customizer\Panels\GlobalPanel;
 use Stage\Customizer\Panels\HeaderPanel;
@@ -10,6 +12,7 @@ use Stage\Customizer\Panels\SettingsPanel;
 use Stage\Customizer\Panels\WebsitePanel;
 use Stage\Customizer\Panels\WebsiteFeatures;
 use Roots\Acorn\ServiceProvider;
+use Stage\View\Composers\Partials\Archive;
 use WP_Customize_Manager;
 
 use function Stage\stage_get_default;
@@ -27,7 +30,7 @@ class Customizer extends ServiceProvider
         add_filter('kirki_use_local_fonts', '__return_true');
 
         // Do not inline CSS, build with action
-        add_filter('kirki_output_inline_styles', '__return_false');
+        add_filter('kirki_output_inline_styles', '__return_true');
 
         // Fix Kirki URL handling for local development, if in symlink folder
         add_filter(
@@ -90,13 +93,13 @@ class Customizer extends ServiceProvider
             'after_setup_theme',
             function () {
                 $modules = array(
-                    'core'               => '\Kirki\Compatibility\Kirki',
+                    // 'core'               => '\Kirki\Compatibility\Kirki',
                     'postMessage'        => '\Kirki\Module\Postmessage',
                     'css'                => '\Kirki\Module\CSS',
                     'selective-refresh'  => '\Kirki\Module\Selective_Refresh',
-                    'field-dependencies' => '\Kirki\Module\Field_Dependencies',
+                    // 'field-dependencies' => '\Kirki\Module\Field_Dependencies',
                     'webfonts'           => '\Kirki\Module\Webfonts',
-                    'tooltips'           => '\Kirki\Module\Tooltips',
+                    // 'tooltips'           => '\Kirki\Module\Tooltips',
                     'sync'               => '\Kirki\Module\Sync',
                     'font-uploads'       => '\Kirki\Module\FontUploads',
                 );
@@ -159,9 +162,21 @@ class Customizer extends ServiceProvider
         add_action(
             'after_setup_theme',
             function () {
+
+                /**
+                 * Set default config is none is defined for field
+                 */
+                self::addConfig('stage', [
+                    'capability'        => 'edit_theme_options',
+                    'option_type'       => 'theme_mod',
+                    'gutenberg_support' => true,
+                    'disable_output'    => false,
+                ]);
+
                 new WebsitePanel(); // HIDES AND MOVES CONTROLS!
-                new WebsiteFeatures(); // HIDES AND MOVES CONTROLS!
                 new SettingsPanel();
+                new WebsiteFeatures();
+                new ColorsPanel();
                 new GlobalPanel();
                 new HeaderPanel();
                 new ArchivesPanel();
@@ -186,6 +201,11 @@ class Customizer extends ServiceProvider
                     null,
                     true
                 );
+
+                // Collect data for 'stage' JS object via 'stage_localize_script' filter
+                wp_localize_script('stage/customize-controls.js', 'stage', [
+                    'archives' => Archive::registeredArchives(),
+                ]);
             }
         );
 
@@ -223,5 +243,84 @@ class Customizer extends ServiceProvider
             },
             20
         );
+    }
+
+
+    /**
+     * Proxy function for Kirki Config.
+     *
+     * @static
+     * @access public
+     * @since 1.0
+     * @param string $id   The config ID.
+     * @param array  $args The config arguments.
+     * @return void
+     */
+    public static function addConfig($id, $args = [])
+    {
+
+        $args = wp_parse_args($args, [
+            'capability'        => 'edit_theme_options',
+            'option_type'       => 'theme_mod',
+            'gutenberg_support' => true,
+            'disable_output'    => false,
+        ]);
+
+        Kirki::add_config($id, apply_filters('stage_customizer_config_args', $args));
+    }
+
+
+    /**
+     * Proxy function for Kirki Panel.
+     *
+     * @static
+     * @access public
+     * @since 1.0
+     * @param string $id   The section ID.
+     * @param array  $args The field arguments.
+     * @return void
+     */
+    public static function addPanel($id, $args)
+    {
+        Kirki::add_panel($id, apply_filters('stage_customizer_panel_args', $args));
+    }
+
+
+    /**
+     * Proxy function for Kirki Section.
+     *
+     * @static
+     * @access public
+     * @since 1.0
+     * @param string $id   The section ID.
+     * @param array  $args The field arguments.
+     * @return void
+     */
+    public static function addSection($id, $args)
+    {
+        Kirki::add_section($id, apply_filters('stage_customizer_section_args', $args));
+    }
+
+
+    /**
+     * Proxy function for Kirki Field.
+     *
+     * @static
+     * @access public
+     * @param string|array $config
+     * @param array $args The field arguments.
+     * @return void
+     * @since 1.0
+     */
+    public static function addField($config, $args = [])
+    {
+
+        // Use global config if none defined
+        if (is_array($config)) {
+            $args = $config;
+            $config = 'stage';
+        }
+
+        Kirki::add_field($config, apply_filters('stage_customizer_field_args', $args));
     }
 }

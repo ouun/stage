@@ -70,7 +70,7 @@ module.exports = {
     |
     | By default these colors are automatically shared by the textColor, borderColor,
     | and backgroundColor utilities, so the above configuration would generate
-    | classes like .text-indigo, .border-blue, and .bg-red.
+    | classes like .text-green-100, .border-blue-300, and .bg-red-500.
     |
     */
 
@@ -79,7 +79,6 @@ module.exports = {
       'transparent': 'transparent',
 
       'body':       'var(--color-body)',
-      'accent':     'var(--color-accent)',
 
       'link':       'var(--color-link)',
       'hover':       'var(--color-primary)',
@@ -115,18 +114,6 @@ module.exports = {
         700: 'var(--color-red-700)',
         800: 'var(--color-red-800)',
         900: 'var(--color-red-900)',
-      },
-
-      'orange': {
-        100: 'var(--color-orange-100)',
-        200: 'var(--color-orange-200)',
-        300: 'var(--color-orange-300)',
-        400: 'var(--color-orange-400)',
-        500: 'var(--color-orange-500)',
-        600: 'var(--color-orange-600)',
-        700: 'var(--color-orange-700)',
-        800: 'var(--color-orange-800)',
-        900: 'var(--color-orange-900)',
       },
 
       'green': {
@@ -686,6 +673,27 @@ module.exports = {
       '3/4': [3, 4],
       '4/3': [4, 3],
       '21/9': [21, 9],
+    },
+
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Flex Grow                            https://tailwindcss.com/docs/flex-grow/
+    |-----------------------------------------------------------------------------
+    |
+    | Class name: .flex-grow-{size}
+    |
+    */
+
+
+    flexGrow: {
+      '0': 0,
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+      '5': 5,
+      default: 1,
     },
   },
 

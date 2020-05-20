@@ -2,10 +2,11 @@
 
 namespace Stage\Customizer\Panels;
 
-use Kirki\Compatibility\Kirki;
+use Stage\Customizer\Customizer;
+use WPLemon\Field\WCAGLinkColor;
+use WPLemon\Field\WCAGTextColor;
 
 use function Stage\stage_get_default;
-use function Stage\stage_get_fallback;
 
 class GlobalPanel
 {
@@ -20,27 +21,18 @@ class GlobalPanel
         /**
          * Set up config for panel
          */
-        Kirki::add_config(
-            self::$config,
-            array(
-                'capability'        => 'edit_theme_options',
-                'option_type'       => 'theme_mod',
-                'gutenberg_support' => true,
-                'disable_output'    => false,
-            )
+        Customizer::addConfig(
+            self::$config
         );
 
         /**
          * Set up the panel
          */
-        Kirki::add_panel(
-            self::$panel,
-            array(
-                'priority'    => 10,
-                'title'       => esc_html__('Global Settings', 'stage'),
-                'description' => esc_html__('Various settings for your website.', 'stage'),
-            )
-        );
+        Customizer::addPanel(self::$panel, array(
+            'priority'    => 10,
+            'title'       => esc_html__('Global Settings', 'stage'),
+            'description' => esc_html__('Various settings for your website.', 'stage'),
+        ));
 
         /**
          * Init sections with fields
@@ -56,29 +48,17 @@ class GlobalPanel
         // Set section & settings ID
         $section = self::$panel . '_website';
 
-        // Remove the default WP fields early and set them back again
-        add_action(
-            'customize_register',
-            function (\WP_Customize_Manager $wp_customize) {
-                $wp_customize->remove_control('blogname');
-                $wp_customize->remove_control('blogdescription');
-                $wp_customize->remove_control('display_header_text');
-            },
-            5
-        );
+        Customizer::addSection($section, array(
+            'title'      => esc_html__('Website Information', 'stage'),
+            'capability' => 'edit_theme_options',
+            'priority'   => 10,
+            'panel'      => self::$panel,
+        ));
 
-        Kirki::add_section(
-            $section,
-            array(
-                'title'      => esc_html__('Website Information', 'stage'),
-                'capability' => 'edit_theme_options',
-                'priority'   => 10,
-                'panel'      => self::$panel,
-            )
-        );
-
-        Kirki::add_field(
-            self::$config,
+        /**
+         * Site Name
+         */
+        Customizer::addField(
             array(
                 'type'            => 'text',
                 'option_type'     => 'option',
@@ -90,18 +70,21 @@ class GlobalPanel
                 'priority'        => 10,
                 'transport'       => 'auto',
                 'partial_refresh' => array(
-                    'global_website_name' => array(
+                    'site_blogname' => array(
                         'selector'        => '.site_brand--name',
+                        'settings'            => 'blogname',
                         'render_callback' => function () {
                             return get_bloginfo('name', 'display');
                         },
-                    ),
-                ),
+                    )
+                )
             )
         );
 
-        Kirki::add_field(
-            self::$config,
+        /**
+         * Site Description
+         */
+        Customizer::addField(
             array(
                 'type'            => 'text',
                 'option_type'     => 'option',
@@ -115,11 +98,12 @@ class GlobalPanel
                 'partial_refresh' => array(
                     'blogdescription' => array(
                         'selector'        => '.site_brand--tagline',
+                        'settings'        => 'blogdescription',
                         'render_callback' => function () {
                             return get_bloginfo('description', 'display');
                         },
-                    ),
-                ),
+                    )
+                )
             )
         );
     }
@@ -130,17 +114,14 @@ class GlobalPanel
         $section = self::$panel . '_branding';
 
         /**
-         * Add Section and fields for Typography
+         * Add Section and fields for Branding
          */
-        Kirki::add_section(
-            $section,
-            array(
-                'title'      => esc_html__('Logos & Branding', 'stage'),
-                'capability' => 'edit_theme_options',
-                'priority'   => 20,
-                'panel'      => self::$panel,
-            )
-        );
+        Customizer::addSection($section, array(
+            'title'      => esc_html__('Logos & Branding', 'stage'),
+            'capability' => 'edit_theme_options',
+            'priority'   => 20,
+            'panel'      => self::$panel,
+        ));
 
         /**
          * Move WP native fields to Branding
@@ -173,21 +154,17 @@ class GlobalPanel
         /**
          * Add Section and fields for Typography
          */
-        Kirki::add_section(
-            $section,
-            array(
-                'title'       => esc_html__('Typography', 'stage'),
-                'description' => esc_html__('Set typo settings for your website', 'stage'),
-                'priority'    => 40,
-                'panel'       => self::$panel,
-            )
-        );
+        Customizer::addSection($section, array(
+            'title'       => esc_html__('Typography', 'stage'),
+            'description' => esc_html__('Set typo settings for your website', 'stage'),
+            'priority'    => 40,
+            'panel'       => self::$panel,
+        ));
 
         /**
          * Copy
          */
-        Kirki::add_field(
-            self::$config,
+        Customizer::addField(
             array(
                 'type'      => 'typography',
                 'label'     => esc_html__('Copy Font', 'stage'),
@@ -225,8 +202,7 @@ class GlobalPanel
         /**
          * Heading
          */
-        Kirki::add_field(
-            self::$config,
+        Customizer::addField(
             array(
                 'type'      => 'typography',
                 'label'     => esc_html__('Headlines Font', 'stage'),
@@ -269,23 +245,19 @@ class GlobalPanel
         $default_key = 'global.colors.';
 
         /**
-         * Add Section and fields for Typography
+         * Add Section and fields for Colors
          */
-        Kirki::add_section(
-            $section,
-            array(
-                'title'       => esc_html__('Colors', 'stage'),
-                'description' => esc_html__('Set color settings for your website', 'stage'),
-                'priority'    => 60,
-                'panel'       => self::$panel,
-            )
-        );
+        Customizer::addSection($section, array(
+            'title'       => esc_html__('Colors', 'stage'),
+            'description' => esc_html__('Set color settings for your website', 'stage'),
+            'priority'    => 60,
+            'panel'       => self::$panel,
+        ));
 
         /**
          * Main colors
          */
-        Kirki::add_field(
-            self::$config,
+        Customizer::addField(
             array(
                 'type'      => 'multicolor',
                 'label'     => esc_html__('Main Colors', 'stage'),
@@ -294,7 +266,7 @@ class GlobalPanel
                 'priority'  => 10,
                 'choices'   => array(
                     'copy'      => esc_html__('Default Text Color', 'stage'),
-                    'heading'      => esc_html__('Default Heading Color', 'stage'),
+                    'heading'   => esc_html__('Default Heading Color', 'stage'),
                     'primary'   => esc_html__('Primary Color', 'stage'),
                     'secondary' => esc_html__('Secondary Color', 'stage'),
                     'body'      => esc_html__('Default Background Color', 'stage'),
@@ -358,10 +330,9 @@ class GlobalPanel
         );
 
         /**
-         * Link colors
+         * Link Colors
          */
-        Kirki::add_field(
-            self::$config,
+        Customizer::addField(
             array(
                 'type'        => 'multicolor',
                 'label'       => esc_html__('Link Colors', 'stage'),
@@ -377,7 +348,12 @@ class GlobalPanel
                     'hover' => '',
                 ),
                 'input_attrs' => array(
-                    'data-sync-master' => 'global_colors_main[primary]', // add 'data-mode' attribute to input element
+                    'link'         => array(
+                        'data-sync-master' => 'global_colors_main[copy]',
+                    ),
+                    'hover'       => array(
+                        'data-sync-master' => 'global_colors_main[primary]',
+                    ),
                 ),
                 'transport'   => 'auto',
                 'output'      => array(

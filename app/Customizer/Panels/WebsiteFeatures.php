@@ -2,11 +2,12 @@
 
 namespace Stage\Customizer\Panels;
 
+use Kirki\Compatibility\Field;
+use Kirki\Control\Checkbox_Switch;
 use Kirki\Panel;
 use Kirki\Section;
-use Kirki\Control\Checkbox_Switch;
+use WP_Customize_Manager;
 
-use function Stage\stage_bool_to_string;
 use function Stage\stage_get_fallback;
 
 class WebsiteFeatures
@@ -14,26 +15,9 @@ class WebsiteFeatures
 
     // Set panel ID
     private static $panel  = 'features';
-    private static $config = 'features_conf';
 
     public function __construct()
     {
-
-        /**
-         * Set up config for panel
-         */
-        /*
-        Kirki::add_config(
-            self::$config,
-            array(
-                'capability'        => 'edit_theme_options',
-                'option_type'       => 'option',
-                'option_name'       => 'stage_options',
-                'gutenberg_support' => false,
-                'disable_output'    => false,
-            )
-        );
-        */
 
         /**
          * Set up the panel
@@ -119,7 +103,6 @@ class WebsiteFeatures
 
         new Section($section, array(
             'title'      => esc_html__('Galleries', 'stage'),
-            'capability' => 'edit_theme_options',
             'priority'   => 10,
             'panel'      => self::$panel,
         ));
@@ -139,28 +122,34 @@ class WebsiteFeatures
     public function addFeatureActivationToggle($section)
     {
 
-        /**
-         * Add Customizer settings & controls.
-         *
-         * @param \WP_Customize_Manager $wp_customize The WP_Customize_Manager object.
-         * @return void
-         */
-        add_action('customize_register', function ($wp_customize) use ($section) {
-            // Add setting.
-            $wp_customize->add_setting("stage[$section.activate]", [
-                'type'              => 'option',
-                'capability'        => 'edit_theme_options',
-                'default'           => stage_get_fallback($section . '.activate'),
-                'transport'         => 'refresh', // Or postMessage.
-                'sanitize_callback'    => 'Stage\stage_bool_to_string',
-                'sanitize_js_callback' => 'Stage\stage_string_to_bool',
-            ]);
+        add_action(
+            'customize_register',
+            function (WP_Customize_Manager $wp_customize) use ($section) {
+                $wp_customize->add_setting(
+                    "stage[$section.activate]",
+                    array(
+                        'type'              => 'option',
+                        'capability'        => 'edit_theme_options',
+                        'default'           => stage_get_fallback($section . '.activate'),
+                        'sanitize_callback'    => 'Stage\stage_bool_to_string',
+                        'sanitize_js_callback' => 'Stage\stage_string_to_bool',
+                    )
+                );
 
-            // Add control.
-            $wp_customize->add_control(new Checkbox_Switch($wp_customize, "stage[$section.activate]", [
-                'label' => esc_html__('Activate', 'stage'),
-                'section' => $section,
-            ]));
-        });
+                // Add control.
+                $wp_customize->add_control(new Checkbox_Switch(
+                    $wp_customize,
+                    "stage[$section.activate]",
+                    [
+                        'section'   => $section,
+                        'priority'          => -999,
+                        'choices'           => [
+                            'yes' => esc_html__('Deactivate Feature', 'stage'),
+                            'no'  => esc_html__('Activate Feature', 'stage'),
+                        ],
+                    ]
+                ));
+            }
+        );
     }
 }
