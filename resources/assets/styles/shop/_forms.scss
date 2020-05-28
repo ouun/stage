@@ -1,5 +1,5 @@
 @import "../mixins/mask-icon";
-@import "../mixins/inputs";
+@import "../components/inputs";
 
 /**
  *  WooCommerce Forms
@@ -8,7 +8,7 @@
   @apply w-auto mb-4;
 
   label {
-    @include label_style();
+    @extend %label;
 
     @apply my-2;
   }
@@ -19,12 +19,11 @@
 
   &.woocommerce-invalid {
     input.input-text {
-      @apply border-red-500 bg-red-100;
-      // box-shadow: inset 2px 0 0 var(--color-red-500);
+      @apply border-red bg-red-light;
     }
 
     input.input-checkbox + span::before {
-      border: 2px solid var(--color-red-500) !important;
+      border: 2px solid var(--color-red) !important;
     }
 
     .select2-selection {
@@ -35,7 +34,7 @@
 
   &.woocommerce-validated {
     input.input-text:not(input[type="password"]) {
-      @apply border-green-500 bg-green-100;
+      @apply border-green bg-green-light;
       // box-shadow: inset 2px 0 0 var(--color-green-500);
     }
   }
@@ -46,19 +45,19 @@
     transition: color 0.2s;
 
     &.short {
-      @apply text-red-500;
+      @apply text-red;
     }
 
     &.bad {
-      @apply text-red-500;
+      @apply text-red;
     }
 
     &.good {
-      @apply text-green-300;
+      @apply text-green-light;
     }
 
     &.strong {
-      @apply text-green-500;
+      @apply text-green;
     }
   }
 }

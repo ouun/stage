@@ -1,0 +1,13 @@
+/**
+ * Sizes to register, currently no Customizer support.
+ * Must reflect tailwind.js
+ * @see https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries
+ */
+
+$screens: (
+  'sm':  theme('screens.sm'),
+  'md':  theme('screens.md'),
+  'lg':  theme('screens.lg'),
+  'xl':  theme('screens.xl'),
+  'xxl': theme('screens.xxl'),
+);

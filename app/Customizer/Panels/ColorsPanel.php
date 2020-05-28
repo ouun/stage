@@ -243,7 +243,8 @@ class ColorsPanel
          */
         foreach (Settings::getDefault('global.colors.palettes') as $palette => $shades) {
             foreach ($shades as $shade => $color) {
-                $key = $palette . '-' . $shade;
+                $key = $palette;
+                $key .= $shade !== 'default' ? '-' . $shade : '';
 
                 new ReactColor(
                     [
@@ -252,9 +253,9 @@ class ColorsPanel
                         'settings'     => $section . '_colors_' . $palette . '[' . $shade . ']',
                         'section'      => $section . '_colors',
                         'choices'      => array(
-                            'formComponent' => 'TwitterPicker',
+                            'formComponent' => 'ChromePicker',
                         ),
-                        'default' => $color,
+                        'default' => stage_get_default("global.colors.palettes.$palette.$shade"),
                         'input_attrs' => $section != 'global' ? [
                             'data-sync-master' => 'global_colors_' . $palette . '[' . $shade . ']',
                         ] : [],

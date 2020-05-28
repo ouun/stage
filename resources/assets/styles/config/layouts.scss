@@ -1,0 +1,13 @@
+/**
+ * Sizes to register, currently no Customizer support.
+ * Must reflect tailwind.js
+ * @see https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries
+ */
+
+$layout-widths: (
+  'sm':  calc(theme('screens.sm') - 10%),
+  'md':  calc(theme('screens.md') - 10%),
+  'lg':  calc(theme('screens.lg') - 20%),
+  'xl':  calc(theme('screens.xl') - 35%),
+  'xxl': calc(theme('screens.xxl') - 35%),
+);

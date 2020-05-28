@@ -1,4 +1,4 @@
-@import "../mixins/inputs";
+@import "inputs";
 
 .animated-accordion__panel {
   @apply block overflow-hidden visible max-h-5xl opacity-100 m-0 p-0;
@@ -22,7 +22,7 @@
   }
 
   .js-accordion__header {
-    @include label_style();
+    @extend %label;
 
     @apply px-4 py-3 m-0 bg-transparent w-full flex items-center justify-between text-left font-sans border-0 border-t border-gray-300 outline-none;
 

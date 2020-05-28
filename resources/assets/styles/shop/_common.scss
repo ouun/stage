@@ -14,7 +14,7 @@
 // Demo store notice
 .demo_store,
 .woocommerce-store-notice {
-  @apply fixed left-0 right-0 bottom-0 w-full px-block-spacing py-3 text-white bg-red-400 z-40 hidden;
+  @apply fixed left-0 right-0 bottom-0 w-full px-block-spacing py-3 text-white bg-red z-40 hidden;
 
   a {
     @apply text-white underline float-right;

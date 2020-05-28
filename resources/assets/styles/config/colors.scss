@@ -4,12 +4,48 @@
  */
 
 $colors: (
-  "copy":       var(--color-copy),
-  "heading":    var(--color-heading),
-  "primary":    var(--color-primary),
-  "secondary":  var(--color-secondary),
-  "gray-200":   var(--color-gray-200),
-  "gray-800":   var(--color-gray-800),
-  "white":      var(--color-white),
-  "black":      var(--color-black),
+  /* Black & White */
+  "black": rgb(0, 0, 0),
+  "white": rgb(255, 255, 255),
+
+  /* Background */
+  "body": #f9f9f9,
+
+  /* Text colors */
+  "copy": #333,
+  "heading": #333,
+
+  /* Link colors */
+  "link": var(--color-copy),
+  "hover": var(--color-blue-dark),
+
+  /* Brand Colors */
+  "primary": var(--color-blue-dark),
+  "secondary": #dd6b20,
+
+  /* Red */
+  "red-light":  #feb2b2,
+  "red":        #f56565,
+  "red-dark":   #c53030,
+
+  /* Green */
+  "green-light": #9ae6b4,
+  "green": #48bb78,
+  "green-dark": #2f855a,
+
+  /* Blue */
+  "blue-light": #90cdf4,
+  "blue": #4299e1,
+  "blue-dark": #2b6cb0,
+
+  /* Gray */
+  'gray-100': #f7fafc,
+  'gray-200': #edf2f7,
+  'gray-300': #e2e8f0,
+  'gray-400': #cbd5e0,
+  'gray-500': #a0aec0,
+  'gray-600': #718096,
+  'gray-700': #4a5568,
+  'gray-800': #2d3748,
+  'gray-900': #1a202c,
 );

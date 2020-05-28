@@ -3,7 +3,7 @@
 /* WP Blocks font sizes */
 @each $name, $size in $font-sizes {
   .has-#{$name}-font-size {
-    font-size: $size;
+    font-size: var(--font-size-#{$name});
   }
 }
 

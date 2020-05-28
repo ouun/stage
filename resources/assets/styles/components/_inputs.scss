@@ -1,8 +1,8 @@
-@mixin label_style() {
+%label {
   @apply block text-left uppercase tracking-wide text-xs text-gray-900 font-semibold;
 }
 
-@mixin input_style() {
+%input {
   @apply appearance-none block w-full bg-gray-200 border border-gray-200 py-3 px-4 mb-2 leading-tight transition duration-500;
 
   &:hover,
@@ -15,6 +15,6 @@
   }
 
   & + label {
-    @include label_style();
+    @extend %label;
   }
 }

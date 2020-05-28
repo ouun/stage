@@ -1,5 +1,5 @@
 /*
- * Container Style
+ * Container Base
  */
 @mixin container() {
   @apply w-full max-w-full mx-auto px-block-spacing;
@@ -28,72 +28,72 @@
 }
 
 /*
- * Adds style to wide aligned blocks
+ * Adds style to wide aligned content
  */
-@mixin blocks_align() {
+@mixin layout_align() {
   @apply px-block-spacing mx-auto;
 
   @screen sm {
-    max-width: var(--block-width-sm);
+    max-width: var(--layout-width-sm);
   }
 
   @screen md {
-    max-width: var(--block-width-md);
+    max-width: var(--layout-width-md);
   }
 
   @screen lg {
     @apply px-initial;
 
-    max-width: var(--block-width-lg);
+    max-width: var(--layout-width-lg);
   }
 
   @screen xl {
-    max-width: var(--block-width-xl);
+    max-width: var(--layout-width-xl);
   }
 
   @screen xxl {
-    max-width: var(--block-width-xxl);
+    max-width: var(--layout-width-xxl);
   }
 }
 
 /*
- * Adds style to wide aligned blocks
+ * Adds style to wide aligned content
  */
-@mixin blocks_align__wide() {
+@mixin layout_align__wide() {
   @apply mx-auto px-block-spacing;
 
   @screen sm {
-    // min-width: var(--block-width-sm);
-    max-width: calc(var(--block-width-sm) + 20%);
+    // min-width: var(--layout-width-sm);
+    max-width: calc(var(--layout-width-sm) + 20%);
   }
 
   @screen md {
-    // min-width: var(--block-width-md);
-    max-width: calc(var(--block-width-md) + 20%);
+    // min-width: var(--layout-width-md);
+    max-width: calc(var(--layout-width-md) + 20%);
   }
 
   @screen lg {
     @apply px-initial;
 
-    // min-width: var(--block-width-lg);
-    max-width: calc(var(--block-width-lg) - var(--gutter) + 20%);
+    // min-width: var(--layout-width-lg);
+    max-width: calc(var(--layout-width-lg) - var(--gutter) + 20%);
   }
 
   @screen xl {
-    // min-width: var(--block-width-xl);
-    max-width: calc(var(--block-width-xl) - var(--gutter) + 20%);
+    // min-width: var(--layout-width-xl);
+    max-width: calc(var(--layout-width-xl) - var(--gutter) + 20%);
   }
 
   @screen xxl {
-    // min-width: var(--block-width-xxl);
-    max-width: calc(var(--block-width-xxl) - var(--gutter) + 20%);
+    // min-width: var(--layout-width-xxl);
+    max-width: calc(var(--layout-width-xxl) - var(--gutter) + 20%);
   }
 }
 
 /*
- * Adds style to screen (full with gutter) aligned blocks
+ * Adds style to screen (full with gutter) aligned content
  */
-@mixin blocks_align__screen() {
+@mixin layout_align__screen() {
   @apply px-block-spacing mx-auto;
 
   @screen sm {

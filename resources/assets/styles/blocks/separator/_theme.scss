@@ -11,7 +11,7 @@
   clear: both;
 
   &.is-style-wide {
-    @include blocks_align__wide();
+    @include layout_align__wide();
 
     max-width: none;
   }

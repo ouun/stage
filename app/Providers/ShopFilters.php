@@ -140,7 +140,7 @@ class ShopFilters extends ServiceProvider
                         '',
                         $link_text
                     );
-                    $link_text .= '<span class="flex text-xs uppercase text-gray-500">' .
+                    $link_text .= '<span class="flex text-xs uppercase text-gray">' .
                                   wc_get_formatted_variation($product_data['variation'], false) .
                                   '</span>';
                 }

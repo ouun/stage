@@ -2,13 +2,13 @@
 
 @each $name, $color in $colors {
   .has-#{$name}-color {
-    color: $color !important;
+    color: var(--color-#{$name}) !important;
   }
 
   .has-#{$name}-background-color,
   .has-#{$name}-background-color::before {
-    background-color: $color !important;
-    border-color: $color !important;
+    background-color: var(--color-#{$name}) !important;
+    border-color: var(--color-#{$name}) !important;
   }
 }
 

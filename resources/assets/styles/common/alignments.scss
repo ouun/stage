@@ -9,18 +9,18 @@
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply w-full max-w-full mx-auto px-gutter;
 
-      @include blocks_align();
+      @include layout_align();
     }
   }
 
   &.alignwide,
   & > .alignwide {
-    @include blocks_align__wide();
+    @include layout_align__wide();
   }
 
   &.alignscreen,
   & > .alignscreen {
-    @include blocks_align__screen();
+    @include layout_align__screen();
 
     & > * {
       @apply mx-0;
@@ -32,7 +32,7 @@
     @include blocks_align__full();
 
     & > * {
-      @apply mx-0 w-full;
+      @apply w-full mx-0;
     }
   }
 }

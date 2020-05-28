@@ -11,8 +11,8 @@ Displays a single product content
 @endif
 
 <div id="product-{{ $id }}" class="{{ $product_class }} {{ $align }}">
-  <div class="product-header flex flex-wrap clearfix py-5">
-    <div class="w-full md:w-2/3 clearfix flex-initial relative pb-10">
+  <div class="product-header flex flex-wrap py-5">
+    <div class="w-full md:w-2/3 flex-initial relative pb-10">
       @action('woocommerce_before_single_product_summary')
     </div>
     <div class="w-full md:w-1/3 relative pb-10">

@@ -1,0 +1,18 @@
+/**
+ * Common Custom Components
+ * Usable with @apply
+ * todo: Extract to Tailwind CSS plugins
+ */
+
+/** !important usage: # {$important} */
+$important: !important;
+
+// Helper class to inherit colors from parent
+.colors-inherit {
+  @apply bg-inherit text-inherit border-inherit;
+}
+
+// Helper to add empty content to pseudo elements
+.content {
+  content: '';
+}

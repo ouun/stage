@@ -1,6 +1,5 @@
-@import "../mixins/clearfix";
 @import "../mixins/container";
-@import "../mixins/inputs";
+@import "inputs";
 
 #respond {
   @apply mt-6;
@@ -25,7 +24,7 @@
     }
 
     label {
-      @include label_style();
+      @extend %label;
 
       @apply mb-2;
     }
@@ -50,7 +49,7 @@
 #comments {
   @apply mt-12;
 
-  @include blocks_align();
+  @include layout_align();
 
   ol.commentlist {
     @apply mb-6 mt-6 pt-6 border-t border-gray-200;

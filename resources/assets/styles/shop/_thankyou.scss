@@ -1,22 +1,21 @@
 @import "../mixins/container";
-@import "../mixins/clearfix";
 @import "../mixins/mask-icon";
 
 body.woocommerce-checkout.woocommerce-order-received {
   .woocommerce-order {
     @apply flex flex-wrap mt-16;
 
-    @include blocks_align();
+    @include layout_align();
 
     h2 {
-      @apply text-xl mb-4;
+      @apply mb-4 text-xl;
     }
 
     .woocommerce-notice {
-      @apply flex-1 w-full text-center text-4xl uppercase font-serif mt-10;
+      @apply flex-1 w-full mt-10 font-serif text-4xl text-center uppercase;
 
       @screen md {
-        @apply w-2/3 p-8 my-0 justify-center self-center;
+        @apply self-center justify-center w-2/3 p-8 my-0;
       }
 
       &.woocommerce-notice--success {
@@ -24,7 +23,7 @@ body.woocommerce-checkout.woocommerce-order-received {
           content: '';
           transform: translateY(-50%);
 
-          @apply bg-green-500;
+          @apply bg-green;
 
           @include mask-icon(info, cover, center left);
         }
@@ -32,9 +31,7 @@ body.woocommerce-checkout.woocommerce-order-received {
     }
 
     ul.order_details {
-      @include clearfix;
-
-      @apply w-full relative mt-8 bg-gray-100 text-sm list-none;
+      @apply relative flow-root w-full mt-8 text-sm list-none bg-gray-100;
 
       @screen md {
         @apply w-1/3 mt-0;
@@ -42,7 +39,7 @@ body.woocommerce-checkout.woocommerce-order-received {
 
       &::before,
       &::after {
-        @apply absolute block w-full left-0;
+        @apply absolute left-0 block w-full;
 
         content: '';
         top: -16px;
@@ -68,7 +65,7 @@ body.woocommerce-checkout.woocommerce-order-received {
         }
 
         &:last-child {
-          @apply border-b-0 pb-4;
+          @apply pb-4 border-b-0;
         }
 
         strong {
@@ -78,7 +75,7 @@ body.woocommerce-checkout.woocommerce-order-received {
     }
 
     section {
-      @apply mt-10 text-sm w-full;
+      @apply w-full mt-10 text-sm;
 
       &.sw-myaccount__order__customer {
         &.row {
@@ -86,7 +83,7 @@ body.woocommerce-checkout.woocommerce-order-received {
         }
 
         & > .col {
-          @apply mb-8 w-full;
+          @apply w-full mb-8;
 
           @screen sm {
             @apply w-1/2;

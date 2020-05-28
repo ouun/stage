@@ -8,7 +8,7 @@
       </div>
     @endif
 
-    <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 menu-wrap">
+    <div class="flex flex-wrap items-center justify-between text-sm text-opacity-50 menu-wrap">
       @include( 'layouts.footer.copyright' )
       @include( 'layouts.footer.navigation' )
     </div>

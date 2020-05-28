@@ -1,18 +1,15 @@
 /**
- * This is loaded additionally to blocks.css
+ * This is loaded in editor additionally to blocks.css
  */
-
-/* Global variables */
-@import "variables/variables";
 @import "mixins/container";
 
 /* Main column width */
 .wp-block {
   @include container();
-  @include blocks_align();
+  @include layout_align();
 
   &[data-align="wide"] {
-    @include blocks_align__wide();
+    @include layout_align__wide();
 
     @apply px-0;
   }

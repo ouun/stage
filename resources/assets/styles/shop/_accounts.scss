@@ -1,23 +1,22 @@
 @import "../mixins/container";
-@import "../mixins/clearfix";
 
 .woocommerce-password-strength {
   @apply text-right text-sm font-semibold px-4 py-2;
 
   &.strong {
-    @apply text-green-500;
+    @apply text-green;
   }
 
   &.short {
-    @apply text-red-500;
+    @apply text-red;
   }
 
   &.bad {
-    @apply text-red-500;
+    @apply text-red;
   }
 
   &.good {
-    @apply text-blue-500;
+    @apply text-blue;
   }
 }
 

@@ -2,7 +2,7 @@
 
 /* appear: active state, define the transition */
 .fade-appear-active {
-  transition: opacity 450ms ease;
+  @apply transition-opacity duration-500;
 }
 
 /* appear: initial state */
@@ -37,10 +37,10 @@
 /* slide transition states */
 .slide-leave,
 .slide-enter-to {
-  transform: translateX(0);
+  @apply transform translate-x-0;
 }
 
 .slide-enter,
 .slide-leave-to {
-  transform: translateX(100%);
+  @apply transform translate-x-full;
 }

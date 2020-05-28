@@ -1,49 +1,23 @@
-@import "variables/variables";
-
-/**
- * Tailwind’s preflight styles are built on top of normalize.css and include
- * opinionated resets for a number of elements (notably headings and lists).
- *
- * @see https://tailwindcss.com/docs/preflight
- * @see https://tailwindcss.com/docs/adding-base-styles
- */
 @tailwind base;
 
 // PhotoSwipe CSS
 @import "~photoswipe/src/css/main";
 
 /**
- * Tailwind components. Define your own below or use/write a plugin.
- *
- * @see https://tailwindcss.com/docs/extracting-components
+ * Tailwind components
  */
 @tailwind components;
 
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
-// Mixins
-@import "mixins/important";
-@import "mixins/clearfix";
+// Custom Components
+@import "common/components";
 
 // Common
-@import "common/global";
+@import "common/base";
 @import "common/typo";
 @import "common/loader";
 @import "common/alignments";
+
+// Components
 @import "components/admin-bar";
 @import "components/animations";
 @import "components/accordion";
@@ -63,6 +37,8 @@
 @import "components/overlay";
 @import "components/widgets";
 @import "components/wp-classes";
+
+// Layout
 @import "header/header";
 @import "header/slide-out-menu";
 @import "header/menus/desktop-horizontal";
@@ -81,25 +57,6 @@
 @import "layouts/grids/masonry";
 
 /**
- * Tailwind utilities. Define your own below or use/write a plugin.
- *
- * @see https://tailwindcss.com/docs/adding-new-utilities
+ * Tailwind Utilities
  */
 @tailwind utilities;
-
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
-
-@import "components/custom-utilities";

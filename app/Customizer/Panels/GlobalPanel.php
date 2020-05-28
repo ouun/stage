@@ -242,7 +242,6 @@ class GlobalPanel
     {
         // Set section & settings ID
         $section     = self::$panel . '_colors';
-        $default_key = 'global.colors.';
 
         /**
          * Add Section and fields for Colors
@@ -254,129 +253,6 @@ class GlobalPanel
             'panel'       => self::$panel,
         ));
 
-        /**
-         * Main colors
-         */
-        Customizer::addField(
-            array(
-                'type'      => 'multicolor',
-                'label'     => esc_html__('Main Colors', 'stage'),
-                'settings'  => $section . '_main',
-                'section'   => $section,
-                'priority'  => 10,
-                'choices'   => array(
-                    'copy'      => esc_html__('Default Text Color', 'stage'),
-                    'heading'   => esc_html__('Default Heading Color', 'stage'),
-                    'primary'   => esc_html__('Primary Color', 'stage'),
-                    'secondary' => esc_html__('Secondary Color', 'stage'),
-                    'body'      => esc_html__('Default Background Color', 'stage'),
-                ),
-                'default'   => array(
-                    'copy'      => stage_get_default($default_key . 'main.copy'),
-                    'heading'   => stage_get_default($default_key . 'main.copy'),
-                    'primary'   => stage_get_default($default_key . 'main.primary'),
-                    'secondary' => stage_get_default($default_key . 'main.secondary'),
-                    'body'      => stage_get_default($default_key . 'main.body'),
-                ),
-                'transport' => 'auto',
-                'output'    => array(
-                    array(
-                        'choice'   => 'copy',
-                        'element'  => ':root',
-                        'property' => '--color-copy',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                    array(
-                        'choice'   => 'heading',
-                        'element'  => ':root',
-                        'property' => '--color-heading',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                    array(
-                        'choice'   => 'primary',
-                        'element'  => ':root',
-                        'property' => '--color-primary',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                    array(
-                        'choice'   => 'secondary',
-                        'element'  => ':root',
-                        'property' => '--color-secondary',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                    array(
-                        'choice'   => 'body',
-                        'element'  => ':root',
-                        'property' => '--color-body',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                ),
-            )
-        );
-
-        /**
-         * Link Colors
-         */
-        Customizer::addField(
-            array(
-                'type'        => 'multicolor',
-                'label'       => esc_html__('Link Colors', 'stage'),
-                'settings'    => $section . '_links',
-                'section'     => $section,
-                'priority'    => 20,
-                'choices'     => array(
-                    'link'  => esc_html__('Link Color', 'stage'),
-                    'hover' => esc_html__('Hover & Focus Color', 'stage'),
-                ),
-                'default'     => array(
-                    'link'  => '',
-                    'hover' => '',
-                ),
-                'input_attrs' => array(
-                    'link'         => array(
-                        'data-sync-master' => 'global_colors_main[copy]',
-                    ),
-                    'hover'       => array(
-                        'data-sync-master' => 'global_colors_main[primary]',
-                    ),
-                ),
-                'transport'   => 'auto',
-                'output'      => array(
-                    array(
-                        'choice'   => 'link',
-                        'element'  => ':root',
-                        'property' => '--color-link',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                    array(
-                        'choice'   => 'hover',
-                        'element'  => ':root',
-                        'property' => '--color-hover',
-                        'context'  => array(
-                            'editor',
-                            'front',
-                        ),
-                    ),
-                ),
-            )
-        );
+        // Fields are calculated from ColorsPanel.php
     }
 }

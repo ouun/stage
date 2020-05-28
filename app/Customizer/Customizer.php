@@ -176,11 +176,11 @@ class Customizer extends ServiceProvider
                 new WebsitePanel(); // HIDES AND MOVES CONTROLS!
                 new SettingsPanel();
                 new WebsiteFeatures();
-                new ColorsPanel();
                 new GlobalPanel();
                 new HeaderPanel();
                 new ArchivesPanel();
-                // new FooterPanel();
+                new FooterPanel();
+				new ColorsPanel();
             },
             100
         );

@@ -1,4 +1,4 @@
-@import "../mixins/inputs";
+@import "inputs";
 
 textarea,
 input[type="text"],
@@ -6,7 +6,7 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 input[type="password"] {
-  @include input_style();
+  @extend %input;
 }
 
 /* --------------------------------
@@ -20,8 +20,7 @@ fieldset {
 
   legend {
     @apply text-center px-4;
-
-    @include label_style();
+    @extend %label;
   }
 }
 
@@ -179,7 +178,7 @@ select {
   background: url('../icons/chevron-down.svg') no-repeat right 10px center;
   background-size: 20px;
 
-  @include input_style();
+  @extend %input;
 
   @apply pr-8;
 }

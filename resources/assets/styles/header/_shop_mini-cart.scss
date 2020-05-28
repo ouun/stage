@@ -1,10 +1,8 @@
-@import "../mixins/clearfix";
-
 .menu-cart-content {
-  @apply pt-0 pr-0 left-0 right-0 -mt-px;
+  @apply left-0 right-0 pt-0 pr-0 -mt-px;
 
   @screen sm {
-    @apply pr-0 left-auto right-auto mt-0;
+    @apply left-auto right-auto pr-0 mt-0;
   }
 
   .widget_shopping_cart {
@@ -22,25 +20,25 @@
       }
 
       .cart_list {
-        @apply -mr-8 pr-4 overflow-x-hidden overflow-y-scroll max-h-half-screen border-inherit;
+        @apply pr-4 -mr-8 overflow-x-hidden overflow-y-scroll max-h-half-screen border-inherit;
 
         .mini_cart_item {
-          @apply flow-root relative my-3 pb-3 border-b border-inherit;
+          @apply relative flow-root pb-3 my-3 border-b border-inherit;
 
           .remove_from_cart_button {
-            @apply absolute z-1 top-0 right-0;
+            @apply absolute top-0 right-0 z-1;
           }
 
           a:not(.remove_from_cart_button) {
-            @apply w-full float-left inline-block w-full overflow-auto p-0 pr-8 font-semibold truncate;
+            @apply inline-block float-left w-full p-0 pr-8 overflow-auto font-semibold truncate;
 
             img {
-              @apply w-1/4 float-left mr-3;
+              @apply float-left w-1/4 mr-3;
             }
           }
 
           .variation {
-            @apply mt-1 w-3/4 overflow-hidden;
+            @apply w-3/4 mt-1 overflow-hidden;
 
             &:last-of-type {
               @apply mb-2;
@@ -51,18 +49,18 @@
             @apply absolute text-gray-500 text-sm bottom-0 right-0 p-0 pb-3;
 
             span.amount {
-              @apply text-black pr-2;
+              @apply pr-2 text-black;
             }
           }
 
           &:last-of-type {
-            @apply border-b-0 mb-0;
+            @apply mb-0 border-b-0;
           }
         }
       }
 
       .woocommerce-mini-cart__total {
-        @apply flow-root py-3 mb-3 border-t border-b font-semibold border-inherit;
+        @apply flow-root py-3 mb-3 font-semibold border-t border-b border-inherit;
 
         & > strong {
           @apply float-left;
@@ -95,7 +93,7 @@
         @apply cursor-pointer;
 
         &:first-of-type {
-          @apply border-none pt-4;
+          @apply pt-4 border-none;
         }
 
         &.nav-item {

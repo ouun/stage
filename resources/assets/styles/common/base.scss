@@ -1,0 +1,37 @@
+@import "../config/colors";
+@import "../config/screens";
+@import "../config/layouts";
+@import "../config/font-sizes";
+
+/**
+ * CSS Base Variables
+ * Most are customizable via Customizer
+ */
+:root {
+  /* Checkbox & Radio input size */
+  --checkbox-radio-size: 20px;
+
+  /* Spacing between content */
+  --block-spacing: 1.5rem;
+  --gutter: 5vw;
+
+  /* Breakpoints */
+  @each $name, $size in $screens {
+    --screen-#{$name}: #{$size};
+  }
+
+  /* Layout Widths */
+  @each $screen, $width in $layout-widths {
+    --layout-width-#{$screen}: #{$width};
+  }
+
+  /* Font sizes */
+  @each $name, $size in $font-sizes {
+    --font-size-#{$name}: #{$size};
+  }
+
+  /* Colors */
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
