@@ -20,6 +20,7 @@ fieldset {
 
   legend {
     @apply text-center px-4;
+
     @extend %label;
   }
 }

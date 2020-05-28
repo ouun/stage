@@ -7,37 +7,29 @@ $colors: (
   /* Black & White */
   "black": rgb(0, 0, 0),
   "white": rgb(255, 255, 255),
-
   /* Background */
   "body": #f9f9f9,
-
   /* Text colors */
   "copy": #333,
   "heading": #333,
-
   /* Link colors */
   "link": var(--color-copy),
   "hover": var(--color-blue-dark),
-
   /* Brand Colors */
   "primary": var(--color-blue-dark),
   "secondary": #dd6b20,
-
   /* Red */
   "red-light":  #feb2b2,
   "red":        #f56565,
   "red-dark":   #c53030,
-
   /* Green */
   "green-light": #9ae6b4,
   "green": #48bb78,
   "green-dark": #2f855a,
-
   /* Blue */
   "blue-light": #90cdf4,
   "blue": #4299e1,
   "blue-dark": #2b6cb0,
-
   /* Gray */
   'gray-100': #f7fafc,
   'gray-200': #edf2f7,

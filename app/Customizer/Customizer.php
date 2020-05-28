@@ -180,7 +180,7 @@ class Customizer extends ServiceProvider
                 new HeaderPanel();
                 new ArchivesPanel();
                 new FooterPanel();
-				new ColorsPanel();
+                new ColorsPanel();
             },
             100
         );
