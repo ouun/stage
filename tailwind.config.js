@@ -307,10 +307,10 @@ module.exports = {
       'base': 'var(--font-size-base)',      // 16px
       'lg':   'var(--font-size-lg)',        // 18px
       'xl':   'var(--font-size-xl)',        // 20px
-      '2xl':  'var(--font-size-2xl)',       // 24px
-      '3xl':  'var(--font-size-3xl)',       // 30px
-      '4xl':  'var(--font-size-4xl)',       // 36px
-      '5xl':  'var(--font-size-5xl)',       // 48px
+      '2xl':  'var(--font-size-2-xl)',       // 24px
+      '3xl':  'var(--font-size-3-xl)',       // 30px
+      '4xl':  'var(--font-size-4-xl)',       // 36px
+      '5xl':  'var(--font-size-5-xl)',       // 48px
     },
 
 

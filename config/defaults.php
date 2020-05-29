@@ -156,22 +156,22 @@ return array(
                     'name'  => __('Extra Large', 'stage'),
                     'px'    => '20',
                 ),
-                '2xl'  => array(
+                '2-xl'  => array(
                     'value' => 'var(--font-size-2xl)',
                     'name'  => __('XX Large', 'stage'),
                     'px'    => '24',
                 ),
-                '3xl'  => array(
+                '3-xl'  => array(
                     'value' => 'var(--font-size-3xl)',
                     'name'  => __('3X Large', 'stage'),
                     'px'    => '30',
                 ),
-                '4xl'  => array(
+                '4-xl'  => array(
                     'value' => 'var(--font-size-4xl)',
                     'name'  => __('4X Large', 'stage'),
                     'px'    => '36',
                 ),
-                '5xl'  => array(
+                '5-xl'  => array(
                     'value' => 'var(--font-size-5xl)',
                     'name'  => __('5X Large', 'stage'),
                     'px'    => '48',
