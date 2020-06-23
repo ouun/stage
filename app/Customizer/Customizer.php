@@ -142,7 +142,6 @@ class Customizer extends ServiceProvider
                     '\Kirki\Control\ReactColor',
                     '\Kirki\Control\Custom',
                     '\Kirki\Control\Generic',
-                    '\Kirki\Control\Image',
                     '\Kirki\Control\ReactSelect',
                 );
 

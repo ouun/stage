@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afd44c4e68bfa439da52824f368e95e4",
+    "content-hash": "b6e045eecf949a0ec0680b2c1c2d0974",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -99,7 +99,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -150,7 +150,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -194,16 +194,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "b6586e349d668c50b8fd3d1253067ca44785d1b0"
+                "reference": "cac29d85d3fb915b452cda046d4d74370dfe4a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/b6586e349d668c50b8fd3d1253067ca44785d1b0",
-                "reference": "b6586e349d668c50b8fd3d1253067ca44785d1b0",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/cac29d85d3fb915b452cda046d4d74370dfe4a0d",
+                "reference": "cac29d85d3fb915b452cda046d4d74370dfe4a0d",
                 "shasum": ""
             },
             "require": {
@@ -244,11 +244,11 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2020-06-02T22:33:52+00:00"
+            "time": "2020-06-19T13:41:58+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -295,7 +295,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -339,16 +339,16 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "723bcb4d31b84b6372cfa7007ef491497422cf24"
+                "reference": "14b21444c04c3052cffbd76e0862b23fdae5fc19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/723bcb4d31b84b6372cfa7007ef491497422cf24",
-                "reference": "723bcb4d31b84b6372cfa7007ef491497422cf24",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/14b21444c04c3052cffbd76e0862b23fdae5fc19",
+                "reference": "14b21444c04c3052cffbd76e0862b23fdae5fc19",
                 "shasum": ""
             },
             "require": {
@@ -380,11 +380,11 @@
             ],
             "description": "The Illuminate Events package.",
             "homepage": "https://laravel.com",
-            "time": "2020-06-16T14:30:08+00:00"
+            "time": "2020-06-18T15:37:01+00:00"
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -439,7 +439,7 @@
         },
         {
             "name": "illuminate/log",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
@@ -484,16 +484,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "dee189db0aff526393b350d3bfb33d0cc32861c3"
+                "reference": "47178a9214d6763daa2993a6896bc3181ee808c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/dee189db0aff526393b350d3bfb33d0cc32861c3",
-                "reference": "dee189db0aff526393b350d3bfb33d0cc32861c3",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/47178a9214d6763daa2993a6896bc3181ee808c4",
+                "reference": "47178a9214d6763daa2993a6896bc3181ee808c4",
                 "shasum": ""
             },
             "require": {
@@ -542,11 +542,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-06-11T14:29:51+00:00"
+            "time": "2020-06-22T18:50:10+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v7.16.1",
+            "version": "v7.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -683,7 +683,7 @@
         },
         {
             "name": "kirki-framework/control-checkbox",
-            "version": "dev-master",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-checkbox.git",
@@ -822,64 +822,17 @@
             "time": "2019-07-06T20:26:46+00:00"
         },
         {
-            "name": "kirki-framework/control-image",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kirki-framework/control-image.git",
-                "reference": "be2c2324f88a04b7aaf9c6cd958b59eeb26dbb0e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-image/zipball/be2c2324f88a04b7aaf9c6cd958b59eeb26dbb0e",
-                "reference": "be2c2324f88a04b7aaf9c6cd958b59eeb26dbb0e",
-                "shasum": ""
-            },
-            "require": {
-                "kirki-framework/control-base": "*",
-                "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Kirki\\Control\\": "src/Control",
-                    "Kirki\\Field\\": "src/Field"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Image control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
-            "keywords": [
-                "customizer",
-                "framework",
-                "wordpress"
-            ],
-            "time": "2019-07-06T20:27:15+00:00"
-        },
-        {
             "name": "kirki-framework/control-react-color",
-            "version": "dev-master",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-react-color.git",
-                "reference": "745b000c37eaddf73369932de68ee51c8dbbf8c9"
+                "reference": "13e85525ca81f94cf58121fe425f6c9a7f40db54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-color/zipball/745b000c37eaddf73369932de68ee51c8dbbf8c9",
-                "reference": "745b000c37eaddf73369932de68ee51c8dbbf8c9",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-color/zipball/13e85525ca81f94cf58121fe425f6c9a7f40db54",
+                "reference": "13e85525ca81f94cf58121fe425f6c9a7f40db54",
                 "shasum": ""
             },
             "require": {
@@ -914,13 +867,7 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/aristath",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-04-05T08:09:27+00:00"
+            "time": "2019-12-21T11:01:08+00:00"
         },
         {
             "name": "kirki-framework/control-react-select",
@@ -1062,7 +1009,7 @@
         },
         {
             "name": "kirki-framework/field-typography",
-            "version": "dev-master",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-typography.git",
@@ -1253,7 +1200,7 @@
         },
         {
             "name": "kirki-framework/module-field-dependencies",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-field-dependencies.git",
@@ -1343,7 +1290,7 @@
         },
         {
             "name": "kirki-framework/module-postmessage",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-postMessage.git",
@@ -1389,7 +1336,7 @@
         },
         {
             "name": "kirki-framework/module-sections",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-sections.git",
@@ -1434,7 +1381,7 @@
         },
         {
             "name": "kirki-framework/module-selective-refresh",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-selective-refresh.git",
@@ -1477,62 +1424,17 @@
             "time": "2019-09-28T07:48:05+00:00"
         },
         {
-            "name": "kirki-framework/module-tooltips",
+            "name": "kirki-framework/module-webfonts",
             "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kirki-framework/module-tooltips.git",
-                "reference": "9fc1430896b0bc0f2cddc402e36ac2d8725ad1e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-tooltips/zipball/9fc1430896b0bc0f2cddc402e36ac2d8725ad1e5",
-                "reference": "9fc1430896b0bc0f2cddc402e36ac2d8725ad1e5",
-                "shasum": ""
-            },
-            "require": {
-                "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Kirki\\Module\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Tooltips Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
-            "keywords": [
-                "customizer",
-                "framework",
-                "wordpress"
-            ],
-            "time": "2019-09-22T14:20:44+00:00"
-        },
-        {
-            "name": "kirki-framework/module-webfonts",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
                 "url": "https://github.com/kirki-framework/module-webfonts.git",
-                "reference": "9f2dac5397214ed932f82555970bfa33d96d210c"
+                "reference": "5fc5a286105c37f9f78c6462b71369d0d2e8f590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/9f2dac5397214ed932f82555970bfa33d96d210c",
-                "reference": "9f2dac5397214ed932f82555970bfa33d96d210c",
+                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/5fc5a286105c37f9f78c6462b71369d0d2e8f590",
+                "reference": "5fc5a286105c37f9f78c6462b71369d0d2e8f590",
                 "shasum": ""
             },
             "require": {
@@ -1564,7 +1466,7 @@
                 "framework",
                 "wordpress"
             ],
-            "time": "2020-04-20T14:49:24+00:00"
+            "time": "2019-11-11T17:41:38+00:00"
         },
         {
             "name": "kirki-framework/url-getter",
@@ -2089,7 +1991,7 @@
         },
         {
             "name": "ouun/kirki-module-fonts_upload",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ouun/kirki-module-fonts_upload.git",
@@ -2132,16 +2034,16 @@
         },
         {
             "name": "ouun/kirki-module-sync_controls",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ouun/kirki-framework-sync_controls.git",
-                "reference": "9c721d477813a60ac36ad4a20529833e029efba3"
+                "reference": "01d4f1c6204a990f51e36d6f17cf458e241b67ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ouun/kirki-framework-sync_controls/zipball/9c721d477813a60ac36ad4a20529833e029efba3",
-                "reference": "9c721d477813a60ac36ad4a20529833e029efba3",
+                "url": "https://api.github.com/repos/ouun/kirki-framework-sync_controls/zipball/01d4f1c6204a990f51e36d6f17cf458e241b67ab",
+                "reference": "01d4f1c6204a990f51e36d6f17cf458e241b67ab",
                 "shasum": ""
             },
             "require": {
@@ -2172,11 +2074,11 @@
                 "framework",
                 "wordpress"
             ],
-            "time": "2020-04-07T18:34:22+00:00"
+            "time": "2020-06-23T15:28:52+00:00"
         },
         {
             "name": "ouun/stage-laravel-tailwind-config",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ouun/stage-laravel-tailwind-config.git",
@@ -3878,22 +3780,10 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "kirki-framework/compatibility": 20,
-        "kirki-framework/control-checkbox": 20,
-        "kirki-framework/control-image": 20,
-        "kirki-framework/control-react-color": 20,
         "kirki-framework/field-multicolor": 20,
-        "kirki-framework/field-typography": 20,
         "kirki-framework/module-css": 20,
         "kirki-framework/module-editor-styles": 20,
-        "kirki-framework/module-field-dependencies": 20,
-        "kirki-framework/module-panels": 20,
-        "kirki-framework/module-postmessage": 20,
-        "kirki-framework/module-sections": 20,
-        "kirki-framework/module-selective-refresh": 20,
-        "kirki-framework/module-webfonts": 20,
-        "ouun/kirki-module-fonts_upload": 20,
-        "ouun/kirki-module-sync_controls": 20,
-        "ouun/stage-laravel-tailwind-config": 20
+        "kirki-framework/module-panels": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
