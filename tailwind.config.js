@@ -82,7 +82,7 @@ module.exports = {
       'body':       'var(--color-body)',
 
       'link':       'var(--color-link)',
-      'hover':       'var(--color-primary)',
+      'hover':      'var(--color-hover)',
 
       'copy':       'var(--color-copy)',
       'heading':    'var(--color-heading)',

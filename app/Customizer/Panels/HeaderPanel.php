@@ -9,6 +9,7 @@ use Kirki\Compatibility\Kirki;
 use Kirki\Control\ReactSelect;
 use Kirki\Panel;
 use Kirki\Section;
+use Stage\Customizer\Customizer;
 use WP_Customize_Manager;
 
 use function Stage\stage_get_default;

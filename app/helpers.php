@@ -10,7 +10,6 @@
 namespace Stage;
 
 use Stage\Customizer\Settings;
-use Stage\Providers\TailwindServiceProvider;
 use Throwable;
 
 use function Roots\view;

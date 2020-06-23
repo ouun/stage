@@ -5,7 +5,7 @@
  * {@link https://codex.wordpress.org/Theme_Customization_API}
  * {@link https://developer.wordpress.org/themes/customize-api/the-customizer-javascript-api/#preview-js-and-controls-js}
  */
-( function ( $, api, stage ) {
+( function ( $, api, stage,  { __ } ) {
 
     api.bind('ready', function () {
 
@@ -58,6 +58,63 @@
             });
         });
 
+      /**
+       * Add Reset Button to Controls
+       */
+        api.control.each(function ( control ) {
+
+            let isSyncedControl = control.params.inputAttrs !== undefined && control.params.inputAttrs.toString().match(/data-sync-master="(.*?)"/);
+
+            if (control.params.type === 'kirki-react-color' || isSyncedControl) {
+                let controlLabel = control.params.label;
+                let controlDescription = control.params.description;
+
+                const append = '<span class="stage-reset-value hide"><span>' + __('Reset to default', 'stage') + '</span></span>';
+
+                // Support React- & Non-React controls
+                if ( $(control.selector + ' label').length ) {
+                  // Works for react field
+                    if ( controlLabel !== '' ) {
+                        $(control.selector + ' label').append(append);
+                    } else if ( controlDescription !== '' ) {
+                        control.params.description = controlDescription + append;
+                    }
+                } else {
+                  // Kirki Backwards compatibility
+                    if ( controlLabel !== '' ) {
+                        control.params.label = controlLabel + append;
+                    } else if ( controlDescription !== '' ) {
+                        control.params.description = controlDescription + append;
+                    }
+                }
+
+                // Add event listener
+                $(control.selector).on('click', '.stage-reset-value', function () {
+                    // Reset to master value if a slave
+                    // let defaultValue = !isSyncedControl ? control.params.default : wp.customize.control(control.params.masterID).setting.get();
+                    // control.setting.set(defaultValue);
+                    control.setting.set(control.params.default);
+                });
+
+                // On change
+                api(control.id, function ( value ) {
+                    value.bind(function ( newValue ) {
+                        showResetButton(control, newValue, isSyncedControl);
+                    });
+                });
+            }
+        });
+
+        function showResetButton( control, newValue, isSyncedControl )
+        {
+            let defaultValue = !isSyncedControl ? control.params.default : wp.customize.control(control.params.masterID).setting.get();
+
+            if ( defaultValue === newValue ) {
+                $(control.selector).find('.stage-reset-value').addClass('hide');
+            } else {
+                $(control.selector).find('.stage-reset-value').removeClass('hide');
+            }
+        }
     });
 
-} )(jQuery, wp.customize, window.stage);
+} )(jQuery, wp.customize, window.stage, wp.i18n);

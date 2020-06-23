@@ -1,5 +1,5 @@
 {{--
-  Template Name: Align Wide
+  Template Name: Wide Aligned
 --}}
 
 @extends('layouts.app')

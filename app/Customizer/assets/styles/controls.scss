@@ -2,3 +2,46 @@
 @import "controls/toggle";
 @import "controls/range";
 @import "controls/layout";
+
+/**
+ * Customize React Color Controls
+ */
+.customize-control-kirki-react-color {
+  .colorPickerContainer {
+    border-width: 0 !important;
+
+    & > summary > span:first-child {
+      height: 2em !important;
+      width: 2em !important;
+      border-radius: 100% !important;
+    }
+  }
+}
+
+.stage-reset-value {
+  position: relative;
+  float: right;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+
+  &.hide {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    text-indent: -9999px;
+    white-space: nowrap;
+    height: 5px;
+    width: 5px;
+    top: 50%;
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%225%22%20height%3D%225%22%20viewBox%3D%220%200%205%205%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23bbb%22%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20%2F%3E%0A%3C%2Fsvg%3E") 50% 50% no-repeat;
+  }
+
+  &:hover {
+    span {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%229%22%20height%3D%229%22%20viewBox%3D%220%200%209%209%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20stroke%3D%22%23444%22%20stroke-width%3D%221.1%22%20d%3D%22M8%2C8%20L1%2C1%22%20%2F%3E%0A%20%20%20%20%3Cpath%20stroke%3D%22%23444%22%20stroke-width%3D%221.1%22%20d%3D%22M8%2C1%20L1%2C8%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    }
+  }
+}
