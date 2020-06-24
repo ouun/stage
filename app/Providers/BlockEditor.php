@@ -51,17 +51,19 @@ class BlockEditor extends ServiceProvider
         foreach ($palettes as $palette) {
             $colors = stage_get_default($palette);
 
-            foreach ($colors as $id => $color) {
-                if (! is_array($color)) {
-                    $color = self::registerColor($id, $palette);
+            if (!empty($colors)) {
+                foreach ($colors as $id => $color) {
+                    if (!is_array($color)) {
+                        $color = self::registerColor($id, $palette);
 
-                    // Add color title if color is already registered
-                    if (isset($register[ $color['color'] ])) {
-                        $color['name'] = $register[ $color['color'] ]['name'] . ', ' . $color['name'];
+                        // Add color title if color is already registered
+                        if (isset($register[$color['color']])) {
+                            $color['name'] = $register[$color['color']]['name'] . ', ' . $color['name'];
+                        }
+
+                        // Overwrite existing colors
+                        $register[$color['color']] = $color;
                     }
-
-                    // Overwrite existing colors
-                    $register[ $color['color'] ] = $color;
                 }
             }
         }
