@@ -1,6 +1,7 @@
 @import "../mixins/container";
 
 .container,
+.wp-block-group,
 .blocks-container,
 .blocks-wrap,
 .content-wrap,
@@ -45,9 +46,15 @@
     &:not(.alignfull):not(.alignscreen):not(.alignwide) {
       @apply my-block-spacing;
 
-      &:first-child {
+      &:first-child,
+      &:first-of-type {
         @apply mt-0;
       }
+    }
+
+    &:first-child,
+    &:first-of-type {
+      @apply mt-0;
     }
   }
 }

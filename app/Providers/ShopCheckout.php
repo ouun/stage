@@ -13,6 +13,13 @@ class ShopCheckout extends ServiceProvider
      */
     public function boot()
     {
+        if (apply_filters('stage_features_activate_multi_step_checkout', false)) {
+            self::multiStepCheckout();
+        }
+    }
+
+    public static function multiStepCheckout()
+    {
         /**
          * Helper errors to validate step if no other error present
          */

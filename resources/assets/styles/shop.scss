@@ -6,10 +6,11 @@ $important: !important;
 
 // Add shop specific styles
 @import "shop/common";
+@import "shop/germanized";
 @import "shop/forms";
 @import "shop/buttons";
 @import "shop/notification";
-@import "header/shop_mini-cart";
+@import "shop/shop_mini-cart";
 @import "shop/archive/shop_loop";
 @import "shop/single_product";
 @import "shop/star-rating";

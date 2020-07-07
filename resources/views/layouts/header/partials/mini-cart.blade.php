@@ -4,6 +4,6 @@
 @endif
 
 {{-- Menu --}}
-<div class="mini-cart-submenu colors-inherit">
+<div class="mini-cart-submenu text-inherit border-inherit">
   {!! $mini_cart_default_menu !!}
 </div>

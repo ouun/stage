@@ -80,9 +80,9 @@ class MiniCart extends Composer
                 }
             }
 
-            $out .= '<ul class="colors-inherit">';
+            $out .= '<ul class="bg-inherit text-inherit border-inherit">';
             foreach ($items as $slug => $item) {
-                $out .= '<li class="nav-item px-2 py-2 border-t colors-inherit ' . $item['label'] . '">';
+                $out .= '<li class="nav-item px-2 py-2 border-t text-inherit border-inherit ' . $item['label'] . '">';
                 // $out .= get_svg_icon($item['icon']);
                 $out .= '<a href="' . $item['link'] . '">' . $item['label'] . '</a>';
                 $out .= '</li>';

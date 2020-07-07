@@ -2,6 +2,6 @@
   @apply w-full mb-5;
 
   .wc-forward {
-    @apply colors-inherit order-last ml-auto;
+    @apply bg-inherit text-inherit border-inherit order-last ml-auto;
   }
 }

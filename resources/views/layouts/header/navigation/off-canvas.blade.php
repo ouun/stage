@@ -1,8 +1,8 @@
 @if ($navigation)
-  <ul class="menu fixed inset-0 w-full colors-inherit">
+  <ul class="fixed inset-0 w-full menu text-inherit border-inherit">
     @foreach ($navigation as $item)
-      <li class="menu-item w-full colors-inherit {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }} {{ $item->classes }}">
-        <a class="relative colors-inherit" href="{{ $item->url }}">
+      <li class="menu-item w-full text-inherit border-inherit {{ $item->children ? 'has-children' : '' }} {{ $item->active ? 'active' : '' }} {{ $item->classes }}">
+        <a class="relative text-inherit border-inherit" href="{{ $item->url }}">
           {{ $item->label }}
 
           @if($item->children)

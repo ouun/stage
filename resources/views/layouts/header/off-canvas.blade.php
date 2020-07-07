@@ -1,5 +1,5 @@
-<div class="nav-wrap fixed overflow-hidden w-screen h-screen inset-0 pointer-events-none z-0 colors-inherit invisible">
-  <nav class="off-canvas-menu fixed invisible is-hidden right-0 pointer-events-auto colors-inherit visible {{ $mobile['layout'] }}">
+<div class="fixed inset-0 z-0 invisible w-screen h-screen overflow-hidden pointer-events-none nav-wrap text-inherit border-inherit">
+  <nav class="off-canvas-menu fixed invisible is-hidden right-0 pointer-events-auto bg-body text-inherit border-inherit visible {{ $mobile['layout'] }}">
     @include( 'layouts.header.navigation.off-canvas' )
   </nav>
 </div>

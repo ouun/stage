@@ -92,10 +92,10 @@
         }
 
         & + #respond {
-          @apply my-6 mx-3 p-6 border border-gray-200;
+          @apply relative my-6 mx-3 p-6 border border-gray-200;
 
           #reply-title {
-            @apply invisible float-right text-xs font-sans;
+            @apply absolute top-6 right-6 invisible float-right text-xs font-sans;
 
             small {
               @apply visible;

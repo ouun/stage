@@ -4,7 +4,7 @@
 }
 
 %button-base-text {
-  @apply font-medium text-center whitespace-no-wrap select-none cursor-pointer no-underline;
+  @apply relative font-medium text-center whitespace-no-wrap select-none cursor-pointer no-underline;
 }
 
 %button {
@@ -14,7 +14,7 @@
   @extend %button-base-spacing;
 
   &::before {
-    @apply content block absolute inset-0 rounded-inherit colors-inherit border-2 opacity-100 -z-1;
+    @apply content block absolute inset-0 rounded-inherit bg-inherit text-inherit border-inherit border-2 opacity-100 -z-1;
   }
 }
 

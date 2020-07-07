@@ -5,7 +5,7 @@
       @include( 'layouts.header.navigation.horizontal' )
     </nav>
 
-    <div class="flex items-center flex-grow my-3 mr-6 text-black logo-wrap">
+    <div class="absolute left-half top-half transform -translate-x-half -translate-y-half text-black logo-wrap">
       @include('layouts.header.partials.logo')
     </div>
 

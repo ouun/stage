@@ -6,7 +6,7 @@
     @extend %button-base-spacing;
 
     &::before {
-      @apply content block absolute inset-0 rounded-inherit colors-inherit border-none opacity-0 z-1;
+      @apply content block absolute inset-0 rounded-inherit bg-inherit text-inherit border-inherit border-none opacity-0 z-1;
     }
 
     &:hover,

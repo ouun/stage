@@ -16,7 +16,7 @@
       @apply overflow-x-hidden border-inherit;
 
       .woocommerce-mini-cart__empty-message {
-        @apply px-2 pt-6 pb-4 text-center text-gray-500 italic whitespace-normal;
+        @apply px-2 pt-6 pb-4 italic text-center text-gray-500 whitespace-normal;
       }
 
       .cart_list {
@@ -46,7 +46,7 @@
           }
 
           span.quantity {
-            @apply absolute text-gray-500 text-sm bottom-0 right-0 p-0 pb-3;
+            @apply absolute bottom-0 right-0 p-0 pb-3 text-sm text-gray-500;
 
             span.amount {
               @apply pr-2 text-black;
@@ -60,7 +60,7 @@
       }
 
       .woocommerce-mini-cart__total {
-        @apply flow-root py-3 mb-3 font-semibold border-t border-b border-inherit;
+        @apply flow-root pt-3 font-semibold border-t border-inherit;
 
         & > strong {
           @apply float-left;
@@ -76,6 +76,8 @@
       }
 
       .woocommerce-mini-cart__buttons {
+        @apply flow-root pt-2 mt-3 border-t border-inherit;
+
         .button {
           @apply block w-full my-2;
 
