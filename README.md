@@ -21,8 +21,6 @@ take the extra T in the name as what this is intended to achieve: A best practis
 * DSGVO ready, e.g. local saving of Google Fonts
 * An much more to come
 
-See a working example at [roots-example-project.com](https://roots-example-project.com/).
-
 ## Requirements
 
 Make sure all dependencies have been installed before moving on:
