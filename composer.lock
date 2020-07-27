@@ -926,16 +926,16 @@
         },
         {
             "name": "kirki-framework/control-react-color",
-            "version": "v1.0.11",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-react-color.git",
-                "reference": "13e85525ca81f94cf58121fe425f6c9a7f40db54"
+                "reference": "3f3680b354d836ef17c402b1859f223c5745c029"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-color/zipball/13e85525ca81f94cf58121fe425f6c9a7f40db54",
-                "reference": "13e85525ca81f94cf58121fe425f6c9a7f40db54",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-color/zipball/3f3680b354d836ef17c402b1859f223c5745c029",
+                "reference": "3f3680b354d836ef17c402b1859f223c5745c029",
                 "shasum": ""
             },
             "require": {
@@ -970,7 +970,13 @@
                 "framework",
                 "wordpress"
             ],
-            "time": "2019-12-21T11:01:08+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/aristath",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-24T12:25:49+00:00"
         },
         {
             "name": "kirki-framework/control-react-select",
