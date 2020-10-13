@@ -49,7 +49,7 @@ add_action(
          *
          * @link https://roots.io/plugins/soil/
          */
-        add_theme_support('soil', array( 'clean-up', 'nav-walker', 'nice-search', 'relative-urls' ) );
+        add_theme_support('soil', array( 'clean-up', 'nav-walker', 'nice-search', 'relative-urls' ));
 
         /**
          * Load Theme translation

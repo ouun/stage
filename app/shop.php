@@ -25,13 +25,15 @@ if (stage_is_shop_active()) {
     /**
      *  Wide align shop pages
      */
-    add_filter('stage_single_align_content', function ($align) {
-        if (is_shop() || is_cart() || is_checkout()) {
-            $align = 'alignwide';
-        }
+    add_filter(
+        'stage_single_align_content', function ($align) {
+            if (is_shop() || is_cart() || is_checkout()) {
+                $align = 'alignwide';
+            }
 
-        return $align;
-    });
+            return $align;
+        }
+    );
 
     /**
      * Remove Coupon Code from checkout, it is already in cart
