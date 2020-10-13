@@ -130,9 +130,9 @@ function stage_is_feature_active($feature)
  * Render & process the fallback template file
  * from Settings::get_fallback_template_path()
  *
- * @param $chosen_key string
- * @param null              $default_key
- * @param $data array
+ * @param $chosen_key  string
+ * @param null $default_key
+ * @param $data        array
  *
  * @return string Rendered template
  * @throws Throwable
@@ -179,7 +179,7 @@ function stage_get_fallback($request, $fallback = false, $pop = false)
  * with fallback to defaults
  *
  * @param $request
- * @param bool    $pop
+ * @param bool $pop
  *
  * @return mixed|string
  */
@@ -191,8 +191,8 @@ function stage_get_default($request, $pop = false)
 /**
  * Customized do_action() for usage in blade
  *
- * @param string $action
- * @param string $arg
+ * @param  string $action
+ * @param  string $arg
  * @return string
  */
 function stage_do_action($action, $arg = '')
@@ -205,7 +205,7 @@ function stage_do_action($action, $arg = '')
 /**
  * Converts a string (e.g. 'yes' or 'no') to a bool.
  *
- * @param string $string String to convert.
+ * @param  string $string String to convert.
  * @return bool
  */
 function stage_string_to_bool($string)
@@ -216,7 +216,7 @@ function stage_string_to_bool($string)
 /**
  * Converts a bool to a 'yes' or 'no'.
  *
- * @param bool $bool String to convert.
+ * @param  bool $bool String to convert.
  * @return string
  */
 function stage_bool_to_string($bool)
@@ -233,11 +233,11 @@ function stage_bool_to_string($bool)
 function post_types()
 {
       $collection = collect(get_post_types(array( '_builtin' => false ), 'objects'))
-        ->pluck('label', 'name')
-        ->except(array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ))
-        ->prepend(get_post_type_object('page')->labels->name, 'page')
-        ->prepend(get_post_type_object('post')->labels->name, 'post')
-        ->all();
+          ->pluck('label', 'name')
+          ->except(array( 'acf-field', 'acf-field-group', 'wp_stream_alerts', 'wp_area' ))
+          ->prepend(get_post_type_object('page')->labels->name, 'page')
+          ->prepend(get_post_type_object('post')->labels->name, 'post')
+          ->all();
 
       return $collection;
 }
@@ -246,8 +246,8 @@ function post_types()
  * Flatten multidimensional array concatenating keys
  * e.g. [data][user][ben] to [data.user.ben]
  *
- * @param $array
- * @param string $prefix
+ * @param  $array
+ * @param  string $prefix
  * @return array|mixed
  */
 function stage_flatten($array, $prefix = '')
