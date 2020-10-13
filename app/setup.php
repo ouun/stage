@@ -55,7 +55,7 @@ add_action(
         add_theme_support('soil-relative-urls');
 
         /**
-         * Load Theme tranlsation
+         * Load Theme translation
          *
          * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
          */
