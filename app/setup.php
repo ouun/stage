@@ -89,7 +89,15 @@ add_action(
          *
          * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
          */
-        add_theme_support('html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form', 'script', 'style' ));
+        add_theme_support('html5', array(
+            'caption',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'search-form',
+            'script',
+            'style'
+        ));
 
         /**
          * Enable selective refresh for widgets in customizer
