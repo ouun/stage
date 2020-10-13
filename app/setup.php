@@ -49,13 +49,10 @@ add_action(
          *
          * @link https://roots.io/plugins/soil/
          */
-        add_theme_support('soil-clean-up');
-        add_theme_support('soil-nav-walker');
-        add_theme_support('soil-nice-search');
-        add_theme_support('soil-relative-urls');
+        add_theme_support('soil', array( 'clean-up', 'nav-walker', 'nice-search', 'relative-urls' ) );
 
         /**
-         * Load Theme tranlsation
+         * Load Theme translation
          *
          * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
          */
@@ -92,7 +89,7 @@ add_action(
          *
          * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
          */
-        add_theme_support('html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ));
+        add_theme_support('html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form', 'script', 'style' ));
 
         /**
          * Enable selective refresh for widgets in customizer

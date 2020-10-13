@@ -44,7 +44,7 @@
     "ouun/kirki-module-sync_controls": "^1.0",
     "ouun/stage-laravel-tailwind-config": "^1.0",
     "ouun/stage-woocommerce": "^1.0",
-    "roots/acorn": "^1.0.1"
+    "roots/acorn": "^1.1"
   },
   "require-dev": {
     "filp/whoops": "^2.5",
