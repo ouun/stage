@@ -62,7 +62,7 @@
     "jquery": "^3.5.1",
     "jquery-accessible-accordion-aria": "^2.6.1",
     "js-dom-router": "^1.0",
-    "lozad": "^1.4.0",
+    "lozad": "^1.16.0",
     "photoswipe": "^4.1.3"
   }
 }
