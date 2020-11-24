@@ -140,7 +140,7 @@ form.cart {
 
         /* Grouped Product table specific */
         td.woocommerce-grouped-product-list-item__quantity {
-          @apply whitespace-no-wrap;
+          @apply whitespace-nowrap;
 
           input[type="number"] {
             @apply pr-0 w-12 py-0;

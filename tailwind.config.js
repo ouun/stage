@@ -25,9 +25,7 @@ module.exports = {
       './resources/assets/scripts/**/*.js',
     ],
     options: {
-      whitelist: [
-      ],
-      whitelistPatterns: [
+      safelist: [
         /^z(-.*)?$/,
         /^bg(-.*)?$/,
         /^text(-.*)?$/,
@@ -107,19 +105,19 @@ module.exports = {
 
       red: {
         light: 'var(--color-red-light)',
-        default: 'var(--color-red)',
+        DEFAULT: 'var(--color-red)',
         dark: 'var(--color-red-dark)',
       },
 
       green: {
         light: 'var(--color-green-light)',
-        default: 'var(--color-green)',
+        DEFAULT: 'var(--color-green)',
         dark: 'var(--color-green-dark)',
       },
 
       blue: {
         light: 'var(--color-blue-light)',
-        default: 'var(--color-blue)',
+        DEFAULT: 'var(--color-blue)',
         dark: 'var(--color-blue-dark)',
       },
     },
@@ -505,7 +503,7 @@ module.exports = {
     */
 
     borderWidth: {
-      default: '1px',
+      DEFAULT: '1px',
       '0': '0',
       '2': '2px',
       '3': '3px',
@@ -541,7 +539,7 @@ module.exports = {
 
     boxShadow: {
       'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.04)',
-      'default': '0 2px 4px 0 rgba(0,0,0,0.10)',
+      DEFAULT: '0 2px 4px 0 rgba(0,0,0,0.10)',
       'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
       'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
       'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
@@ -676,7 +674,7 @@ module.exports = {
       '3': 3,
       '4': 4,
       '5': 5,
-      default: 1,
+      DEFAULT: 1,
     },
   },
 

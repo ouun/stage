@@ -34,7 +34,7 @@ div.icons-wrap {
       // Second menu level / First sub-menu
       & > .sub-menu {
         @apply invisible fixed right-0 top-full opacity-0 cursor-auto;
-        @apply flex flex-col whitespace-no-wrap;
+        @apply flex flex-col whitespace-nowrap;
         @apply z-30;
         @apply px-6 py-4;
         @apply border;

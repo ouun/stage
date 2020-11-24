@@ -1,6 +1,6 @@
 p.has-drop-cap {
   &:not(:focus)::first-letter {
-    @apply font-hairline not-italic uppercase float-left;
+    @apply not-italic uppercase float-left;
 
     font-family: var(--heading-font-family);
     font-size: 8.4em; // Relative to the text-size

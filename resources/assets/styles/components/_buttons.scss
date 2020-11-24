@@ -4,7 +4,7 @@
 }
 
 %button-base-text {
-  @apply relative font-medium text-center whitespace-no-wrap select-none cursor-pointer no-underline;
+  @apply relative font-medium text-center whitespace-nowrap select-none cursor-pointer no-underline;
 }
 
 %button {
