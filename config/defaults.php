@@ -2,10 +2,9 @@
 
 /**
  * This file contains the defaults used by Stage
- * Overwrite them here or via the Customizer settings
+ * Overwrite them here or via the Customizer Settings
  */
 
-use function Stage\stage_get_default;
 use function Stage\stage_get_fallback;
 
 return array(

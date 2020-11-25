@@ -27,7 +27,7 @@ mix.setPublicPath('./dist')
 // Todo: .extract() is removed: https://github.com/roots/sage/issues/2204
 // So there is no manifest.js file available
 mix.js('resources/assets/scripts/app.js', 'scripts')
-  .block('resources/assets/scripts/editor.js', 'scripts');
+  .blocks('resources/assets/scripts/editor.js', 'scripts');
 
 // Styles
 mix.sass('resources/assets/styles/stage.scss', 'styles')
