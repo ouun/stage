@@ -1970,16 +1970,16 @@
         },
         {
             "name": "log1x/sage-svg",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/sage-svg.git",
-                "reference": "40cf359f5ac11b9be290bd224afc4bc127130336"
+                "reference": "923f0c286b57180883ffd61cbcf4a854b20e8f91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/sage-svg/zipball/40cf359f5ac11b9be290bd224afc4bc127130336",
-                "reference": "40cf359f5ac11b9be290bd224afc4bc127130336",
+                "url": "https://api.github.com/repos/Log1x/sage-svg/zipball/923f0c286b57180883ffd61cbcf4a854b20e8f91",
+                "reference": "923f0c286b57180883ffd61cbcf4a854b20e8f91",
                 "shasum": ""
             },
             "require": {
@@ -2026,7 +2026,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-30T00:34:52+00:00"
+            "time": "2020-12-06T04:44:28+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2852,6 +2852,16 @@
                 }
             ],
             "homepage": "https://github.com/roots/support/",
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/rootsdev",
+                    "type": "patreon"
+                }
+            ],
             "time": "2019-01-28T09:46:14+00:00"
         },
         {
