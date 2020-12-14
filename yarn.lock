@@ -8655,10 +8655,10 @@ tailwindcss-wordpress@^0.1.1:
   resolved "https://registry.yarnpkg.com/tailwindcss-wordpress/-/tailwindcss-wordpress-0.1.1.tgz#4765e176af4932453a2bb9045d99f9e22fd722c4"
   integrity sha512-wOT4XXoPw6udkESkl9tEk3fDMZe1mLZCVMkzDS8QhbO/mzBcNIijeyN0VKe7Syem+o4YYzGcth+4HAT2OehxNw==
 
-tailwindcss@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.0.1.tgz#8d336917819341d1018208e8b3ed8cbc46e6b643"
-  integrity sha512-57G3jdcVBWTPkHCNSAfDAo1Qp2Nkr4H6WnLD0luNFh1td+KwQp9FOVcqj0SYBH6qwVQJawzT+0/zLxzKmyznGw==
+tailwindcss@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.0.2.tgz#28e1573d29dd4547b26782facb05bcfaa92be366"
+  integrity sha512-nO9JRE1pO7SF9RnYAl6g7uzeHdrmKAFqNjT9NtZUfxqimJZAOOLOEyIEUiMq12+xIc7mC2Ey3Vf90XjHpWKfbw==
   dependencies:
     "@fullhuman/postcss-purgecss" "^3.0.0"
     bytes "^3.0.0"
