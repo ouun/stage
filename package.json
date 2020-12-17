@@ -58,7 +58,7 @@
     "autoprefixer": "^10.0.2",
     "colcade": "^0.2.0",
     "custom-event-polyfill": "^1.0.7",
-    "detect-it": "^3.0.5",
+    "detect-it": "^4.0.0",
     "infinite-scroll": "^3.0.6",
     "jquery": "^3.5.1",
     "jquery-accessible-accordion-aria": "^2.6.1",
