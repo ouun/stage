@@ -2,7 +2,7 @@
 
 Stage is a feature rich & very opinionated - but still highly customizable - Theme Framework.
 
-Stage is completely based on the modern development workflow of [Roots Sage](https://infinite-scroll.com/), take the extra T in the name as what this is intended to achieve: A best practise Parent Theme that helps you to rev up.
+Stage is completely based on the modern development workflow of [Roots Sage](https://roots.io/sage), take the extra T in the name as what this is intended to achieve: A best practise Parent Theme that helps you to rev up.
 
 ## Features
 
