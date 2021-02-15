@@ -37,7 +37,7 @@
     "kirki-framework/module-sections": "^1.0",
     "kirki-framework/module-selective-refresh": "^1.0",
     "kirki-framework/module-webfonts": "^1.0",
-    "log1x/navi": "^1.0",
+    "log1x/navi": "^2.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
     "ouun/kirki-module-fonts_upload": "^1.0",
