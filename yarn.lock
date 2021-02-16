@@ -5287,10 +5287,10 @@ known-css-properties@^0.20.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.20.0.tgz#0570831661b47dd835293218381166090ff60e96"
   integrity sha512-URvsjaA9ypfreqJ2/ylDr5MUERhJZ+DhguoWRr2xgS5C7aGCalXo+ewL+GixgKBfhT2vuL02nbIgNGqVWgTOYw==
 
-laravel-mix-copy-watched@^2.2.3:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/laravel-mix-copy-watched/-/laravel-mix-copy-watched-2.2.4.tgz#28404b15e63e0beec74a0dd8f93779ee179f7167"
-  integrity sha512-etuYFnEI8pDH7G5bO4NjUZ5H2sVxsZ9GAFRqobc3u7FTXmfHWKoBF0c49FYxeGBz+bt4i84+2n9A6TVmec1eyw==
+laravel-mix-copy-watched@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/laravel-mix-copy-watched/-/laravel-mix-copy-watched-2.3.0.tgz#471d84b8130f66c567135d2c4971799694dd5466"
+  integrity sha512-1uTm9uk0GcfCPB27xP2zJf65b9KQ0sq1lLwX1rWMDtc/swZwicyWh1Obyrg/km07IeVn4GdZDBfRN7RD3p0cYA==
   dependencies:
     chokidar "^3.3.0"
     fs-extra "^7.0.1"
@@ -5943,11 +5943,6 @@ nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
-
-nanoid@^3.1.20:
-  version "3.1.20"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
-  integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
 
 nanoid@^3.1.20:
   version "3.1.20"
