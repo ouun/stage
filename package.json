@@ -59,7 +59,7 @@
     "colcade": "^0.2.0",
     "custom-event-polyfill": "^1.0.7",
     "detect-it": "^3.0.5",
-    "infinite-scroll": "^3.0.6",
+    "infinite-scroll": "^4.0.1",
     "jquery": "^3.5.1",
     "jquery-accessible-accordion-aria": "^2.6.1",
     "js-dom-router": "^1.0",
