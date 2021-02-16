@@ -5874,10 +5874,10 @@ mitt@^1.1.3:
   resolved "https://registry.yarnpkg.com/mitt/-/mitt-1.2.0.tgz#cb24e6569c806e31bd4e3995787fe38a04fdf90d"
   integrity sha512-r6lj77KlwqLhIUku9UWYes7KJtsczvolZkzp8hbaDPPaE24OmWl5s539Mytlj22siEQKosZ26qCBgda2PKwoJw==
 
-mix-tailwindcss@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/mix-tailwindcss/-/mix-tailwindcss-1.2.0.tgz#a4edeea96c5040d0c8606b12964abd8a0b238c77"
-  integrity sha512-dhG63wPBd4xy+HjPtTnJLXHfzKV6BEhqEKwrmMlKVurtR8+3oRexCff8rnVWonyGaSo8VRVtYhYR5VB53HEnqQ==
+mix-tailwindcss@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/mix-tailwindcss/-/mix-tailwindcss-1.3.0.tgz#8b0315863aff99b7fa1de3c73c922d60848a4ad7"
+  integrity sha512-K76U+TS2wiKOKv8I6muMGbzg+3CrAQaI5cGduMzmjkSLS1GolL4kYSGJCP9LrtjAmFb9vINCzqPDNiNEjoeX3w==
 
 mixin-deep@^1.2.0:
   version "1.3.2"
@@ -5943,11 +5943,6 @@ nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
-
-nanoid@^3.1.20:
-  version "3.1.20"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
-  integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
 
 nanoid@^3.1.20:
   version "3.1.20"
