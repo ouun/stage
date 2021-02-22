@@ -2082,16 +2082,16 @@
         },
         {
             "name": "log1x/sage-directives",
-            "version": "v1.1.8",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/sage-directives.git",
-                "reference": "063ecd6e33e2a51f62eca6718e48e1bc7325f4c8"
+                "reference": "1162c9fa46aea11cd1495d6a8e6a1a120833308d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/sage-directives/zipball/063ecd6e33e2a51f62eca6718e48e1bc7325f4c8",
-                "reference": "063ecd6e33e2a51f62eca6718e48e1bc7325f4c8",
+                "url": "https://api.github.com/repos/Log1x/sage-directives/zipball/1162c9fa46aea11cd1495d6a8e6a1a120833308d",
+                "reference": "1162c9fa46aea11cd1495d6a8e6a1a120833308d",
                 "shasum": ""
             },
             "require": {
@@ -2132,7 +2132,7 @@
             ],
             "support": {
                 "issues": "https://github.com/log1x/sage-directives/issues",
-                "source": "https://github.com/Log1x/sage-directives/tree/master"
+                "source": "https://github.com/Log1x/sage-directives/tree/v1.1.9"
             },
             "funding": [
                 {
@@ -2140,7 +2140,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-31T20:42:02+00:00"
+            "time": "2021-02-19T15:19:22+00:00"
         },
         {
             "name": "log1x/sage-svg",
