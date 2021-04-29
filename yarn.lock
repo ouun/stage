@@ -5949,11 +5949,6 @@ nanoid@^3.1.20:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
   integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
 
-nanoid@^3.1.20:
-  version "3.1.20"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
-  integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
-
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -7233,10 +7228,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-purgecss-with-wordpress@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/purgecss-with-wordpress/-/purgecss-with-wordpress-4.0.0.tgz#6bb45c674e08bf88105f623556e1fb85a5caa04b"
-  integrity sha512-40JgLR6nVqAUVnff9QYRIdRYWxVQNocCaq2Eo55qqnFUb6mLpP8iQy3Z+Uy6tH/djChhZznlu80kkQCfe012uQ==
+purgecss-with-wordpress@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/purgecss-with-wordpress/-/purgecss-with-wordpress-4.0.3.tgz#f5754f8b02e876ae06cb658d278842c08f610c51"
+  integrity sha512-TpbJJ8Iq/dJVvdp3QxoXc1rBpYIR/uuaowRETOeAFMdpSOGfsxt+pmOlWw0nzfAdx/39w9zIAWMynuoRjVlHNQ==
 
 purgecss@^2.3.0:
   version "2.3.0"
