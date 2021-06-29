@@ -2018,16 +2018,16 @@
         },
         {
             "name": "log1x/navi",
-            "version": "v2.0.0",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/navi.git",
-                "reference": "bdfbeb62109545a29745fc5c09d8bb8704db0281"
+                "reference": "946bcd422515fd17f7dd37559de68889b23e4bfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/navi/zipball/bdfbeb62109545a29745fc5c09d8bb8704db0281",
-                "reference": "bdfbeb62109545a29745fc5c09d8bb8704db0281",
+                "url": "https://api.github.com/repos/Log1x/navi/zipball/946bcd422515fd17f7dd37559de68889b23e4bfb",
+                "reference": "946bcd422515fd17f7dd37559de68889b23e4bfb",
                 "shasum": ""
             },
             "require": {
@@ -2070,7 +2070,7 @@
             ],
             "support": {
                 "issues": "https://github.com/log1x/navi/issues",
-                "source": "https://github.com/Log1x/navi/tree/v2.0.0"
+                "source": "https://github.com/Log1x/navi/tree/v2.0.2"
             },
             "funding": [
                 {
@@ -2078,7 +2078,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-02-14T06:30:23+00:00"
+            "time": "2021-04-30T17:33:13+00:00"
         },
         {
             "name": "log1x/sage-directives",
@@ -5256,5 +5256,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
