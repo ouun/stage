@@ -46,7 +46,7 @@
     "sass-loader": "^10.1.0",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^2.2.8",
     "tailwindcss-aspect-ratio": "^3.0.0",
     "tailwindcss-wordpress": "^0.1.1",
     "vue-template-compiler": "^2.6.11",
