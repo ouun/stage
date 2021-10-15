@@ -1675,16 +1675,16 @@
         },
         {
             "name": "kirki-framework/module-selective-refresh",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-selective-refresh.git",
-                "reference": "826dad18131bd4d6e9fdd4dde2eaa2f338801692"
+                "reference": "1fe1326c09df7cda2e3b29bae878369c9ef82e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-selective-refresh/zipball/826dad18131bd4d6e9fdd4dde2eaa2f338801692",
-                "reference": "826dad18131bd4d6e9fdd4dde2eaa2f338801692",
+                "url": "https://api.github.com/repos/kirki-framework/module-selective-refresh/zipball/1fe1326c09df7cda2e3b29bae878369c9ef82e11",
+                "reference": "1fe1326c09df7cda2e3b29bae878369c9ef82e11",
                 "shasum": ""
             },
             "require": {
@@ -1717,9 +1717,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-selective-refresh/issues",
-                "source": "https://github.com/kirki-framework/module-selective-refresh/tree/v1.0.1"
+                "source": "https://github.com/kirki-framework/module-selective-refresh/tree/v1.0.2"
             },
-            "time": "2019-09-28T07:48:05+00:00"
+            "time": "2021-09-24T13:58:38+00:00"
         },
         {
             "name": "kirki-framework/module-webfonts",
@@ -5256,5 +5256,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
