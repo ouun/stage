@@ -1576,16 +1576,16 @@
         },
         {
             "name": "kirki-framework/module-postmessage",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-postMessage.git",
-                "reference": "15697b26ce05df057a23da6c4faaec57b4ee6fa5"
+                "reference": "fda89740079626acc35f6dd61b89b72b96a38f5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-postMessage/zipball/15697b26ce05df057a23da6c4faaec57b4ee6fa5",
-                "reference": "15697b26ce05df057a23da6c4faaec57b4ee6fa5",
+                "url": "https://api.github.com/repos/kirki-framework/module-postMessage/zipball/fda89740079626acc35f6dd61b89b72b96a38f5b",
+                "reference": "fda89740079626acc35f6dd61b89b72b96a38f5b",
                 "shasum": ""
             },
             "require": {
@@ -1620,9 +1620,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-postMessage/issues",
-                "source": "https://github.com/kirki-framework/module-postMessage/tree/master"
+                "source": "https://github.com/kirki-framework/module-postMessage/tree/v1.0.2"
             },
-            "time": "2019-09-22T14:19:53+00:00"
+            "time": "2021-09-20T18:52:20+00:00"
         },
         {
             "name": "kirki-framework/module-sections",
@@ -1818,22 +1818,21 @@
         },
         {
             "name": "kirki-framework/util",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/util.git",
-                "reference": "b572a335388d9d2f603f8dca717f0e224f0700a9"
+                "reference": "7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/util/zipball/b572a335388d9d2f603f8dca717f0e224f0700a9",
-                "reference": "b572a335388d9d2f603f8dca717f0e224f0700a9",
+                "url": "https://api.github.com/repos/kirki-framework/util/zipball/7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3",
+                "reference": "7ead5a4bf6875aa1afb96cbb4e747c59c163b2a3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1861,9 +1860,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/util/issues",
-                "source": "https://github.com/kirki-framework/util/tree/master"
+                "source": "https://github.com/kirki-framework/util/tree/v1.0.0"
             },
-            "time": "2020-04-26T10:22:13+00:00"
+            "time": "2021-09-09T21:02:44+00:00"
         },
         {
             "name": "league/flysystem",
@@ -5256,5 +5255,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
