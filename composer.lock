@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4cba27f813f31d677b0517844dd37a0",
+    "content-hash": "efd41e006ed1524a6db5a39027566fb0",
     "packages": [
         {
             "name": "brick/math",
@@ -854,23 +854,22 @@
         },
         {
             "name": "kirki-framework/control-base",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-base.git",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304"
+                "reference": "cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/13bf42e5b4619c9122e3c78d1381c104443c6304",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304",
+                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580",
+                "reference": "cf0d6e4f3aa5576e2a1c56d9f63caad2fa3df580",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
                 "php": ">=5.6"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -898,22 +897,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-base/issues",
-                "source": "https://github.com/kirki-framework/control-base/tree/master"
+                "source": "https://github.com/kirki-framework/control-base/tree/v1.0.0"
             },
-            "time": "2019-10-04T21:15:35+00:00"
+            "time": "2021-10-07T04:13:38+00:00"
         },
         {
             "name": "kirki-framework/control-checkbox",
-            "version": "v0.1.2",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-checkbox.git",
-                "reference": "554893f0b35e2b4285ea418d088cca963e948889"
+                "reference": "769f2ce5dc0eb89e12886dc6d16cf10a1c181405"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/554893f0b35e2b4285ea418d088cca963e948889",
-                "reference": "554893f0b35e2b4285ea418d088cca963e948889",
+                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/769f2ce5dc0eb89e12886dc6d16cf10a1c181405",
+                "reference": "769f2ce5dc0eb89e12886dc6d16cf10a1c181405",
                 "shasum": ""
             },
             "require": {
@@ -949,9 +948,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-checkbox/issues",
-                "source": "https://github.com/kirki-framework/control-checkbox/tree/master"
+                "source": "https://github.com/kirki-framework/control-checkbox/tree/v1.0.1"
             },
-            "time": "2019-10-20T11:52:49+00:00"
+            "time": "2021-12-17T16:32:40+00:00"
         },
         {
             "name": "kirki-framework/control-custom",
@@ -5256,5 +5255,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
