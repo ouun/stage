@@ -1626,21 +1626,21 @@
         },
         {
             "name": "kirki-framework/module-sections",
-            "version": "v1.0",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-sections.git",
-                "reference": "1726ccf28ce24e1084e5f78b5342b84f1110abc7"
+                "reference": "ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-sections/zipball/1726ccf28ce24e1084e5f78b5342b84f1110abc7",
-                "reference": "1726ccf28ce24e1084e5f78b5342b84f1110abc7",
+                "url": "https://api.github.com/repos/kirki-framework/module-sections/zipball/ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c",
+                "reference": "ee8c9120ddd7fe63e1ca39db93714b9b4e5d477c",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1654,14 +1654,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Sections API & Custom Section Types for the Kirki WordPress Plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1669,9 +1667,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-sections/issues",
-                "source": "https://github.com/kirki-framework/module-sections/tree/v1.0"
+                "source": "https://github.com/kirki-framework/module-sections/tree/v1.0.4"
             },
-            "time": "2019-09-22T16:09:41+00:00"
+            "time": "2021-12-29T16:14:58+00:00"
         },
         {
             "name": "kirki-framework/module-selective-refresh",
@@ -1772,20 +1770,20 @@
         },
         {
             "name": "kirki-framework/url-getter",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/url-getter.git",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3"
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
+                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1799,22 +1797,20 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Helper component to get the URL of a file in WordPress.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/url-getter/issues",
-                "source": "https://github.com/kirki-framework/url-getter/tree/master"
+                "source": "https://github.com/kirki-framework/url-getter/tree/v1.0.5"
             },
-            "time": "2019-09-08T18:32:10+00:00"
+            "time": "2021-12-29T16:27:31+00:00"
         },
         {
             "name": "kirki-framework/util",
@@ -5256,5 +5252,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
