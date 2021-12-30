@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4cba27f813f31d677b0517844dd37a0",
+    "content-hash": "0e811bf840fb31ffe08ebcd539f4e4e1",
     "packages": [
         {
             "name": "brick/math",
@@ -854,23 +854,22 @@
         },
         {
             "name": "kirki-framework/control-base",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-base.git",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304"
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/13bf42e5b4619c9122e3c78d1381c104443c6304",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304",
+                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/d204f596cc5b90d8945b1183ca68becfe2b7387d",
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -883,14 +882,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
-            "description": "The Base Class for other Kirki Customizer Controls.",
-            "homepage": "https://aristath.github.io/kirki",
+            "description": "The base class for other Kirki's controls.",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -898,9 +895,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-base/issues",
-                "source": "https://github.com/kirki-framework/control-base/tree/master"
+                "source": "https://github.com/kirki-framework/control-base/tree/v1.0.2"
             },
-            "time": "2019-10-04T21:15:35+00:00"
+            "time": "2021-12-29T13:18:01+00:00"
         },
         {
             "name": "kirki-framework/control-checkbox",
@@ -955,23 +952,22 @@
         },
         {
             "name": "kirki-framework/control-custom",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-custom.git",
-                "reference": "134a69a61fdbc95a7d6c081b324eba262db80729"
+                "reference": "103f4f813f1919c23ec41e81c81cfbf83ab0e78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-custom/zipball/134a69a61fdbc95a7d6c081b324eba262db80729",
-                "reference": "134a69a61fdbc95a7d6c081b324eba262db80729",
+                "url": "https://api.github.com/repos/kirki-framework/control-custom/zipball/103f4f813f1919c23ec41e81c81cfbf83ab0e78f",
+                "reference": "103f4f813f1919c23ec41e81c81cfbf83ab0e78f",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -985,14 +981,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Custom control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1000,30 +994,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-custom/issues",
-                "source": "https://github.com/kirki-framework/control-custom/tree/master"
+                "source": "https://github.com/kirki-framework/control-custom/tree/v1.0.1"
             },
-            "time": "2019-07-06T20:23:00+00:00"
+            "time": "2021-12-29T14:02:22+00:00"
         },
         {
             "name": "kirki-framework/control-generic",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-generic.git",
-                "reference": "49678ddd3e3d26c7f5a174e59f22afcc69cf7408"
+                "reference": "82643cbfc2cd48dc1d047ca7e32ca7ed98650611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-generic/zipball/49678ddd3e3d26c7f5a174e59f22afcc69cf7408",
-                "reference": "49678ddd3e3d26c7f5a174e59f22afcc69cf7408",
+                "url": "https://api.github.com/repos/kirki-framework/control-generic/zipball/82643cbfc2cd48dc1d047ca7e32ca7ed98650611",
+                "reference": "82643cbfc2cd48dc1d047ca7e32ca7ed98650611",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1037,14 +1030,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Generic control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1052,9 +1043,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-generic/issues",
-                "source": "https://github.com/kirki-framework/control-generic/tree/master"
+                "source": "https://github.com/kirki-framework/control-generic/tree/v1.0.1"
             },
-            "time": "2019-07-06T20:26:46+00:00"
+            "time": "2021-12-29T14:33:52+00:00"
         },
         {
             "name": "kirki-framework/control-react-color",
@@ -1115,23 +1106,24 @@
             "time": "2020-07-24T12:25:49+00:00"
         },
         {
-            "name": "kirki-framework/control-react-select",
-            "version": "v0.3.1",
+            "name": "kirki-framework/control-react-colorful",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kirki-framework/control-react-select.git",
-                "reference": "bc4d6cd15e482c28b4924203fc129bc1cc731c92"
+                "url": "https://github.com/kirki-framework/control-react-colorful.git",
+                "reference": "c826815a402cb84fb924ddf55b1ffffd32f1be38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-react-select/zipball/bc4d6cd15e482c28b4924203fc129bc1cc731c92",
-                "reference": "bc4d6cd15e482c28b4924203fc129bc1cc731c92",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-colorful/zipball/c826815a402cb84fb924ddf55b1ffffd32f1be38",
+                "reference": "c826815a402cb84fb924ddf55b1ffffd32f1be38",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
+                "kirki-framework/field": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1146,14 +1138,61 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
+                }
+            ],
+            "description": "Color control for the Kirki Customizer framework using react-colorful.",
+            "homepage": "https://kirki.org/",
+            "keywords": [
+                "customizer",
+                "framework",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/kirki-framework/control-react-colorful/issues",
+                "source": "https://github.com/kirki-framework/control-react-colorful/tree/v1.0.6"
+            },
+            "time": "2021-12-29T14:43:45+00:00"
+        },
+        {
+            "name": "kirki-framework/control-react-select",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirki-framework/control-react-select.git",
+                "reference": "0601c2a25ff91d8ee509ba746885b72298abdf09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirki-framework/control-react-select/zipball/0601c2a25ff91d8ee509ba746885b72298abdf09",
+                "reference": "0601c2a25ff91d8ee509ba746885b72298abdf09",
+                "shasum": ""
+            },
+            "require": {
+                "kirki-framework/control-base": "*",
+                "kirki-framework/url-getter": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kirki\\Control\\": "src/Control",
+                    "Kirki\\Field\\": "src/Field"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Select control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1161,28 +1200,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-react-select/issues",
-                "source": "https://github.com/kirki-framework/control-react-select/tree/v0.3.1"
+                "source": "https://github.com/kirki-framework/control-react-select/tree/v1.1.2"
             },
-            "time": "2019-11-09T11:39:56+00:00"
+            "time": "2021-12-29T14:52:48+00:00"
         },
         {
             "name": "kirki-framework/field",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field.git",
-                "reference": "5865773dd95b4d75c9534be2d58dde4251a06626"
+                "reference": "d619e8c0b2e6d097fe870931854d6aff074cd270"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field/zipball/5865773dd95b4d75c9534be2d58dde4251a06626",
-                "reference": "5865773dd95b4d75c9534be2d58dde4251a06626",
+                "url": "https://api.github.com/repos/kirki-framework/field/zipball/d619e8c0b2e6d097fe870931854d6aff074cd270",
+                "reference": "d619e8c0b2e6d097fe870931854d6aff074cd270",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1195,23 +1233,21 @@
             ],
             "authors": [
                 {
-                    "name": "aristath",
-                    "email": "aristath@gmail.com",
-                    "homepage": "https://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Customizer API abstraction used by Kirki Controls.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field/issues",
-                "source": "https://github.com/kirki-framework/field/tree/master"
+                "source": "https://github.com/kirki-framework/field/tree/v1.0.2"
             },
-            "time": "2019-09-01T13:35:03+00:00"
+            "time": "2021-12-29T15:23:42+00:00"
         },
         {
             "name": "kirki-framework/field-multicolor",
@@ -1268,28 +1304,28 @@
         },
         {
             "name": "kirki-framework/field-typography",
-            "version": "v0.3.1",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/field-typography.git",
-                "reference": "2c060f5b6298a06ef863601f9075d094e7bcd098"
+                "reference": "df2c8a9d3db8a3407a3835453de3c85641198c10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/2c060f5b6298a06ef863601f9075d094e7bcd098",
-                "reference": "2c060f5b6298a06ef863601f9075d094e7bcd098",
+                "url": "https://api.github.com/repos/kirki-framework/field-typography/zipball/df2c8a9d3db8a3407a3835453de3c85641198c10",
+                "reference": "df2c8a9d3db8a3407a3835453de3c85641198c10",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/control-custom": "*",
                 "kirki-framework/control-generic": "*",
-                "kirki-framework/control-react-color": "*",
+                "kirki-framework/control-react-colorful": "*",
                 "kirki-framework/control-react-select": "*",
                 "kirki-framework/googlefonts": "*",
                 "kirki-framework/module-webfonts": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1304,14 +1340,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Typography field for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1319,26 +1353,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/field-typography/issues",
-                "source": "https://github.com/kirki-framework/field-typography/tree/master"
+                "source": "https://github.com/kirki-framework/field-typography/tree/v1.0.5"
             },
-            "time": "2019-11-09T11:03:59+00:00"
+            "time": "2021-12-29T15:41:59+00:00"
         },
         {
             "name": "kirki-framework/googlefonts",
-            "version": "v19.09.22",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/googlefonts.git",
-                "reference": "d943e605c1dfb985dbe2cd1bd94e005a6e5fe65b"
+                "reference": "722ee68cb1aa5252b3000fea8cc77dae8b7f6881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/d943e605c1dfb985dbe2cd1bd94e005a6e5fe65b",
-                "reference": "d943e605c1dfb985dbe2cd1bd94e005a6e5fe65b",
+                "url": "https://api.github.com/repos/kirki-framework/googlefonts/zipball/722ee68cb1aa5252b3000fea8cc77dae8b7f6881",
+                "reference": "722ee68cb1aa5252b3000fea8cc77dae8b7f6881",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1352,14 +1386,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Get a JSON file for all googlefonts. Initially built for the Kirki framework for the WordPress Customizer.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1369,9 +1401,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/googlefonts/issues",
-                "source": "https://github.com/kirki-framework/googlefonts/tree/master"
+                "source": "https://github.com/kirki-framework/googlefonts/tree/v1.0.3"
             },
-            "time": "2019-09-22T13:04:19+00:00"
+            "time": "2021-12-29T15:45:37+00:00"
         },
         {
             "name": "kirki-framework/module-css",
@@ -1723,21 +1755,21 @@
         },
         {
             "name": "kirki-framework/module-webfonts",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/module-webfonts.git",
-                "reference": "5fc5a286105c37f9f78c6462b71369d0d2e8f590"
+                "reference": "ec12372bb67230ab5558a6b3d8b7f98300d2e2a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/5fc5a286105c37f9f78c6462b71369d0d2e8f590",
-                "reference": "5fc5a286105c37f9f78c6462b71369d0d2e8f590",
+                "url": "https://api.github.com/repos/kirki-framework/module-webfonts/zipball/ec12372bb67230ab5558a6b3d8b7f98300d2e2a6",
+                "reference": "ec12372bb67230ab5558a6b3d8b7f98300d2e2a6",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/googlefonts": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1751,14 +1783,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Webfonts Module for the Kirki WordPress plugin.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "customizer",
                 "framework",
@@ -1766,26 +1796,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/module-webfonts/issues",
-                "source": "https://github.com/kirki-framework/module-webfonts/tree/master"
+                "source": "https://github.com/kirki-framework/module-webfonts/tree/v1.0.4"
             },
-            "time": "2019-11-11T17:41:38+00:00"
+            "time": "2021-12-29T16:23:32+00:00"
         },
         {
             "name": "kirki-framework/url-getter",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/url-getter.git",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3"
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
+                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1799,22 +1829,20 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Helper component to get the URL of a file in WordPress.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/url-getter/issues",
-                "source": "https://github.com/kirki-framework/url-getter/tree/master"
+                "source": "https://github.com/kirki-framework/url-getter/tree/v1.0.5"
             },
-            "time": "2019-09-08T18:32:10+00:00"
+            "time": "2021-12-29T16:27:31+00:00"
         },
         {
             "name": "kirki-framework/util",
@@ -5256,5 +5284,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
