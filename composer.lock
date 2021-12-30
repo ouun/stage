@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4cba27f813f31d677b0517844dd37a0",
+    "content-hash": "efd41e006ed1524a6db5a39027566fb0",
     "packages": [
         {
             "name": "brick/math",
@@ -854,23 +854,22 @@
         },
         {
             "name": "kirki-framework/control-base",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-base.git",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304"
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/13bf42e5b4619c9122e3c78d1381c104443c6304",
-                "reference": "13bf42e5b4619c9122e3c78d1381c104443c6304",
+                "url": "https://api.github.com/repos/kirki-framework/control-base/zipball/d204f596cc5b90d8945b1183ca68becfe2b7387d",
+                "reference": "d204f596cc5b90d8945b1183ca68becfe2b7387d",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -883,14 +882,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
-            "description": "The Base Class for other Kirki Customizer Controls.",
-            "homepage": "https://aristath.github.io/kirki",
+            "description": "The base class for other Kirki's controls.",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -898,28 +895,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-base/issues",
-                "source": "https://github.com/kirki-framework/control-base/tree/master"
+                "source": "https://github.com/kirki-framework/control-base/tree/v1.0.2"
             },
-            "time": "2019-10-04T21:15:35+00:00"
+            "time": "2021-12-29T13:18:01+00:00"
         },
         {
             "name": "kirki-framework/control-checkbox",
-            "version": "v0.1.2",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/control-checkbox.git",
-                "reference": "554893f0b35e2b4285ea418d088cca963e948889"
+                "reference": "ea0e0b724634df9ecce4c6536b4de2135d15620d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/554893f0b35e2b4285ea418d088cca963e948889",
-                "reference": "554893f0b35e2b4285ea418d088cca963e948889",
+                "url": "https://api.github.com/repos/kirki-framework/control-checkbox/zipball/ea0e0b724634df9ecce4c6536b4de2135d15620d",
+                "reference": "ea0e0b724634df9ecce4c6536b4de2135d15620d",
                 "shasum": ""
             },
             "require": {
                 "kirki-framework/control-base": "*",
                 "kirki-framework/url-getter": "*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -934,14 +931,12 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Checkbox control for the Kirki Customizer framework.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org",
             "keywords": [
                 "customizer",
                 "framework",
@@ -949,9 +944,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/control-checkbox/issues",
-                "source": "https://github.com/kirki-framework/control-checkbox/tree/master"
+                "source": "https://github.com/kirki-framework/control-checkbox/tree/v1.0.2"
             },
-            "time": "2019-10-20T11:52:49+00:00"
+            "time": "2021-12-29T13:19:58+00:00"
         },
         {
             "name": "kirki-framework/control-custom",
@@ -1772,20 +1767,20 @@
         },
         {
             "name": "kirki-framework/url-getter",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirki-framework/url-getter.git",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3"
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
-                "reference": "2b1b464b4ba7d2a3d37094669dd66f20d39fa9e3",
+                "url": "https://api.github.com/repos/kirki-framework/url-getter/zipball/cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
+                "reference": "cfe7ea5b51c5e9b5e7d706ed56694f54a972fae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -1799,22 +1794,20 @@
             ],
             "authors": [
                 {
-                    "name": "Ari Stathopoulos",
-                    "email": "aristath@gmail.com",
-                    "homepage": "http://aristath.github.io",
-                    "role": "Developer"
+                    "name": "Kirki Framework",
+                    "email": "connect@mapsteps.com"
                 }
             ],
             "description": "Helper component to get the URL of a file in WordPress.",
-            "homepage": "https://aristath.github.io/kirki",
+            "homepage": "https://kirki.org/",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/kirki-framework/url-getter/issues",
-                "source": "https://github.com/kirki-framework/url-getter/tree/master"
+                "source": "https://github.com/kirki-framework/url-getter/tree/v1.0.5"
             },
-            "time": "2019-09-08T18:32:10+00:00"
+            "time": "2021-12-29T16:27:31+00:00"
         },
         {
             "name": "kirki-framework/util",
@@ -5256,5 +5249,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
