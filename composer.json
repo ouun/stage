@@ -25,7 +25,7 @@
   "require": {
     "php": "^7.2.5",
     "kirki-framework/compatibility": "dev-master",
-    "kirki-framework/control-checkbox": "^0.1",
+    "kirki-framework/control-checkbox": "^1.0",
     "kirki-framework/control-react-color": "^1.0",
     "kirki-framework/field-multicolor": "dev-master",
     "kirki-framework/field-typography": "^0.3",
