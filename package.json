@@ -40,7 +40,7 @@
     "laravel-mix-purgecss": "^5.0.0",
     "mix-tailwindcss": "^1.2.0",
     "npm-run-all": "^4.1",
-    "purgecss-with-wordpress": "^4.0.0",
+    "purgecss-with-wordpress": "^5.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.32.7",
     "sass-loader": "^10.1.0",
